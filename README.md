@@ -8,19 +8,12 @@ Repository dedicated to organizing and versioning study topics in systems theory
 
 Collection of documents exploring systems theory, complexity, and emergent phenomena.
 
-#### Document 1: Complex Systems as Unbounded Dynamical Holarchies
-[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../releases/latest/download/document-1.pdf)
+#### Foundations of General Systems Theory: A Survey of Formal Definitions
+[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../releases/latest/download/gst-overview.pdf)
 
-A framework for understanding and simulating emergent phenomena in complex systems through the lens of unbounded dynamical holarchies.
+A systematic compilation of foundational definitions of systems and major theoretical insights drawn from the mathematical literature on General Systems Theory.
 
-[View Document →](./general-systems-theory/document-1/)
-
-#### Document 2: Open-Ended Evolution in Multiagent Formal Systems
-[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../releases/latest/download/document-2.pdf)
-
-Exploring curiosity, novelty, and the adjacent possible in multiagent formal systems.
-
-[View Document →](./general-systems-theory/document-2/)
+[View Document →](./general-systems-theory/gst-overview/)
 
 ### Formal Ontologies
 
@@ -33,24 +26,13 @@ Collection of documents on formal ontologies and knowledge representation.
 ```
 weird-science/
 ├── general-systems-theory/
-│   ├── document-1/
-│   │   ├── README.md
-│   │   ├── main.tex
-│   │   ├── sections/
-│   │   │   ├── introduction.tex
-│   │   │   ├── framework.tex
-│   │   │   ├── applications.tex
-│   │   │   └── conclusion.tex
-│   │   └── references/
-│   └── document-2/
+│   └── gst-overview/
 │       ├── README.md
 │       ├── main.tex
 │       ├── sections/
-│       │   ├── introduction.tex
-│       │   ├── methodology.tex
-│       │   ├── results.tex
-│       │   └── conclusion.tex
+│       │   └── gst-overview.tex
 │       └── references/
+│           └── bibliography.bib
 └── formal-ontologies/
     └── (future documents)
 ```
