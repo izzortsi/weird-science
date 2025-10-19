@@ -2,13 +2,13 @@ name: Build LaTeX PDFs
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
     paths:
       - 'general-systems-theory/**.tex'
       - 'formal-ontologies/**.tex'
       - '.github/workflows/build-pdf.yml'
   pull_request:
-    branches: [main]
+    branches: [dev]
     paths:
       - 'general-systems-theory/**.tex'
       - 'formal-ontologies/**.tex'
@@ -154,7 +154,7 @@ jobs:
             }
             
       - name: Update main branch release
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.collect_pdfs.outputs.pdf_paths != ''
+        if: github.ref == 'refs/heads/dev' && github.event_name == 'push' && steps.collect_pdfs.outputs.pdf_paths != ''
         uses: ncipollo/release-action@v1
         with:
           artifacts: ${{ steps.collect_pdfs.outputs.pdf_paths }}
