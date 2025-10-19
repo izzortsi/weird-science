@@ -1,20 +1,18 @@
-# Complex Systems as Unbounded Dynamical Holarchies
+# Foundations of General Systems Theory: A Survey of Formal Definitions
 
-A framework for understanding and simulating emergent phenomena in complex systems through the lens of unbounded dynamical holarchies.
+A systematic compilation of foundational definitions of systems and major theoretical insights drawn from the mathematical literature on General Systems Theory.
 
 ## Overview
 
-This document presents a comprehensive framework for analyzing complex systems as dynamical holarchies, providing tools for understanding and simulating emergent phenomena.
+This document presents a comprehensive survey of the mathematical formalization of systems theory, tracing conceptual foundations through the seminal contributions of Mesarovic, Takahara, Yi Lin, and other key figures in the formalization of systems theory within set-theoretic and logical frameworks.
 
 ## Structure
 
 - `main.tex` - Main LaTeX document
 - `sections/` - Document sections:
-  - `introduction.tex` - Introduction to the framework
-  - `framework.tex` - Core framework description
-  - `applications.tex` - Practical applications
-  - `conclusion.tex` - Concluding remarks
-- `references/` - Bibliography files
+  - `gst-overview.tex` - Complete survey of GST formal definitions
+- `references/` - Bibliography files:
+  - `bibliography.bib` - Reference database
 
 ## Building
 
@@ -30,7 +28,7 @@ Or use the automated GitHub Actions workflow which builds PDFs on every push.
 
 ## Download
 
-📄 [Download latest PDF](../../../releases/latest/download/document-1.pdf)
+📄 [Download latest PDF](../../../releases/latest/download/gst-overview.pdf)
 
 ## Status
 
