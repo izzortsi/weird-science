@@ -47,20 +47,29 @@ jobs:
             if [ -f "$doc" ]; then
               echo "Building $doc"
               dir=$(dirname "$doc")
-              cd "$dir"
-              
-              # Run pdflatex twice for cross-references
-              pdflatex -interaction=nonstopmode main.tex || true
-              pdflatex -interaction=nonstopmode main.tex || true
-              
-              # Rename PDF to document folder name
               doc_name=$(basename "$dir")
-              if [ -f "main.pdf" ]; then
-                mv main.pdf "$doc_name.pdf"
-                echo "Created $doc_name.pdf"
-              fi
               
-              cd - > /dev/null
+              echo "📄 Building PDF in $dir"
+              
+              # Build using xu-cheng/latex-action's Docker image
+              # This replicates what xu-cheng/latex-action@v4 does
+              docker run --rm \
+                -v "$PWD/$dir:/work" \
+                -w /work \
+                ghcr.io/xu-cheng/texlive-full:latest \
+                sh -c "pdflatex -interaction=nonstopmode main.tex && pdflatex -interaction=nonstopmode main.tex"
+              
+              # Verify build
+              if [ -f "$dir/main.pdf" ]; then
+                ls -lh "$dir/main.pdf"
+                echo "✅ PDF successfully built in $dir"
+                
+                # Rename PDF to document folder name
+                mv "$dir/main.pdf" "$dir/$doc_name.pdf"
+                echo "📄 Created $dir/$doc_name.pdf"
+              else
+                echo "❌ Failed to build PDF in $dir"
+              fi
             fi
           done
           
