@@ -45,7 +45,7 @@ Each document folder contains:
 
 ## 🔨 Building PDFs
 
-PDFs are automatically built via GitHub Actions on every push to `main` and for pull requests. You can:
+PDFs are automatically built via GitHub Actions on every push to `dev` and for pull requests. You can:
 
 - **Download the latest PDFs** from the [Releases](../../releases/latest) page
 - **Build locally** by running `pdflatex` in each document directory
