@@ -1,0 +1,169 @@
+name: Build LaTeX PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'general-systems-theory/**.tex'
+      - 'formal-ontologies/**.tex'
+      - '.github/workflows/build-pdf.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'general-systems-theory/**.tex'
+      - 'formal-ontologies/**.tex'
+      - '.github/workflows/build-pdf.yml'
+  workflow_dispatch:
+
+jobs:
+  build-pdfs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Find all main.tex files
+        id: find_docs
+        run: |
+          # Find all main.tex files in the topic folders
+          docs=$(find general-systems-theory formal-ontologies -type f -name 'main.tex' 2>/dev/null || echo "")
+          if [ -z "$docs" ]; then
+            echo "No main.tex files found"
+            echo "docs=[]" >> $GITHUB_OUTPUT
+          else
+            echo "Found documents:"
+            echo "$docs"
+            echo "docs=$(echo "$docs" | jq -R -s -c 'split("\n") | map(select(length > 0))')" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Build PDFs
+        if: steps.find_docs.outputs.docs != '[]'
+        run: |
+          docs='${{ steps.find_docs.outputs.docs }}'
+          echo "$docs" | jq -r '.[]' | while read -r doc; do
+            if [ -f "$doc" ]; then
+              echo "Building $doc"
+              dir=$(dirname "$doc")
+              cd "$dir"
+              
+              # Run pdflatex twice for cross-references
+              pdflatex -interaction=nonstopmode main.tex || true
+              pdflatex -interaction=nonstopmode main.tex || true
+              
+              # Rename PDF to document folder name
+              doc_name=$(basename "$dir")
+              if [ -f "main.pdf" ]; then
+                mv main.pdf "$doc_name.pdf"
+                echo "Created $doc_name.pdf"
+              fi
+              
+              cd - > /dev/null
+            fi
+          done
+          
+      - name: Collect built PDFs
+        id: collect_pdfs
+        if: steps.find_docs.outputs.docs != '[]'
+        run: |
+          # Find all PDFs that were created in document directories
+          pdfs=$(find general-systems-theory formal-ontologies -type f -name '*.pdf' 2>/dev/null || echo "")
+          if [ -n "$pdfs" ]; then
+            echo "Found PDFs:"
+            echo "$pdfs"
+            # Create comma-separated list for artifacts
+            pdf_list=$(echo "$pdfs" | tr '\n' ',' | sed 's/,$//')
+            echo "pdf_paths=$pdf_list" >> $GITHUB_OUTPUT
+            # Also create space-separated for easy iteration
+            echo "pdf_files=$pdfs" >> $GITHUB_OUTPUT
+          else
+            echo "No PDFs found"
+            echo "pdf_paths=" >> $GITHUB_OUTPUT
+            echo "pdf_files=" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Upload artifacts
+        if: steps.collect_pdfs.outputs.pdf_paths != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-pdfs
+          path: |
+            general-systems-theory/**/**.pdf
+            formal-ontologies/**/**.pdf
+          retention-days: 30
+          
+      - name: Create/Update PR Release
+        if: github.event_name == 'pull_request' && steps.collect_pdfs.outputs.pdf_paths != ''
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: ${{ steps.collect_pdfs.outputs.pdf_paths }}
+          tag: pr-${{ github.event.pull_request.number }}
+          name: "PR #${{ github.event.pull_request.number }} - Built PDFs"
+          body: |
+            📄 Automatically generated PDFs from PR #${{ github.event.pull_request.number }}
+            
+            **Branch:** ${{ github.head_ref }}
+            **Commit:** ${{ github.sha }}
+            **Build:** ${{ github.run_number }}
+          allowUpdates: true
+          replacesArtifacts: true
+          prerelease: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Comment on PR with download links
+        if: github.event_name == 'pull_request' && steps.collect_pdfs.outputs.pdf_paths != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pdfPaths = '${{ steps.collect_pdfs.outputs.pdf_paths }}'.split(',');
+            const pdfLinks = pdfPaths.map(pdf => {
+              const fileName = pdf.split('/').pop();
+              return `- [Download ${fileName}](https://github.com/${context.repo.owner}/${context.repo.repo}/releases/download/pr-${context.issue.number}/${fileName})`;
+            }).join('\n');
+            
+            const commentBody = `📄 **PDFs Generated**:\n${pdfLinks}\n\n_Updates automatically with each push to this PR_\n\n🔄 Last updated: ${new Date().toUTCString()}`;
+            
+            // Find existing comment
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            
+            const botComment = comments.data.find(comment =>
+              comment.user.type === 'Bot' &&
+              comment.body.includes('PDFs Generated')
+            );
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: commentBody
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: commentBody
+              });
+            }
+            
+      - name: Update main branch release
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.collect_pdfs.outputs.pdf_paths != ''
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: ${{ steps.collect_pdfs.outputs.pdf_paths }}
+          tag: latest
+          name: Latest Built PDFs
+          body: |
+            📄 Auto-generated from commit ${{ github.sha }}
+            🔨 Built on: ${{ github.event.head_commit.timestamp }}
+            👤 Author: ${{ github.event.head_commit.author.name }}
+          allowUpdates: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
