@@ -1,0 +1,147 @@
+% Hierarchies and Multi-level Structures
+\section{Levels, Hierarchies, and Non-Well-Founded Structures}
+
+\subsection{The concept of levels}
+
+Now that we have mentioned levels, we shall discuss and then rigorously define what we consider it to be. When we think about levels, we mean levels of description, essentially in the same sense multi-strata systems are considered in \cite{Mesarovic1970}. Our goal is to consider a complex system as comprised of infinitely many different levels of description, each one being a system on its own. That is what actually happens in real life complex systems. 
+
+If we take, for instance, a cell in a multicellular organism, at the cellular level it interacts with other cells and the extracellular space. This level has structures at some characteristic scales. Depending on our goal, it might be needed to consider finer or coarser structures, and, in principle, considering more levels would imply a better understanding of the phenomenon in question. Considering the behavior and structure of cell with respect to the tissues it composes yields some insights, while considering it respectively to the smaller structures that compose it tells us a different, complementary, story. 
+
+We, evidently, can extrapolate this to consider arbitrarily finer or coarser scales. For a fixed spatial region that contains a cell in the given example, we could consider how things look at the molecular level. Or at the atomic level. Or at the subatomic level, going all the way to the Planck scale and watching in which ways, and at which scales, from quantum fluctuations some structures emerge, structures which in turn give rise to yet bigger structures and so forth. We could, of course, make the same considerations for coarser structures, seeing a cell within its extracellular environment, and this environment within a tissue, and this tissue within an organism etc, up to spatial scales of the size of the observable universe. 
+
+Depending on the purpose, it might not be at all clear what levels of description are relevant for understanding a complex phenomenon. It does not seem to be the case, but it could be that considering structures at very, very small scales is somewhat revealing of their behavior. Analysis over bigger scales do so, in a not entirely trivial way. The molecular aspects of a cell are undeniably relevant to comprehend the cell itself, and they depend, albeit faintly, on things as big as planetary systems, since the matter available for the emergence of life depends on the proportion of the various molecules and atoms some spacetime region had, prior to the formation of the planetary system. Stuff on various scales are all intertwined, and it is not exactly obvious that structures or dynamics at very apart scales cannot depend relevantly on each other. 
+
+Also, we believe that, in general, considering the distribution of structures over scales is very helpful in understanding a complex system, at the very least in determining at which levels it is more adequate to `cut' this infinite structure with the best possible comprehension. Some spatial scales might exhibit a smaller number of discernible structures. If we imagine a curve of number of structures versus spatial scale, it is only natural that we make such cut at minimums, if they actually exist. This, in our view, is another reason for considering a system over vast spatial scales. 
+
+\subsection{Superlevel and sublevel systems}
+
+We now give our formal definitions of superlevel and sublevel.
+
+\begin{definition}[Superlevel (of a) system] \label{def::Slevel}
+	Let $\mathcal{S}$ be a system. We say that another system, $\mathcal{S}^+$, is on the (immediate) superlevel of $\mathcal{S}$ if there is a family $\{\mathcal{S}_i\}$ of subsystems of $\mathcal{S}$ such that $\mathcal{S} \sqsubset \mathcal{S}^+$, i.e., $\mathcal{S}^+$ satisfies the conditions given at Definition \ref{def::supersystem}. We denote the immediate superlevel of a system $\mathcal{S}$ by $\Slv{\mathcal{S}}$ or, sometimes, by $\mathcal{S}^+$.
+\end{definition}
+
+It will be often needed to talk about the system on the $n$-th superlevel of some other system. This, in general, shall be written as $\mathcal{S}^{+n}$ or, less preferably, $\Slv[n]{\mathcal{S}}$.
+
+The general idea behind the transition from one level to another (in this case, specifically, from one level to its superlevel) is to consider, for a system at the $n$-th level of some multilevel system, subsystems that are understood as elements of a system at the $(n+1)$-th level. For instance, if one is given the description of a system of cells -- composed of cells and an intercellular medium -- that comprises a tissue or an organ or an entire organ system, a higher level description of the given system would be a system that has discernible structures made of aggregates of cells and extracellular regions. Such structures would be abstracted as further elements of the superlevel system. 
+
+The difference between the superlevel system and a simple supersystem is that when defining a superlevel system, we consider not only the properties and internal dynamics of subsystems, but also the properties and mesodynamics of the entire system in question. In our definition, though, these subsystems are not necessarily the elements of the superlevel system. Indeed, the elements of the superlevel might not even be systems. Essentially, we consider that outlining these subsystems might not be sufficient to determine the elements of the superlevel system. They might give a strong hint about what these elements are, but not be entirely reducible to them. The mesoscopic dynamics might have a role in determining, together with the subsystems, the superlevel system. In particular, the superlevel system might have an underlying set that is a proper superset of the system at the level below. In this case, we could have elements at the superlevel whose corresponding parts are not even within the underlying set of the sublevel system, which we now define.
+
+\begin{definition}[Sublevel (of a) system] \label{def::slevel}
+	Let $\mathcal{S}$ be a system. Consider, for each element $e \in \mathfrak{e}(\mathcal{S}) = E$, a subsystem $\mathcal{S}_e$, with $\bigcup \mathfrak{e}(\mathcal{S}_e) \subset e$. Define, additionally, for each such system the set 
+	\[\mathfrak{R}_e = \left(\bigcup \mathfrak{r}(\mathcal{S}_e)\right) \cup \left(\bigcup\bigcup \mathfrak{v}(\mathcal{S}_e)\right).\] 
+	Let $\mathfrak{R} = \bigcup_{e \in E} \{\mathfrak{R}_e \}$.  A system $\mathcal{S}^-$ is said to be on the (immediate) sublevel of $\mathcal{S}$ if it has $\bigcup \{\mathfrak{e}(\mathcal{S}_e)\ |\ e \in E\}$ as set of elements and there are functions such that:
+	
+	\noindent
+	i) for each $R \in \bigcup\mathfrak{r}(\mathcal{S}^-)$, there is a natural number $p \leq |\mathfrak{R}|$ and a function $f$ such that, for some $\boldsymbol{\sigma} \in \mathfrak{R}^p$, $R = f(\boldsymbol{\sigma})$;
+	
+	\noindent
+	ii) for each $V \in \bigcup\bigcup\mathfrak{v}(\mathcal{S}^-)$, there is a natural number $q \leq |\mathfrak{R}|$ and a function $g$ such that, for some $\boldsymbol{\sigma} \in \mathfrak{R}^q$, $V = g(\boldsymbol{\sigma})$.
+	
+	\noindent
+	We denote the immediate sublevel of a system $\mathcal{S}$ by $\slv{\mathcal{S}}$ or $\mathcal{S}^-$. The $n$-th sublevel is written as $\slv[n]{\mathcal{S}}$ or $\mathcal{S}^{-n}$.
+\end{definition}	
+
+A sublevel system is a system obtained from another system $\mathcal{S}$ by considering each element of $\mathcal{S}$ as a subsystem. These subsystems will have elements. We then define the sublevel system as a system that has the union of these elements for its set of elements. The partition of $\mathcal{S}^-$ refines that of $\mathcal{S}$. Moreover, the properties of the sublevel system are tied to those of the generating subsystems. We do not ask for such properties to depend explicitly on those of $\mathcal{S}$ since these are already taken in consideration when defining the subsystems.
+
+Our discussion about levels suggested structures composed of various levels. The very idea of nested system, in fact, leads to considerations about nested systems of nested systems. As we already mentioned, this kind of system is, in fact, our goal. We now turn to the idea of hierarchies and hierarchies of systems.
+
+\subsection{Hierarchies and hierarchical systems}
+
+As said, we are only interested in what is called `multistrata system', in the terminology given at \cite{Mesarovic1970}. We nonetheless give these systems a different look, which is reflected in our definitions. The conceptual architecture we seek to establish must accommodate the profound interplay between discrete level transitions and the continuous emergence of macroscopic phenomena from mesoscopic dynamics -- a dialectical relationship that conventional lattice-theoretic approaches, with their emphasis on idempotent operations, fail to adequately capture.
+
+An immediate, natural way to set-theoretically conceive a hierarchy is as a (strictly) partially ordered set, or as a join semi-lattice, if one wants a richer algebraic structure. On a closer inspection, however, both ideas happen to be insufficiently precise. A strictly partially ordered set may lack being connected, i.e., it can have elements that are not comparable to any other, or it can lack being complete, which would make it disagree with our intuitive notion of hierarchy. That is easily solvable by considering a hierarchy as a complete (i.e., every subset has a least upper bound) strictly poset, but it still lacks a thing that will prove convenient: an operational aspect, which we find in lattices. 
+
+As for the join semi-lattice modeling, the problem is that the join operation is idempotent. Since most naturally we would like to think of a join of a set of elements as the least element that is higher at the hierarchy than those, the join operation disagrees with our intuition. In a sense inspired by it, though, we will define a superlevel operation, that makes an element `go a level up', and a hierarchy as an algebraic structure with this unary operation. This, of course, abstracts the idea behind $\superlv$, that is not actually an operation since a superlevel of a system is not unique.
+
+What we seek, then, is a formalism that preserves the essential structure of level transitions while remaining sufficiently general to encompass the manifold ways in which systems at one scale give rise to, and are constrained by, systems at adjacent scales. The operations we shall define -- the superlevel and sublevel transitions -- must be understood not merely as formal algebraic constructs, but as representing genuine ontological processes: the emergence of coarse-grained descriptions from fine-grained dynamics, and reciprocally, the revelation of microstructure underlying macroscopic phenomena.
+
+\subsubsection{Refined superlevel and sublevel operations}
+
+Having established the conceptual desiderata, we now proceed to formalize the level-transition operations with appropriate mathematical rigor. These definitions refine and extend those given previously (Definitions \ref{def::Slevel} and \ref{def::slevel}), providing a more complete characterization of the functional dependencies that constitute inter-level relationships.
+
+\begin{definition}[Superlevel operation] \label{def::superlevel_op}
+Let $\mathcal{S} = (S, \Gamma_{\mathfrak{P}}, \mathbf{R}, \mathbf{V})$ be a system. For each element $e \in \mathfrak{e}(\mathcal{S}) = \Gamma_{\mathfrak{P}}$, let $\mathcal{S}_e$ denote a subsystem corresponding to $e$, and define
+\[\mathfrak{R}_e = \left(\bigcup \mathfrak{r}(\mathcal{S}_e)\right) \cup \left(\bigcup \bigcup \mathfrak{v}(\mathcal{S}_e)\right).\]
+Let $\mathfrak{R} = \bigcup_{e \in \Gamma_{\mathfrak{P}}} \{\mathfrak{R}_e\}$. 
+
+The superlevel of $\mathcal{S}$, denoted $\Slv{\mathcal{S}}$ or $\mathcal{S}^+$, is a system satisfying:
+
+\noindent
+i) $\mathfrak{e}(\mathcal{S}^+) = \{\mathcal{S}_e \ | \ e \in \Gamma_{\mathfrak{P}}\}$, i.e., the elements of $\mathcal{S}^+$ are precisely the subsystems of $\mathcal{S}$ associated with each element;
+
+\noindent
+ii) for each $R \in \bigcup \mathfrak{r}(\mathcal{S}^+)$, there exist a natural number $p \leq |\mathfrak{R}|$ and a function $f$ such that, for some $\boldsymbol{\sigma} \in \mathfrak{R}^p$, $R = f(\boldsymbol{\sigma})$;
+
+\noindent
+iii) for each $V \in \bigcup \bigcup \mathfrak{v}(\mathcal{S}^+)$, there exist a natural number $q \leq |\mathfrak{R}|$ and a function $g$ such that, for some $\boldsymbol{\sigma} \in \mathfrak{R}^q$, $V = g(\boldsymbol{\sigma})$.
+\end{definition}
+
+The superlevel operation embodies a fundamental principle of emergence: the macroscopic system $\mathcal{S}^+$ treats as its constituent elements precisely those subsystems that, at the level of $\mathcal{S}$, were understood as structured regions of the underlying set. The partition of $\mathfrak{u}(\mathcal{S}^+)$ is necessarily coarser than that of $\mathfrak{u}(\mathcal{S})$, reflecting the aggregation of fine-grained structure into coarse-grained entities. This coarsening is not, however, a mere loss of information; rather, it represents the emergence of new organizational principles -- captured in the relations $\mathfrak{r}(\mathcal{S}^+)$ and valuations $\mathfrak{v}(\mathcal{S}^+)$ -- that govern the interactions among these newly-conceived elements.
+
+\begin{definition}[Sublevel operation] \label{def::sublevel_op}
+Let $\mathcal{S} = (S, \Gamma_{\mathfrak{P}}, \mathbf{R}, \mathbf{V})$ be a system. For each element $e \in \mathfrak{e}(\mathcal{S}) = \Gamma_{\mathfrak{P}}$, let $\mathcal{S}_e$ be a subsystem with $\bigcup \mathfrak{e}(\mathcal{S}_e) \subset e$. Define
+\[\mathfrak{R}_e^- = \left(\bigcup \mathfrak{r}(\mathcal{S}_e)\right) \cup \left(\bigcup \bigcup \mathfrak{v}(\mathcal{S}_e)\right)\]
+and let $\mathfrak{R}^- = \bigcup_{e \in \Gamma_{\mathfrak{P}}} \{\mathfrak{R}_e^-\}$.
+
+The sublevel of $\mathcal{S}$, denoted $\slv{\mathcal{S}}$ or $\mathcal{S}^-$, is a system satisfying:
+
+\noindent
+i) $\mathfrak{e}(\mathcal{S}^-) = \bigcup \{\mathfrak{e}(\mathcal{S}_e) \ | \ e \in \Gamma_{\mathfrak{P}}\}$, i.e., the elements of $\mathcal{S}^-$ are the union of elements of all subsystems $\mathcal{S}_e$;
+
+\noindent
+ii) for each $R \in \bigcup \mathfrak{r}(\mathcal{S}^-)$, there exist a natural number $p \leq |\mathfrak{R}^-|$ and a function $f$ such that, for some $\boldsymbol{\sigma} \in (\mathfrak{R}^-)^p$, $R = f(\boldsymbol{\sigma})$;
+
+\noindent
+iii) for each $V \in \bigcup \bigcup \mathfrak{v}(\mathcal{S}^-)$, there exist a natural number $q \leq |\mathfrak{R}^-|$ and a function $g$ such that, for some $\boldsymbol{\sigma} \in (\mathfrak{R}^-)^q$, $V = g(\boldsymbol{\sigma})$.
+\end{definition}
+
+The sublevel operation effects the reciprocal transformation: it refines the partition of the underlying set, revealing the microstructure that constitutes each element of $\mathcal{S}$. Where the superlevel operation aggregates, the sublevel operation decomposes; where the former identifies emergent macroscopic regularities, the latter uncovers the microscopic mechanisms from which those regularities arise. The relations and valuations of $\mathcal{S}^-$ are functionally dependent upon those of the constituent subsystems $\mathcal{S}_e$, but need not be simple compositions thereof -- permitting, as before, the possibility that inter-level relationships exhibit genuine novelty rather than mere reduplication.
+
+\subsubsection{Hierarchies as structured partially ordered sets}
+
+Armed with these refined operational definitions, we are now positioned to articulate a formal characterization of hierarchical systems that transcends the limitations of classical lattice theory while preserving its essential insights. A hierarchy, in our conception, is not merely a collection of systems arranged in a partial order, but rather a dynamical structure equipped with operations that generate level transitions and thereby constitute the very relationality that defines the hierarchical organization.
+
+\begin{definition}[Hierarchy] \label{def::hierarchy}
+A hierarchy $\mathcal{H}$ over nested systems is a quintuple
+\[\mathcal{H} = (\mathcal{L}, \preceq, \vee, \check{\vee}, \ell)\]
+where:
+
+\noindent
+i) $\mathcal{L}$ is a collection of systems closed under the operations $\vee$ (superlevel) and $\check{\vee}$ (sublevel);
+
+\noindent
+ii) $\preceq$ is a partial order on $\mathcal{L}$ defined by: for $\mathcal{S}_1, \mathcal{S}_2 \in \mathcal{L}$,
+\[\mathcal{S}_1 \preceq \mathcal{S}_2 \iff \mathfrak{u}(\mathcal{S}_1) \subseteq \mathfrak{u}(\mathcal{S}_2) \text{ and } \mathcal{S}_1 \text{ is functionally dependent on } \mathcal{S}_2,\]
+where functional dependence means that the relations and valuations of $\mathcal{S}_1$ are determined by functions of those of $\mathcal{S}_2$ and its subsystems;
+
+\noindent
+iii) $\vee : \mathcal{L} \rightarrow \mathcal{L}$ is the superlevel operation satisfying $\vee(\mathcal{S}) \succeq \mathcal{S}$ for all $\mathcal{S} \in \mathcal{L}$;
+
+\noindent
+iv) $\check{\vee} : \mathcal{L} \rightarrow \mathcal{L}$ is the sublevel operation satisfying $\check{\vee}(\mathcal{S}) \preceq \mathcal{S}$ for all $\mathcal{S} \in \mathcal{L}$;
+
+\noindent
+v) $\ell : \mathcal{L} \rightarrow \Z$ is a level function assigning relative level positions, where
+\[\ell(\vee(\mathcal{S})) = \ell(\mathcal{S}) + 1 \quad \text{and} \quad \ell(\check{\vee}(\mathcal{S})) = \ell(\mathcal{S}) - 1.\]
+\end{definition}
+
+Several observations are in order. The structure $(\mathcal{L}, \preceq)$ forms a locally finite poset -- locally finite in that any bounded chain within it contains only finitely many elements, a consequence of results analogous to those in \cite{LinMa1987}. For any finite subset $\mathcal{F} \subset \mathcal{L}$ of systems sharing a common underlying region (in the sense that $\mathfrak{u}(\mathcal{S}_1) = \mathfrak{u}(\mathcal{S}_2)$ for all $\mathcal{S}_1, \mathcal{S}_2 \in \mathcal{F}$), we may consider the join $\bigvee \mathcal{F}$ as representing the most refined common superstructure, and the meet $\bigwedge \mathcal{F}$ as the coarsest common substructure -- though these operations must be understood in a generalized sense, as the non-uniqueness of super- and subsystems precludes a straightforward lattice interpretation.
+
+The operations $\vee$ and $\check{\vee}$ generate level-preserving transformations in the sense that they respect the stratification imposed by $\ell$. This level function provides a global coordinatization of the hierarchy, though we emphasize that it is defined only up to an additive constant (reflecting the arbitrariness of designating any particular level as "zero"). The integers $\Z$ are chosen rather than the natural numbers $\N$ precisely to accommodate the possibility of indefinitely many levels both above and below any given reference system -- a necessity if we are to permit truly non-well-founded hierarchies wherein no "fundamental" level exists.
+
+\begin{remark}[Compatibility with near-decomposability]
+The hierarchical structure we have defined is naturally compatible with the principle of near-decomposability articulated by Simon \cite{Simon1962} and formalized in the context of dynamical systems. For systems $\mathcal{S}_1 \preceq \mathcal{S}_2$, the characteristic timescales of intra-level interactions within $\mathcal{S}_1$ are typically much faster than the timescales governing inter-level interactions between $\mathcal{S}_1$ and $\mathcal{S}_2$. This separation of timescales manifests formally as a dynamical decoupling: high-frequency behaviors associated with $\mathcal{S}_1$ evolve on a "fast" timescale, while low-frequency behaviors characteristic of $\mathcal{S}_2$ evolve on a "slow" timescale, with the two regimes weakly coupled.
+
+Such separation is, of course, an idealization -- and one that may fail dramatically in systems exhibiting critical phenomena or resonant coupling across scales. The hierarchy concept as defined here does not enforce such separation; it merely provides a framework within which the degree of inter-level coupling can be examined and quantified.
+\end{remark}
+
+This minimal definition preserves the essential hierarchical structure while remaining consonant with the nested systems framework and the multirelation approach of Lin \cite{LinMa1987}, without imposing well-foundedness or other restrictions that would preclude infinite-level structures. It is, in a sense, the least commitment necessary to formalize the notion that systems are organized into levels, that there exist operations taking one between levels, and that these operations respect a notion of relative position within the hierarchy.
+
+\subsection{Non-well-foundedness and infinite descent}
+
+The framework we have constructed permits, but does not require, hierarchies to extend infinitely in both directions. A hierarchy $\mathcal{H} = (\mathcal{L}, \preceq, \vee, \check{\vee}, \ell)$ is said to be \textit{non-well-founded} if there exists an infinite descending chain
+\[\cdots \preceq \mathcal{S}_{-2} \preceq \mathcal{S}_{-1} \preceq \mathcal{S}_0\]
+of systems in $\mathcal{L}$. Such hierarchies challenge the intuition, inherited from set theory, that every structure must be grounded in some collection of "atomic" or "fundamental" constituents. In the context of physical systems, non-well-foundedness might reflect the possibility that structure persists at arbitrarily fine scales, with no ultimate foundation in point particles or other structureless entities.
+
+Whether the hierarchies that describe actual complex systems in nature are well-founded or non-well-founded is ultimately an empirical question, one intimately bound up with fundamental questions in physics regarding the nature of space, time, and matter at the smallest scales. Our formalism remains agnostic on this point, providing the conceptual tools to describe either possibility while leaving the determination to empirical investigation and theoretical physics.

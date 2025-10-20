@@ -1,0 +1,57 @@
+% Preliminaries
+\section{Preliminaries}
+
+\subsection{Notational conventions}
+
+Here we establish mathematical conventions to be employed throughout this work. These choices, while seemingly minor, embody deliberate commitments regarding the conceptual architecture we seek to construct.
+
+\subsubsection{Set-theoretic notation}
+
+If $S$ is a set whose elements $x$ are also sets, by $\bigcup S$ we denote the union of these elements, i.e., 
+\[\bigcup S = \{ e \in x\ |\ x \in S\}.\]
+ 
+By $\N_{\leq n}$ we denote the set $\{0, 1, 2, \dots, n\}$. By $\Z^+$ we denote $\{1, 2, \dots\}$ and by $\Z^-$, $\{-1, -2, \dots\}$.
+
+\subsubsection{Functions with parameters}
+
+If $f$ is a function of two variables, i.e., $f: X \times Y \rightarrow Z$, when one such variable is held fixed, say, the second one, we write $f$ as $f_\alpha : X \rightarrow Z$, for some $\alpha \in Y$. In such cases, we say that $\alpha$ is a \textit{parameter} of $f$. 
+
+For functions with two parameters, say, $f: T \times X \times Y \rightarrow Z$ with $t\in T$ and $\alpha \in Y$ fixed, we write $f_{t, \alpha} : X \rightarrow Z$. For functions with too many parameters, or whose parameters prove cumbersome (or just plain ugly) to write as subscripts, we shall use the notation $f[t, \alpha]$ instead of $f_{t, \alpha}$. For instance, instead of $f_{t, N_t, \alpha, \beta}(x)$, if inevitably necessary to write all of these parameters explicitly, we shall write $f[t, N_t, \alpha, \beta](x)$. 
+
+Should the order in which we fix the variables matter, the order of the parameters follows it; otherwise, it corresponds to the order of the arguments, skipping those that are not fixed (as in $f_{t, \alpha}$).  
+
+\subsubsection{Indexed families}
+
+When sufficiently clear, we shall denote a family $\mathcal{F}$ of things indexed by a set $I$, i.e., $\mathcal{F} = \{F_i\}_{i\in I}$, simply by $\{F_i\}$ and referring to all of the elements as `the $F_i$', and to some particular but unspecified element as `a $F_i$'. 
+
+\subsection{Preliminary definitions from model theory}
+
+We now provide certain foundational definitions from model theory and mathematical logic, following primarily \cite{Poizat2000}. These serve as conceptual antecedents to our formulation of general systems, though we shall ultimately adopt a somewhat different approach that privileges mereological considerations over strictly logical ones.
+
+\subsubsection{Multirelation and signature}
+
+Instead of considering just one relation, we could consider the structure formed by a finite set of relations $R_1, \ldots, R_k$, of arities $m_1, \ldots, m_k$, respectively, all on the same universe $E$; such a structure is called a \textbf{multirelation}; the sequence of arities $m_1, \ldots, m_k$ is called the \textbf{signature} (or \textbf{similarity type}) of the multirelation.
+
+\subsubsection{Relational structure}
+
+A \textbf{relational structure} $\mathcal{R}$ is formed from a family (not necessarily finite) of relations $R_i$ of arity $m_i$, all with the same universe $E$; the list $\{m_i\}$ of arities is called the \textbf{signature}, or equivalently the \textbf{similarity type}, of the structure.
+
+\subsubsection{Structure (general definition)}
+
+A \textbf{signature}, or \textbf{similarity type}, is a fixed set (possibly empty) consisting of:
+\begin{itemize}
+    \item constant symbols $c_i$ (we also say individual instead of constant);
+    \item function symbols $f_j$, having arity (i.e., number of arguments) $m_j$;
+    \item relation symbols $r_k$, having arity $m_k$.
+\end{itemize}
+
+(We could also consider constants as functions of 0 arguments.)
+
+A \textbf{structure} $\mathcal{S}$ of signature $\sigma$ and universe $E$ is the assignment to:
+\begin{itemize}
+    \item each constant symbol $c_i$ of $\sigma$ an element of $E$ interpreting it,
+    \item each function symbol $f_j$ a function from $E^{m_j}$ to $E$, and
+    \item each relation symbol $r_k$ a subset of $E^{m_k}$.
+\end{itemize}
+
+These classical definitions from model theory provide a useful conceptual backdrop, though we shall depart from them in significant ways. The model-theoretic approach privileges linguistic representation -- the assignment of interpretations to formal symbols -- whereas our approach will emphasize the mereological and compositional aspects of systems, treating relations not as extensions of predicates but as structural features of organized wholes. This shift reflects our conviction that systems theory requires a more flexible framework than that afforded by classical logic, one that can accommodate the rich variety of inter-level dependencies characteristic of hierarchical organization.

@@ -1,0 +1,75 @@
+% Non-well-founded hierarchies of nested systems
+% Main document file
+%
+\documentclass[runningheads]{llncs}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[strings]{underscore}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+
+% Mathematical operators and symbols
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+
+% System-theoretic notation
+\newcommand\ins{\stackrel{\scalebox{0.5}[0.5]{sys}}{\in}}
+\newcommand\subs{\subset_{sys}}
+\DeclareMathOperator{\join}{join}
+\DeclareMathOperator*{\superlv}{\curlywedgeuparrow}
+\DeclareMathOperator*{\sublv}{\curlywedgedownarrow}
+
+\newcommand\Slv[2][]{\hspace{-0.9pt}{\curlywedgeuparrow^{#1}}{#2}}
+\newcommand\slv[2][]{\hspace{-0.88pt}{\curlywedgedownarrow^{#1}}{#2}}
+\newcommand\sqin{\mathrel{\raisebox{0.1ex}{\ooalign{$\sqsubset$\cr $-$}}}}
+
+% Superimposition macro for composite symbols
+\makeatletter
+\newcommand{\superimpose}[2]{%
+	{\ooalign{$#1\@firstoftwo#2$\cr\hfil$#1\@secondoftwo#2$\hfil\cr}}}
+\makeatother
+
+\newcommand{\veewedge}{\mathpalette\superimpose{{\vee}{\wedge}}}
+\newcommand{\lessgreater}{\mathpalette\superimpose{{<}{>}}}
+\newcommand{\strikeQ}{\mathpalette\superimpose{{\text{---}}{Q}}}
+\newcommand{\encloses}{\mathrel{\mathpalette\superimpose{{\sqsubset}{\hfil{\raisebox{0.09ex}{\scalebox{0.85}[0.7]{$\sqin$}}}}}}}
+\newcommand{\encl}{\mathrel{\raisebox{0.1ex}{$\encloses$}}}
+
+\begin{document}
+
+\title{Non-well-founded hierarchies of nested systems}
+\titlerunning{Non-well-founded hierarchies of nested systems}
+
+\author{Igor Strozzi\orcidID{0000-0003-1792-2880}}
+
+\institute{\textbf{Federal University of Rio de Janeiro}\\
+Applied Mathematics Department \\
+\url{dma.im.ufrj.br}  \\
+\diamond \\
+\email{istrozzi@matematica.ufrj.br}\\
+}
+
+\maketitle
+
+\begin{abstract}
+We undertake a systematic investigation of the definitional foundations of complex systems, proceeding from first principles to articulate a formalism grounded in the recursive nesting of subsystems. The theoretical apparatus thus constructed permits a rigorous examination of emergence as a structural phenomenon arising from inter-level functional dependencies within hierarchical architectures. Our approach synthesizes set-theoretic precision with mereological intuitions, yielding a framework wherein systems are characterized not merely by their constituent elements and relations, but by the stratified organization of subsystems across potentially infinite scales of description.
+
+\keywords{Complex systems \and Emergence \and Hierarchical organization \and Nested structures \and Mereology}
+\end{abstract}
+
+% Include sections
+\input{sections/introduction}
+\input{sections/preliminaries}
+\input{sections/systems}
+\input{sections/subsystems}
+\input{sections/hierarchies}
+
+% Bibliography
+\bibliographystyle{splncs04}
+\bibliography{references/references.bib}
+
+\end{document}
