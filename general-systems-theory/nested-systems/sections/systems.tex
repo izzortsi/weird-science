@@ -17,15 +17,15 @@ With that considered, it seems natural to formalize such kind of relations much 
 
 \begin{definition}[Valued relation] \label{def::valued_relation}
 Let $\mathcal{F} = \{S_i\}_{i\in I}$ be a family of sets and $R$ a $n$-ary relation over $\mathcal{F}$, that is, $R \subseteq \prod_{i \in I} S_i$. Let $V$ be another set, said the \textit{set of values}. If $\mathrm{v}$ is a function such that $\mathrm{v}: R \rightarrow V$, we convention that 
-\begin{itemize}
+\begin{enumerate}[(a)]
 \item $\mathrm{v}(R) = \{\mathrm{v}(r) \in V\ |\ r \in R\}$;
 \item $R_\mathrm{v} = (R, V, \mathrm{v})$ is called an $n$-ary $\mathrm{v}$-valued relation over $\mathcal{F}$;
 \item $\mathrm{v}$ is a \textit{valuation} of $R$;
-\end{itemize}
+\end{enumerate}
 If $R_\mathrm{v} = (R, V, \mathrm{v})$, we say that $R$ is the \textit{underlying relation} of $R_\mathrm{v}$.
 \end{definition}
 
-In the above definition, we consider the graph of $\mathrm{v}$ as the valued relation, which is very natural since, well, graphs of functions are indeed relations. Thus a $n$-ary valued relation over a family $\{S_i\}$ is nothing else than a $(n+1)$-ary relation with some particularities: mainly, that it is functional in $V$, but it will be almost always the case here that the set $V$ is very different in nature from the $S_i$. We will usually talk about relations defined over the elements of a system, that will be considered as sets themselves, and the values these relations have will usually be numbers. The underlying relations account for the `structure of interactions', whereas the valuations denote the characteristics these interactions have, the most remarkable one probably being their strength, or intensity. `Structure of interactions with values' could also be thought of, very naturally, as a graph with weighted edges.
+In the above definition, we consider the graph of $\mathrm{v}$ as the valued relation, which is very natural since, well, graphs of functions are indeed relations. Thus a $n$-ary valued relation over a family $\{S_i\}$ is nothing else than a $(n+1)$-ary relation with some particularities: mainly, that it is functional in $V$, but it will be almost always the case here that the set $V$ is very different in nature from the $S_i$. We will usually talk about relations defined over the elements of a system, which will be considered as sets themselves, and the values these relations have will usually be quantities. The underlying relations account for the `structure of interactions between objects', whereas the valuations denote the characteristics these interactions have, the most remarkable one probably being their strength, or intensity. As an example, observe that a weighted digraph is an instance of a `structure of interactions with values'.
 
 \subsection{The underlying set: a mereological commitment}
 
