@@ -34,7 +34,7 @@ We should further add that despite the possibility of underlying sets having ele
 \begin{definition}[System] \label{def::system}
 Let $S$ be a set with cardinality $|S| \geq 2$. Consider a partition $\mathfrak{P}$ of $S$, and a subset $\Gamma_{\mathfrak{P}}$ of $\mathfrak{P}$, with $|\Gamma_{\mathfrak{P}}| = C$. 
 
-Define $\mathbf{R} = \{R_k \ | \ k \in \N_{\leq C} \}$ where each $R_k$ is a set of $n_k$ distinct $k$-ary relations over $\Gamma_{\mathfrak{P}}$, i.e., for any $R_{ki} \in R_k$ we have $R_{ki} \subseteq \Gamma_{\mathfrak{P}}^k$ and therefore 
+Define $\mathbf{R} = \{R_k \ | \ k \in \N_{\leq C} \}$ where each $R_k$ is a set of $n_k+1$ distinct $k$-ary relations over $\Gamma_{\mathfrak{P}}$, i.e., for any $R_{ki} \in R_k$ we have $R_{ki} \subseteq \Gamma_{\mathfrak{P}}^k$ and therefore 
 \[R_k = \{R_{ki} \subseteq \Gamma_{\mathfrak{P}}^k\ | \ i \in \N_{\leq n_k}\}.\]
 
 Define, now, for each $R_k$ and each relation $R_{ki} \in R_k$, a set $P_{ki}$ (possibly empty) of functions $\mathrm{v}_{kij}$ such that, for each $j$, $\mathrm{v}_{kij}: R_{ki} \rightarrow V_{kij}$, where $V_{kij}$ is the set of values for the valued relation $\mathrm{v}_{kij}(R_{ki})$. 
