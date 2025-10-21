@@ -1,0 +1,37 @@
+\section{Intended Models: The Extensional-Intensional Bridge}
+
+\begin{definition}[Intended Models]
+	Let $\mathcal{C} = (D, W, \mathfrak{R})$ be a conceptualization, $\mathcal{L}$ a first-order logical language with vocabulary $V$ and ontological commitment $K = (\mathcal{C}, \mathcal{I})$. An extensional first-order structure (model) $M = (S, I)$ for $\mathcal{L}$ (where $S = (D, \mathbf{R})$) is \emph{compatible} with $K$ if:
+	\begin{enumerate}
+		\item For all constant symbols $c \in V$ we have $I(c) = \mathcal{I}(c)$
+		\item There exists a world $w \in W$ such that, for each predicate symbol $v \in V$, there exists an intensional relation $\rho \in \mathfrak{R}$ such that $\mathcal{I}(v) = \rho$ and $I(v) = \rho(w)$
+	\end{enumerate}
+	The set $I_K(\mathcal{L})$ of all models of $\mathcal{L}$ that are compatible with $K$ is called the set of \emph{intended models} of $\mathcal{L}$ according to $K$.
+\end{definition}
+
+\subsection{The Space of Intended Models}
+
+This definition performs crucial mediating work. It specifies when an extensional model—a particular assignment of extensions to vocabulary—is compatible with an intensional commitment. Condition (2) is particularly significant: it requires that there be \emph{some} world $w$ where the extensional interpretations given by $M$ match what the conceptual relations in $K$ specify for that world.
+
+This captures the idea that intended models are ``possible realizations'' of the conceptualization. They represent states of affairs that could obtain, given one's conceptual framework. Models that violate the intensional commitments—that assign extensions incompatible with what any world in the conceptualization allows—are excluded.
+
+The set $I_K(\mathcal{L})$ thus constitutes the ``semantic range'' determined by ontological commitment $K$. It is the space of extensional possibilities consistent with one's intensional commitments.
+
+\begin{example}[Reports-To as Asymmetric Relation]
+	Suppose our vocabulary includes the predicate ``reports-to'' and our ontological commitment specifies that this denotes an asymmetric conceptual relation:
+	$$\text{reports-to}^2 : W \to 2^{D^2}$$
+	$$\forall w \in W, \forall x,y \in D: (x,y) \in \text{reports-to}^2(w) \Rightarrow (y,x) \notin \text{reports-to}^2(w)$$
+	
+	Now consider three candidate models:
+	\begin{itemize}
+		\item $M_1$: $I_1(\text{reports-to}) = \{(\text{Alice}, \text{Bob}), (\text{Bob}, \text{Charlie})\}$
+		\item $M_2$: $I_2(\text{reports-to}) = \{(\text{Alice}, \text{Bob}), (\text{Bob}, \text{Alice})\}$
+		\item $M_3$: $I_3(\text{reports-to}) = \{(\text{Alice}, \text{Bob}), (\text{Bob}, \text{Charlie}), (\text{Charlie}, \text{Alice})\}$
+	\end{itemize}
+	
+	Model $M_1$ is compatible with $K$: there exists a world $w$ where the reporting structure is this two-level hierarchy, and this extension respects asymmetry.
+	
+	Model $M_2$ is \emph{incompatible} with $K$: no world in our conceptualization can yield mutual reporting, as this violates the asymmetry built into the conceptual relation.
+	
+	Model $M_3$ requires careful analysis. The extension is locally asymmetric (no mutual pairs) but forms a cycle. Whether this is compatible depends on whether we've built anti-transitivity into our concept of reports-to. If our conceptualization allows reporting cycles, $M_3 \in I_K(\mathcal{L})$; otherwise not.
+\end{example}

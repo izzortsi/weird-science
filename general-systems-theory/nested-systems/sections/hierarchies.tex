@@ -104,11 +104,11 @@ Armed with these refined operational definitions, we are now positioned to artic
 
 \begin{definition}[Hierarchy] \label{def::hierarchy}
 A hierarchy $\mathcal{H}$ over nested systems is a quintuple
-\[\mathcal{H} = (\mathcal{L}, \preceq, \vee, \check{\vee}, \ell)\]
+\[\mathcal{H} = (\mathcal{L}, \preceq, \sublv, \superlv, \ell)\]
 where:
 
 \noindent
-i) $\mathcal{L}$ is a collection of systems closed under the operations $\vee$ (superlevel) and $\check{\vee}$ (sublevel);
+i) $\mathcal{L}$ is a collection of systems closed under the operations $\superlv$ (superlevel) and $\sublv$ (sublevel);
 
 \noindent
 ii) $\preceq$ is a partial order on $\mathcal{L}$ defined by: for $\mathcal{S}_1, \mathcal{S}_2 \in \mathcal{L}$,
@@ -116,19 +116,19 @@ ii) $\preceq$ is a partial order on $\mathcal{L}$ defined by: for $\mathcal{S}_1
 where functional dependence means that the relations and valuations of $\mathcal{S}_1$ are determined by functions of those of $\mathcal{S}_2$ and its subsystems;
 
 \noindent
-iii) $\vee : \mathcal{L} \rightarrow \mathcal{L}$ is the superlevel operation satisfying $\vee(\mathcal{S}) \succeq \mathcal{S}$ for all $\mathcal{S} \in \mathcal{L}$;
+iii) $\superlv : \mathcal{L} \rightarrow \mathcal{L}$ is the superlevel operation satisfying $\superlv(\mathcal{S}) \succeq \mathcal{S}$ for all $\mathcal{S} \in \mathcal{L}$;
 
 \noindent
-iv) $\check{\vee} : \mathcal{L} \rightarrow \mathcal{L}$ is the sublevel operation satisfying $\check{\vee}(\mathcal{S}) \preceq \mathcal{S}$ for all $\mathcal{S} \in \mathcal{L}$;
+iv) $\sublv : \mathcal{L} \rightarrow \mathcal{L}$ is the sublevel operation satisfying $\sublv(\mathcal{S}) \preceq \mathcal{S}$ for all $\mathcal{S} \in \mathcal{L}$;
 
 \noindent
 v) $\ell : \mathcal{L} \rightarrow \Z$ is a level function assigning relative level positions, where
-\[\ell(\vee(\mathcal{S})) = \ell(\mathcal{S}) + 1 \quad \text{and} \quad \ell(\check{\vee}(\mathcal{S})) = \ell(\mathcal{S}) - 1.\]
+\[\ell(\superlv(\mathcal{S})) = \ell(\mathcal{S}) + 1 \quad \text{and} \quad \ell(\sublv(\mathcal{S})) = \ell(\mathcal{S}) - 1.\]
 \end{definition}
 
-Several observations are in order. The structure $(\mathcal{L}, \preceq)$ forms a locally finite poset -- locally finite in that any bounded chain within it contains only finitely many elements, a consequence of results analogous to those in \cite{LinMa1987}. For any finite subset $\mathcal{F} \subset \mathcal{L}$ of systems sharing a common underlying region (in the sense that $\mathfrak{u}(\mathcal{S}_1) = \mathfrak{u}(\mathcal{S}_2)$ for all $\mathcal{S}_1, \mathcal{S}_2 \in \mathcal{F}$), we may consider the join $\bigvee \mathcal{F}$ as representing the most refined common superstructure, and the meet $\bigwedge \mathcal{F}$ as the coarsest common substructure -- though these operations must be understood in a generalized sense, as the non-uniqueness of super- and subsystems precludes a straightforward lattice interpretation.
+Several observations are in order. The structure $(\mathcal{L}, \preceq)$ forms a locally finite poset -- locally finite in that any bounded chain within it contains only finitely many elements, a consequence of results analogous to those in \cite{Lin2002}. For any finite subset $\mathcal{F} \subset \mathcal{L}$ of systems sharing a common underlying region (in the sense that $\mathfrak{u}(\mathcal{S}_1) = \mathfrak{u}(\mathcal{S}_2)$ for all $\mathcal{S}_1, \mathcal{S}_2 \in \mathcal{F}$), we may consider the join $\bigvee \mathcal{F}$ as representing the most refined common superstructure, and the meet $\bigwedge \mathcal{F}$ as the coarsest common substructure -- though these operations must be understood in a generalized sense, as the non-uniqueness of super- and subsystems precludes a straightforward lattice interpretation.
 
-The operations $\vee$ and $\check{\vee}$ generate level-preserving transformations in the sense that they respect the stratification imposed by $\ell$. This level function provides a global coordinatization of the hierarchy, though we emphasize that it is defined only up to an additive constant (reflecting the arbitrariness of designating any particular level as "zero"). The integers $\Z$ are chosen rather than the natural numbers $\N$ precisely to accommodate the possibility of indefinitely many levels both above and below any given reference system -- a necessity if we are to permit truly non-well-founded hierarchies wherein no "fundamental" level exists.
+The operations $\superlv$ and $\sublv$ generate level-preserving transformations in the sense that they respect the stratification imposed by $\ell$. This level function provides a global coordinatization of the hierarchy, though we emphasize that it is defined only up to an additive constant (reflecting the arbitrariness of designating any particular level as "zero"). The integers $\Z$ are chosen rather than the natural numbers $\N$ precisely to accommodate the possibility of indefinitely many levels both above and below any given reference system -- a necessity if we are to permit truly non-well-founded hierarchies wherein no "fundamental" level exists.
 
 \begin{remark}[Compatibility with near-decomposability]
 The hierarchical structure we have defined is naturally compatible with the principle of near-decomposability articulated by Simon \cite{Simon1962} and formalized in the context of dynamical systems. For systems $\mathcal{S}_1 \preceq \mathcal{S}_2$, the characteristic timescales of intra-level interactions within $\mathcal{S}_1$ are typically much faster than the timescales governing inter-level interactions between $\mathcal{S}_1$ and $\mathcal{S}_2$. This separation of timescales manifests formally as a dynamical decoupling: high-frequency behaviors associated with $\mathcal{S}_1$ evolve on a "fast" timescale, while low-frequency behaviors characteristic of $\mathcal{S}_2$ evolve on a "slow" timescale, with the two regimes weakly coupled.
@@ -136,11 +136,11 @@ The hierarchical structure we have defined is naturally compatible with the prin
 Such separation is, of course, an idealization -- and one that may fail dramatically in systems exhibiting critical phenomena or resonant coupling across scales. The hierarchy concept as defined here does not enforce such separation; it merely provides a framework within which the degree of inter-level coupling can be examined and quantified.
 \end{remark}
 
-This minimal definition preserves the essential hierarchical structure while remaining consonant with the nested systems framework and the multirelation approach of Lin \cite{LinMa1987}, without imposing well-foundedness or other restrictions that would preclude infinite-level structures. It is, in a sense, the least commitment necessary to formalize the notion that systems are organized into levels, that there exist operations taking one between levels, and that these operations respect a notion of relative position within the hierarchy.
+This minimal definition preserves the essential hierarchical structure while remaining consonant with the nested systems framework and the multirelation approach of Lin \cite{Lin2002}, without imposing well-foundedness or other restrictions that would preclude infinite-level structures. It is, in a sense, the least commitment necessary to formalize the notion that systems are organized into levels, that there exist operations taking one between levels, and that these operations respect a notion of relative position within the hierarchy.
 
 \subsection{Non-well-foundedness and infinite descent}
 
-The framework we have constructed permits, but does not require, hierarchies to extend infinitely in both directions. A hierarchy $\mathcal{H} = (\mathcal{L}, \preceq, \vee, \check{\vee}, \ell)$ is said to be \textit{non-well-founded} if there exists an infinite descending chain
+The framework we have constructed permits, but does not require, hierarchies to extend infinitely in both directions. A hierarchy $\mathcal{H} = (\mathcal{L}, \preceq, \superlv, \sublv, \ell)$ is said to be \textit{non-well-founded} if there exists an infinite descending chain
 \[\cdots \preceq \mathcal{S}_{-2} \preceq \mathcal{S}_{-1} \preceq \mathcal{S}_0\]
 of systems in $\mathcal{L}$. Such hierarchies challenge the intuition, inherited from set theory, that every structure must be grounded in some collection of "atomic" or "fundamental" constituents. In the context of physical systems, non-well-foundedness might reflect the possibility that structure persists at arbitrarily fine scales, with no ultimate foundation in point particles or other structureless entities.
 

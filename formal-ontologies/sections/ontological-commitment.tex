@@ -1,0 +1,38 @@
+\section{Ontological Commitment: Language Meets Reality}
+
+Having established conceptualizations as intensional structures, we now confront the problem of \emph{linguistic access}: how do we refer to conceptual relations using formal languages? This is where ontological commitment enters.
+
+\begin{definition}[Extensional First-Order Structure]
+	Let $\mathcal{L}$ be a first-order logical language with vocabulary $V$ and $S = (D, \mathbf{R})$ an extensional relational structure. An \emph{extensional first order structure} (also called \emph{model} for $\mathcal{L}$) is a tuple $M = (S, I)$, where $I$ (called extensional interpretation function) is a total function $I : V \to D \cup \mathbf{R}$ that maps each vocabulary symbol in $V$ to either an element of $D$ or an extensional relation belonging to the set $\mathbf{R}$.
+\end{definition}
+
+This is the standard Tarskian semantics for first-order logic: an interpretation assigns denotations to non-logical symbols. But as Guarino emphasizes, this extensional interpretation is insufficient for capturing \emph{intended meaning}.
+
+\begin{definition}[Intensional First-Order Structure or Ontological Commitment]
+	Let $\mathcal{L}$ be a first-order logical language with vocabulary $V$ and $\mathcal{C} = (D, W, \mathfrak{R})$ an intensional relational structure (i.e., a conceptualization). An \emph{intensional first order structure} (also called \emph{ontological commitment}) for $\mathcal{L}$ is a tuple $K = (\mathcal{C}, \mathcal{I})$, where $\mathcal{I}$ (called intensional interpretation function) is a total function $\mathcal{I} : V \to D \cup \mathfrak{R}$ that maps each vocabulary symbol of $V$ to either an element of $D$ or an intensional relation belonging to the set $\mathfrak{R}$.
+\end{definition}
+
+\subsection{Commitment as Intensional Anchoring}
+
+The term ``commitment'' here carries profound philosophical weight. To commit to a conceptualization $\mathcal{C}$ is to specify how one's vocabulary latches onto the intensional structure of $\mathcal{C}$—not merely onto some particular extensional snapshot, but onto the conceptual relations that transcend particular world states.
+
+This addresses a deep problem in ontological engineering: without such intensional anchoring, the same linguistic theory could be satisfied by radically different conceptualizations. Two agents might agree on all extensional facts while harboring fundamentally incompatible concepts—precisely because concepts are individuated intensionally, not extensionally.
+
+Schaffer's critique of truthmaker theory as a theory of ontological commitment \cite{Schaffer2008} is illuminating here. He argues that truthmaking (understood as necessitation) cannot ground commitments because necessitation is both too weak (allowing trivial truthmakers) and too strong (requiring rigid truthmakers for contingent truths). But Schaffer's preferred notion of \emph{grounding}—metaphysical dependence—aligns remarkably with Guarino's intensional commitment. 
+
+To commit to a conceptualization is to commit to certain grounding relations: to say that the truth of propositions involving, say, \textit{cooperates-with} is grounded in facts about shared goals and coordinated actions (or whatever one's concept of cooperation specifies). The intensional interpretation function $\mathcal{I}$ encodes these grounding relations by mapping predicates to conceptual relations.
+
+\begin{example}[Commitment and the Ship of Theseus]
+	Consider the persistence of objects over mereological change. Let our domain include:
+	$$D = \{\text{ship}_t, \text{plank}_1, \text{plank}_2, \ldots, \text{plank}_n : t \in \text{time points}\}$$
+	
+	Two theorists might agree on all extensional facts—which planks constitute the ship at each time—yet disagree about the conceptual relation \textit{same-ship-as}. 
+	
+	Conceptualization $\mathcal{C}_1$ (sortal essentialism):
+	$$\text{same-ship-as}^2(w) = \{(s_1, s_2) : s_1 \text{ and } s_2 \text{ share original planks in } w\}$$
+	
+	Conceptualization $\mathcal{C}_2$ (four-dimensionalism):
+	$$\text{same-ship-as}^2(w) = \{(s_1, s_2) : s_1 \text{ and } s_2 \text{ are temporal parts of same continuum in } w\}$$
+	
+	An ontological commitment $K_1 = (\mathcal{C}_1, \mathcal{I}_1)$ maps the predicate ``same-ship-as'' to the first conceptual relation, while $K_2 = (\mathcal{C}_2, \mathcal{I}_2)$ maps it to the second. This is not merely semantic disagreement but genuine metaphysical divergence about what persistence \emph{consists in}.
+\end{example}

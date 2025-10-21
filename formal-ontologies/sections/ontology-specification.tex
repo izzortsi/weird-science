@@ -1,0 +1,65 @@
+\section{Ontology: The Explicit Specification}
+
+We arrive finally at the definition of ontology itself—the formal apparatus by which we attempt to explicitly specify conceptualizations through logical axioms.
+
+\begin{definition}[Ontology]
+	Let $\mathcal{C}$ be a conceptualization, and $\mathcal{L}$ a logical language with vocabulary $V$ and ontological commitment $K$. An \emph{ontology} for $\mathcal{C}$ with vocabulary $V$ and ontological commitment $K$ is a logical theory consisting of a set of formulas of $\mathcal{L}$, designed so that the set of its models approximates as well as possible the set of intended models of $\mathcal{L}$ according to $K$.
+\end{definition}
+
+\subsection{Approximation and Axiomatic Incompleteness}
+
+The language of ``approximation'' here is telling. An ontology does not \emph{fully capture} a conceptualization but rather constrains the space of models to approach the intended models $I_K(\mathcal{L})$. This is inevitable: the intensional structure of conceptualizations outstrips what can be expressed in first-order logic (or indeed in most formal languages).
+
+Consider the dialectic:
+\begin{enumerate}
+	\item We begin with a conceptualization $\mathcal{C}$—an intensional structure specifying how concepts vary across possible worlds
+	\item We commit to this conceptualization via $K$, establishing how our vocabulary maps to conceptual relations
+	\item This commitment determines a set of intended models $I_K(\mathcal{L})$—the extensional structures compatible with our intensional commitments
+	\item We write axioms—an ontology $O$—to constrain models, attempting to admit all and only the intended models
+\end{enumerate}
+
+The gap between $\text{Mod}(O)$ (models of ontology $O$) and $I_K(\mathcal{L})$ (intended models) is the measure of our axiomatic incompleteness. A ``good'' ontology minimizes this gap.
+
+\begin{example}[Ontology of Organizational Hierarchies]
+	Continuing our human resources example, consider building an ontology $O_{\text{HR}}$. Our conceptualization includes relations: \textit{Person}, \textit{Manager}, \textit{Researcher}, \textit{reports-to}, \textit{cooperates-with}.
+	
+	We might begin with taxonomic axioms:
+	\begin{align*}
+		&\forall x: \text{Manager}(x) \to \text{Person}(x) \\
+		&\forall x: \text{Researcher}(x) \to \text{Person}(x)
+	\end{align*}
+	
+	Add domain/range constraints:
+	$$\forall x,y: \text{reports-to}(x,y) \to \text{Person}(x) \land \text{Person}(y)$$
+	
+	Specify structural properties:
+	\begin{align*}
+		&\forall x,y: \text{cooperates-with}(x,y) \leftrightarrow \text{cooperates-with}(y,x) \quad \text{(symmetric)} \\
+		&\forall x,y,z: \text{reports-to}(x,y) \land \text{reports-to}(y,z) \to \text{reports-to}(x,z) \quad \text{(transitive)} \\
+		&\forall x,y: \text{reports-to}(x,y) \to \neg\text{reports-to}(y,x) \quad \text{(asymmetric)}
+	\end{align*}
+	
+	Each axiom eliminates certain models from consideration. The transitive closure axiom for reports-to rules out models with non-transitive reporting chains. The symmetry axiom for cooperates-with rules out models with unreciprocated cooperation.
+	
+	Yet much remains unspecified. What makes two people cooperate? Must they share goals, or coordinate actions, or both? Our ontology $O_{\text{HR}}$ has not yet captured this intensional content. We might attempt:
+	$$\forall x,y: \text{cooperates-with}(x,y) \leftrightarrow \text{shares-goal}(x,y) \land \text{coordinates-action}(x,y)$$
+	
+	But now we've introduced new predicates (shares-goal, coordinates-action) whose meanings must themselves be specified. The regress of definition is inevitable; complete formalization remains asymptotic.
+\end{example}
+
+\subsection{The Schaffer Critique and Fundamentality}
+
+Schaffer's analysis of truthmaker theory offers a profound methodological insight applicable to ontology construction \cite{Schaffer2008}. He argues that truthmaking should not specify what \emph{exists} but rather what is \emph{fundamental}. Analogously, we might distinguish:
+
+\begin{itemize}
+	\item \textbf{Existence commitments}: What entities the ontology posits (captured by quantifier commitments)
+	\item \textbf{Fundamentality commitments}: Which entities/relations the ontology treats as primitive versus derivative
+\end{itemize}
+
+An ontology's axiomatization reveals its fundamentality structure. Primitive predicates correspond to conceptual relations we take as basic; defined predicates correspond to derivative relations grounded in the primitive ones.
+
+In our HR ontology, if we define:
+$$\text{cooperates-with}(x,y) \leftrightarrow \text{shares-goal}(x,y) \land \text{coordinates-action}(x,y)$$
+we are committing to cooperation being \emph{non-fundamental}—grounded in the more basic relations of goal-sharing and action-coordination.
+
+This connects directly to von Bertalanffy's distinction between summative and constitutive properties. Constitutive properties are precisely those that must be captured by primitive relations in our ontology, for they are the fundamental organizational principles that make a system what it is. Summative properties, by contrast, can be defined or derived.

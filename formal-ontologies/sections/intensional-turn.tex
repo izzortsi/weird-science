@@ -1,0 +1,65 @@
+\section{The Intensional Turn: From Extension to Conceptualization}
+
+The fundamental inadequacy of extensional structures for capturing conceptual content emerges clearly in Guarino's analysis. A conceptualization must remain invariant across different world states, yet extensional relations vary precisely with these states. This tension motivates the crucial turn toward intensionality.
+
+\begin{definition}[World and World State]
+	With respect to a specific system $S$ we want to model, a \emph{world state} for $S$ is a maximal observable state of affairs, i.e., a unique assignment of values to all the observable variables that characterize the system. A \emph{world} is a totally ordered set of world states, corresponding to the system's evolution in time. If we abstract from time for the sake of simplicity, a world state coincides with a world.
+\end{definition}
+
+This definition embeds a critical methodological choice: we fix a granularity of observation and declare certain variable configurations ``maximal.'' The epistemic humility here is noteworthy—we do not claim to capture all possible states of $S$, but rather all states \emph{observable at our chosen level of analysis}.
+
+\begin{definition}[Intensional Relation or Conceptual Relation]
+	Let $S$ be an arbitrary system, $D$ an arbitrary set of distinguished elements of $S$, and $W$ the set of world states for $S$ (also called worlds, or possible worlds). The pair $\langle D, W \rangle$ is called a \emph{domain space} for $S$, as it intuitively fixes the space of variability of the universe of discourse $D$ with respect to the possible states of $S$. An \emph{intensional relation} (or \emph{conceptual relation}) $\rho^n$ of arity $n$ on $\langle D, W \rangle$ is a total function
+	$$\rho^n : W \to 2^{D^n}$$
+	from the set $W$ into the set of all $n$-ary (extensional) relations on $D$.
+\end{definition}
+
+\subsection{The Carnapian Heritage and Modal Semantics}
+
+This definition instantiates the classical Carnapian approach to intension: an intension is a function from possible worlds to extensions \cite{Carnap1956}. The conceptual relation $\rho^n$ does not \emph{vary} with worlds; rather, it is the very function that \emph{determines} how extension varies with worlds. This is the formal correlate of conceptual stability across counterfactual variation.
+
+The significance becomes apparent when we contrast this with Backlund's observation that different definitional approaches to ``system'' often disagree about whether certain properties are essential or accidental \cite{Backlund2000a}. A purely extensional definition cannot adjudicate such disputes, for it has no resources to express modal distinctions. The intensional framework, by contrast, builds modality into its foundational architecture.
+
+\begin{example}[Cooperates-With as Conceptual Relation]
+	Following Guarino's human resources example, consider the conceptual relation \textit{cooperates-with}$^2$. Let:
+	\begin{align*}
+		D &= \{\text{employee}_1, \text{employee}_2, \ldots, \text{employee}_{50000}\} \\
+		W &= \{\text{possible organizational states}\}
+	\end{align*}
+	
+	The conceptual relation is not merely the set of pairs currently cooperating, but rather the function that specifies, for each possible organizational configuration $w \in W$, which pairs would be cooperating in that configuration. 
+	
+	Crucially, this function encodes our \emph{concept} of cooperation—what counts as cooperation—which remains stable even as the actual instantiations vary. In world $w_1$, perhaps cooperation requires merely shared goals. In this world:
+	$$\text{cooperates-with}^2(w_1) = \{(\text{emp}_i, \text{emp}_j) : \text{emp}_i \text{ and } \text{emp}_j \text{ share goals in } w_1\}$$
+	
+	But we might imagine an alternative concept where cooperation requires both shared goals \emph{and} coordinated action. This would be a \emph{different conceptual relation} $\rho'^2$, even though it might happen to have the same extension in certain worlds.
+\end{example}
+
+\begin{definition}[Intensional Relational Structure or Conceptualization]
+	An \emph{intensional relational structure} (or a \emph{conceptualization} according to Guarino) is a triple $\mathcal{C} = (D, W, \mathfrak{R})$ with:
+	\begin{itemize}
+		\item $D$ a set (universe of discourse)
+		\item $W$ a set (possible worlds or world states)
+		\item $\mathfrak{R}$ a set of conceptual relations on the domain space $\langle D, W \rangle$
+	\end{itemize}
+\end{definition}
+
+\subsection{The Invariance Problem and Systems Theory}
+
+This definition crystallizes what we might call the \emph{invariance requirement}: a conceptualization specifies the intensions—the conceptual relations—that remain fixed while extensions vary with world states. This directly addresses von Bertalanffy's concern with identifying genuine systemic properties that transcend particular states.
+
+When von Bertalanffy characterizes a system through differential equations:
+$$\frac{dQ_i}{dt} = f_i(Q_1, Q_2, \ldots, Q_n)$$
+he is implicitly specifying conceptual relations—the functional dependencies $f_i$ that determine how changes in any variable $Q_i$ depend on all variables. These functions do not vary with the current values of the $Q_i$; rather, they determine how those values evolve. In Guarino's framework, each $f_i$ corresponds to a conceptual relation specifying, for each world state (configuration of $Q$ values), what the derivative relationships are.
+
+\begin{example}[Von Bertalanffy's Biological Systems]
+	Consider a simple metabolic system with states characterized by substrate concentration $S$, enzyme concentration $E$, and product concentration $P$. The universe of discourse is:
+	$$D = \{\text{substrate molecules, enzyme molecules, product molecules}\}$$
+	
+	World states are assignments of concentrations:
+	$$w \in W \text{ assigns values to } (S(w), E(w), P(w))$$
+	
+	A conceptual relation might be the Michaelis-Menten kinetics:
+	$$\text{reaction-rate}^3 : W \to 2^{D^3}$$
+	where for each world state $w$, this relation specifies which triples of (substrate, enzyme, product) entities satisfy the kinetic equation at that state. The relation itself—the functional form of Michaelis-Menten kinetics—is the invariant concept, while its extension varies with concentration states.
+\end{example}
