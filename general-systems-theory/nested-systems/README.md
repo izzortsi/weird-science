@@ -11,9 +11,10 @@ This document presents a comprehensive framework for analyzing complex systems a
 - `main.tex` - Main LaTeX document
 - `sections/` - Document sections:
   - `introduction.tex` - Introduction to the framework
-  - `framework.tex` - Core framework description
-  - `applications.tex` - Practical applications
-  - `conclusion.tex` - Concluding remarks
+  - `preliminaries.tex` - Preliminaries and foundational concepts
+  - `systems.tex` - Systems and their properties
+  - `subsystems.tex` - Subsystems and interactions
+  - `hierarchies.tex` - Hierarchical organization and holarchies
 - `references/` - Bibliography files
 
 ## Building
