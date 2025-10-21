@@ -5,13 +5,24 @@
 \usepackage[utf8]{inputenc}
 \usepackage[numbers]{natbib}
 \usepackage{hyperref}
-
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[auth-sc-lg]{authblk}
+\hypersetup{
+	colorlinks,
+	linkcolor={blue!100!black},
+	citecolor={blue!100!black},
+	urlcolor={blue!100!black}
+}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Example}[section]
 
 \title{Definitional Architectures: From Conceptualization to Ontology\\
 	\large{A Philosophical Excavation of Formal System Concepts}}
-\author{}
+	
+% Define authors and link them to affiliations
+\author[]{Igor Strozzi}
+\affil[]{\itshape \small Applied Mathematics Department \\ Federal University of Rio de Janeiro}
 \date{}
 
 \begin{document}
@@ -22,9 +33,9 @@
 		This document traces the conceptual trajectory from extensional mathematical structures through intensional conceptualizations to formal ontologies, following the architectonic framework established by Guarino, Oberle, and Staab. We excavate the epistemological substrata underlying computational ontology, situating these definitions within the broader discourse of General Systems Theory and examining their philosophical commitments through the lens of contemporary metaphysics.
 	\end{abstract}
 	
+	\newpage
 	\tableofcontents
 	\newpage
-	
 	\input{sections/introduction}
 	\input{sections/extensional-foundations}
 	\input{sections/intensional-turn}

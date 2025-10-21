@@ -1,12 +1,16 @@
 % Non-well-founded hierarchies of nested systems
 % Main document file
 %
-\documentclass[runningheads]{llncs}
+%\documentclass[a4paper, 12pt]{article}
+\documentclass[runningheads, citeauthoryear]{llncs}
 
 % Packages
+%\usepackage{llncsdoc}
+
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
+%\usepackage{amsthm}
 \usepackage[strings]{underscore}
 \usepackage{mathtools}
 \usepackage{stmaryrd}
@@ -15,9 +19,14 @@
 \hypersetup{
 	colorlinks,
 	linkcolor={blue!100!black},
-	citecolor={blue!100!black},
+	citecolor={red!100!black},
 	urlcolor={blue!100!black}
 }
+
+% Theorem-like environments
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{example}{Example}[section]
+
 % Mathematical operators and symbols
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -51,8 +60,13 @@
 \title{Non-well-founded hierarchies of nested systems}
 \titlerunning{Non-well-founded hierarchies of nested systems}
 
-\author{Igor Strozzi\orcidID{0000-0003-1792-2880}}
-
+%\author{Igor Strozzi\\
+%	Applied Mathematics Department \\
+%	Federal University of Rio de Janeiro\\
+%	\href{dma.im.ufrj.br}{dma.im.ufrj.br}  \\
+%	\diamond \\
+%	\href{istrozzi@matematica.ufrj.br}{istrozzi@matematica.ufrj.br}}
+\author{Igor Strozzi}
 \institute{\textbf{Federal University of Rio de Janeiro}\\
 Applied Mathematics Department \\
 \url{dma.im.ufrj.br}  \\
@@ -68,6 +82,7 @@ We undertake a systematic investigation of the definitional foundations of compl
 \keywords{Complex systems \and Emergence \and Hierarchical organization \and Nested structures \and Mereology}
 \end{abstract}
 
+%\tableofcontents
 % Include sections
 \input{sections/introduction}
 \input{sections/preliminaries}
@@ -77,6 +92,7 @@ We undertake a systematic investigation of the definitional foundations of compl
 
 % Bibliography
 \bibliographystyle{splncs04}
+%\bibliographystyle{plain}
 \bibliography{references/bibliography}
 
 \end{document}
