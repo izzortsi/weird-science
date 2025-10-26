@@ -10,7 +10,8 @@ This document presents a comprehensive survey of the mathematical formalization 
 
 - `main.tex` - Main LaTeX document
 - `sections/` - Document sections:
-  - `gst-overview.tex` - Complete survey of GST formal definitions
+  - `foundational-definitions.tex` - Foundational definitions of systems from seminal literature
+  - `theoretical-insights.tex` - Major theoretical insights from GST
 - `references/` - Bibliography files:
   - `bibliography.bib` - Reference database
 
