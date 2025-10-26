@@ -9,14 +9,14 @@ Repository dedicated to organizing and versioning study topics in systems theory
 Collection of documents exploring systems theory, complexity, and emergent phenomena.
 
 #### Foundations of General Systems Theory: A Survey of Formal Definitions
-[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../releases/latest/download/gst-overview.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](./releases/latest/download/gst-overview.pdf)
 
 A systematic compilation of foundational definitions of systems and major theoretical insights drawn from the mathematical literature on General Systems Theory.
 
 [View Document →](./general-systems-theory/gst-overview/)
 
 #### Non-well-founded Hierarchies of Nested Systems
-[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../releases/latest/download/nested-systems.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](./releases/latest/download/nested-systems.pdf)
 
 A systematic investigation of the definitional foundations of complex systems, articulating a formalism grounded in the recursive nesting of subsystems and examining emergence as a structural phenomenon arising from inter-level functional dependencies.
 
@@ -27,7 +27,7 @@ A systematic investigation of the definitional foundations of complex systems, a
 Collection of documents on formal ontologies and knowledge representation.
 
 #### Definitional Architectures: From Conceptualization to Ontology
-[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../releases/latest/download/formal-ontologies.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](./releases/latest/download/formal-ontologies.pdf)
 
 A philosophical excavation of formal system concepts, tracing the conceptual trajectory from extensional mathematical structures through intensional conceptualizations to formal ontologies, situated within the broader discourse of General Systems Theory.
 
