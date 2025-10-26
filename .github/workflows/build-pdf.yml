@@ -94,8 +94,10 @@ jobs:
             # Create comma-separated list for artifacts
             pdf_list=$(echo "$pdfs" | tr '\n' ',' | sed 's/,$//')
             echo "pdf_paths=$pdf_list" >> $GITHUB_OUTPUT
-            # Also create space-separated for easy iteration
-            echo "pdf_files=$pdfs" >> $GITHUB_OUTPUT
+            # Use heredoc syntax for multiline output
+            echo "pdf_files<<EOF" >> $GITHUB_OUTPUT
+            echo "$pdfs" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
           else
             echo "No PDFs found"
             echo "pdf_paths=" >> $GITHUB_OUTPUT
