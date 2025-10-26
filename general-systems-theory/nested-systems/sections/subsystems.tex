@@ -1,0 +1,111 @@
+% Subsystems, Supersystems, and Nested Structures
+\section{Subsystems, Supersystems, and Nested Structures}
+
+\subsection{The inadequacy of naive inclusion}
+
+It seems to be a common inclination to consider a subsystem of a system $\mathcal{S}$ as a system $\mathcal{S}'$ comprising of a subset of the underlying set of $\mathcal{S}$, in a way that the relations between the elements of $\mathcal{S}'$ are inherited, or compatible, with the relations between the elements of the corresponding supersystem $\mathcal{S}$ \cite{Mesarovic1976}. This definition is inadequate for our purposes, since we intend to consider broader possible relations between the properties and relations of a system and those of its subsystems. That is partly what can allow us to describe and study emergent properties: we need a formal description that enables us to describe richer interplay between the properties of a sub and a supersystem. 
+
+One could want, for instance, to have subsystems with the scaled-down versions of the same properties than their supersystems, and in this sense these properties would only be the same as those from the supersystem after a scaling; one could also think that the supersystems could, instead of having more properties, have fewer of them. An example would be considering regions of a gas as subsystems, and instead of thinking about the kinetic properties of the molecules, considering only the temperatures of these regions. The relevant properties of the entities at the macroscopic level -- the regions of the gas -- would be entirely different from the relevant properties of the entities at the mesoscopic level. Whereas the dynamics at the mesoscopic level, in this example, would be the typical intermolecular dynamics, the macroscopic properties would be indexes, or aggregates, based on such dynamics. Even further, we shall also consider the microscopic aspects of systems, integrating in one structure these three different views. In this example, the microscopic aspects would be the intramolecular dynamics and properties.
+
+The above observations are to be taken with the already made consideration that we are interested in developing a framework to formally account for the choices one makes while modeling. The temperature of each region is a function of the velocities of the particles within that region; in this sense, the only `relevant' properties are these velocities, since the macroscopic properties could in principle be reduced to these mesoscopic dynamics. But, on the one hand, we are precisely interested in explicitly accounting, in the modeling endeavor, for this process of abstracting the mesoscopic aspects to the macroscopic ones. In this case, we would have, for each region, a function mapping from the velocities of its particles to its temperature. 
+
+On the other hand, we are also interested in describing how (sub)systems, like molecules, having their own elements and dynamics over them, happen to give rise to the mesoscopic dynamics, and to further relate these three scales. This choice for three scales, as we will see, is to be extended when considering holarchies (which are, essentially, infinite multilevel systems), and they are also contained within a single level of description. Evidently, the relation between intramolecular and intermolecular dynamics could be too negligible or too complicated to model; but in consonance with the idea of holon, we understand that each level of description should relate to these three aspects.
+
+\subsection{Subsystems: a functional approach}
+
+As suggested by the gas example, we shall generally approach the problem of defining a super/subsystem by means of functions. We start defining a subsystem $\mathcal{S}'$, which will be seen simply as a system whose underlying set $S'$ is a subset of $S$ -- the underlying set of $\mathcal{S}$ --, whose elements refine the elements of $\mathcal{S}$, and with the relations and properties of $\mathcal{S}, \mathcal{S}'$ being related by maps. More precisely:
+
+\begin{definition}[Subsystem] \label{def::subsystem}
+	Let $\mathcal{S} = (S, \Gamma_{\mathfrak{P}}, \mathbf{R}, \mathbf{V})$ be a system. Consider the set 
+	\[\mathfrak{R} = \left(\bigcup_k \mathbf{R}\right)\cup \left(\bigcup_i \bigcup_k \mathbf{V}\right).\]
+	
+	A subsystem $\mathcal{S}' = (S',\Gamma_{\mathfrak{P'}}', \mathbf{R'}, \mathbf{V'})$ of $\mathcal{S}$ is a system such that:
+	
+	\noindent
+	i) $S' \subseteq S$ and $ \bigcup\Gamma_{\mathfrak{P'}}' \subseteq \bigcup\Gamma_{\mathfrak{P}}$;
+	
+	\noindent
+	ii) there exist families of functions $\{f_n\}, \{g_m\}$ with $n, m \leq |\Gamma_{\mathfrak{P'}}'| = C'$, such that, for some $p_n, q_n$,  $f_n: \mathfrak{R}^{p_n} \rightarrow \Gamma_{\mathfrak{P'}}'^{q_n}$ and for $p_m, q_m$, $g_m: \mathfrak{R}^{p_m} \rightarrow \mathcal{P}(\Gamma_{\mathfrak{P'}}'^{q_m} \times V_{kij}')$, for given sets of values $V_{kij}'$, satisfying:
+	
+	\begin{itemize}
+	\item[(a)] for any element $R'$ of $\bigcup_k \mathbf{R}'$ there is exactly one $n$ such that for some $\boldsymbol{\sigma} \in \mathfrak{R}^{p_n}$, $f_n(\boldsymbol{\sigma}) = R'$;
+	
+	\item[(b)] for any element $\mathrm{v}'$ of $\bigcup_k \bigcup_i \mathbf{V}'$, if $\mathrm{dom}(\mathrm{v}') = R'$ for some $R' \in \bigcup_k \mathbf{R}'$, then there is exactly one $m$ such that for some $\boldsymbol{\sigma} \in \mathfrak{R}^{p_m}$, $g_m(\boldsymbol{\sigma}) = \mathrm{v}'$.
+	\end{itemize}
+	
+	\noindent
+	We denote the system-inclusion relation by $\sqsubset$.
+\end{definition}
+
+\begin{remark}[On the generality of functional dependencies] \label{rem::functional_dep}
+This might seem an overly complicated definition, specially considering the stunning simplicity of the usually given ones \cite{Backlund2000,Mesarovic1970,Mesarovic1976}. The justification of such an intricate definition is that, as said, we want to allow as few as possible restrictions on the relationship between systems and subsystems, while still providing the basic elements to describe them.
+
+In the above definition, we consider a subsystem to be a system whose underlying set is bounded above by the underlying set of its supersystem and whose elements' parts on the underlying set are also bounded by the parts of the elements of the supersystem. This is in accordance with the idea that, in spatial systems, any subsystem is a spatial part of any of its supersystems. 
+
+Notice that we explicitly defined subsystems so as to leave open the possibility that the relations and valuations of subsets could depend on arbitrary relations and valuations over the corresponding superset. That is what justifies the definition of the set $\mathfrak{R}$. It could be interesting, for instance, to treat global parameters or variables as valued relations of arity equal to the cardinality of the set of elements of a system (instead of considering each element to have a property with the same value). And it is reasonable to consider that, in some cases, the determination of subsystems' relations could depend on such global properties, what suggests that relations of any arity on a subsystem can sensibly depend on relations of any other arity on its supersystem. 
+
+The sets $\{f_n\}$ and $\{g_m\}$ are sets of functions that map from tuples of elements of the joint set of relations $\mathfrak{R}$ to, respectively, relations and valuations in the corresponding subsystem, existing one such mapping for each relation/valuation. 
+\end{remark}
+
+\begin{remark}[On independence of relation and valuation dependencies] \label{rem::independence}
+In good English, what Definition \ref{def::subsystem} means is that a subsystem $\mathcal{S}' \sqsubset \mathcal{S}$ has as its underlying set $S'$ a subset of the underlying set $S = \mathfrak{u}(\mathcal{S})$, and that its relations and valuations depend on the set $\mathfrak{R}$ of all relations and valuations of $\mathcal{S}$. It is too restrictive to aprioristically assume basically anything about how relations on a subsystem relate to relations on its supersystem. In principle, a relation on a subsystem could depend in arbitrarily complicated ways on relations of its supersystem. 
+
+We cannot even guarantee that a relation $R$ of $\mathcal{S}'$ that is mapped from $\boldsymbol{\sigma} \in \mathfrak{R}$ and has a valuation $\mathrm{v}$ satisfies something like $g_m(\boldsymbol{\sigma}) = \mathrm{v}$, i.e., if $R$ comes from some $\boldsymbol{\sigma}$, its valuations not necessarily depend on the same $\boldsymbol{\sigma}$. Indeed, an unvalued relation represents a `structure of interactions' and as such could be the same for very different valued relations. For instance, two global coupling parameters can describe very distinct features of a system, and have very different values, but would share a same unvalued (unary) relation. It is not unreasonable to consider, then, that, being these features sufficiently different in quality, their dependence on relations at the superlevel could be different enough as to render, at the very least, inconvenient to consider them functions of a same tuple $\boldsymbol{\sigma}$.
+\end{remark}
+
+\begin{remark}[On transitivity of subsystem inclusion] \label{rem::transitivity}
+Two relevant observations concerning the relation $\sqsubset$ are that it is not reflexive, but it is transitive. That it is not reflexive follows immediately from the fact that we required a subsystem to be distinct from its supersystem (implicitly, through the use of proper subset notation). As for the transitivity, for three systems $\mathcal{S}_3 \sqsubset \mathcal{S}_2 \sqsubset \mathcal{S}_1$, we have for certain that their underlying systems satisfy $S_3 \subset S_2 \subset S_1$, and therefore that $S_3 \subset S_1$. The functional dependencies compose appropriately: if the relations of $\mathcal{S}_3$ depend on those of $\mathcal{S}_2$, and the relations of $\mathcal{S}_2$ depend on those of $\mathcal{S}_1$, then by composition the relations of $\mathcal{S}_3$ depend on those of $\mathcal{S}_1$, satisfying the requirements for $\mathcal{S}_3 \sqsubset \mathcal{S}_1$.
+\end{remark}
+
+\subsection{Supersystems: the inverse problem}
+
+We talked about supersystems, but we are yet to define them. We proceed to that, now.
+
+A really useful definition of supersystem does not follow all that trivially from Definition \ref{def::subsystem}. Conceptually, the reason is that while one can use the knowledge about a system to infer a characterization of a subsystem, when only the latter is known it is in general much harder to completely -- or, at least, satisfactorily -- describe some of its supersystems. The more heterogeneous the system, the harder. More formally, the motive is that the functions that define a subsystem from a given system do not necessarily have inverses, so that when we define a subsystem, we not necessarily define how to obtain a corresponding supersystem (which is not even unique). 
+
+It is, though, obvious to think, for a given system $\mathcal{S}'$, of a supersystem of it as a system $\mathcal{S}$ such that $\mathcal{S}' \sqsubset \mathcal{S}$. Moreover, it is reasonable, and more adequate to our purposes, to define a supersystem for sets of systems, despite the fact that such sets could be singletons. We define supersystems as follows:
+
+\begin{definition}[Supersystem] \label{def::supersystem}
+	Let $\mathfrak{S} = \{\mathcal{S}_i\}_{i\in I}$ be a family of systems. Define, for each $\mathcal{S}_i$, the set 
+	\[\mathfrak{R}_i = \left(\bigcup \mathfrak{r}(\mathcal{S}_i)\right) \cup \left(\bigcup \bigcup \mathfrak{v} (\mathcal{S}_i)\right).\]
+	Define $\mathfrak{R} = \bigcup_{i\in I} \{\mathfrak{R}_i\}$. A system $\mathcal{S}$ is said a supersystem of each $\mathcal{S}_i$ (and, by extension, of $\mathfrak{S}$) if it satisfies the following:
+	
+	\noindent
+	i) $\bigcup\limits_{s \in \mathfrak{S}} \mathfrak{u}(s) \subseteq \mathfrak{u}(\mathcal{S})$;
+	
+	\noindent
+	ii) $\bigcup\limits_{s \in \mathfrak{S}} \mathfrak{e}(s) \subseteq \mathfrak{e}(\mathcal{S})$; 
+	
+	\noindent
+	iii) for each $R \in \bigcup\mathfrak{r}(\mathcal{S})$, there is a natural number $p \leq |\mathfrak{R}|$ and a function $f$ such that, for some $\boldsymbol{\sigma} \in \mathfrak{R}^p$, $R = f(\boldsymbol{\sigma})$;
+	
+	\noindent
+	iv) for each $V \in \bigcup\bigcup\mathfrak{v}(\mathcal{S})$, there is a natural number $q \leq |\mathfrak{R}|$ and a function $g$ such that, for some $\boldsymbol{\sigma} \in \mathfrak{R}^q$, $V = g(\boldsymbol{\sigma})$.
+\end{definition}
+
+\begin{remark}[On the non-uniqueness of supersystems]
+The supersystem of a given system (or family of systems) is not unique. Indeed, there are infinitely many ways to construct a system satisfying the conditions of Definition \ref{def::supersystem} for any given family $\mathfrak{S}$. This non-uniqueness reflects a fundamental asymmetry in the relationship between scales: emergence, understood as the appearance of novel organizational principles at coarser scales, permits multiple distinct macroscopic descriptions to be compatible with a single microscopic configuration. This is not a defect of our formalism but rather a feature -- it captures the essential underdetermination of coarse-grained descriptions by fine-grained dynamics.
+\end{remark}
+
+\subsection{Nested systems and the enclose relation}
+
+We start this subsection considering nested systems, roughly in the same sense as defined in \cite{Walloth2016}, i.e., as a system that `is enclosed by, and is enclosing, other systems'. We say `roughly' since we will not incorporate in the concept of nested system any other characteristics but that. For instance, we will not consider that, necessarily, enclosing systems should be `understood as being emergent of the generating activities of enclosed systems', although systems that exhibit such behavior are in fact our main interest. Moreover, we understand this enclosed/enclosing relation as implying simultaneously system inclusion and membership, i.e.
+
+\begin{definition}[Enclose relation/Parthood] \label{def::enclose}
+	Let $\mathcal{S},\ \mathcal{S}'$ be systems such that $\mathcal{S}' \sqsubset \mathcal{S}$. We say that $\mathcal{S}$ \textit{encloses} $\mathcal{S}'$, denoting by $\mathcal{S}' \encl \mathcal{S}$, if additionally $\mathfrak{u}(\mathcal{S}') \sqin \mathfrak{e}(\mathcal{S})$. If $\mathcal{S}$ encloses $\mathcal{S}'$ we say that the latter is a \textit{part} of the former.
+\end{definition}
+
+The enclose relation thus combines three distinct aspects: the mereological relation of part-to-whole and the functional dependencies $\mathcal{S}$ holds with respect to  $\mathcal{S}'$ -- captured by $\sqsubset$ -- and the set-theoretic relation of membership (captured by $\sqin$). A system $\mathcal{S}'$ that is merely a subsystem of $\mathcal{S}$ may have no direct role in the mesodynamics of $\mathcal{S}$ -- it is a part of $\mathcal{S}$ in the sense of occupying a spatial subregion, but not necessarily a functional component. To be enclosed, $\mathcal{S}'$ must additionally be an element of $\mathcal{S}$, which means that $\mathcal{S}'$ itself (not merely its elements) participates in the relations that constitute $\mathcal{S}$. This captures the intuition that in a genuinely nested system, the subsystems at one level become the objects at the next level up.
+
+We now formally define nested systems:
+
+\begin{definition}[Nested system] \label{def::nested}
+Let $\mathcal{S}$ be a system. We say that $\mathcal{S}$ is a \textit{nested system} if there are systems $\mathcal{R}$ and $\mathcal{T}$ such that 
+\[\mathcal{R} \encl \mathcal{S} \encl \mathcal{T}.\]
+\end{definition}
+
+A nested system could, in principle, be defined as a system that simply has a supersystem and a subsystem. We believe that would be less interesting, though, since in general one is to define the relations and properties that characterize a system with respect to its elements, not to arbitrary subsystems. In this sense, defining a nested system as to simply have super/subsystems, although being reasonable and coherent with our general understanding, falls rather short from capturing what is the actual intent of talking about this nestedness (in particular in the sense dealt with in \cite{Walloth2016}), which involves, besides having a supersystem, being an actual part, or element, of it -- i.e., having a role in its (meso)dynamics --, and also involves having subsystems as elements, since that is what `ties' the entities on one level to their counterparts in the super or sublevels.
+
+\begin{remark}[On the relationship to holonic systems]
+The nested system concept as articulated here bears significant affinity to the notion of holonic systems developed in the context of multiagent systems and organizational theory. A holon, in the sense of Koestler, is simultaneously a whole and a part -- it exhibits autonomy and agency at its own level of organization while also serving as a component of larger organizational structures. Our formalization captures this dual nature: a nested system $\mathcal{S}$ is simultaneously composed of parts (the systems $\mathcal{R}$ such that $\mathcal{R} \encl \mathcal{S}$) and itself a part of larger wholes (the systems $\mathcal{T}$ such that $\mathcal{S} \encl \mathcal{T}$). The richness of the nested structure emerges from iterating this pattern: each part is itself composed of parts, each whole is itself part of larger wholes, generating a potentially infinite regression in both directions.
+\end{remark}

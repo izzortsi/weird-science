@@ -1,0 +1,75 @@
+% Systems: Fundamental Definitions
+\section{Systems: Fundamental Definitions}
+
+In this section we articulate the foundational apparatus upon which our entire theoretical edifice rests. The path we chart here diverges from conventional approaches in systems theory, reflecting our commitment to maximum generality while preserving computational tractability.
+
+\subsection{Motivating considerations}
+
+In a first moment, to motivate or illustrate the definitions, we shall use very simple, borderline trivial examples, in general using systems of particles. Due to their simplicity, they offer a convenient way to understand the `holonic transition' in general systems, wherein the composing entities do not necessarily have rich or intelligent behavior on their own. It is easy to see a system of particles as made of, on the one hand, particles, and these particles, on the other hand, as made of yet more particles. Since understanding in depth in which ways these two views relate to each other and providing a theory that explains these relations and guides the modeling of such systems are our overarching goals, as long as these systems exhibit this holonic behavior, their simplicity is most welcome. 
+
+\subsection{The concept of system}
+
+We shall consider a (general) system in consonance with the established conceptualization, i.e., as `a set of interrelated objects' \cite{Mesarovic1970}; we shall however formalize this idea somewhat differently from the way it is usually done.
+ 
+We start observing that if one is to use two-valued first order logic, relations cannot have values other than `true' or `false'. To allow for relations to have arbitrary associated values (by means of an \textit{interpretation function}) would ask for unreasonably complicated (formal) logics, with `truth values' as arbitrary as the values of relations between elements in systems can be, besides the fact that these logics would have to be, in principle, different for each system, since relations, in this case, would be considered at language, as opposed to theory, level. We want to keep with the usual mathematical logic, thus being led to consider distinct ways of formally allowing the idea of a `relation between objects' to have arbitrary values. 
+
+With that considered, it seems natural to formalize such kind of relations much in the same way one does in model theory, i.e., using a function that maps well-formed formulas to truth values. We shall follow these lines, but in a higher level than that of a formal language: we simply consider a relation as in the usual `working mathematical' sense and define over it a mapping that associates to each of its elements values taken on an arbitrary set. That is defined as follows:
+
+\begin{definition}[Valued relation] \label{def::valued_relation}
+Let $\mathcal{F} = \{S_i\}_{i\in I}$ be a family of sets and $R$ a $n$-ary relation over $\mathcal{F}$, that is, $R \subseteq \prod_{i \in I} S_i$. Let $V$ be another set, said the \textit{set of values}. If $\mathrm{v}$ is a function such that $\mathrm{v}: R \rightarrow V$, we convention that 
+\begin{enumerate}[(a)]
+\item $\mathrm{v}(R) = \{\mathrm{v}(r) \in V\ |\ r \in R\}$;
+\item $R_\mathrm{v} = (R, V, \mathrm{v})$ is called an $n$-ary $\mathrm{v}$-valued relation over $\mathcal{F}$;
+\item $\mathrm{v}$ is a \textit{valuation} of $R$;
+\end{enumerate}
+If $R_\mathrm{v} = (R, V, \mathrm{v})$, we say that $R$ is the \textit{underlying relation} of $R_\mathrm{v}$.
+\end{definition}
+
+In the above definition, we consider the graph of $\mathrm{v}$ as the valued relation, which is very natural since, well, graphs of functions are indeed relations. Thus a $n$-ary valued relation over a family $\{S_i\}$ is nothing else than a $(n+1)$-ary relation with some particularities: mainly, that it is functional in $V$, but it will be almost always the case here that the set $V$ is very different in nature from the $S_i$. We will usually talk about relations defined over the elements of a system, which will be considered as sets themselves, and the values these relations have will usually be quantities. The underlying relations account for the `structure of interactions between objects', whereas the valuations denote the characteristics these interactions have, the most remarkable one probably being their strength, or intensity. As an example, observe that a weighted digraph is an instance of a `structure of interactions with values'.
+
+\subsection{The underlying set: a mereological commitment}
+
+As for the concept of system, there is another thing to be said before we provide our definition. The usual set-theoretical definition uses a set $S$ of objects and over it defines relations and such, in a sense that were one to talk about `elements' of a system, these would be exactly the elements of $S$. We shall similarly conceive a system in respect to a set, which we will call the \textit{underlying set} of the system. This set, though, is not to be understood as the set of `objects', or `elements', of the system. Rather, the elements will be disjoint subsets of the underlying set. 
+
+That is in consonance with our inclination towards spatial systems: under this interpretation, the underlying set would correspond to a spatial region, and the system's elements would correspond to subregions with properties - the system itself being the whole of these elements, their properties and relations between them. It is not to be said, though, that this interpretation exhausts the possible applications; we shall see further how this conceptualization generalizes. It is, nonetheless, a good aid to develop intuition over, and to motivate, the formalization we are about to present. 
+
+We should further add that despite the possibility of underlying sets having elements of arbitrary nature, the systems in which we are interested are those that arise from the things that are built upon the underlying set, with the nature of its elements being in general of little importance. This choice is to emphasize, mainly, the mereological aspects of our understanding of systems (and the topological ones, to some extent), while allowing one to use tools that benefit from defining hierarchies based on set-inclusion, rather than set-membership (such as measure-theoretical and topological tools).
+
+\subsection{Formal definition of system}
+
+\begin{definition}[System] \label{def::system}
+Let $S$ be a set with cardinality $|S| \geq 2$. Consider a partition $\mathfrak{P}$ of $S$, and a subset $\Gamma_{\mathfrak{P}}$ of $\mathfrak{P}$, with $|\Gamma_{\mathfrak{P}}| = C$. 
+
+Define $\mathbf{R} = \{R_k \ | \ k \in \N_{\leq C} \}$ where each $R_k$ is a set of $n_k+1$ distinct $k$-ary relations over $\Gamma_{\mathfrak{P}}$, i.e., for any $R_{ki} \in R_k$ we have $R_{ki} \subseteq \Gamma_{\mathfrak{P}}^k$ and therefore 
+\[R_k = \{R_{ki} \subseteq \Gamma_{\mathfrak{P}}^k\ | \ i \in \N_{\leq n_k}\}.\]
+
+Define, now, for each $R_k$ and each relation $R_{ki} \in R_k$, a set $P_{ki}$ (possibly empty) of functions $\mathrm{v}_{kij}$ such that, for each $j$, $\mathrm{v}_{kij}: R_{ki} \rightarrow V_{kij}$, where $V_{kij}$ is the set of values for the valued relation $\mathrm{v}_{kij}(R_{ki})$. 
+
+Finally, define the set $\mathbf{V} = \{P_{ki} \ | \ k \in \N_{\leq C};\ i \in \N_{\leq n_k} \}$ of sets of valuations. Then a system $\mathcal{S}$ is a quadruple
+\[ \mathcal{S} = (S,\ \Gamma_{\mathfrak{P}}, \ \mathbf{R},\ \mathbf{V}).\]
+
+We call the set $S$ the \textit{underlying set} of $\mathcal{S}$, denoted by $\mathfrak{u}(\mathcal{S})$. We call $\Gamma_{\mathfrak{P}}$ the \textit{set of elements} of $\mathcal{S}$, which we denote by $\mathfrak{e}(\mathcal{S})$. We call $\mathbf{R}$ the \textit{set of relations} of $\mathcal{S}$, denoted $\mathfrak{r}(\mathcal{S})$, and $\mathbf{V}$ the \textit{set of valuations} of $\mathcal{S}$, denoted $\mathfrak{v}(\mathcal{S})$. Strictly speaking, $\mathbf{V}$ is, as said, a set of sets of valuations, since for each relation in $\mathbf{R}$ we might have multiple distinct valuations; with respect to a system $\mathcal{S}$, though, we simply call it its set of valuations. 
+
+We say that a non-empty set $s \subset S$ is an element of a system $\mathcal{S}$ iff $s \in \Gamma_{\mathfrak{P}}$, and denote the system-membership relation by $\sqin$. Naturally, it is thus true that: 
+\[s \sqin \mathcal{S} \iff s \in \Gamma_{\mathfrak{P}}.\]
+\end{definition}
+
+\subsection{Interpretative remarks}
+
+In the above, constants can be regarded as $0$-ary functions, whereas properties as unary relations. Constants will usually be called the \textit{parameters} of a model. 
+
+A fair question that could be raised is: why not use an usual mathematical structure (as defined in \cite{Poizat2000}), i.e., a set $E$, a family of relations $\{R_i\}$ over $E$ with arities $k_i$ and a family of $k_j$-ary operations on $E$, $\{f_j\}$? 
+
+A first reason is that such objects have only one function or relation per arity. But, still, we could easily generalize that and only that, and be done with it, without having to introduce the notion of a valued relation. Indeed, the idea of a property of an object might seem more naturally described by mapping such object to some value, which is the value of this property. In the way we defined a system, one would need to consider an unary relation and a valuation over it, to describe the same thing. There are some compelling reasons for that. 
+
+A minor one is that a function over an unary relation over a set $E$ is just a function over a subset of $E$. Hence considering valuations of unary relations allows us to neatly talk about partial and total functions over $E$. This is also true for any other arity, hence we almost immediately can have the same result as having a set of relations and a set of functions over $E$. 
+
+The main reason, however, is that with things defined as this we can talk about relations that have arbitrary values, as we discussed before. In this sense, the advantage is that we can express more (since we start to be able to talk about values of relations) with essentially the same commitment of having two sets, one of relations and one of functions. Gain some, lose nothing. 
+
+A possible objection is that we could have abandoned either the set of relations or the set of functions entirely, since we can write any $k$-ary relation as a $(k+1)$-ary function (the characteristic function of such relation in $E^k$), and since we can also write any function as a relation that is functional. The convenience of considering these sets in separate is what already justifies the existence of concepts such as that of mathematical structure. 
+
+We nonetheless would like to remember that in our definition, in particular, the detachment of the structural aspects in which things are interrelated and the quantitative/qualitative aspects of such interrelations allows us to more easily manage the representation of these things in data structures. For instance, if we had only functions or only relations, two functions/relations that were different only by their valuations would not be easily discernible. In a computational implementation, that could imply one writing them \textit{almost} twice, in a memory-suboptimal way; under our proposal, it would be clear that two such functions share the same domain and one would be much less prone to redundantly storage such domain.
+
+\begin{remark}[On the cardinality constraint] \label{rem::cardinality}
+The requirement $|S| \geq 2$ in Definition \ref{def::system} warrants justification. A singleton set cannot admit a non-trivial partition, and thus cannot serve as the underlying set for a system in our sense. This reflects our commitment to understanding systems as inherently relational entities -- a system of one element would be, at best, a degenerate case devoid of the structural richness we seek to capture. One might object that certain physical systems (an isolated particle, for instance) could reasonably be modeled as singletons; we would respond that even such apparently simple entities possess internal structure (spin, charge, etc.) that, when properly accounted for, reveals them to be systems in our sense, with underlying sets of cardinality strictly greater than unity.
+\end{remark}

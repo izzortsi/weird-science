@@ -1,16 +1,24 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[a4paper,12pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage[strings]{underscore}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
-\usepackage{natbib}
-
+\usepackage[numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	linkcolor={blue!100!black},
+	citecolor={blue!100!black},
+	urlcolor={blue!100!black}
+}
 \title{Foundations of General Systems Theory:\\A Survey of Formal Definitions}
-\author{}
+\author{\scshape Igor Strozzi \\ \small \itshape Applied Mathematics Department \\ \small Federal University of Rio de Janeiro}
 \date{}
 
 \begin{document}
@@ -25,7 +33,10 @@ This document presents a systematic compilation of foundational definitions of s
 
 \newpage
 
-\input{sections/gst-overview.tex}
+\section{General Systems Theory}
+
+\input{sections/foundational-definitions.tex}
+\input{sections/theoretical-insights.tex}
 
 \bibliographystyle{plain}
 \bibliography{references/bibliography.bib}

@@ -1,0 +1,85 @@
+\subsection{Foundational Definitions of a System}
+
+The mathematical formalization of systems theory emerges from diverse epistemological traditions, each seeking to articulate the fundamental nature of systemic relationships through rigorous set-theoretic frameworks. We present here the principal definitions that constitute the conceptual architecture of General Systems Theory.
+
+\subsubsection{The Verbal-Conceptual Definition}
+
+Mesarovic \citep{Mesarovic1972} articulates the primordial intuition underlying all systems thinking:
+
+\begin{quote}
+\emph{A system is (or reflects the existence of) a relationship between the objects (of study).}
+\end{quote}
+
+This formulation reveals the essential phenomenological stance: systems are not \emph{things-in-themselves}, but rather patterns of interrelation discerned through observational praxis. The definition achieves generality precisely through its abstraction from particular physical instantiations, concerning itself instead with the structural configurations of relationships.
+
+Mesarovic further refines this characterization to emphasize its teleological dimension:
+
+\begin{quote}
+\emph{A system is a relationship among objects described (or, specified, defined) in terms of information-processing and decision-making concepts.}
+\end{quote}
+
+\subsubsection{The Set-Theoretic Formalization}
+
+The transition from verbal description to mathematical precision constitutes the foundational gesture of modern systems theory. Mesarovic \citep{Mesarovic1972} proposes the canonical set-theoretic definition:
+
+\begin{align*}
+S \subseteq V_1 \times \cdots \times V_n
+\end{align*}
+
+where $\times$ denotes the Cartesian product. The coordinate sets $V_1, \ldots, V_n$ are designated as \emph{system objects}. This formulation encapsulates several profound insights:
+
+\begin{itemize}
+\item An object $V_i$ represents the totality of all possible appearances of an attribute of the phenomenon under consideration.
+\item The system $S$ specifies which combinations of object appearances can occur simultaneously when objects are interrelated to form the given system.
+\item The relation $S$ is not merely an arbitrary subset, but rather embodies the structural constraints that govern the co-variation of system attributes.
+\end{itemize}
+
+Mesarovic and Takahara further develop this framework, emphasizing that systems are defined on the set-theoretic level with minimal mathematical structure \citep{Mesarovic1975}. They write:
+
+\begin{quote}
+A family of sets is given, $\mathcal{V} = \{V_i : i \in I\}$ where $I$ is the index set, and a system, defined on $\mathcal{V}$, is a proper subset of $\times \mathcal{V}$:
+\begin{align*}
+S \subseteq \times \{V_i : i \in I\}
+\end{align*}
+\end{quote}
+
+\subsubsection{The Input-Output System}
+
+For systems exhibiting causal structure, the formalism specializes to an input-output configuration. The most widely studied case considers a system consisting of two objects \citep{Mesarovic1975}:
+
+\begin{align*}
+S \subseteq X \times Y
+\end{align*}
+
+where $X$ represents the input object (stimuli) and $Y$ represents the output object (responses). This partitioning introduces the fundamental distinction between cause and effect, transforming the abstract relational structure into a framework amenable to dynamical analysis.
+
+When $S$ is a function, i.e., with every input $x \in X$ there is associated a unique output, the system is designated a \emph{functional system}:
+
+\begin{align*}
+S: X \to Y
+\end{align*}
+
+This functional characterization permits the introduction of \emph{internal mechanisms}---constructive specifications that determine output generation for any given input through differential equations, transformation tables, or algorithmic procedures.
+
+\subsubsection{The Multirelation Approach}
+
+Yi Lin \citep{Lin1999} introduces an alternative formalization emphasizing the multiplicity of relations within a system. A system is defined as an ordered pair:
+
+\begin{align*}
+S = (M, R)
+\end{align*}
+
+where $M$ is a set of \emph{objects} and $R$ is a set of \emph{relations} on $M$. For each relation $r \in R$, there exists an ordinal number $n = n(r)$ such that $r \subseteq M^n$, where $M^n$ denotes the $n$-fold Cartesian product of $M$.
+
+This formulation explicitly acknowledges that systems typically exhibit multiple simultaneous relationships of varying arities, capturing the richness of interconnection patterns that characterize complex phenomena.
+
+\subsubsection{Bunge's Compositional Definition}
+
+Bunge introduces environmental considerations into the system definition \citep[as cited in][]{Lin1999,Bunge1979}. Given a nonempty set $T$, an ordered triple $W = (C, E, S)$ constitutes a system over $T$ if and only if:
+
+\begin{itemize}
+\item $C$ and $E$ are mutually disjoint subsets of $T$ (composition and environment, respectively)
+\item $S$ is a nonempty set of relations on $C \cup E$
+\end{itemize}
+
+This tripartite structure distinguishes internal composition from external environment, while acknowledging that systemic relations may span both domains.
