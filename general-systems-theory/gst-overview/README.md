@@ -29,7 +29,7 @@ Or use the automated GitHub Actions workflow which builds PDFs on every push.
 
 ## Download
 
-📄 [Download latest PDF](../../../releases/latest/download/gst-overview.pdf)
+📄 [Download latest PDF](https://github.com/izzortsi/weird-science/releases/download/latest/gst-overview.pdf)
 
 ## Status
 
