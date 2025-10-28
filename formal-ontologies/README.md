@@ -1,6 +1,6 @@
 # Definitional Architectures: From Conceptualization to Ontology
 
-[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../releases/latest/download/formal-ontologies.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](https://github.com/izzortsi/weird-science/releases/download/latest/formal-ontologies.pdf)
 
 ## Overview
 
@@ -34,7 +34,7 @@ Or use the automated GitHub Actions workflow which builds PDFs on every push.
 
 ## Download
 
-📄 [Download latest PDF](../../releases/latest/download/formal-ontologies.pdf)
+📄 [Download latest PDF](https://github.com/izzortsi/weird-science/releases/download/latest/formal-ontologies.pdf)
 
 ## Status
 

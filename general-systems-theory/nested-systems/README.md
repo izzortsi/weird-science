@@ -1,6 +1,6 @@
 # Non-well-founded Hierarchies of Nested Systems
 
-[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](../../../releases/latest/download/nested-systems.pdf)
+[![PDF](https://img.shields.io/badge/PDF-Download-blue?logo=adobe-acrobat-reader)](https://github.com/izzortsi/weird-science/releases/download/latest/nested-systems.pdf)
 
 ## Overview
 
@@ -32,7 +32,7 @@ Or use the automated GitHub Actions workflow which builds PDFs on every push.
 
 ## Download
 
-📄 [Download latest PDF](../../../releases/latest/download/nested-systems.pdf)
+📄 [Download latest PDF](https://github.com/izzortsi/weird-science/releases/download/latest/nested-systems.pdf)
 
 ## Status
 
