@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zotero Library Explorer - weird-science</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 Zotero Library Explorer</h1>
+            <p class="subtitle">Interactive exploration of the weird-science Zotero library</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for papers, authors, topics..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn">Search</button>
+            </div>
+            <div id="searchHelp" class="help-text">
+                Try searching for: "systems theory", "ontology", "emergence", or author names
+            </div>
+        </div>
+
+        <div id="results" class="results-container">
+            <div class="welcome-message">
+                <h2>Welcome!</h2>
+                <p>Use the search box above to explore the Zotero library.</p>
+                <p>You can search by:</p>
+                <ul>
+                    <li>Paper titles</li>
+                    <li>Author names</li>
+                    <li>Keywords and topics</li>
+                    <li>DOIs</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Searching library...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Connected to Zotero Group Library 
+            <a href="https://www.zotero.org/groups/6182921/" target="_blank">6182921</a>
+            | 
+            <a href="https://github.com/izzortsi/weird-science" target="_blank">weird-science repository</a>
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

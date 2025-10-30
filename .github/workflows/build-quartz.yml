@@ -1,0 +1,127 @@
+name: Build and Deploy Quartz Site
+
+on:
+  push:
+    branches: [dev]
+    paths:
+      - 'knowledge-database/**'
+      - '**/project-summary.md'
+      - 'quartz-site/**'
+      - '.github/workflows/build-quartz.yml'
+  pull_request:
+    branches: [dev]
+    paths:
+      - 'knowledge-database/**'
+      - '**/project-summary.md'
+      - 'quartz-site/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for git info
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Quartz
+        run: |
+          npm install -g quartz-v4 || echo "Quartz will be installed via npx"
+      
+      - name: Setup Quartz content
+        run: |
+          # Create content directory structure
+          mkdir -p quartz-site/content
+          
+          # Copy knowledge-database content
+          if [ -d "knowledge-database" ]; then
+            cp -r knowledge-database/* quartz-site/content/ || true
+          fi
+          
+          # Copy project summaries
+          find . -name 'project-summary.md' -type f | while read file; do
+            # Get project name from path
+            project=$(echo "$file" | sed 's|./||' | sed 's|/project-summary.md||' | tr '/' '-')
+            mkdir -p quartz-site/content/projects
+            cp "$file" "quartz-site/content/projects/${project}-summary.md"
+          done
+          
+          # Create index page if it doesn't exist
+          if [ ! -f "quartz-site/content/index.md" ]; then
+            cat > quartz-site/content/index.md <<EOF
+          ---
+          title: weird-science Knowledge Base
+          ---
+          
+          # Welcome to weird-science Knowledge Base
+          
+          This site contains literature reviews, project summaries, and concept articles
+          derived from the [weird-science repository](https://github.com/izzortsi/weird-science)
+          and integrated with our [Zotero group library](https://www.zotero.org/groups/6182921/).
+          
+          ## Explore
+          
+          - Browse the [[knowledge-database]] for concept articles
+          - View [[projects]] for project-specific literature summaries
+          - Check the tag index for topical navigation
+          
+          ## About
+          
+          This knowledge base is automatically generated from:
+          - LaTeX documents in the weird-science repository
+          - Bibliography entries (.bib files)
+          - Zotero group library items (group ID: 6182921)
+          
+          The content is organized by projects, tags, and concepts, with automatic
+          linking between related items.
+          EOF
+          fi
+      
+      - name: Build Quartz site
+        run: |
+          cd quartz-site
+          
+          # Initialize Quartz if needed (this should be done once in the repo)
+          # For now, we'll just note that Quartz needs to be properly initialized
+          echo "Note: Quartz should be initialized in the repository"
+          echo "Run 'npx quartz create' to set up Quartz for the first time"
+          
+          # Build would happen here
+          # npx quartz build
+          
+          # For now, create a placeholder output
+          mkdir -p public
+          echo "<html><body><h1>Quartz site would be built here</h1></body></html>" > public/index.html
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: quartz-site/public
+  
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3

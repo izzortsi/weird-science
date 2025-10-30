@@ -86,6 +86,29 @@ PDFs are automatically built via GitHub Actions on every push to `dev` and for p
 - **Build locally** by running `pdflatex` in each document directory
 - **View PR-specific builds** as artifacts on pull request pages
 
+## 📚 Zotero Integration
+
+This repository is integrated with a [Zotero group library](https://www.zotero.org/groups/6182921/) to maintain literature references and generate knowledge artifacts:
+
+- **Project Summaries** - Each project folder contains a `project-summary.md` with references matched to the Zotero library
+- **Knowledge Database** - The `knowledge-database/` directory contains atomic concept articles organized by tags
+- **Interactive Exploration** - Local Docker setup provides a web UI for querying the Zotero library
+- **Automated Sync** - GitHub Actions workflow syncs library data daily
+
+For details, see [docs/ZOTERO_INTEGRATION.md](docs/ZOTERO_INTEGRATION.md)
+
+### Quick Start
+
+```bash
+# Generate/update project summaries and knowledge base
+python scripts/zotero-integration/zotero_exporter.py
+
+# Run local exploration UI
+cd tools/zotero-mcp
+docker-compose up -d
+# Access at http://localhost:5000
+```
+
 ## 🤝 Contributing
 
 This repository uses comprehensive LaTeX .gitignore rules to keep auxiliary files out of version control while preserving source files and important assets.
