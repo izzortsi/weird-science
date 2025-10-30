@@ -110,7 +110,7 @@ jobs:
           echo "<html><body><h1>Quartz site would be built here</h1></body></html>" > public/index.html
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: quartz-site/public
   
