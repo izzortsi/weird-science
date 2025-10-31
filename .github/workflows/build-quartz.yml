@@ -56,9 +56,13 @@ jobs:
             cp temp-quartz/package-lock.json ./
             cp temp-quartz/tsconfig.json ./
             
-            # Copy other necessary files if they don't exist
-            [ ! -f ".gitignore" ] && cp temp-quartz/.gitignore ./ || true
-            [ ! -f ".prettierignore" ] && cp temp-quartz/.prettierignore ./ || true
+            # Copy additional config files if they don't exist
+            if [ ! -f ".gitignore" ]; then
+              cp temp-quartz/.gitignore ./
+            fi
+            if [ ! -f ".prettierignore" ]; then
+              cp temp-quartz/.prettierignore ./
+            fi
             
             # Clean up
             rm -rf temp-quartz
@@ -69,7 +73,11 @@ jobs:
           fi
           
           # Install dependencies
-          npm ci || npm install
+          if [ -f "package-lock.json" ]; then
+            npm ci
+          else
+            npm install
+          fi
       
       - name: Setup Quartz content
         run: |
