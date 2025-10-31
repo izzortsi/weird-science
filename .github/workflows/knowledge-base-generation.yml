@@ -60,13 +60,17 @@ jobs:
         env:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
           ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
-          FORCE_FULL_GENERATION: ${{ inputs.force_full_generation || 'false' }}
         run: |
+          FORCE_FLAG=""
+          if [ "${{ inputs.force_full_generation }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          
           python scripts/zotero-integration/knowledge_base_generator.py \
             --group-id "$ZOTERO_GROUP_ID" \
             --manifest "zotero-cache/zotero-manifest.json" \
             ${ZOTERO_API_KEY:+--api-key "$ZOTERO_API_KEY"} \
-            ${FORCE_FULL_GENERATION:+--force}
+            $FORCE_FLAG
       
       - name: Check for changes
         id: check_changes
@@ -104,7 +108,9 @@ jobs:
           echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           if [ -f "zotero-cache/zotero-manifest.json" ]; then
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "**Zotero Items Cached:** $(jq '.items | length' zotero-cache/zotero-manifest.json)" >> $GITHUB_STEP_SUMMARY
+            # Use python to count items instead of jq
+            item_count=$(python3 -c "import json; print(len(json.load(open('zotero-cache/zotero-manifest.json'))['items']))" 2>/dev/null || echo "N/A")
+            echo "**Zotero Items Cached:** $item_count" >> $GITHUB_STEP_SUMMARY
           fi
       
       - name: Upload manifest as artifact

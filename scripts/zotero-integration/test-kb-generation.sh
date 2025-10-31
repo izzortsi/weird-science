@@ -31,7 +31,8 @@ echo
 # Test 4: Knowledge base generator execution
 echo "Test 4: Running knowledge base generator..."
 python3 scripts/zotero-integration/knowledge_base_generator.py > /tmp/kb-gen-output.log 2>&1
-if [ $? -eq 0 ]; then
+exit_code=$?
+if [ $exit_code -eq 0 ]; then
     echo "✓ Knowledge base generator executed successfully"
 else
     echo "✗ Knowledge base generator failed"

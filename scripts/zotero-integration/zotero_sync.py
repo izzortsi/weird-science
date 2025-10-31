@@ -15,7 +15,7 @@ import json
 import argparse
 import hashlib
 from pathlib import Path
-from typing import Dict, List, Optional, Set
+from typing import Dict, List, Optional, Set, Tuple
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 import requests
@@ -156,7 +156,7 @@ class ZoteroSync:
             print(f"  Error downloading {filename}: {e}", file=sys.stderr)
             return None
     
-    def process_items(self, items: List[Dict]) -> tuple[List[ZoteroManifestItem], List[ZoteroAttachment]]:
+    def process_items(self, items: List[Dict]) -> Tuple[List[ZoteroManifestItem], List[ZoteroAttachment]]:
         """Process raw Zotero items into structured manifest items and attachments."""
         manifest_items = []
         attachments = []
