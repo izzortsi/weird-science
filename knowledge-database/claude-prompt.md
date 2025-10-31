@@ -130,21 +130,21 @@ The following data is available for your analysis:
 
 ### Sample Citations
 - Mesarovic1975
-- Poizat2000
-- Carnap1956
 - Walloth2016
-- Mesarovic1976
-- Bertalanffy1968
 - Backlund2000
-- Lin2002
-- Mesarovic1972
-- Takahashi1995
 - Backlund2000a
+- Poizat2000
+- Lin1999
+- Takahashi1995
+- Schaffer2008
+- Bertalanffy1968
+- Mesarovic1976
 - Simon2012
 - Lin1987
-- Schaffer2008
+- Mesarovic1972
+- Lin2002
+- Carnap1956
 - Mesarovic1970
-- Lin1999
 
 ### Sample Zotero Items
 
