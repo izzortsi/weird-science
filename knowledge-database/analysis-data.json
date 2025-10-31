@@ -1,0 +1,300 @@
+{
+  "timestamp": "2025-10-31T00:15:52.102516+00:00",
+  "total_projects": 3,
+  "total_latex_files": 17,
+  "total_citations": 16,
+  "total_zotero_items": 0,
+  "total_bib_entries": 110,
+  "projects": [
+    {
+      "name": "formal-ontologies",
+      "tex_files": [
+        {
+          "path": "formal-ontologies/main.tex",
+          "content_length": 1676,
+          "citations": []
+        },
+        {
+          "path": "formal-ontologies/sections/extensional-foundations.tex",
+          "content_length": 3528,
+          "citations": [
+            "Lin1987",
+            "Mesarovic1975",
+            "Bertalanffy1968"
+          ]
+        },
+        {
+          "path": "formal-ontologies/sections/intended-models.tex",
+          "content_length": 3357,
+          "citations": []
+        },
+        {
+          "path": "formal-ontologies/sections/intensional-turn.tex",
+          "content_length": 6296,
+          "citations": [
+            "Backlund2000a",
+            "Carnap1956"
+          ]
+        },
+        {
+          "path": "formal-ontologies/sections/introduction.tex",
+          "content_length": 1092,
+          "citations": [
+            "Bertalanffy1968"
+          ]
+        },
+        {
+          "path": "formal-ontologies/sections/conclusion.tex",
+          "content_length": 2078,
+          "citations": []
+        },
+        {
+          "path": "formal-ontologies/sections/ontology-specification.tex",
+          "content_length": 5120,
+          "citations": [
+            "Schaffer2008"
+          ]
+        },
+        {
+          "path": "formal-ontologies/sections/ontological-commitment.tex",
+          "content_length": 4511,
+          "citations": [
+            "Schaffer2008"
+          ]
+        }
+      ],
+      "citations": [
+        "Lin1987",
+        "Backlund2000a",
+        "Mesarovic1975",
+        "Schaffer2008",
+        "Bertalanffy1968",
+        "Carnap1956"
+      ]
+    },
+    {
+      "name": "nested-systems",
+      "tex_files": [
+        {
+          "path": "general-systems-theory/nested-systems/main.tex",
+          "content_length": 3501,
+          "citations": []
+        },
+        {
+          "path": "general-systems-theory/nested-systems/sections/subsystems.tex",
+          "content_length": 17466,
+          "citations": [
+            "Walloth2016",
+            "Mesarovic1970",
+            "Backlund2000",
+            "Mesarovic1976"
+          ]
+        },
+        {
+          "path": "general-systems-theory/nested-systems/sections/introduction.tex",
+          "content_length": 8778,
+          "citations": []
+        },
+        {
+          "path": "general-systems-theory/nested-systems/sections/systems.tex",
+          "content_length": 12267,
+          "citations": [
+            "Poizat2000",
+            "Mesarovic1970"
+          ]
+        },
+        {
+          "path": "general-systems-theory/nested-systems/sections/preliminaries.tex",
+          "content_length": 4642,
+          "citations": [
+            "Poizat2000"
+          ]
+        },
+        {
+          "path": "general-systems-theory/nested-systems/sections/hierarchies.tex",
+          "content_length": 22050,
+          "citations": [
+            "Simon2012",
+            "Lin2002",
+            "Mesarovic1970"
+          ]
+        }
+      ],
+      "citations": [
+        "Poizat2000",
+        "Simon2012",
+        "Mesarovic1970",
+        "Walloth2016",
+        "Backlund2000",
+        "Lin2002",
+        "Mesarovic1976"
+      ]
+    },
+    {
+      "name": "gst-overview",
+      "tex_files": [
+        {
+          "path": "general-systems-theory/gst-overview/main.tex",
+          "content_length": 1333,
+          "citations": []
+        },
+        {
+          "path": "general-systems-theory/gst-overview/sections/theoretical-insights.tex",
+          "content_length": 6470,
+          "citations": [
+            "Mesarovic1975",
+            "Takahashi1995",
+            "Mesarovic1972",
+            "Lin1999"
+          ]
+        },
+        {
+          "path": "general-systems-theory/gst-overview/sections/foundational-definitions.tex",
+          "content_length": 5067,
+          "citations": [
+            "Mesarovic1975",
+            "Mesarovic1972",
+            "Lin1999"
+          ]
+        }
+      ],
+      "citations": [
+        "Mesarovic1975",
+        "Takahashi1995",
+        "Mesarovic1972",
+        "Lin1999"
+      ]
+    }
+  ],
+  "all_citations": [
+    "Simon2012",
+    "Backlund2000a",
+    "Takahashi1995",
+    "Mesarovic1976",
+    "Mesarovic1972",
+    "Carnap1956",
+    "Lin1987",
+    "Schaffer2008",
+    "Mesarovic1975",
+    "Backlund2000",
+    "Lin2002",
+    "Lin1999",
+    "Poizat2000",
+    "Mesarovic1970",
+    "Walloth2016",
+    "Bertalanffy1968"
+  ],
+  "zotero_items_summary": [],
+  "bibliography_keys": [
+    "Bertalanffy1968",
+    "Carnap1956",
+    "Backlund2000a",
+    "Guarino2009",
+    "Lin1987",
+    "Mesarovic1975",
+    "Schaffer2008",
+    "Poizat2000",
+    "Lin2002",
+    "Pichler2000",
+    "Cespedes2020",
+    "Minati2012",
+    "Carmichael2019",
+    "Vorotnikov2004",
+    "Seibt2009",
+    "Downey2012",
+    "Feder1988",
+    "Mobus2015",
+    "Zattoni2020",
+    "Bar-Yam1997",
+    "Siegfried2014",
+    "Koslicki2008",
+    "Minati2006",
+    "Koestler1967",
+    "Zhang",
+    "Thurner2018",
+    "Dekkers2017",
+    "Schmickl2016",
+    "Mesarovic1972",
+    "Northrop2014",
+    "Lynch2018",
+    "Oono1998",
+    "Dooley1997",
+    "Birdsey2014",
+    "Stavrinides2013",
+    "Koestler2013",
+    "Needham2017",
+    "Xepapadeas2010",
+    "Schuster2005",
+    "Galton1999",
+    "Stankovski2019",
+    "Simon2012",
+    "Rosas2020",
+    "Walloth2016",
+    "Sayama2013",
+    "Klein2020",
+    "Bak1988",
+    "Fischer2003",
+    "Georgiev2019",
+    "Campbell2018",
+    "Kuramoto1987",
+    "ArgolloDeMenezes2004",
+    "Backlund2000",
+    "Gerber1999",
+    "Fieguth2017",
+    "Teschl2004",
+    "Ladyman2020",
+    "Kitto2014",
+    "Mariani2019",
+    "Skyttner1957",
+    "Kaneko2001",
+    "Meyers2012",
+    "Calosi2014",
+    "Zwick2014",
+    "Ladyman2013",
+    "Maayan2017",
+    "Lebreton2018",
+    "Rodriguez2011",
+    "Minati2006a",
+    "Mormann2012",
+    "Ghosh2016",
+    "Badii1999",
+    "LAWVERE2554",
+    "Landsberg1980",
+    "Seibt2015",
+    "Takahashi2010",
+    "Potzsche2010",
+    "Mesarovic2010",
+    "Feistel2011",
+    "Chen2017",
+    "Mesarovic1976",
+    "Cummings2015",
+    "Sprott2554",
+    "Bak1996",
+    "LIN2002",
+    "Bertalanffy",
+    "Marinescu2017",
+    "Calabrese2010",
+    "Lagree2014",
+    "Vicsek1995",
+    "MITTAL2018",
+    "Tranquillo2019",
+    "Giret2004",
+    "Mesarovic1970",
+    "Minati2008",
+    "Minati2018",
+    "Wimsatt1994",
+    "Fromm2005",
+    "Fromm2005a",
+    "Ryan2007",
+    "Miller2007",
+    "DeHaro2019",
+    "Gabbay2011",
+    "Furusawa2000",
+    "Mesarovic1989",
+    "Lin1999",
+    "Takahashi1995",
+    "Bunge1979",
+    "Klir1985",
+    "Bertalanffy1972"
+  ]
+}

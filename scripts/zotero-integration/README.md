@@ -2,9 +2,43 @@
 
 This directory contains scripts and tools for integrating the weird-science repository with the Zotero group library.
 
-## Main Script
+## Scripts
 
-**`zotero_exporter.py`** - The primary integration script that:
+### 1. `zotero_sync.py` - Zotero Library Sync and PDF Caching
+
+**Purpose:** Fetches Zotero library metadata and caches PDF attachments locally.
+
+Features:
+- Fetches all items from Zotero API (group 6182921)
+- Downloads PDF attachments to `/zotero-cache/`
+- Generates `zotero-manifest.json` with complete metadata
+- Manages cache with deduplication
+
+Usage:
+```bash
+python zotero_sync.py --cache-dir zotero-cache --generate-manifest
+```
+
+### 2. `knowledge_base_generator.py` - Knowledge Base Orchestration
+
+**Purpose:** Orchestrates semantic analysis to generate hierarchical knowledge base.
+
+Features:
+- Analyzes all LaTeX sources and bibliography files
+- Prepares structured data for semantic analysis
+- Generates prompts for Claude Code integration
+- Creates analysis metadata and integration instructions
+
+Usage:
+```bash
+python knowledge_base_generator.py --manifest zotero-cache/zotero-manifest.json
+```
+
+### 3. `zotero_exporter.py` - Original Exporter (Legacy)
+
+**Purpose:** Basic Zotero integration script for project summaries.
+
+Features:
 - Scans the repository for LaTeX projects
 - Extracts citations from .tex files
 - Parses .bib files
@@ -95,8 +129,20 @@ Contains:
 - concepts/*.md files organized by Zotero tags
 - Atomic articles with cross-links
 
+## Workflow Integration
+
+The scripts work together in the automated knowledge base generation workflow:
+
+1. **zotero_sync.py** - Fetches library data and caches PDFs
+2. **knowledge_base_generator.py** - Prepares analysis and generates prompts
+3. **Claude Code** - Performs semantic analysis (external)
+4. **Automated commit** - Changes pushed to repository
+
+See [Knowledge Base Workflow Documentation](../../docs/KNOWLEDGE_BASE_WORKFLOW.md) for complete details.
+
 ## See Also
 
-- [Full Documentation](../../docs/ZOTERO_INTEGRATION.md)
+- [Knowledge Base Workflow](../../docs/KNOWLEDGE_BASE_WORKFLOW.md)
+- [Zotero Integration Guide](../../docs/ZOTERO_INTEGRATION.md)
 - [Zotero Group Library](https://www.zotero.org/groups/6182921/)
 - [Repository](https://github.com/izzortsi/weird-science)
