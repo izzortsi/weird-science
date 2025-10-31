@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-31T01:14:23.339986+00:00",
+  "timestamp": "2025-10-31T01:38:27.031918+00:00",
   "total_projects": 3,
   "total_latex_files": 17,
   "total_citations": 16,
@@ -18,8 +18,8 @@
           "path": "formal-ontologies/sections/extensional-foundations.tex",
           "content_length": 3528,
           "citations": [
-            "Lin1987",
             "Mesarovic1975",
+            "Lin1987",
             "Bertalanffy1968"
           ]
         },
@@ -32,8 +32,8 @@
           "path": "formal-ontologies/sections/intensional-turn.tex",
           "content_length": 6296,
           "citations": [
-            "Backlund2000a",
-            "Carnap1956"
+            "Carnap1956",
+            "Backlund2000a"
           ]
         },
         {
@@ -64,12 +64,12 @@
         }
       ],
       "citations": [
-        "Lin1987",
-        "Bertalanffy1968",
-        "Backlund2000a",
-        "Carnap1956",
         "Schaffer2008",
-        "Mesarovic1975"
+        "Backlund2000a",
+        "Mesarovic1975",
+        "Carnap1956",
+        "Lin1987",
+        "Bertalanffy1968"
       ]
     },
     {
@@ -84,10 +84,10 @@
           "path": "general-systems-theory/nested-systems/sections/subsystems.tex",
           "content_length": 17466,
           "citations": [
-            "Backlund2000",
-            "Mesarovic1976",
             "Walloth2016",
-            "Mesarovic1970"
+            "Backlund2000",
+            "Mesarovic1970",
+            "Mesarovic1976"
           ]
         },
         {
@@ -114,20 +114,20 @@
           "path": "general-systems-theory/nested-systems/sections/hierarchies.tex",
           "content_length": 22050,
           "citations": [
+            "Simon2012",
             "Lin2002",
-            "Mesarovic1970",
-            "Simon2012"
+            "Mesarovic1970"
           ]
         }
       ],
       "citations": [
-        "Poizat2000",
-        "Lin2002",
-        "Mesarovic1970",
-        "Simon2012",
         "Backlund2000",
-        "Mesarovic1976",
-        "Walloth2016"
+        "Lin2002",
+        "Walloth2016",
+        "Simon2012",
+        "Poizat2000",
+        "Mesarovic1970",
+        "Mesarovic1976"
       ]
     },
     {
@@ -143,9 +143,9 @@
           "content_length": 6470,
           "citations": [
             "Mesarovic1975",
-            "Takahashi1995",
+            "Lin1999",
             "Mesarovic1972",
-            "Lin1999"
+            "Takahashi1995"
           ]
         },
         {
@@ -153,36 +153,36 @@
           "content_length": 5067,
           "citations": [
             "Mesarovic1975",
-            "Mesarovic1972",
-            "Lin1999"
+            "Lin1999",
+            "Mesarovic1972"
           ]
         }
       ],
       "citations": [
-        "Mesarovic1972",
         "Lin1999",
         "Mesarovic1975",
+        "Mesarovic1972",
         "Takahashi1995"
       ]
     }
   ],
   "all_citations": [
-    "Lin2002",
-    "Backlund2000",
-    "Takahashi1995",
     "Walloth2016",
-    "Lin1987",
-    "Mesarovic1970",
-    "Schaffer2008",
-    "Mesarovic1972",
-    "Backlund2000a",
     "Mesarovic1975",
-    "Poizat2000",
-    "Simon2012",
-    "Lin1999",
+    "Takahashi1995",
     "Bertalanffy1968",
+    "Schaffer2008",
+    "Lin2002",
+    "Simon2012",
+    "Poizat2000",
+    "Lin1987",
+    "Backlund2000",
+    "Lin1999",
+    "Backlund2000a",
     "Carnap1956",
-    "Mesarovic1976"
+    "Mesarovic1972",
+    "Mesarovic1976",
+    "Mesarovic1970"
   ],
   "zotero_items_summary": [],
   "bibliography_keys": [
