@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  zotero-mcp:
+    build:
+      context: ./zotero-mcp-server
+      dockerfile: Dockerfile
+    container_name: zotero-mcp-server
+    ports:
+      - "3000:3000"
+    environment:
+      - ZOTERO_API_KEY=${ZOTERO_API_KEY}
+      - ZOTERO_GROUP_ID=${ZOTERO_GROUP_ID:-6182921}
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - zotero-net
+
+  web-ui:
+    build:
+      context: ./web-ui
+      dockerfile: Dockerfile
+    container_name: zotero-web-ui
+    ports:
+      - "5000:5000"
+    environment:
+      - ZOTERO_MCP_URL=http://zotero-mcp:3000
+      - FLASK_ENV=production
+    depends_on:
+      - zotero-mcp
+    restart: unless-stopped
+    networks:
+      - zotero-net
+
+networks:
+  zotero-net:
+    driver: bridge
