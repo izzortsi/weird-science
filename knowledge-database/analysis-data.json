@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-31T00:26:49.344481+00:00",
+  "timestamp": "2025-10-31T01:14:23.339986+00:00",
   "total_projects": 3,
   "total_latex_files": 17,
   "total_citations": 16,
@@ -18,9 +18,9 @@
           "path": "formal-ontologies/sections/extensional-foundations.tex",
           "content_length": 3528,
           "citations": [
-            "Bertalanffy1968",
+            "Lin1987",
             "Mesarovic1975",
-            "Lin1987"
+            "Bertalanffy1968"
           ]
         },
         {
@@ -32,8 +32,8 @@
           "path": "formal-ontologies/sections/intensional-turn.tex",
           "content_length": 6296,
           "citations": [
-            "Carnap1956",
-            "Backlund2000a"
+            "Backlund2000a",
+            "Carnap1956"
           ]
         },
         {
@@ -64,12 +64,12 @@
         }
       ],
       "citations": [
-        "Mesarovic1975",
         "Lin1987",
-        "Schaffer2008",
         "Bertalanffy1968",
+        "Backlund2000a",
         "Carnap1956",
-        "Backlund2000a"
+        "Schaffer2008",
+        "Mesarovic1975"
       ]
     },
     {
@@ -114,20 +114,20 @@
           "path": "general-systems-theory/nested-systems/sections/hierarchies.tex",
           "content_length": 22050,
           "citations": [
-            "Simon2012",
             "Lin2002",
-            "Mesarovic1970"
+            "Mesarovic1970",
+            "Simon2012"
           ]
         }
       ],
       "citations": [
         "Poizat2000",
+        "Lin2002",
+        "Mesarovic1970",
         "Simon2012",
-        "Walloth2016",
         "Backlund2000",
         "Mesarovic1976",
-        "Lin2002",
-        "Mesarovic1970"
+        "Walloth2016"
       ]
     },
     {
@@ -142,10 +142,10 @@
           "path": "general-systems-theory/gst-overview/sections/theoretical-insights.tex",
           "content_length": 6470,
           "citations": [
-            "Lin1999",
             "Mesarovic1975",
+            "Takahashi1995",
             "Mesarovic1972",
-            "Takahashi1995"
+            "Lin1999"
           ]
         },
         {
@@ -159,30 +159,30 @@
         }
       ],
       "citations": [
-        "Mesarovic1975",
         "Mesarovic1972",
         "Lin1999",
+        "Mesarovic1975",
         "Takahashi1995"
       ]
     }
   ],
   "all_citations": [
-    "Mesarovic1975",
-    "Walloth2016",
-    "Backlund2000",
-    "Backlund2000a",
-    "Poizat2000",
-    "Lin1999",
-    "Takahashi1995",
-    "Schaffer2008",
-    "Bertalanffy1968",
-    "Mesarovic1976",
-    "Simon2012",
-    "Lin1987",
-    "Mesarovic1972",
     "Lin2002",
+    "Backlund2000",
+    "Takahashi1995",
+    "Walloth2016",
+    "Lin1987",
+    "Mesarovic1970",
+    "Schaffer2008",
+    "Mesarovic1972",
+    "Backlund2000a",
+    "Mesarovic1975",
+    "Poizat2000",
+    "Simon2012",
+    "Lin1999",
+    "Bertalanffy1968",
     "Carnap1956",
-    "Mesarovic1970"
+    "Mesarovic1976"
   ],
   "zotero_items_summary": [],
   "bibliography_keys": [
