@@ -1,0 +1,68 @@
+name: Copilot Agent — Knowledge Base Synthesis
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_method:
+        description: 'how to publish agent output: commit or pull_request'
+        required: true
+        default: 'pull_request'
+        type: choice
+        options:
+          - pull_request
+          - commit
+  # Allow manual triggering and also provide a scheduled safety-run (optional)
+  # Manual runs are expected after knowledge-base-generation has produced analysis-data.json and claude-prompt.md
+
+permissions:
+  contents: write
+
+jobs:
+  run-copilot-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Ensure analysis artifacts exist
+        id: check_files
+        run: |
+          set -e
+          if [ ! -f knowledge-database/analysis-data.json ]; then
+            echo "analysis-data.json not found. Run the knowledge-base-generation workflow first." >&2
+            exit 1
+          fi
+          if [ ! -f knowledge-database/claude-prompt.md ]; then
+            echo "claude-prompt.md not found. Run the knowledge-base-generation workflow first." >&2
+            exit 1
+          fi
+
+      - name: Make executable helper
+        run: |
+          chmod +x .github/scripts/execute_copilot_agent.sh || true
+
+      - name: Run Copilot coding agent to synthesize knowledge base
+        id: run_agent
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_METHOD: ${{ github.event.inputs.commit_method || 'pull_request' }}
+          REPO: ${{ github.repository }}
+          BRANCH: "copilot/kb-synthesis-${{ github.run_id }}"
+        run: |
+          set -euo pipefail
+          .github/scripts/execute_copilot_agent.sh
+
+      - name: Upload agent output as artifact (for debugging)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: copilot-kb-output
+          path: knowledge-database/concepts || true
+          retention-days: 7
