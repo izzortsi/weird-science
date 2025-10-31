@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-31T00:15:52.102516+00:00",
+  "timestamp": "2025-10-31T00:19:22.234398+00:00",
   "total_projects": 3,
   "total_latex_files": 17,
   "total_citations": 16,
@@ -19,8 +19,8 @@
           "content_length": 3528,
           "citations": [
             "Lin1987",
-            "Mesarovic1975",
-            "Bertalanffy1968"
+            "Bertalanffy1968",
+            "Mesarovic1975"
           ]
         },
         {
@@ -32,8 +32,8 @@
           "path": "formal-ontologies/sections/intensional-turn.tex",
           "content_length": 6296,
           "citations": [
-            "Backlund2000a",
-            "Carnap1956"
+            "Carnap1956",
+            "Backlund2000a"
           ]
         },
         {
@@ -65,11 +65,11 @@
       ],
       "citations": [
         "Lin1987",
-        "Backlund2000a",
-        "Mesarovic1975",
         "Schaffer2008",
+        "Mesarovic1975",
         "Bertalanffy1968",
-        "Carnap1956"
+        "Carnap1956",
+        "Backlund2000a"
       ]
     },
     {
@@ -84,10 +84,10 @@
           "path": "general-systems-theory/nested-systems/sections/subsystems.tex",
           "content_length": 17466,
           "citations": [
-            "Walloth2016",
-            "Mesarovic1970",
             "Backlund2000",
-            "Mesarovic1976"
+            "Mesarovic1976",
+            "Mesarovic1970",
+            "Walloth2016"
           ]
         },
         {
@@ -114,20 +114,20 @@
           "path": "general-systems-theory/nested-systems/sections/hierarchies.tex",
           "content_length": 22050,
           "citations": [
-            "Simon2012",
             "Lin2002",
+            "Simon2012",
             "Mesarovic1970"
           ]
         }
       ],
       "citations": [
-        "Poizat2000",
-        "Simon2012",
+        "Mesarovic1976",
         "Mesarovic1970",
-        "Walloth2016",
-        "Backlund2000",
+        "Poizat2000",
         "Lin2002",
-        "Mesarovic1976"
+        "Backlund2000",
+        "Simon2012",
+        "Walloth2016"
       ]
     },
     {
@@ -142,47 +142,47 @@
           "path": "general-systems-theory/gst-overview/sections/theoretical-insights.tex",
           "content_length": 6470,
           "citations": [
-            "Mesarovic1975",
-            "Takahashi1995",
             "Mesarovic1972",
-            "Lin1999"
+            "Lin1999",
+            "Mesarovic1975",
+            "Takahashi1995"
           ]
         },
         {
           "path": "general-systems-theory/gst-overview/sections/foundational-definitions.tex",
           "content_length": 5067,
           "citations": [
-            "Mesarovic1975",
             "Mesarovic1972",
-            "Lin1999"
+            "Lin1999",
+            "Mesarovic1975"
           ]
         }
       ],
       "citations": [
-        "Mesarovic1975",
-        "Takahashi1995",
         "Mesarovic1972",
-        "Lin1999"
+        "Mesarovic1975",
+        "Lin1999",
+        "Takahashi1995"
       ]
     }
   ],
   "all_citations": [
-    "Simon2012",
-    "Backlund2000a",
-    "Takahashi1995",
     "Mesarovic1976",
-    "Mesarovic1972",
-    "Carnap1956",
-    "Lin1987",
     "Schaffer2008",
-    "Mesarovic1975",
+    "Mesarovic1972",
     "Backlund2000",
-    "Lin2002",
-    "Lin1999",
+    "Simon2012",
+    "Bertalanffy1968",
     "Poizat2000",
+    "Mesarovic1975",
+    "Lin2002",
+    "Backlund2000a",
+    "Lin1999",
+    "Lin1987",
     "Mesarovic1970",
     "Walloth2016",
-    "Bertalanffy1968"
+    "Carnap1956",
+    "Takahashi1995"
   ],
   "zotero_items_summary": [],
   "bibliography_keys": [

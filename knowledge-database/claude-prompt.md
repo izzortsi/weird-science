@@ -129,22 +129,22 @@ Provide the complete knowledge base structure as:
 The following data is available for your analysis:
 
 ### Sample Citations
-- Simon2012
-- Backlund2000a
-- Takahashi1995
 - Mesarovic1976
-- Mesarovic1972
-- Carnap1956
-- Lin1987
 - Schaffer2008
-- Mesarovic1975
+- Mesarovic1972
 - Backlund2000
-- Lin2002
-- Lin1999
+- Simon2012
+- Bertalanffy1968
 - Poizat2000
+- Mesarovic1975
+- Lin2002
+- Backlund2000a
+- Lin1999
+- Lin1987
 - Mesarovic1970
 - Walloth2016
-- Bertalanffy1968
+- Carnap1956
+- Takahashi1995
 
 ### Sample Zotero Items
 
