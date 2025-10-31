@@ -47,8 +47,8 @@ jobs:
           # Check if Quartz is already initialized
           if [ ! -f "package.json" ]; then
             echo "Initializing Quartz v4..."
-            # Clone the Quartz repository to get the framework
-            git clone https://github.com/jackyzha0/quartz.git temp-quartz
+            # Clone the Quartz repository to get the framework (shallow clone for speed)
+            git clone --depth 1 https://github.com/jackyzha0/quartz.git temp-quartz
             
             # Copy necessary files from Quartz
             cp -r temp-quartz/quartz ./
