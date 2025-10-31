@@ -382,3 +382,7 @@ quartz-site/node_modules/
 # Docker
 .env
 docker-compose.override.yml
+
+# Zotero cache (exclude PDFs but keep manifest)
+zotero-cache/
+!zotero-cache/zotero-manifest.json

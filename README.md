@@ -91,17 +91,24 @@ PDFs are automatically built via GitHub Actions on every push to `dev` and for p
 This repository is integrated with a [Zotero group library](https://www.zotero.org/groups/6182921/) to maintain literature references and generate knowledge artifacts:
 
 - **Project Summaries** - Each project folder contains a `project-summary.md` with references matched to the Zotero library
-- **Knowledge Database** - The `knowledge-database/` directory contains atomic concept articles organized by tags
+- **Knowledge Database** - The `knowledge-database/` directory contains atomic concept articles organized hierarchically
+- **Automated Generation** - GitHub Actions workflow generates knowledge base from LaTeX sources and Zotero data
+- **Semantic Analysis** - Extracts concepts (Γ) from LaTeX and expands to related Zotero items (Γ⁺)
 - **Interactive Exploration** - Local Docker setup provides a web UI for querying the Zotero library
-- **Automated Sync** - GitHub Actions workflow syncs library data daily
 
-For details, see [docs/ZOTERO_INTEGRATION.md](docs/ZOTERO_INTEGRATION.md)
+For details, see:
+- [Knowledge Base Workflow](docs/KNOWLEDGE_BASE_WORKFLOW.md) - Automated generation process
+- [Zotero Integration](docs/ZOTERO_INTEGRATION.md) - Complete integration guide
 
 ### Quick Start
 
 ```bash
-# Generate/update project summaries and knowledge base
-python scripts/zotero-integration/zotero_exporter.py
+# Generate knowledge base from LaTeX and Zotero
+python scripts/zotero-integration/zotero_sync.py
+python scripts/zotero-integration/knowledge_base_generator.py
+
+# Or use the automated workflow (in GitHub Actions)
+# Triggers on: manual dispatch or merges to dev with .tex changes
 
 # Run local exploration UI
 cd tools/zotero-mcp
