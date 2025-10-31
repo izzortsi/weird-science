@@ -129,22 +129,22 @@ Provide the complete knowledge base structure as:
 The following data is available for your analysis:
 
 ### Sample Citations
-- Backlund2000
-- Schaffer2008
 - Takahashi1995
-- Carnap1956
+- Simon2012
 - Mesarovic1970
-- Poizat2000
-- Backlund2000a
-- Lin1987
-- Mesarovic1976
 - Walloth2016
-- Lin1999
-- Mesarovic1975
+- Schaffer2008
 - Bertalanffy1968
 - Mesarovic1972
-- Simon2012
+- Mesarovic1976
+- Carnap1956
+- Backlund2000
+- Backlund2000a
+- Lin1999
+- Lin1987
 - Lin2002
+- Mesarovic1975
+- Poizat2000
 
 ### Sample Zotero Items
 - Themes from Ontology, Mind, and Logic: Present and Past. Essays in Honour of Peter Simons (book) - Tags: 
