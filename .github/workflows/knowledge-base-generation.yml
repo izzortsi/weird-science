@@ -32,6 +32,14 @@ jobs:
         with:
           fetch-depth: 0
       
+      - name: Restore zotero cache
+        uses: actions/cache@v4
+        with:
+          path: zotero-cache
+          key: ${{ runner.os }}-zotero-cache-${{ hashFiles('**/*.bib') }}
+          restore-keys: |
+            ${{ runner.os }}-zotero-cache-
+      
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -97,12 +105,22 @@ jobs:
       
       - name: Commit and push changes
         if: steps.check_changes.outputs.has_changes == 'true'
+        env:
+          GIT_AUTHOR_NAME: "github-actions[bot]"
+          GIT_AUTHOR_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com"
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add knowledge-database/ zotero-cache/zotero-manifest.json */project-summary.md
-          git commit -m "chore: automated knowledge base generation from LaTeX and Zotero [automated]"
-          git push
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          # stage all changes but unstage zotero-cache so .gitignore is respected
+          git add --all
+          git reset -- zotero-cache || true
+          # only commit if there are staged changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update knowledge base"
+            git push
+          fi
       
       - name: Create job summary
         run: |
