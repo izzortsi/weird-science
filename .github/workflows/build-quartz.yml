@@ -46,9 +46,9 @@ jobs:
           
           # Check if Quartz is already initialized
           if [ ! -f "package.json" ]; then
-            echo "Initializing Quartz v4..."
-            # Clone the Quartz repository to get the framework (shallow clone for speed)
-            git clone --depth 1 https://github.com/jackyzha0/quartz.git temp-quartz
+            echo "Initializing Quartz v4.5.2..."
+            # Clone the Quartz repository at a specific version for reproducibility
+            git clone --depth 1 --branch v4.5.2 https://github.com/jackyzha0/quartz.git temp-quartz
             
             # Copy necessary files from Quartz
             cp -r temp-quartz/quartz ./
@@ -72,12 +72,8 @@ jobs:
             echo "Quartz already initialized"
           fi
           
-          # Install dependencies
-          if [ -f "package-lock.json" ]; then
-            npm ci
-          else
-            npm install
-          fi
+          # Install dependencies (package-lock.json always exists after initialization)
+          npm ci
       
       - name: Setup Quartz content
         run: |
