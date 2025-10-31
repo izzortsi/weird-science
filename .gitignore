@@ -378,6 +378,13 @@ package-lock.json
 quartz-site/public/
 quartz-site/.quartz/
 quartz-site/node_modules/
+quartz-site/content/
+quartz-site/quartz/
+quartz-site/package.json
+quartz-site/package-lock.json
+quartz-site/tsconfig.json
+quartz-site/.gitignore
+quartz-site/.prettierignore
 
 # Docker
 .env

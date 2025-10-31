@@ -38,11 +38,42 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       
-      - name: Install Quartz
+      - name: Initialize Quartz
         run: |
-          npm install -g quartz-v4 || echo "Quartz will be installed via npx"
+          cd quartz-site
+          
+          # Check if Quartz is already initialized
+          if [ ! -f "package.json" ]; then
+            echo "Initializing Quartz v4.5.2..."
+            # Clone the Quartz repository at a specific version for reproducibility
+            git clone --depth 1 --branch v4.5.2 https://github.com/jackyzha0/quartz.git temp-quartz
+            
+            # Copy necessary files from Quartz
+            cp -r temp-quartz/quartz ./
+            cp temp-quartz/package.json ./
+            cp temp-quartz/package-lock.json ./
+            cp temp-quartz/tsconfig.json ./
+            
+            # Copy additional config files if they don't exist
+            if [ ! -f ".gitignore" ]; then
+              cp temp-quartz/.gitignore ./
+            fi
+            if [ ! -f ".prettierignore" ]; then
+              cp temp-quartz/.prettierignore ./
+            fi
+            
+            # Clean up
+            rm -rf temp-quartz
+            
+            echo "Quartz initialized successfully"
+          else
+            echo "Quartz already initialized"
+          fi
+          
+          # Install dependencies (package-lock.json always exists after initialization)
+          npm ci
       
       - name: Setup Quartz content
         run: |
@@ -97,17 +128,8 @@ jobs:
         run: |
           cd quartz-site
           
-          # Initialize Quartz if needed (this should be done once in the repo)
-          # For now, we'll just note that Quartz needs to be properly initialized
-          echo "Note: Quartz should be initialized in the repository"
-          echo "Run 'npx quartz create' to set up Quartz for the first time"
-          
-          # Build would happen here
-          # npx quartz build
-          
-          # For now, create a placeholder output
-          mkdir -p public
-          echo "<html><body><h1>Quartz site would be built here</h1></body></html>" > public/index.html
+          # Build the Quartz site
+          npx quartz build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
