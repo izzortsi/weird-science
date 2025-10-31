@@ -148,14 +148,16 @@ class KnowledgeBaseGenerator:
             
             try:
                 content = bib_file.read_text(encoding='utf-8')
-                # Simple extraction of bibkeys
-                pattern = r'@\w+\s*{\s*([^,\s]+)\s*,'
+                # Extract bibkeys - handles various formats
+                # Match @type{key, or @type{key}
+                pattern = r'@\w+\s*{\s*([^,}\s]+)'
                 for match in re.finditer(pattern, content):
-                    bibkey = match.group(1)
-                    bib_entries[bibkey] = {
-                        'key': bibkey,
-                        'file': str(bib_file.relative_to(self.repo_root))
-                    }
+                    bibkey = match.group(1).strip()
+                    if bibkey:  # Only add non-empty keys
+                        bib_entries[bibkey] = {
+                            'key': bibkey,
+                            'file': str(bib_file.relative_to(self.repo_root))
+                        }
             except Exception as e:
                 print(f"Warning: Could not read {bib_file}: {e}", file=sys.stderr)
         

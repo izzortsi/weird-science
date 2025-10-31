@@ -30,13 +30,17 @@ echo
 
 # Test 4: Knowledge base generator execution
 echo "Test 4: Running knowledge base generator..."
-python3 scripts/zotero-integration/knowledge_base_generator.py > /tmp/kb-gen-output.log 2>&1
+# Use repository-relative temp directory
+TEMP_LOG="./test-kb-gen-output.log"
+python3 scripts/zotero-integration/knowledge_base_generator.py > "$TEMP_LOG" 2>&1
 exit_code=$?
 if [ $exit_code -eq 0 ]; then
     echo "✓ Knowledge base generator executed successfully"
+    rm -f "$TEMP_LOG"
 else
     echo "✗ Knowledge base generator failed"
-    cat /tmp/kb-gen-output.log
+    cat "$TEMP_LOG"
+    rm -f "$TEMP_LOG"
     exit 1
 fi
 echo

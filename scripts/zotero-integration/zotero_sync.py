@@ -120,9 +120,14 @@ class ZoteroSync:
     
     def download_attachment(self, attachment_key: str, parent_key: str, filename: str) -> Optional[Path]:
         """Download a PDF attachment and cache it locally."""
-        # Sanitize filename
-        safe_filename = "".join(c for c in filename if c.isalnum() or c in "._- ").strip()
-        if not safe_filename:
+        # Sanitize filename - use restrictive character set for security
+        safe_filename = "".join(c if c.isalnum() or c in "._-" else "_" for c in filename).strip()
+        # Remove leading dots and multiple dots for security
+        safe_filename = safe_filename.lstrip('.')
+        while '..' in safe_filename:
+            safe_filename = safe_filename.replace('..', '.')
+        
+        if not safe_filename or safe_filename == '.':
             safe_filename = f"attachment_{attachment_key}.pdf"
         
         # Create parent item directory

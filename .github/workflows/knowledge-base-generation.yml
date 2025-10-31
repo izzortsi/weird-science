@@ -50,11 +50,16 @@ jobs:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
           ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
         run: |
+          API_KEY_ARG=""
+          if [ -n "$ZOTERO_API_KEY" ]; then
+            API_KEY_ARG="--api-key $ZOTERO_API_KEY"
+          fi
+          
           python scripts/zotero-integration/zotero_sync.py \
             --group-id "$ZOTERO_GROUP_ID" \
             --cache-dir "zotero-cache" \
             --generate-manifest \
-            ${ZOTERO_API_KEY:+--api-key "$ZOTERO_API_KEY"}
+            $API_KEY_ARG
       
       - name: Generate knowledge base structure
         env:
@@ -66,10 +71,15 @@ jobs:
             FORCE_FLAG="--force"
           fi
           
+          API_KEY_ARG=""
+          if [ -n "$ZOTERO_API_KEY" ]; then
+            API_KEY_ARG="--api-key $ZOTERO_API_KEY"
+          fi
+          
           python scripts/zotero-integration/knowledge_base_generator.py \
             --group-id "$ZOTERO_GROUP_ID" \
             --manifest "zotero-cache/zotero-manifest.json" \
-            ${ZOTERO_API_KEY:+--api-key "$ZOTERO_API_KEY"} \
+            $API_KEY_ARG \
             $FORCE_FLAG
       
       - name: Check for changes
