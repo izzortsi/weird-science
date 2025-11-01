@@ -1,5 +1,5 @@
 ---
-title: Definitional Architectures: From Conceptualization to Ontology
+title: "From Conceptualization to Ontology"
 project: formal-ontologies
 date: 2025-11-01
 tags:
@@ -16,7 +16,7 @@ matched_bibkeys:
   - Bertalanffy1968
 ---
 
-# Definitional Architectures: From Conceptualization to Ontology - Literature Summary
+# From Conceptualization to Ontology - Literature Summary
 
 This document provides a summary of the references used in this project, 
 with links to the corresponding items in the Zotero group library.

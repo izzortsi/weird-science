@@ -1,0 +1,31 @@
+name: Quartz Deploy (after KB synthesis)
+
+on:
+  workflow_run:
+    workflows: ["Copilot Agent — Knowledge Base Synthesis"]
+    types: [completed]
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Diagnostics
+        run: |
+          set -euo pipefail
+          echo "Copilot Agent workflow succeeded. Workflow run id: ${{ github.event.workflow_run.id }}"
+
+      - name: Run deploy script if present
+        run: |
+          set -euo pipefail
+          if [ -x .github/scripts/deploy_quartz.sh ]; then
+            .github/scripts/deploy_quartz.sh
+          else
+            echo "::warning file=.github/scripts/deploy_quartz.sh::No deploy script found at .github/scripts/deploy_quartz.sh. Please add deployment steps to publish the Quartz site."
+            exit 1
+          fi

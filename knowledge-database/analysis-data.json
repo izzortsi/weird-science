@@ -18,8 +18,8 @@
           "path": "formal-ontologies/sections/extensional-foundations.tex",
           "content_length": 3528,
           "citations": [
-            "Lin1987",
             "Bertalanffy1968",
+            "Lin1987",
             "Mesarovic1975"
           ]
         },
@@ -144,17 +144,17 @@
           "citations": [
             "Takahashi1995",
             "Mesarovic1972",
-            "Mesarovic1975",
-            "Lin1999"
+            "Lin1999",
+            "Mesarovic1975"
           ]
         },
         {
           "path": "general-systems-theory/gst-overview/sections/foundational-definitions.tex",
           "content_length": 5067,
           "citations": [
-            "Mesarovic1972",
             "Mesarovic1975",
-            "Lin1999"
+            "Lin1999",
+            "Mesarovic1972"
           ]
         }
       ],
@@ -168,16 +168,12 @@
   ],
   "all_citations": [
     "Poizat2000",
-    "Walloth2016",
-    "Lin2002",
-    "Simon2012",
-    "Lin1999",
-    "Mesarovic1976",
-    "Backlund2000",
-    "Carnap1956",
-    "Mesarovic1970",
-    "Backlund2000a",
     "Bertalanffy1968",
+    "Lin1987",
+    "Mesarovic1972",
+    "Walloth2016",
+    "Backlund2000",
+    "Backlund2000a",
     "Mesarovic1975",
     "Lin1987",
     "Takahashi1995",
@@ -825,6 +821,7 @@
       "num_attachments": 1
     }
   ],
+  "zotero_items_summary": [],
   "bibliography_keys": [
     "Bertalanffy1968",
     "Carnap1956",

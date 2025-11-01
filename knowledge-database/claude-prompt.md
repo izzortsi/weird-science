@@ -130,16 +130,12 @@ The following data is available for your analysis:
 
 ### Sample Citations
 - Poizat2000
-- Walloth2016
-- Lin2002
-- Simon2012
-- Lin1999
-- Mesarovic1976
-- Backlund2000
-- Carnap1956
-- Mesarovic1970
-- Backlund2000a
 - Bertalanffy1968
+- Lin1987
+- Mesarovic1972
+- Walloth2016
+- Backlund2000
+- Backlund2000a
 - Mesarovic1975
 - Lin1987
 - Takahashi1995
