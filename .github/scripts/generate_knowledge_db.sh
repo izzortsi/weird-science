@@ -15,7 +15,7 @@ echo
 cd "$REPO_ROOT"
 
 # Run the knowledge base generator
-python3 scripts/zotero-integration/knowledge_base_generator.py
+python3 scripts/zotero-integration/knowledge_base_generator.py --manifest zotero-cache/zotero-manifest.json
 
 echo
 echo "Knowledge database generation completed."
