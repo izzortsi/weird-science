@@ -63,7 +63,7 @@ jobs:
           git checkout -b "$GENERATED_BRANCH"
           git add knowledge-database || true
           git commit -m "chore(kb): add generated knowledge-database (run ${{ github.run_id }})" || echo "no changes to commit"
-          git push --set-upstream origin "$GENERATED_BRANCH"
+          git push --set-upstream origin "$GENERATED_BRANCH" || true
 
       - name: Upload artifact for debugging
         if: always()
