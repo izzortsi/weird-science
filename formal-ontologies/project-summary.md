@@ -1,5 +1,5 @@
 ---
-title: Definitional Architectures: From Conceptualization to Ontology
+title: "Definitional Architectures: From Conceptualization to Ontology"
 project: formal-ontologies
 date: 2025-11-01
 tags:
