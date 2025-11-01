@@ -11,20 +11,40 @@ on:
         options:
           - pull_request
           - commit
-  # Allow manual triggering and also provide a scheduled safety-run (optional)
-  # Manual runs are expected after knowledge-base-generation has produced analysis-data.json and claude-prompt.md
+  workflow_run:
+    workflows: ["Knowledge Base Generation"]
+    types: [completed]
 
 permissions:
   contents: write
 
 jobs:
   run-copilot-agent:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Attempt to find generated knowledge-database branch (if any)
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Searching for branches named knowledge-database/generated-*..."
+          git fetch --all --prune
+          # Look for remote branches first, then local
+          BRANCH=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/remotes/origin/knowledge-database/generated-* 2>/dev/null | sed 's|origin/||' | head -n1 || true)
+          if [ -z "$BRANCH" ]; then
+            BRANCH=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/heads/knowledge-database/generated-* 2>/dev/null | head -n1 || true)
+          fi
+          if [ -n "$BRANCH" ]; then
+            echo "Found generated branch: $BRANCH. Checking it out."
+            git checkout "$BRANCH" || git checkout -b "$BRANCH" "origin/$BRANCH" || true
+          else
+            echo "No generated branch found; continuing with current checkout."
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -35,12 +55,13 @@ jobs:
         id: check_files
         run: |
           set -e
-          if [ ! -f knowledge-database/analysis-data.json ]; then
-            echo "analysis-data.json not found. Run the knowledge-base-generation workflow first." >&2
-            exit 1
-          fi
-          if [ ! -f knowledge-database/claude-prompt.md ]; then
-            echo "claude-prompt.md not found. Run the knowledge-base-generation workflow first." >&2
+          if [ ! -f knowledge-database/analysis-data.json ] || [ ! -f knowledge-database/claude-prompt.md ]; then
+            echo "One or more required knowledge-database files are missing. Printing diagnostics..." >&2
+            echo "Listing knowledge-database contents:" >&2
+            ls -la knowledge-database || true
+            echo "Last commits touching knowledge-database:" >&2
+            git --no-pager log --pretty=oneline -n 10 -- knowledge-database || true
+            echo "analysis-data.json or claude-prompt.md not found. Run the knowledge-base-generation workflow first." >&2
             exit 1
           fi
 
