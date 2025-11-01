@@ -26,6 +26,6 @@ jobs:
           if [ -x .github/scripts/deploy_quartz.sh ]; then
             .github/scripts/deploy_quartz.sh
           else
-            echo "No deploy script found at .github/scripts/deploy_quartz.sh. Please add deployment steps to publish the Quartz site."
-            exit 0
+            echo "::warning file=.github/scripts/deploy_quartz.sh::No deploy script found at .github/scripts/deploy_quartz.sh. Please add deployment steps to publish the Quartz site."
+            exit 1
           fi
