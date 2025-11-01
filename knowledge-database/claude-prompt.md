@@ -7,7 +7,7 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - **Projects:** 3
 - **LaTeX Files:** 17
 - **Citations:** 16
-- **Zotero Items:** 67
+- **Zotero Items:** 0
 - **Bibliography Entries:** 110
 
 ## Projects in Repository
@@ -129,39 +129,29 @@ Provide the complete knowledge base structure as:
 The following data is available for your analysis:
 
 ### Sample Citations
-- Walloth2016
-- Lin1999
-- Bertalanffy1968
-- Mesarovic1975
-- Mesarovic1970
-- Mesarovic1976
 - Poizat2000
-- Takahashi1995
-- Lin2002
-- Carnap1956
-- Mesarovic1972
-- Schaffer2008
-- Simon2012
-- Backlund2000
+- Bertalanffy1968
 - Lin1987
+- Mesarovic1972
+- Walloth2016
+- Backlund2000
 - Backlund2000a
+- Mesarovic1975
+- Simon2012
+- Carnap1956
+- Lin1999
+- Mesarovic1970
+- Lin2002
+- Schaffer2008
+- Takahashi1995
+- Mesarovic1976
 
 ### Sample Zotero Items
-- Themes from Ontology, Mind, and Logic: Present and Past. Essays in Honour of Peter Simons (book) - Tags: 
-- Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems (book) - Tags: 
-- Parts, wholes, and part-whole relations: The prospects of mereotopology (journalArticle) - Tags: 
-- Mereotopology without Mereology (journalArticle) - Tags: 
-- Mereology and the Sciences: Parts and Wholes in the Contemporary Scientific Context (book) - Tags: 
-- On the mereological structure of complex states of affairs (journalArticle) - Tags: 
-- Region-Based Topology (journalArticle) - Tags: 
-- Holonic Multiagent Systems: A Foundation for the Organisation of Multiagent Systems (bookSection) - Tags: 
-- Holonic Multi-Agent Systems (bookSection) - Tags: 
-- What is a complex system? (journalArticle) - Tags: 
 
 
 ### Full Data Files Available
 - Complete LaTeX sources in: 17 files
-- Zotero manifest: 67 items
+- Zotero manifest: 0 items
 - Bibliography: 110 entries
 
 Please proceed with the semantic analysis and knowledge base generation.
