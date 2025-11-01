@@ -7,7 +7,7 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - **Projects:** 3
 - **LaTeX Files:** 17
 - **Citations:** 16
-- **Zotero Items:** 0
+- **Zotero Items:** 70
 - **Bibliography Entries:** 110
 
 ## Projects in Repository
@@ -137,21 +137,27 @@ The following data is available for your analysis:
 - Backlund2000
 - Backlund2000a
 - Mesarovic1975
-- Simon2012
-- Carnap1956
-- Lin1999
-- Mesarovic1970
-- Lin2002
-- Schaffer2008
+- Lin1987
 - Takahashi1995
-- Mesarovic1976
+- Schaffer2008
+- Mesarovic1972
 
 ### Sample Zotero Items
+- Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents (preprint) - Tags: Computer Science - Artificial Intelligence
+- Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements (preprint) - Tags: Computer Science - Artificial Intelligence, Computer Science - Logic in Computer Science
+- Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine (preprint) - Tags: Computer Science - Artificial Intelligence
+- Themes from Ontology, Mind, and Logic: Present and Past. Essays in Honour of Peter Simons (book) - Tags: 
+- Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems (book) - Tags: 
+- Parts, wholes, and part-whole relations: The prospects of mereotopology (journalArticle) - Tags: 
+- Mereotopology without Mereology (journalArticle) - Tags: 
+- Mereology and the Sciences: Parts and Wholes in the Contemporary Scientific Context (book) - Tags: 
+- On the mereological structure of complex states of affairs (journalArticle) - Tags: 
+- Region-Based Topology (journalArticle) - Tags: 
 
 
 ### Full Data Files Available
 - Complete LaTeX sources in: 17 files
-- Zotero manifest: 0 items
+- Zotero manifest: 70 items
 - Bibliography: 110 entries
 
 Please proceed with the semantic analysis and knowledge base generation.
