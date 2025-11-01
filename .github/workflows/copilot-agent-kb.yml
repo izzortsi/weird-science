@@ -35,7 +35,7 @@ jobs:
           echo "Searching for branches named knowledge-database/generated-*..."
           git fetch --all --prune
           # Look for remote branches first, then local
-          BRANCH=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/remotes/origin/knowledge-database/generated-* 2>/dev/null | sed 's|origin/||' | head -n1 || true)
+          BRANCH=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/remotes/origin/knowledge-database/generated-* 2>/dev/null | sed 's|^origin/||' | head -n1 || true)
           if [ -z "$BRANCH" ]; then
             BRANCH=$(git for-each-ref --sort=-creatordate --format='%(refname:short)' refs/heads/knowledge-database/generated-* 2>/dev/null | head -n1 || true)
           fi
