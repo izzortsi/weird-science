@@ -1,31 +1,23 @@
-name: Quartz Deploy (after KB synthesis)
+name: Quartz Deploy (after PR merge)
 
 on:
-  workflow_run:
-    workflows: ["Copilot Agent — Knowledge Base Synthesis"]
-    types: [completed]
+  push:
+    branches: [dev]
+    paths:
+      - 'knowledge-database/concepts/**'
+  workflow_dispatch:
 
 jobs:
-  deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  trigger-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Trigger Quartz build workflow
+        uses: actions/github-script@v7
         with:
-          fetch-depth: 0
-
-      - name: Diagnostics
-        run: |
-          set -euo pipefail
-          echo "Copilot Agent workflow succeeded. Workflow run id: ${{ github.event.workflow_run.id }}"
-
-      - name: Run deploy script if present
-        run: |
-          set -euo pipefail
-          if [ -x .github/scripts/deploy_quartz.sh ]; then
-            .github/scripts/deploy_quartz.sh
-          else
-            echo "::warning file=.github/scripts/deploy_quartz.sh::No deploy script found at .github/scripts/deploy_quartz.sh. Please add deployment steps to publish the Quartz site."
-            exit 1
-          fi
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'build-quartz.yml',
+              ref: 'dev'
+            })

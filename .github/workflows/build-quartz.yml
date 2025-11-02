@@ -79,12 +79,17 @@ jobs:
         run: |
           # Create content directory structure
           mkdir -p quartz-site/content
-          
+
           # Copy knowledge-database content
           if [ -d "knowledge-database" ]; then
             cp -r knowledge-database/* quartz-site/content/ || true
+
+            # Use knowledge-database README as the homepage index
+            if [ -f "knowledge-database/README.md" ]; then
+              cp knowledge-database/README.md quartz-site/content/index.md
+            fi
           fi
-          
+
           # Copy project summaries
           find . -name 'project-summary.md' -type f | while read file; do
             # Get project name from path
@@ -92,37 +97,6 @@ jobs:
             mkdir -p quartz-site/content/projects
             cp "$file" "quartz-site/content/projects/${project}-summary.md"
           done
-          
-          # Create index page if it doesn't exist
-          if [ ! -f "quartz-site/content/index.md" ]; then
-            cat > quartz-site/content/index.md <<EOF
-          ---
-          title: weird-science Knowledge Base
-          ---
-          
-          # Welcome to weird-science Knowledge Base
-          
-          This site contains literature reviews, project summaries, and concept articles
-          derived from the [weird-science repository](https://github.com/izzortsi/weird-science)
-          and integrated with our [Zotero group library](https://www.zotero.org/groups/6182921/).
-          
-          ## Explore
-          
-          - Browse the [[knowledge-database]] for concept articles
-          - View [[projects]] for project-specific literature summaries
-          - Check the tag index for topical navigation
-          
-          ## About
-          
-          This knowledge base is automatically generated from:
-          - LaTeX documents in the weird-science repository
-          - Bibliography entries (.bib files)
-          - Zotero group library items (group ID: 6182921)
-          
-          The content is organized by projects, tags, and concepts, with automatic
-          linking between related items.
-          EOF
-          fi
       
       - name: Build Quartz site
         run: |
