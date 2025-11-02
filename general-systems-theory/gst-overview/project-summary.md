@@ -1,5 +1,5 @@
 ---
-title: Foundations of General Systems Theory: A Survey of Formal Definitions
+title: "Foundations of General Systems Theory: A Survey of Formal Definitions"
 project: gst-overview
 date: 2025-11-02
 tags:
