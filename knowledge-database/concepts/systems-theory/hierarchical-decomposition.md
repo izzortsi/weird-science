@@ -155,7 +155,17 @@ Mesarovic formalized hierarchical decomposition with:
 
 ## Key References
 
-Hierarchical decomposition is central to systems engineering, discussed extensively by Simon (1962), Mesarovic (1970), and in software engineering by Parnas, Dijkstra, and others.
+### The Architecture of Complexity
+*Herbert A. Simon (1962)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/B7AE6ZQF)
+
+Foundational paper on hierarchical decomposition, establishing principles of near-decomposability and the advantages of hierarchical organization for complex systems.
+
+### Theory of Hierarchical, Multilevel, Systems
+*Mihajlo D. Mesarović, D. Macko, Yasuhiko Takahara (1970)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/3I8HVQYH)
+
+Formal mathematical treatment of hierarchical decomposition, including stratified hierarchies, coordination mechanisms, and decomposition principles.
 
 ## Related Concepts
 

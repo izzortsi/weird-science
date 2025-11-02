@@ -139,7 +139,11 @@ The I/O view is complementary to structural views:
 
 ## Key References
 
-Input-output systems are fundamental in control theory (Kalman), systems theory (Mesarovic, Wymore), and automata theory (Mealy, Moore). The I/O perspective is central to behavioral systems theory developed by Willems.
+### General Systems Theory: Mathematical Foundations
+*Mihajlo D. Mesarović, Yasuhiko Takahara (1975)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/TETVGKU7)
+
+Provides formal treatment of input-output systems as special cases of general systems, with the canonical definition $S \subseteq X \times Y$ where $X$ represents inputs and $Y$ represents outputs.
 
 ## Related Concepts
 

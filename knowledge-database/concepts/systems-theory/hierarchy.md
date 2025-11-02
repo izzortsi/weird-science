@@ -98,7 +98,17 @@ While powerful, hierarchies have limitations:
 
 ## Key References
 
-Herbert Simon's "The Architecture of Complexity" (1962) is seminal in establishing the importance of hierarchical organization in complex systems. Mesarovic's hierarchical systems theory provides formal mathematical foundations.
+### The Architecture of Complexity
+*Herbert A. Simon (1962)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/B7AE6ZQF)
+
+Seminal paper establishing the importance of hierarchical organization in complex systems, introducing principles of near-decomposability and hierarchical structure.
+
+### Theory of Hierarchical, Multilevel, Systems
+*Mihajlo D. Mesarović, D. Macko, Yasuhiko Takahara (1970)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/3I8HVQYH)
+
+Provides comprehensive formal mathematical foundations for hierarchical systems theory, including stratified hierarchies and coordination mechanisms.
 
 ## Related Concepts
 

@@ -10,11 +10,21 @@ zotero_keys: []
 
 ## Definition
 
-A nested system is a hierarchical organization where systems contain subsystems, which in turn may contain their own subsystems, forming multiple levels of containment. This creates a recursive structure where each level exhibits system properties.
+Let $\mathcal{S}$ be a system. We say that $\mathcal{S}$ is a **nested system** if there are systems $\mathcal{R}$ and $\mathcal{T}$ such that:
+$$\mathcal{R} \sqsubset \mathcal{S} \sqsubset \mathcal{T}$$
 
-Formally, a nested system can be represented as:
-- S = {S₁, S₂, ..., Sₙ} where each Sᵢ may itself be S_i = {S_i1, S_i2, ..., S_im}
-- The nesting relation ⊂ is transitive: if A ⊂ B and B ⊂ C, then A ⊂ C
+where $\sqsubset$ is the **enclose relation** (parthood).
+
+### The Enclose Relation
+
+Let $\mathcal{S},\ \mathcal{S}'$ be systems such that $\mathcal{S}' \sqsubset \mathcal{S}$ (subsystem relation). We say that $\mathcal{S}$ **encloses** $\mathcal{S}'$, denoting by $\mathcal{S}' \encl \mathcal{S}$, if additionally $\mathfrak{u}(\mathcal{S}') \sqin \mathfrak{e}(\mathcal{S})$. If $\mathcal{S}$ encloses $\mathcal{S}'$ we say that the latter is a **part** of the former.
+
+The enclose relation thus combines three distinct aspects:
+- The mereological relation of part-to-whole
+- The functional dependencies $\mathcal{S}$ holds with respect to $\mathcal{S}'$ (captured by $\sqsubset$)
+- The set-theoretic relation of membership (captured by $\sqin$)
+
+A system $\mathcal{S}'$ that is merely a subsystem of $\mathcal{S}$ may have no direct role in the mesodynamics of $\mathcal{S}$. To be enclosed, $\mathcal{S}'$ must additionally be an element of $\mathcal{S}$, which means that $\mathcal{S}'$ itself (not merely its elements) participates in the relations that constitute $\mathcal{S}$.
 
 ### Key Characteristics
 
@@ -89,7 +99,17 @@ When designing nested systems:
 
 ## Key References
 
-The concept of nested hierarchies is central to systems theory, notably discussed by Herbert Simon in "The Architecture of Complexity" and extensively developed in hierarchical systems theory by Mesarovic and others.
+### The Architecture of Complexity
+*Herbert A. Simon (1962)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/B7AE6ZQF)
+
+Seminal paper establishing the importance of hierarchical organization in complex systems, introducing the concept of near-decomposability and discussing nested structures as fundamental to complexity.
+
+### Theory of Hierarchical, Multilevel, Systems
+*Mihajlo D. Mesarović, D. Macko, Yasuhiko Takahara (1970)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/3I8HVQYH)
+
+Provides formal mathematical foundations for hierarchical and multilevel systems, extensively developing the theory of nested system structures.
 
 ## Related Concepts
 
