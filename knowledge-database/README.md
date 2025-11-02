@@ -1,7 +1,3 @@
----
-title: Knowledge Base
----
-
 # Weird Science Knowledge Base
 
 This knowledge base contains atomic concept articles extracted through semantic analysis of LaTeX sources and Zotero references. The knowledge base is organized around research projects, each investigating specific aspects of systems theory and formal ontologies.
