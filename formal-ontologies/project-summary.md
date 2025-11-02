@@ -16,15 +16,10 @@ matched_bibkeys:
   - Mesarovic1975
 ---
 
-# From Conceptualization to Ontology
+# From Conceptualization to Ontology - Literature Summary
 
-## Project Summary
-
-This project traces a philosophical trajectory from extensional mathematical descriptions to intensional conceptualizations and formal ontologies. The investigation begins with von Bertalanffy's recognition of the fundamental limitation of purely extensional relational structures: their inability to distinguish between intrinsic systemic properties and mere accidental aggregations \citep{Bertalanffy1968}.
-
-Following Backlund's critique of existing system definitions \citep{Backlund2000a}, which argues that many common definitions fail to be sufficiently exclusive or properly capture the essence of systemhood, the project adopts Mesarovic and Takahara's rigorous set-theoretic formalization \citep{Mesarovic1975}. Their framework provides the mathematical substrate for moving beyond extensional snapshots toward conceptualizations that capture what is invariant across possible world states.
-
-The central philosophical question emerges: How do we formalize the transition from mathematical descriptions of specific system states to general conceptualizations that encompass all possible states, and finally to ontological commitments suitable for computational reasoning? This investigation synthesizes insights from formal ontology and systems theory to address the relationship between extensional relational structures, intensional conceptualizations, ontological commitments, and intended models.
+This document provides a summary of the references used in this project, 
+with links to the corresponding items in the Zotero group library.
 
 ## References
 

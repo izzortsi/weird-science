@@ -8,27 +8,20 @@ tags:
   - nested-systems
 zotero_keys:
   - TETVGKU7
-  - B7AE6ZQF
   - LQ8GFWEG
+  - B7AE6ZQF
   - 3I8HVQYH
 matched_bibkeys:
   - Mesarovic1976
-  - Simon2012
   - Backlund2000
+  - Simon2012
   - Mesarovic1970
 ---
 
-# Non-well-founded Hierarchies of Nested Systems
+# Non-well-founded Hierarchies of Nested Systems - Literature Summary
 
-## Project Summary
-
-This project investigates complex systems through recursive nesting of subsystems, examining emergence as a structural phenomenon in hierarchical architectures. Building on Simon's seminal observation that hierarchy—the architecture of complexity itself—emerges from the dynamics of nearly decomposable systems \citep{Simon2012}, this investigation explores how subsystems contain subsystems in recursive patterns that may lead to non-well-founded structures.
-
-The formal framework draws on Mesarovic and Takahara's mathematical foundations of general systems theory \citep{Mesarovic1976}, which provides the set-theoretic substrate for defining systems as relations on Cartesian products. Their hierarchical systems theory \citep{Mesarovic1970} establishes the theoretical foundation for understanding multilevel, nested organizations where each level exhibits autonomous system properties while participating in larger wholes.
-
-Backlund's analysis of system definitions \citep{Backlund2000} informs our approach by emphasizing that system elements must not be isolated from other parts—a criterion crucial for understanding genuine systemic properties in nested hierarchies. The central question is: How can we rigorously formalize the hierarchical organization of complex systems where subsystems themselves contain subsystems, potentially creating structures that challenge well-foundedness assumptions?
-
-This investigation develops formal machinery for the enclose relation, subsystem dependencies, and emergent properties that arise when systems are organized in nested hierarchies.
+This document provides a summary of the references used in this project, 
+with links to the corresponding items in the Zotero group library.
 
 ## References
 

@@ -8,29 +8,20 @@ tags:
   - gst-overview
 zotero_keys:
   - JVAUAL5Q
+  - 4JSYDZNR
   - E6TF8EDR
   - TETVGKU7
-  - 4JSYDZNR
 matched_bibkeys:
   - Lin1999
+  - Mesarovic1972
   - Takahashi1995
   - Mesarovic1975
-  - Mesarovic1972
 ---
 
-# Foundations of General Systems Theory: A Survey of Formal Definitions
+# Foundations of General Systems Theory: A Survey of Formal Definitions - Literature Summary
 
-## Project Summary
-
-This project provides a comprehensive survey of mathematical formalizations of systems theory, tracing conceptual foundations through seminal contributions from Mesarovic, Takahara, Yi Lin, and other key figures in the development of General Systems Theory (GST).
-
-The investigation begins with Mesarovic's foundational work on the conceptual basis for a mathematical theory of general systems \citep{Mesarovic1972}, which calls for a reappraisal of systems foundations and emphasizes the importance of goal-seeking representations within set-theoretic frameworks. This early work establishes the need for sharpening basic systems concepts through rigorous mathematical formalization.
-
-Building on these foundations, Mesarovic and Takahara's comprehensive treatment \citep{Mesarovic1975} provides the canonical mathematical framework, defining systems as relations on Cartesian products: $S \subseteq \prod\{V_i : i \in I\}$. This set-theoretic approach offers maximum generality while maintaining mathematical rigor, forming the basis for subsequent developments in systems theory.
-
-Takahashi and Takahara's logical approach \citep{Takahashi1995} extends these foundations by exploring the relationship between logical frameworks and systems theory, while Yi Lin's mathematical approach \citep{Lin1999} introduces the multirelation formulation $S = (M, R)$, emphasizing that "the concept of systems is a generalization of that of structures."
-
-The central question is: What are the fundamental mathematical definitions and theoretical insights that form the foundation of General Systems Theory across these different formalizations? This survey synthesizes diverse approaches to provide a unified understanding of systems-theoretic foundations.
+This document provides a summary of the references used in this project, 
+with links to the corresponding items in the Zotero group library.
 
 ## References
 
