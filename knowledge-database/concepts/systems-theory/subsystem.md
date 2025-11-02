@@ -10,11 +10,26 @@ zotero_keys: []
 
 ## Definition
 
-A subsystem is a system that is part of a larger system. More formally, given a system S = (O, R) with objects O and relations R, a subsystem S' is defined as S' = (O', R') where:
-- O' ⊆ O (subset of objects)
-- R' consists of relations from R restricted to O'
+Let $\mathcal{S} = (S, \Gamma_{\mathfrak{P}}, \mathbf{R}, \mathbf{V})$ be a system. Consider the set:
+$$\mathfrak{R} = \left(\bigcup_k \mathbf{R}\right)\cup \left(\bigcup_i \bigcup_k \mathbf{V}\right)$$
 
-A subsystem maintains the system properties while being a component of a larger whole.
+A **subsystem** $\mathcal{S}' = (S',\Gamma_{\mathfrak{P'}}', \mathbf{R'}, \mathbf{V'})$ of $\mathcal{S}$ is a system such that:
+
+(i) $S' \subseteq S$ and $ \bigcup\Gamma_{\mathfrak{P'}}' \subseteq \bigcup\Gamma_{\mathfrak{P}}$
+
+(ii) there exist families of functions $\{f_n\}, \{g_m\}$ with $n, m \leq |\Gamma_{\mathfrak{P'}}'| = C'$, such that, for some $p_n, q_n$,  $f_n: \mathfrak{R}^{p_n} \rightarrow \Gamma_{\mathfrak{P'}}'^{q_n}$ and for $p_m, q_m$, $g_m: \mathfrak{R}^{p_m} \rightarrow \mathcal{P}(\Gamma_{\mathfrak{P'}}'^{q_m} \times V_{kij}')$, for given sets of values $V_{kij}'$, satisfying:
+
+- (a) for any element $R'$ of $\bigcup_k \mathbf{R}'$ there is exactly one $n$ such that for some $\boldsymbol{\sigma} \in \mathfrak{R}^{p_n}$, $f_n(\boldsymbol{\sigma}) = R'$
+
+- (b) for any element $\mathrm{v}'$ of $\bigcup_k \bigcup_i \mathbf{V}'$, if $\mathrm{dom}(\mathrm{v}') = R'$ for some $R' \in \bigcup_k \mathbf{R}'$, then there is exactly one $m$ such that for some $\boldsymbol{\sigma} \in \mathfrak{R}^{p_m}$, $g_m(\boldsymbol{\sigma}) = \mathrm{v}'$
+
+We denote the system-inclusion relation by $\sqsubset$.
+
+### Interpretation
+
+This definition allows as few restrictions as possible on the relationship between systems and subsystems. A subsystem has an underlying set bounded by the underlying set of its supersystem, and its elements' parts on the underlying set are also bounded by the parts of the elements of the supersystem.
+
+The relations and valuations of subsystems can depend on arbitrary relations and valuations over the corresponding supersystem. This enables describing emergent properties: relations of any arity on a subsystem can sensibly depend on relations of any other arity on its supersystem.
 
 ### Key Characteristics
 
@@ -93,7 +108,17 @@ Effective subsystem decomposition should:
 
 ## Key References
 
-Subsystem theory is fundamental to systems engineering and general systems theory, discussed extensively in works by Mesarovic, Wymore, and others on hierarchical systems.
+### Theory of Hierarchical, Multilevel, Systems
+*Mihajlo D. Mesarović, D. Macko, Yasuhiko Takahara (1970)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/3I8HVQYH)
+
+Discusses subsystems extensively in the context of hierarchical and multilevel systems, establishing the theoretical foundation for subsystem decomposition.
+
+### General Systems Theory: Mathematical Foundations
+*Mihajlo D. Mesarović, Yasuhiko Takahara (1975)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/TETVGKU7)
+
+Provides the mathematical formalization of subsystem relations and their role in system decomposition and hierarchical organization.
 
 ## Related Concepts
 

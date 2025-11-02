@@ -10,11 +10,21 @@ zotero_keys: []
 
 ## Definition
 
-A valued relation is a generalization of ordinary relations where instead of elements simply being related or not (binary), the relation assigns values from some value set to tuples of elements. Formally, a valued relation ρ on sets X₁, X₂, ..., Xₙ with values in set Y is a function:
+Let $\mathcal{F} = \{S_i\}_{i\in I}$ be a family of sets and $R$ an $n$-ary relation over $\mathcal{F}$, that is, $R \subseteq \prod_{i \in I} S_i$. Let $V$ be another set, called the **set of values**. If $\mathrm{v}$ is a function such that $\mathrm{v}: R \rightarrow V$, we define:
 
-ρ: X₁ × X₂ × ... × Xₙ → Y
+(a) $\mathrm{v}(R) = \{\mathrm{v}(r) \in V\ |\ r \in R\}$
 
-This extends the classical notion of relation (which can be viewed as valued in {true, false}) to arbitrary value sets.
+(b) $R_\mathrm{v} = (R, V, \mathrm{v})$ is called an $n$-ary $\mathrm{v}$-valued relation over $\mathcal{F}$
+
+(c) $\mathrm{v}$ is a **valuation** of $R$
+
+If $R_\mathrm{v} = (R, V, \mathrm{v})$, we say that $R$ is the **underlying relation** of $R_\mathrm{v}$.
+
+### Interpretation
+
+In the above definition, the graph of $\mathrm{v}$ is considered as the valued relation. Thus an $n$-ary valued relation over a family $\{S_i\}$ is an $(n+1)$-ary relation with the particularity that it is functional in $V$. The underlying relations account for the 'structure of interactions between objects', whereas the valuations denote the characteristics these interactions have, notably their strength or intensity.
+
+As an example, a weighted digraph is an instance of a 'structure of interactions with values'.
 
 ### Key Characteristics
 
@@ -91,7 +101,11 @@ where each ρᵢ is a valued relation on some family of sets. This provides:
 
 ## Key References
 
-Valued relations are central to Mesarovic and Takahara's formalization of general systems theory, providing a mathematical foundation that generalizes both classical systems theory and relational approaches.
+### General Systems Theory: Mathematical Foundations
+*Mihajlo D. Mesarović, Yasuhiko Takahara (1975)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/TETVGKU7)
+
+Central to Mesarovic and Takahara's formalization, providing the mathematical foundation for valued relations as the basis of general systems theory.
 
 ## Related Concepts
 
