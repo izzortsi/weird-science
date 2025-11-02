@@ -54,7 +54,15 @@ The conceptualization is the "what we mean" while the ontology is "how we say it
 
 ## Key References
 
-The formal definition of conceptualization as an intensional relational structure was introduced by Gruber (1993) in "A Translation Approach to Portable Ontology Specifications" and further refined by Guarino (1998) in "Formal Ontology and Information Systems."
+### A Translation Approach to Portable Ontology Specifications
+*Thomas R. Gruber (1993)*
+
+Introduces the foundational definition of conceptualization as an intensional structure independent of specific logical formalizations, establishing the basis for modern ontology engineering.
+
+### Formal Ontology and Information Systems
+*Nicola Guarino (1998)*
+
+Refines the formal definition of conceptualization as the triple $\mathcal{C} = (D, W, \mathfrak{R})$, introducing the domain space $\langle D, W \rangle$ and establishing the relationship between conceptualizations, ontological commitments, and intended models.
 
 ## Related Concepts
 

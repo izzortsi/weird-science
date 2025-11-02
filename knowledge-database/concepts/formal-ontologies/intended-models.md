@@ -66,7 +66,15 @@ Intended models are crucial because:
 
 ## Key References
 
-The notion of intended models as the extensional characterization of conceptualizations was developed by Gruber (1993) and Guarino (1998) as part of their formal framework for ontologies.
+### A Translation Approach to Portable Ontology Specifications
+*Thomas R. Gruber (1993)*
+
+Introduces the notion of intended models as the extensional characterization of conceptualizations, distinguishing between the intensional conceptualization and its extensional realizations.
+
+### Formal Ontology and Information Systems
+*Nicola Guarino (1998)*
+
+Provides the formal definition of compatibility between models and ontological commitments, establishing intended models $I_K(\mathcal{L})$ as the set of extensional structures compatible with an intensional commitment $K$.
 
 ## Related Concepts
 

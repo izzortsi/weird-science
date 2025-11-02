@@ -10,12 +10,13 @@ zotero_keys: []
 
 ## Definition
 
-An ontology specification (or simply "ontology") is a formal, explicit specification of a shared conceptualization. It consists of a logical theory - a set of formulas in a logical language - designed to capture the intended models of a conceptualization.
+An **ontology** for a conceptualization $\mathcal{C}$ with vocabulary $V$ and ontological commitment $K$ is a logical theory consisting of a set of formulas of $\mathcal{L}$, designed so that the set of its models approximates as well as possible the set of intended models $I_K(\mathcal{L})$ according to $K$.
 
-Formally, an ontology O is a logical theory such that:
-- It is expressed in a formal language L
-- Its models K(O) approximate the intended models I(C) of conceptualization C
-- It makes the conceptualization explicit and machine-processable
+### Approximation and Axiomatic Incompleteness
+
+The language of "approximation" is significant. An ontology does not *fully capture* a conceptualization but rather constrains the space of models to approach the intended models. This is inevitable: the intensional structure of conceptualizations outstrips what can be expressed in first-order logic (or indeed in most formal languages).
+
+The gap between $\text{Mod}(O)$ (models of ontology $O$) and $I_K(\mathcal{L})$ (intended models) is the measure of our axiomatic incompleteness. A "good" ontology minimizes this gap.
 
 ### Key Characteristics
 

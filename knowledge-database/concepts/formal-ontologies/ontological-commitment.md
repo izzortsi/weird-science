@@ -10,11 +10,17 @@ zotero_keys: []
 
 ## Definition
 
-An ontological commitment is an agreement to use shared vocabulary in a coherent and consistent way with respect to a conceptualization. More formally, an ontological commitment K is the set of models of a logical theory - it approximates the intended models of a conceptualization.
+An **ontological commitment** (or **intensional first-order structure**) for a logical language $\mathcal{L}$ is a tuple $K = (\mathcal{C}, \mathcal{I})$ where:
+- $\mathcal{C} = (D, W, \mathfrak{R})$ is a conceptualization (intensional relational structure)
+- $\mathcal{I}$ is the **intensional interpretation function** $\mathcal{I} : V \to D \cup \mathfrak{R}$
 
-Given a logical language L, an ontological commitment K(L) specifies the set of all models of L that are consistent with the conceptualization. The ontological commitment acts as a bridge between:
-- The conceptualization C (intensional, abstract understanding)
-- The logical theory T (formal specification)
+The function $\mathcal{I}$ maps each vocabulary symbol in $V$ to either an element of $D$ or an intensional relation in $\mathfrak{R}$.
+
+### Philosophical Significance
+
+The term "commitment" carries profound philosophical weight. To commit to a conceptualization $\mathcal{C}$ is to specify how one's vocabulary latches onto the intensional structure of $\mathcal{C}$—not merely onto some particular extensional snapshot, but onto the conceptual relations that transcend particular world states.
+
+This addresses a deep problem in ontological engineering: without such intensional anchoring, the same linguistic theory could be satisfied by radically different conceptualizations. Two agents might agree on all extensional facts while harboring fundamentally incompatible concepts—precisely because concepts are individuated intensionally, not extensionally.
 
 ### Key Characteristics
 
