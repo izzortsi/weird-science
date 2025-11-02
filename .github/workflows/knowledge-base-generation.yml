@@ -1,150 +1,74 @@
 name: Knowledge Base Generation
 
 on:
-  # Manual trigger
-  workflow_dispatch:
-    inputs:
-      force_full_generation:
-        description: 'Force full regeneration of knowledge base'
-        required: false
-        type: boolean
-        default: false
-  
-  # Automatic trigger on merges to /dev with .tex changes
   push:
-    branches: [dev]
+    branches: [ 'dev' ]
     paths:
-      - '**.tex'
-      - '**.bib'
-      - 'scripts/zotero-integration/**'
-      - '.github/workflows/knowledge-base-generation.yml'
+      - '**/*.tex'
+      - '**/*.md'
+      - '.github/workflows/**'
+  workflow_dispatch: {}
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
-  generate-knowledge-base:
+  generate-kb:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
-      - name: Restore zotero cache
-        uses: actions/cache@v4
-        with:
-          path: zotero-cache
-          key: ${{ runner.os }}-zotero-cache-${{ hashFiles('**/*.bib') }}
-          restore-keys: |
-            ${{ runner.os }}-zotero-cache-
-      
-      - name: Setup Python
+
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
-      - name: Install dependencies
+
+      - name: Run generation script if available
+        shell: bash
         run: |
-          pip install -r scripts/zotero-integration/requirements.txt
-      
-      - name: Create cache directory for Zotero PDFs
-        run: |
-          mkdir -p zotero-cache
-      
-      - name: Sync Zotero library and download PDFs
-        env:
-          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
-          ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
-        run: |
-          API_KEY_ARG=""
-          if [ -n "$ZOTERO_API_KEY" ]; then
-            API_KEY_ARG="--api-key $ZOTERO_API_KEY"
-          fi
-          
-          python scripts/zotero-integration/zotero_sync.py \
-            --group-id "$ZOTERO_GROUP_ID" \
-            --cache-dir "zotero-cache" \
-            --generate-manifest \
-            $API_KEY_ARG
-      
-      - name: Generate knowledge base structure
-        env:
-          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
-          ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
-        run: |
-          FORCE_FLAG=""
-          if [ "${{ inputs.force_full_generation }}" = "true" ]; then
-            FORCE_FLAG="--force"
-          fi
-          
-          API_KEY_ARG=""
-          if [ -n "$ZOTERO_API_KEY" ]; then
-            API_KEY_ARG="--api-key $ZOTERO_API_KEY"
-          fi
-          
-          python scripts/zotero-integration/knowledge_base_generator.py \
-            --group-id "$ZOTERO_GROUP_ID" \
-            --manifest "zotero-cache/zotero-manifest.json" \
-            $API_KEY_ARG \
-            $FORCE_FLAG
-      
-      - name: Check for changes
-        id: check_changes
-        run: |
-          git --no-pager status --porcelain
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "## Changes detected" >> $GITHUB_STEP_SUMMARY
-            git --no-pager diff --stat >> $GITHUB_STEP_SUMMARY
+          set -euo pipefail
+          if [ -x .github/scripts/generate_knowledge_db.sh ]; then
+            echo "Running .github/scripts/generate_knowledge_db.sh"
+            .github/scripts/generate_knowledge_db.sh
+          elif [ -f knowledge-database/generate.py ]; then
+            echo "Running knowledge-database/generate.py"
+            python knowledge-database/generate.py
           else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "## No changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "No generation script found. Please implement .github/scripts/generate_knowledge_db.sh or knowledge-database/generate.py to create knowledge-database/analysis-data.json and knowledge-database/claude-prompt.md." >&2
+            exit 1
           fi
-      
-      - name: Commit and push changes
-        if: steps.check_changes.outputs.has_changes == 'true'
-        env:
-          GIT_AUTHOR_NAME: "github-actions[bot]"
-          GIT_AUTHOR_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Verify generated artifacts
         run: |
+          set -e
+          echo "Listing knowledge-database after generation:"
+          ls -la knowledge-database || true
+          if [ ! -f knowledge-database/analysis-data.json ] || [ ! -f knowledge-database/claude-prompt.md ]; then
+            echo "Required artifacts missing after generation." >&2
+            exit 1
+          fi
+
+      - name: Commit generated artifacts to a dedicated branch
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: github-actions[bot]@users.noreply.github.com
+        run: |
+          set -euo pipefail
+          GENERATED_BRANCH="knowledge-database/generated-${{ github.run_id }}"
           git config user.name "$GIT_AUTHOR_NAME"
           git config user.email "$GIT_AUTHOR_EMAIL"
-          # stage all changes but unstage zotero-cache so .gitignore is respected
-          git add --all
-          git reset -- zotero-cache || true
-          # only commit if there are staged changes
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "chore: update knowledge base"
-            git push
-          fi
-      
-      - name: Create job summary
-        run: |
-          echo "## Knowledge Base Generation Complete" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]; then
-            echo "✅ Knowledge base updated successfully" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "ℹ️ No updates needed - knowledge base is current" >> $GITHUB_STEP_SUMMARY
-          fi
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Zotero Group ID:** ${{ vars.ZOTERO_GROUP_ID || '6182921' }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
-          if [ -f "zotero-cache/zotero-manifest.json" ]; then
-            echo "" >> $GITHUB_STEP_SUMMARY
-            # Use python to count items instead of jq
-            item_count=$(python3 -c "import json; print(len(json.load(open('zotero-cache/zotero-manifest.json'))['items']))" 2>/dev/null || echo "N/A")
-            echo "**Zotero Items Cached:** $item_count" >> $GITHUB_STEP_SUMMARY
-          fi
-      
-      - name: Upload manifest as artifact
+          git checkout -b "$GENERATED_BRANCH"
+          git add knowledge-database || true
+          git commit -m "chore(kb): add generated knowledge-database (run ${{ github.run_id }})" || echo "no changes to commit"
+          git push --set-upstream origin "$GENERATED_BRANCH" || true
+
+      - name: Upload artifact for debugging
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: zotero-manifest
-          path: zotero-cache/zotero-manifest.json
-          retention-days: 30
+          name: knowledge-database
+          path: knowledge-database
+          retention-days: 7

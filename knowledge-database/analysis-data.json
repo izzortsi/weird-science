@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-10-31T23:02:20.950774+00:00",
+  "timestamp": "2025-11-01T19:59:34.897195+00:00",
   "total_projects": 3,
   "total_latex_files": 17,
   "total_citations": 16,
-  "total_zotero_items": 67,
+  "total_zotero_items": 70,
   "total_bib_entries": 110,
   "projects": [
     {
@@ -11,15 +11,15 @@
       "tex_files": [
         {
           "path": "formal-ontologies/main.tex",
-          "content_length": 1676,
+          "content_length": 1648,
           "citations": []
         },
         {
           "path": "formal-ontologies/sections/extensional-foundations.tex",
           "content_length": 3528,
           "citations": [
-            "Lin1987",
             "Bertalanffy1968",
+            "Lin1987",
             "Mesarovic1975"
           ]
         },
@@ -32,8 +32,8 @@
           "path": "formal-ontologies/sections/intensional-turn.tex",
           "content_length": 6296,
           "citations": [
-            "Backlund2000a",
-            "Carnap1956"
+            "Carnap1956",
+            "Backlund2000a"
           ]
         },
         {
@@ -64,11 +64,11 @@
         }
       ],
       "citations": [
-        "Schaffer2008",
-        "Lin1987",
         "Backlund2000a",
+        "Lin1987",
         "Carnap1956",
         "Bertalanffy1968",
+        "Schaffer2008",
         "Mesarovic1975"
       ]
     },
@@ -85,9 +85,9 @@
           "content_length": 17466,
           "citations": [
             "Mesarovic1976",
+            "Mesarovic1970",
             "Walloth2016",
-            "Backlund2000",
-            "Mesarovic1970"
+            "Backlund2000"
           ]
         },
         {
@@ -115,19 +115,19 @@
           "content_length": 22050,
           "citations": [
             "Lin2002",
-            "Simon2012",
-            "Mesarovic1970"
+            "Mesarovic1970",
+            "Simon2012"
           ]
         }
       ],
       "citations": [
+        "Poizat2000",
         "Walloth2016",
-        "Simon2012",
         "Mesarovic1970",
-        "Mesarovic1976",
         "Lin2002",
-        "Backlund2000",
-        "Poizat2000"
+        "Simon2012",
+        "Mesarovic1976",
+        "Backlund2000"
       ]
     },
     {
@@ -144,47 +144,77 @@
           "citations": [
             "Takahashi1995",
             "Mesarovic1972",
-            "Mesarovic1975",
-            "Lin1999"
+            "Lin1999",
+            "Mesarovic1975"
           ]
         },
         {
           "path": "general-systems-theory/gst-overview/sections/foundational-definitions.tex",
           "content_length": 5067,
           "citations": [
-            "Mesarovic1972",
             "Mesarovic1975",
-            "Lin1999"
+            "Lin1999",
+            "Mesarovic1972"
           ]
         }
       ],
       "citations": [
-        "Takahashi1995",
         "Lin1999",
+        "Takahashi1995",
         "Mesarovic1972",
         "Mesarovic1975"
       ]
     }
   ],
   "all_citations": [
-    "Walloth2016",
-    "Lin1999",
-    "Bertalanffy1968",
-    "Mesarovic1975",
-    "Mesarovic1970",
-    "Mesarovic1976",
     "Poizat2000",
-    "Takahashi1995",
-    "Lin2002",
-    "Carnap1956",
-    "Mesarovic1972",
-    "Schaffer2008",
-    "Simon2012",
-    "Backlund2000",
+    "Bertalanffy1968",
     "Lin1987",
-    "Backlund2000a"
+    "Mesarovic1972",
+    "Walloth2016",
+    "Backlund2000",
+    "Backlund2000a",
+    "Mesarovic1975",
+    "Lin1987",
+    "Takahashi1995",
+    "Schaffer2008",
+    "Mesarovic1972"
   ],
   "zotero_items_summary": [
+    {
+      "key": "78HTLZ5S",
+      "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+      "type": "preprint",
+      "tags": [
+        "Computer Science - Artificial Intelligence"
+      ],
+      "doi": "10.48550/arXiv.2505.22954",
+      "has_abstract": true,
+      "num_attachments": 1
+    },
+    {
+      "key": "MNNN2K8M",
+      "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+      "type": "preprint",
+      "tags": [
+        "Computer Science - Artificial Intelligence",
+        "Computer Science - Logic in Computer Science"
+      ],
+      "doi": "10.48550/arXiv.cs/0309048",
+      "has_abstract": true,
+      "num_attachments": 1
+    },
+    {
+      "key": "WFB8I6Z3",
+      "title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+      "type": "preprint",
+      "tags": [
+        "Computer Science - Artificial Intelligence"
+      ],
+      "doi": "10.48550/arXiv.2510.21614",
+      "has_abstract": true,
+      "num_attachments": 1
+    },
     {
       "key": "4CKRKU8P",
       "title": "Themes from Ontology, Mind, and Logic: Present and Past. Essays in Honour of Peter Simons",
@@ -791,6 +821,7 @@
       "num_attachments": 1
     }
   ],
+  "zotero_items_summary": [],
   "bibliography_keys": [
     "Bertalanffy1968",
     "Carnap1956",
