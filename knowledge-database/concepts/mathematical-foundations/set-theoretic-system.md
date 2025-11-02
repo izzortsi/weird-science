@@ -10,12 +10,15 @@ zotero_keys: []
 
 ## Definition
 
-A set-theoretic system is a system defined purely in terms of sets and set-theoretic constructs. It provides the most general mathematical foundation for system theory, where all system components (objects, relations, functions, states) are formalized as sets and operations on sets.
+A **set-theoretic system** is a system defined purely in terms of sets and set-theoretic constructs. It provides the most general mathematical foundation for system theory, where all system components (objects, relations, functions, states) are formalized as sets and operations on sets.
 
 Formally, a set-theoretic system typically consists of:
-- Base sets X₁, X₂, ..., Xₙ (component spaces)
-- Relations R ⊆ X₁ × X₂ × ... × Xₙ (constraints)
-- Functions f: X → Y (transformations)
+- Base sets $X_1, X_2, \ldots, X_n$ (component spaces)
+- Relations $R \subseteq X_1 \times X_2 \times \cdots \times X_n$ (constraints)
+- Functions $f: X \to Y$ (transformations)
+
+Following Mesarovic and Takahara's canonical definition, a system $S$ is a relation on nonempty sets:
+$$S \subseteq \prod\{V_i : i \in I\}$$
 
 This foundation allows precise mathematical treatment of systems using the tools of set theory.
 
@@ -37,12 +40,12 @@ This foundation allows precise mathematical treatment of systems using the tools
    - Collections of any mathematical objects
 
 2. **Relations**:
-   - Binary relations: R ⊆ X × Y
-   - n-ary relations: R ⊆ X₁ × ... × Xₙ
+   - Binary relations: $R \subseteq X \times Y$
+   - $n$-ary relations: $R \subseteq X_1 \times \cdots \times X_n$
    - System constraints and connections
 
 3. **Functions**:
-   - Special relations: f: X → Y
+   - Special relations: $f: X \to Y$
    - System transformations and behaviors
    - State transitions, input-output mappings
 
@@ -54,39 +57,35 @@ This foundation allows precise mathematical treatment of systems using the tools
 ## Representations of Systems
 
 1. **Relational Systems**:
-   - S = ⟨X₁, ..., Xₙ, R₁, ..., Rₘ⟩
-   - Objects from base sets related by R
+   - $S = \langle X_1, \ldots, X_n, R_1, \ldots, R_m \rangle$
+   - Objects from base sets related by $R$
 
 2. **State-Transition Systems**:
-   - S = ⟨Q, Σ, δ, q₀, F⟩
-   - States Q, alphabet Σ, transition function δ
+   - $S = \langle Q, \Sigma, \delta, q_0, F \rangle$
+   - States $Q$, alphabet $\Sigma$, transition function $\delta$
 
 3. **Input-Output Systems**:
-   - S: X → Y
+   - $S: X \to Y$
    - Mapping from inputs to outputs
 
 4. **Dynamical Systems**:
-   - S = ⟨T, X, φ⟩
-   - Time set T, state space X, evolution φ
+   - $S = \langle T, X, \varphi \rangle$
+   - Time set $T$, state space $X$, evolution $\varphi$
 
 ## Examples
 
 1. **Finite Automaton**:
-   ```
-   M = (Q, Σ, δ, q₀, F)
-   Q = {q₀, q₁, q₂} (finite set of states)
-   Σ = {0, 1} (finite alphabet)
-   δ: Q × Σ → Q (transition function)
-   F ⊆ Q (accept states)
-   ```
+   $$M = (Q, \Sigma, \delta, q_0, F)$$
+   - $Q = \{q_0, q_1, q_2\}$ (finite set of states)
+   - $\Sigma = \{0, 1\}$ (finite alphabet)
+   - $\delta: Q \times \Sigma \to Q$ (transition function)
+   - $F \subseteq Q$ (accept states)
 
 2. **Dynamical System**:
-   ```
-   S = (ℝ, ℝⁿ, φ)
-   ℝ = time (real numbers)
-   ℝⁿ = state space
-   φ: ℝ × ℝⁿ → ℝⁿ (evolution)
-   ```
+   $$S = (\mathbb{R}, \mathbb{R}^n, \varphi)$$
+   - $\mathbb{R}$ = time (real numbers)
+   - $\mathbb{R}^n$ = state space
+   - $\varphi: \mathbb{R} \times \mathbb{R}^n \to \mathbb{R}^n$ (evolution)
 
 3. **Database**:
    ```

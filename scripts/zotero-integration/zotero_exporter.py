@@ -422,12 +422,33 @@ class MarkdownGenerator:
                 md_content.append(f'{key}: {value}')
         md_content.append('---')
         md_content.append('')
-        md_content.append(f'# {title} - Literature Summary')
+        md_content.append(f'# {title}')
         md_content.append('')
-        md_content.append('This document provides a summary of the references used in this project, ')
-        md_content.append('with links to the corresponding items in the Zotero group library.')
-        md_content.append('')
-        
+
+        # Check if existing file has a Project Summary section to preserve
+        project_summary = None
+        if output_path.exists():
+            try:
+                with open(output_path, 'r', encoding='utf-8') as f:
+                    existing_content = f.read()
+                    # Extract Project Summary section if it exists
+                    summary_match = re.search(
+                        r'## Project Summary\s*\n\n(.*?)\n\n## References',
+                        existing_content,
+                        re.DOTALL
+                    )
+                    if summary_match:
+                        project_summary = summary_match.group(1).strip()
+            except Exception as e:
+                print(f"Warning: Could not read existing {output_path}: {e}")
+
+        # Add Project Summary if it exists, otherwise add placeholder
+        if project_summary:
+            md_content.append('## Project Summary')
+            md_content.append('')
+            md_content.append(project_summary)
+            md_content.append('')
+
         # Add references section
         if matches:
             md_content.append('## References')
@@ -455,20 +476,12 @@ class MarkdownGenerator:
                 # Add Zotero link
                 zotero_url = f'https://www.zotero.org/groups/{group_id}/items/{zitem.key}'
                 md_content.append(f'[View in Zotero Library]({zotero_url})')
-                md_content.append('')
-                
-                # Add DOI link if available
+
+                # Add DOI link on same line if available
                 if zitem.doi:
-                    md_content.append(f'DOI: [{zitem.doi}](https://doi.org/{zitem.doi})')
-                    md_content.append('')
-                
-                # Add abstract if available
-                if zitem.abstract:
-                    md_content.append('**Abstract:**')
-                    md_content.append('')
-                    md_content.append(zitem.abstract)
-                    md_content.append('')
-                
+                    md_content.append(f' | DOI: [{zitem.doi}](https://doi.org/{zitem.doi})')
+
+                md_content.append('')
                 md_content.append('---')
                 md_content.append('')
         else:

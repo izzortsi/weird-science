@@ -10,15 +10,15 @@ zotero_keys: []
 
 ## Definition
 
-A relational structure is a fundamental mathematical construct consisting of:
-- A domain D (a non-empty set)
-- A family of relations R = {R₁, R₂, ..., Rₙ} on D
+A **relational structure** is a fundamental mathematical construct consisting of:
+- A domain $D$ (a non-empty set)
+- A family of relations $\mathbf{R} = \{R_1, R_2, \ldots, R_n\}$ on $D$
 
-Formally, a relational structure is an ordered pair:
+Formally, a relational structure is an ordered tuple:
 
-**A** = ⟨D, R₁, R₂, ..., Rₙ⟩
+$$\mathcal{A} = \langle D, R_1, R_2, \ldots, R_n \rangle$$
 
-where each Rᵢ is a relation on D (i.e., Rᵢ ⊆ D^(kᵢ) for some arity kᵢ).
+where each $R_i$ is a relation on $D$ (i.e., $R_i \subseteq D^{k_i}$ for some arity $k_i$).
 
 ### Key Characteristics
 
@@ -33,56 +33,56 @@ where each Rᵢ is a relation on D (i.e., Rᵢ ⊆ D^(kᵢ) for some arity kᵢ)
 ## Components
 
 1. **Domain (Universe)**:
-   - Set D of elements
+   - Set $D$ of elements
    - Can be finite or infinite
    - Elements are the "objects" of discourse
 
 2. **Relations**:
-   - n-ary relations: Rᵢ ⊆ D^n
-   - Binary relations (n=2): Most common in applications
-   - Unary relations (n=1): Properties or predicates
+   - $n$-ary relations: $R_i \subseteq D^n$
+   - Binary relations ($n=2$): Most common in applications
+   - Unary relations ($n=1$): Properties or predicates
    - Functions can be represented as functional relations
 
 3. **Signature (Type)**:
-   - Specifies structure: σ = (k₁, k₂, ..., kₙ)
-   - kᵢ is arity of Rᵢ
+   - Specifies structure: $\sigma = (k_1, k_2, \ldots, k_n)$
+   - $k_i$ is arity of $R_i$
    - Two structures have same type if same signature
 
 ## Examples
 
 1. **Graph as Relational Structure**:
-   - Domain D = set of vertices
-   - Binary relation E ⊆ D × D (edge relation)
-   - Structure: G = ⟨V, E⟩
+   - Domain $D =$ set of vertices
+   - Binary relation $E \subseteq D \times D$ (edge relation)
+   - Structure: $G = \langle V, E \rangle$
 
 2. **Ordered Set**:
-   - Domain D = set of elements
-   - Binary relation ≤ ⊆ D × D (ordering relation)
-   - Structure: ⟨D, ≤⟩
+   - Domain $D =$ set of elements
+   - Binary relation ${\leq} \subseteq D \times D$ (ordering relation)
+   - Structure: $\langle D, {\leq} \rangle$
 
 3. **Group**:
-   - Domain D = set of elements
-   - Ternary relation M ⊆ D × D × D (multiplication)
-   - Nullary relation {e} (identity element)
-   - Binary relation I ⊆ D × D (inverse)
-   - Structure: ⟨D, M, e, I⟩
+   - Domain $D =$ set of elements
+   - Ternary relation $M \subseteq D \times D \times D$ (multiplication)
+   - Nullary relation $\{e\}$ (identity element)
+   - Binary relation $I \subseteq D \times D$ (inverse)
+   - Structure: $\langle D, M, e, I \rangle$
 
 4. **Database Schema**:
-   - Domain D = set of data values
-   - Relations Rᵢ = tables (relations in database sense)
-   - Structure: ⟨D, R₁, R₂, ..., Rₙ⟩
+   - Domain $D =$ set of data values
+   - Relations $R_i =$ tables (relations in database sense)
+   - Structure: $\langle D, R_1, R_2, \ldots, R_n \rangle$
 
 5. **Kinship Structure**:
-   - Domain D = set of persons
+   - Domain $D =$ set of persons
    - Relations: parent-of, sibling-of, spouse-of
-   - Structure: ⟨Persons, Parent, Sibling, Spouse⟩
+   - Structure: $\langle \text{Persons}, \text{Parent}, \text{Sibling}, \text{Spouse} \rangle$
 
 ## Morphisms Between Structures
 
-For structures **A** = ⟨D_A, R_A⟩ and **B** = ⟨D_B, R_B⟩:
+For structures $\mathcal{A} = \langle D_A, \mathbf{R}_A \rangle$ and $\mathcal{B} = \langle D_B, \mathbf{R}_B \rangle$:
 
-1. **Homomorphism**: Function h: D_A → D_B preserving relations
-   - If (a₁, ..., aₙ) ∈ R_A then (h(a₁), ..., h(aₙ)) ∈ R_B
+1. **Homomorphism**: Function $h: D_A \to D_B$ preserving relations
+   - If $(a_1, \ldots, a_n) \in R_A$ then $(h(a_1), \ldots, h(a_n)) \in R_B$
 
 2. **Isomorphism**: Bijective homomorphism with inverse also homomorphism
    - Structures are essentially the same
