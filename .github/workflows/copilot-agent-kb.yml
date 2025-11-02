@@ -1,22 +1,14 @@
-name: Copilot Agent — Knowledge Base Synthesis
+name: Knowledge Base — Manual Claude Code Notification
 
 on:
   workflow_dispatch:
-    inputs:
-      commit_method:
-        description: 'how to publish agent output: commit or pull_request'
-        required: true
-        default: 'pull_request'
-        type: choice
-        options:
-          - pull_request
-          - commit
   workflow_run:
     workflows: ["Knowledge Base Generation"]
     types: [completed]
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   run-copilot-agent:
@@ -65,25 +57,87 @@ jobs:
             exit 1
           fi
 
-      - name: Make executable helper
-        run: |
-          chmod +x .github/scripts/execute_copilot_agent.sh || true
-
-      - name: Run Copilot coding agent to synthesize knowledge base
-        id: run_agent
+      - name: Create GitHub issue with manual instructions
+        id: create_issue
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMIT_METHOD: ${{ github.event.inputs.commit_method || 'pull_request' }}
-          REPO: ${{ github.repository }}
-          BRANCH: "copilot/kb-synthesis-${{ github.run_id }}"
         run: |
           set -euo pipefail
-          .github/scripts/execute_copilot_agent.sh
 
-      - name: Upload agent output as artifact (for debugging)
+          # Get the branch name
+          BRANCH=$(git branch --show-current)
+
+          # Create issue with instructions
+          gh issue create \
+            --title "🤖 Claude Code: Knowledge Base Analysis Ready (Run ${{ github.run_id }})" \
+            --label "claude-code,automation,knowledge-base" \
+            --body "$(cat <<'EOF'
+          ## 🎯 Action Required: Run Claude Code Locally
+
+          The knowledge base generation has completed successfully. Please run Claude Code locally to perform semantic analysis.
+
+          ### 📋 Steps to Complete
+
+          1. **Pull the generated branch:**
+             \`\`\`bash
+             git fetch origin
+             git checkout $BRANCH
+             \`\`\`
+
+          2. **Open Claude Code in your editor** (VS Code with Claude Code extension)
+
+          3. **Review the generated files:**
+             - 📄 [\`knowledge-database/claude-prompt.md\`](../blob/$BRANCH/knowledge-database/claude-prompt.md) - Full prompt for semantic analysis
+             - 📊 [\`knowledge-database/analysis-data.json\`](../blob/$BRANCH/knowledge-database/analysis-data.json) - Structured data about LaTeX sources and citations
+
+          4. **Run Claude Code with the prompt:**
+             - Copy the contents of \`knowledge-database/claude-prompt.md\`
+             - Paste into Claude Code chat
+             - Let Claude analyze the repository and generate the knowledge base
+
+          5. **Review and commit the results:**
+             - Claude will create files in \`knowledge-database/concepts/\`
+             - Review the generated Markdown files
+             - Commit the changes:
+               \`\`\`bash
+               git add knowledge-database/concepts
+               git commit -m "feat(kb): add Claude-generated knowledge base concepts"
+               git push origin $BRANCH
+               \`\`\`
+
+          6. **Create a Pull Request:**
+             - Open a PR from \`$BRANCH\` to \`dev\`
+             - Review and merge when ready
+
+          ### 📊 Analysis Summary
+
+          - **Projects Analyzed:** $(jq -r '.total_projects' knowledge-database/analysis-data.json)
+          - **LaTeX Files:** $(jq -r '.total_latex_files' knowledge-database/analysis-data.json)
+          - **Citations Found:** $(jq -r '.total_citations' knowledge-database/analysis-data.json)
+          - **Zotero Items:** $(jq -r '.total_zotero_items' knowledge-database/analysis-data.json)
+          - **Bibliography Entries:** $(jq -r '.total_bib_entries' knowledge-database/analysis-data.json)
+
+          ### 🔗 Quick Links
+
+          - [View Branch: \`$BRANCH\`](../tree/$BRANCH)
+          - [Workflow Run #${{ github.run_id }}](../actions/runs/${{ github.run_id }})
+          - [Claude Prompt](../blob/$BRANCH/knowledge-database/claude-prompt.md)
+          - [Analysis Data](../blob/$BRANCH/knowledge-database/analysis-data.json)
+
+          ---
+
+          💡 **Tip:** You can also use the downloaded artifact from the workflow run if you prefer not to checkout the branch.
+
+          🤖 *This issue was automatically created by the Knowledge Base Generation workflow.*
+          EOF
+          )"
+
+          echo "Issue created successfully!"
+
+      - name: Upload knowledge-database artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: copilot-kb-output
-          path: knowledge-database/concepts || true
-          retention-days: 7
+          name: knowledge-database-ready-for-claude
+          path: knowledge-database/
+          retention-days: 30

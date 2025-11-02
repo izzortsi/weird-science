@@ -27,10 +27,59 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      title: "📚 Knowledge Base",
+      folderClickBehavior: "collapse",
+      folderDefaultState: "collapsed",
+      useSavedState: true,
+      mapFn: (node) => {
+        // Customize folder/file display
+        if (node.file) {
+          // Remove date prefixes from file names if present
+          node.displayName = node.displayName?.replace(/^\d{4}-\d{2}-\d{2}-/, "")
+        }
+        return node
+      },
+      sortFn: (a, b) => {
+        // Sort folders first, then alphabetically
+        if ((!a.file && !b.file) || (a.file && b.file)) {
+          return a.displayName.localeCompare(b.displayName)
+        }
+        return a.file ? 1 : -1
+      },
+      filterFn: (node) => node.name !== "tags",
+      order: ["filter", "map", "sort"],
+    })),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({
+      localGraph: {
+        drag: true,
+        zoom: true,
+        depth: 2,
+        scale: 1.1,
+        repelForce: 0.5,
+        centerForce: 0.3,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeTags: [],
+        showTags: true,
+      },
+      globalGraph: {
+        drag: true,
+        zoom: true,
+        depth: -1,
+        scale: 0.9,
+        repelForce: 0.5,
+        centerForce: 0.3,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeTags: [],
+        showTags: true,
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -44,7 +93,55 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      title: "📚 Knowledge Base",
+      folderClickBehavior: "collapse",
+      folderDefaultState: "collapsed",
+      useSavedState: true,
+      mapFn: (node) => {
+        if (node.file) {
+          node.displayName = node.displayName?.replace(/^\d{4}-\d{2}-\d{2}-/, "")
+        }
+        return node
+      },
+      sortFn: (a, b) => {
+        if ((!a.file && !b.file) || (a.file && b.file)) {
+          return a.displayName.localeCompare(b.displayName)
+        }
+        return a.file ? 1 : -1
+      },
+      filterFn: (node) => node.name !== "tags",
+      order: ["filter", "map", "sort"],
+    })),
   ],
-  right: [],
+  right: [
+    Component.Graph({
+      localGraph: {
+        drag: true,
+        zoom: true,
+        depth: 2,
+        scale: 1.1,
+        repelForce: 0.5,
+        centerForce: 0.3,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeTags: [],
+        showTags: true,
+      },
+      globalGraph: {
+        drag: true,
+        zoom: true,
+        depth: -1,
+        scale: 0.9,
+        repelForce: 0.5,
+        centerForce: 0.3,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeTags: [],
+        showTags: true,
+      },
+    }),
+  ],
 }

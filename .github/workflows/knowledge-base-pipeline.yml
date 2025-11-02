@@ -1,0 +1,315 @@
+name: Knowledge Base Pipeline (Master)
+
+on:
+  workflow_dispatch:
+    inputs:
+      sync_zotero:
+        description: 'Sync Zotero library first'
+        required: false
+        default: true
+        type: boolean
+      trigger_notification:
+        description: 'Create notification issue after generation'
+        required: false
+        default: true
+        type: boolean
+  schedule:
+    # Run weekly on Mondays at 3 AM UTC
+    - cron: '0 3 * * 1'
+  push:
+    branches: [ 'dev' ]
+    paths:
+      - '**/*.tex'
+      - '**/*.md'
+      - '.github/workflows/knowledge-base-pipeline.yml'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  # Step 1: Sync Zotero Library (optional but recommended)
+  sync-zotero:
+    name: "1️⃣ Sync Zotero Library"
+    if: github.event.inputs.sync_zotero != 'false'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Check if requirements file exists
+        id: check_requirements
+        run: |
+          if [ -f scripts/zotero-integration/requirements.txt ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No requirements.txt found, skipping dependency installation"
+          fi
+
+      - name: Install dependencies
+        if: steps.check_requirements.outputs.exists == 'true'
+        run: |
+          pip install -r scripts/zotero-integration/requirements.txt || echo "Failed to install dependencies, continuing anyway"
+
+      - name: Run Zotero sync
+        env:
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
+        run: |
+          if [ -f scripts/zotero-integration/zotero_exporter.py ]; then
+            python scripts/zotero-integration/zotero_exporter.py \
+              --group-id "$ZOTERO_GROUP_ID" \
+              ${ZOTERO_API_KEY:+--api-key "$ZOTERO_API_KEY"} || echo "⚠️ Zotero sync failed, continuing anyway"
+          else
+            echo "⚠️ zotero_exporter.py not found, skipping Zotero sync"
+          fi
+
+      - name: Check for changes and commit
+        id: check_changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git add -A
+            git commit -m "chore: sync Zotero library data [automated]" || echo "Commit failed"
+            git push || echo "Push failed"
+            echo "✅ Zotero data updated"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No changes from Zotero sync"
+          fi
+
+  # Step 2: Generate Knowledge Base Data
+  generate-knowledge-base:
+    name: "2️⃣ Generate Knowledge Base Data"
+    needs: [sync-zotero]
+    if: always() && (needs.sync-zotero.result == 'success' || needs.sync-zotero.result == 'skipped')
+    runs-on: ubuntu-latest
+    outputs:
+      branch_name: ${{ steps.get_branch.outputs.branch_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: dev
+
+      - name: Pull latest changes (if Zotero was updated)
+        run: |
+          git pull origin dev || echo "Pull failed, continuing with current state"
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run generation script
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -x .github/scripts/generate_knowledge_db.sh ]; then
+            echo "Running .github/scripts/generate_knowledge_db.sh"
+            .github/scripts/generate_knowledge_db.sh
+          elif [ -f knowledge-database/generate.py ]; then
+            echo "Running knowledge-database/generate.py"
+            python knowledge-database/generate.py
+          else
+            echo "No generation script found." >&2
+            exit 1
+          fi
+
+      - name: Verify generated artifacts
+        run: |
+          set -e
+          echo "Listing knowledge-database after generation:"
+          ls -la knowledge-database || true
+          if [ ! -f knowledge-database/analysis-data.json ] || [ ! -f knowledge-database/claude-prompt.md ]; then
+            echo "Required artifacts missing after generation." >&2
+            exit 1
+          fi
+
+      - name: Commit to dedicated branch
+        id: get_branch
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: github-actions[bot]@users.noreply.github.com
+        run: |
+          set -euo pipefail
+          GENERATED_BRANCH="knowledge-database/generated-${{ github.run_id }}"
+          echo "branch_name=$GENERATED_BRANCH" >> $GITHUB_OUTPUT
+
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          git checkout -b "$GENERATED_BRANCH"
+          git add knowledge-database || true
+          git commit -m "chore(kb): add generated knowledge-database (run ${{ github.run_id }})" || echo "no changes to commit"
+          git push --set-upstream origin "$GENERATED_BRANCH" || true
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-database-${{ github.run_id }}
+          path: knowledge-database
+          retention-days: 30
+
+  # Step 3: Create Notification Issue
+  create-notification:
+    name: "3️⃣ Create Notification Issue"
+    needs: [generate-knowledge-base]
+    if: always() && needs.generate-knowledge-base.result == 'success' && github.event.inputs.trigger_notification != 'false'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout generated branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.generate-knowledge-base.outputs.branch_name }}
+
+      - name: Create GitHub issue with instructions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          BRANCH="${{ needs.generate-knowledge-base.outputs.branch_name }}"
+
+          # Get analysis summary
+          PROJECTS=$(jq -r '.total_projects' knowledge-database/analysis-data.json)
+          LATEX_FILES=$(jq -r '.total_latex_files' knowledge-database/analysis-data.json)
+          CITATIONS=$(jq -r '.total_citations' knowledge-database/analysis-data.json)
+          ZOTERO_ITEMS=$(jq -r '.total_zotero_items' knowledge-database/analysis-data.json)
+          BIB_ENTRIES=$(jq -r '.total_bib_entries' knowledge-database/analysis-data.json)
+
+          # Create issue
+          gh issue create \
+            --title "🤖 Claude Code: Knowledge Base Analysis Ready (Pipeline Run ${{ github.run_id }})" \
+            --label "claude-code,automation,knowledge-base,pipeline" \
+            --body "## 🎯 Action Required: Run Claude Code Locally
+
+          The knowledge base generation pipeline has completed successfully! Please run Claude Code locally to perform semantic analysis.
+
+          ### 🔄 Pipeline Summary
+
+          - ✅ Step 1: Zotero library sync
+          - ✅ Step 2: Knowledge base data generation
+          - ✅ Step 3: Notification (this issue)
+          - ⏸️  **Step 4: YOUR TURN** - Run Claude Code
+
+          ### 📋 Steps to Complete
+
+          1. **Pull the generated branch:**
+             \`\`\`bash
+             git fetch origin
+             git checkout $BRANCH
+             \`\`\`
+
+          2. **Open Claude Code in your editor** (VS Code with Claude Code extension)
+
+          3. **Review the generated files:**
+             - 📄 [\`knowledge-database/claude-prompt.md\`](../blob/$BRANCH/knowledge-database/claude-prompt.md) - Full prompt for semantic analysis
+             - 📊 [\`knowledge-database/analysis-data.json\`](../blob/$BRANCH/knowledge-database/analysis-data.json) - Structured data about LaTeX sources and citations
+
+          4. **Run Claude Code with the prompt:**
+             - Copy the contents of \`knowledge-database/claude-prompt.md\`
+             - Paste into Claude Code chat
+             - Let Claude analyze the repository and generate the knowledge base
+
+          5. **Review and commit the results:**
+             - Claude will create files in \`knowledge-database/concepts/\`
+             - Review the generated Markdown files
+             - Commit the changes:
+               \`\`\`bash
+               git add knowledge-database/concepts
+               git commit -m \"feat(kb): add Claude-generated knowledge base concepts
+
+               🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+               Co-Authored-By: Claude <noreply@anthropic.com>\"
+               git push origin $BRANCH
+               \`\`\`
+
+          6. **Create a Pull Request:**
+             - Open a PR from \`$BRANCH\` to \`dev\`
+             - Review and merge when ready
+             - The Quartz site will automatically deploy with the new knowledge base!
+
+          ### 📊 Analysis Summary
+
+          - **Projects Analyzed:** $PROJECTS
+          - **LaTeX Files:** $LATEX_FILES
+          - **Citations Found:** $CITATIONS
+          - **Zotero Items:** $ZOTERO_ITEMS
+          - **Bibliography Entries:** $BIB_ENTRIES
+
+          ### 🔗 Quick Links
+
+          - [View Branch: \`$BRANCH\`](../tree/$BRANCH)
+          - [Pipeline Run #${{ github.run_id }}](../actions/runs/${{ github.run_id }})
+          - [Claude Prompt](../blob/$BRANCH/knowledge-database/claude-prompt.md)
+          - [Analysis Data](../blob/$BRANCH/knowledge-database/analysis-data.json)
+          - [Download Artifact](../actions/runs/${{ github.run_id }})
+
+          ---
+
+          💡 **Tip:** You can also download the artifact from the workflow run if you prefer not to checkout the branch.
+
+          🤖 *This issue was automatically created by the Knowledge Base Pipeline workflow.*
+          "
+
+          echo "✅ Notification issue created successfully!"
+
+  # Summary Step
+  pipeline-summary:
+    name: "📊 Pipeline Summary"
+    needs: [sync-zotero, generate-knowledge-base, create-notification]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create summary
+        run: |
+          echo "# 🔄 Knowledge Base Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Pipeline Steps" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ needs.sync-zotero.result }}" == "success" ]; then
+            echo "- ✅ **Zotero Sync:** Success" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.sync-zotero.result }}" == "skipped" ]; then
+            echo "- ⏭️ **Zotero Sync:** Skipped" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ❌ **Zotero Sync:** Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ needs.generate-knowledge-base.result }}" == "success" ]; then
+            echo "- ✅ **Knowledge Base Generation:** Success" >> $GITHUB_STEP_SUMMARY
+            echo "  - Branch: \`${{ needs.generate-knowledge-base.outputs.branch_name }}\`" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ❌ **Knowledge Base Generation:** Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ needs.create-notification.result }}" == "success" ]; then
+            echo "- ✅ **Notification Issue:** Created" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.create-notification.result }}" == "skipped" ]; then
+            echo "- ⏭️ **Notification Issue:** Skipped" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ❌ **Notification Issue:** Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "1. Check your GitHub issues for the notification" >> $GITHUB_STEP_SUMMARY
+          echo "2. Follow the instructions to run Claude Code locally" >> $GITHUB_STEP_SUMMARY
+          echo "3. Create a PR with the generated knowledge base" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 [View Workflow Run](../actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
