@@ -83,9 +83,14 @@ jobs:
           # Create content directory structure
           mkdir -p quartz-site/content
 
-          # Copy knowledge-database content
+          # Copy knowledge-database content (excluding internal documentation)
           if [ -d "knowledge-database" ]; then
             cp -r knowledge-database/* quartz-site/content/ || true
+
+            # Remove internal documentation files
+            rm -f quartz-site/content/CLAUDE_INTEGRATION.md
+            rm -f quartz-site/content/claude-prompt.md
+            rm -f quartz-site/content/analysis-data.json
 
             # Use knowledge-database README as the homepage index
             if [ -f "knowledge-database/README.md" ]; then
