@@ -75,6 +75,9 @@ jobs:
           # Install dependencies (package-lock.json always exists after initialization)
           npm ci
       
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Setup Quartz content
         run: |
           # Create content directory structure
@@ -97,7 +100,7 @@ jobs:
             mkdir -p quartz-site/content/projects
             cp "$file" "quartz-site/content/projects/${project}-summary.md"
           done
-      
+
       - name: Build Quartz site
         run: |
           cd quartz-site
