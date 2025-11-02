@@ -7,15 +7,15 @@ tags:
   - literature-review
   - gst-overview
 zotero_keys:
-  - JVAUAL5Q
-  - 4JSYDZNR
   - E6TF8EDR
   - TETVGKU7
+  - 4JSYDZNR
+  - JVAUAL5Q
 matched_bibkeys:
-  - Lin1999
-  - Mesarovic1972
   - Takahashi1995
   - Mesarovic1975
+  - Mesarovic1972
+  - Lin1999
 ---
 
 # Foundations of General Systems Theory: A Survey of Formal Definitions
@@ -50,7 +50,8 @@ The central question is: What are the fundamental mathematical definitions and t
 
 *Mihajlo D. Mesarovic (1972)*
 
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/4JSYDZNR) | DOI: [10.1108/eb005295](https://doi.org/10.1108/eb005295)
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/4JSYDZNR)
+ | DOI: [10.1108/eb005295](https://doi.org/10.1108/eb005295)
 
 ---
 

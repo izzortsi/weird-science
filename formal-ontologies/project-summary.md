@@ -34,7 +34,8 @@ The central philosophical question emerges: How do we formalize the transition f
 
 *Alexander Backlund (2000)*
 
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/LQ8GFWEG) | DOI: [10.1108/03684920010322055](https://doi.org/10.1108/03684920010322055)
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/LQ8GFWEG)
+ | DOI: [10.1108/03684920010322055](https://doi.org/10.1108/03684920010322055)
 
 ---
 

@@ -7,15 +7,15 @@ tags:
   - literature-review
   - nested-systems
 zotero_keys:
-  - TETVGKU7
-  - LQ8GFWEG
   - B7AE6ZQF
   - 3I8HVQYH
+  - TETVGKU7
+  - LQ8GFWEG
 matched_bibkeys:
-  - Mesarovic1976
-  - Backlund2000
   - Simon2012
   - Mesarovic1970
+  - Mesarovic1976
+  - Backlund2000
 ---
 
 # Non-well-founded Hierarchies of Nested Systems
@@ -38,7 +38,8 @@ This investigation develops formal machinery for the enclose relation, subsystem
 
 *Alexander Backlund (2000)*
 
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/LQ8GFWEG) | DOI: [10.1108/03684920010322055](https://doi.org/10.1108/03684920010322055)
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/LQ8GFWEG)
+ | DOI: [10.1108/03684920010322055](https://doi.org/10.1108/03684920010322055)
 
 ---
 
