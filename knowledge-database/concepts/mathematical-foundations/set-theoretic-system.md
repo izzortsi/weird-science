@@ -163,7 +163,11 @@ Set-theoretic systems can be formalized at different levels:
 
 ## Key References
 
-The set-theoretic foundation for systems theory was developed by Mesarovic, Wymore, Zadeh, and others, providing rigorous mathematical basis for general systems theory.
+### General Systems Theory: Mathematical Foundations
+*Mihajlo D. Mesarović, Yasuhiko Takahara (1975)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/TETVGKU7)
+
+Provides the canonical set-theoretic foundation for general systems theory, defining systems as relations on Cartesian products and establishing rigorous mathematical basis for system analysis.
 
 ## Related Concepts
 

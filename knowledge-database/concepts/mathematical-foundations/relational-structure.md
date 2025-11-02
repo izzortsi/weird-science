@@ -134,7 +134,12 @@ Relations in a structure may satisfy various properties:
 
 ## Key References
 
-Relational structures are fundamental in mathematical logic and model theory, extensively studied by Tarski, Robinson, Chang, and Keisler. They provide the semantic foundation for both logic and many areas of computer science.
+### Model Theory
+*Wilfrid Hodges (1993)*
+
+Comprehensive treatment of relational structures in model theory, including morphisms, homomorphisms, and the role of structures in providing semantics for logical languages.
+
+Relational structures provide the semantic foundation for both mathematical logic and many areas of computer science, extensively studied by Tarski, Robinson, Chang, and Keisler.
 
 ## Related Concepts
 
