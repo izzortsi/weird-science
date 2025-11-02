@@ -8,7 +8,7 @@ This knowledge base contains atomic concept articles extracted through semantic 
 
 ## Research Projects
 
-### [From Conceptualization to Ontology](../formal-ontologies/project-summary.md)
+### [From Conceptualization to Ontology](projects/formal-ontologies-summary)
 
 A philosophical excavation of formal system concepts, tracing the trajectory from extensional mathematical structures through intensional conceptualizations to formal ontologies.
 
@@ -18,7 +18,7 @@ A philosophical excavation of formal system concepts, tracing the trajectory fro
 
 ---
 
-### [Non-well-founded Hierarchies of Nested Systems](../general-systems-theory/nested-systems/project-summary.md)
+### [Non-well-founded Hierarchies of Nested Systems](projects/general-systems-theory-nested-systems-summary)
 
 A systematic investigation of complex systems through recursive nesting of subsystems, examining emergence as a structural phenomenon in hierarchical architectures.
 
@@ -28,7 +28,7 @@ A systematic investigation of complex systems through recursive nesting of subsy
 
 ---
 
-### [Foundations of General Systems Theory: A Survey](../general-systems-theory/gst-overview/project-summary.md)
+### [Foundations of General Systems Theory: A Survey](projects/general-systems-theory-gst-overview-summary)
 
 A comprehensive survey of mathematical formalizations of systems theory, tracing conceptual foundations through seminal contributions from Mesarovic, Takahara, Yi Lin, and other key figures.
 

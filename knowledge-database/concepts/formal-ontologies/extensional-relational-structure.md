@@ -10,9 +10,9 @@ zotero_keys: []
 
 ## Definition
 
-An **extensional relational structure** (also called a **phenomenal cross-section**) is a tuple (D, R) where:
-- D is the **universe of discourse** (domain of entities)
-- R is a set of **relations** on D
+An **extensional relational structure** (also called a **phenomenal cross-section**) is a tuple $(\mathcal{D}, \mathcal{R})$ where:
+- $\mathcal{D}$ is the **universe of discourse** (domain of entities)
+- $\mathcal{R}$ is a set of **relations** on $\mathcal{D}$
 
 This represents a mathematical conceptualization according to Genesereth and Nilsson, providing a snapshot of entities and their actual interrelations at a particular state.
 
@@ -26,8 +26,8 @@ This represents a mathematical conceptualization according to Genesereth and Nil
 ## Examples
 
 A simple extensional structure might include:
-- Domain D = {molecules in a system}
-- Relations R = {chemical bonds, spatial proximity, energy levels}
+- Domain $\mathcal{D} = \{\text{molecules in a system}\}$
+- Relations $\mathcal{R} = \{\text{chemical bonds, spatial proximity, energy levels}\}$
 
 At a given instant, this structure captures which molecules are bonded, their distances, and energy states—but not the laws determining how these change.
 

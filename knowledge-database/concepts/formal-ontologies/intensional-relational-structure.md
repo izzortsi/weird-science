@@ -12,7 +12,7 @@ zotero_keys: []
 
 An intensional relational structure is a fundamental component of a conceptualization in formal ontology theory. It represents the conceptual schema or intension that defines what entities and relationships are meaningful in a domain, independent of their specific instantiations.
 
-While an extensional relational structure consists of a domain D and a set of relations R over D, an intensional relational structure defines the same structure at the conceptual level - specifying what kinds of entities and relations are possible or intended, rather than which specific entities and relations actually exist.
+While an extensional relational structure consists of a domain $\mathcal{D}$ and a set of relations $\mathcal{R}$ over $\mathcal{D}$, an intensional relational structure defines the same structure at the conceptual level - specifying what kinds of entities and relations are possible or intended, rather than which specific entities and relations actually exist.
 
 ### Key Characteristics
 
