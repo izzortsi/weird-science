@@ -416,6 +416,9 @@ class MarkdownGenerator:
                 for item in value:
                     md_content.append(f'  - {item}')
             else:
+                # Quote strings that contain special YAML characters (colons, etc.)
+                if isinstance(value, str) and (':' in value or value.startswith(('*', '&', '!', '|', '>', '{', '['))):
+                    value = json.dumps(value)
                 md_content.append(f'{key}: {value}')
         md_content.append('---')
         md_content.append('')
