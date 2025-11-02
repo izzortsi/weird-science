@@ -7,15 +7,15 @@ tags:
   - literature-review
   - gst-overview
 zotero_keys:
-  - TETVGKU7
+  - E6TF8EDR
   - 4JSYDZNR
   - JVAUAL5Q
-  - E6TF8EDR
+  - TETVGKU7
 matched_bibkeys:
-  - Mesarovic1975
+  - Takahashi1995
   - Mesarovic1972
   - Lin1999
-  - Takahashi1995
+  - Mesarovic1975
 ---
 
 # Foundations of General Systems Theory: A Survey of Formal Definitions - Literature Summary
