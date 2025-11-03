@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-02T21:21:23.166369+00:00",
+  "timestamp": "2025-11-03T01:06:26.745354+00:00",
   "total_projects": 3,
   "total_latex_files": 17,
   "total_citations": 16,
@@ -10,189 +10,182 @@
       "name": "formal-ontologies",
       "tex_files": [
         {
-          "path": "formal-ontologies/main.tex",
+          "path": "formal-ontologies\\main.tex",
           "content_length": 1649,
           "citations": []
         },
         {
-          "path": "formal-ontologies/sections/extensional-foundations.tex",
+          "path": "formal-ontologies\\sections\\conclusion.tex",
+          "content_length": 2078,
+          "citations": []
+        },
+        {
+          "path": "formal-ontologies\\sections\\extensional-foundations.tex",
           "content_length": 3528,
           "citations": [
-            "Bertalanffy1968",
             "Lin1987",
-            "Mesarovic1975"
+            "Mesarovic1975",
+            "Bertalanffy1968"
           ]
         },
         {
-          "path": "formal-ontologies/sections/intended-models.tex",
+          "path": "formal-ontologies\\sections\\intended-models.tex",
           "content_length": 3357,
           "citations": []
         },
         {
-          "path": "formal-ontologies/sections/intensional-turn.tex",
+          "path": "formal-ontologies\\sections\\intensional-turn.tex",
           "content_length": 6296,
           "citations": [
-            "Carnap1956",
-            "Backlund2000a"
+            "Backlund2000a",
+            "Carnap1956"
           ]
         },
         {
-          "path": "formal-ontologies/sections/introduction.tex",
+          "path": "formal-ontologies\\sections\\introduction.tex",
           "content_length": 1092,
           "citations": [
             "Bertalanffy1968"
           ]
         },
         {
-          "path": "formal-ontologies/sections/conclusion.tex",
-          "content_length": 2078,
-          "citations": []
-        },
-        {
-          "path": "formal-ontologies/sections/ontology-specification.tex",
-          "content_length": 5120,
-          "citations": [
-            "Schaffer2008"
-          ]
-        },
-        {
-          "path": "formal-ontologies/sections/ontological-commitment.tex",
+          "path": "formal-ontologies\\sections\\ontological-commitment.tex",
           "content_length": 4511,
           "citations": [
             "Schaffer2008"
           ]
+        },
+        {
+          "path": "formal-ontologies\\sections\\ontology-specification.tex",
+          "content_length": 5120,
+          "citations": [
+            "Schaffer2008"
+          ]
         }
       ],
       "citations": [
-        "Bertalanffy1968",
         "Lin1987",
+        "Carnap1956",
         "Backlund2000a",
+        "Bertalanffy1968",
         "Mesarovic1975",
-        "Schaffer2008",
-        "Carnap1956"
-      ]
-    },
-    {
-      "name": "nested-systems",
-      "tex_files": [
-        {
-          "path": "general-systems-theory/nested-systems/main.tex",
-          "content_length": 3501,
-          "citations": []
-        },
-        {
-          "path": "general-systems-theory/nested-systems/sections/subsystems.tex",
-          "content_length": 17466,
-          "citations": [
-            "Backlund2000",
-            "Mesarovic1976",
-            "Walloth2016",
-            "Mesarovic1970"
-          ]
-        },
-        {
-          "path": "general-systems-theory/nested-systems/sections/introduction.tex",
-          "content_length": 8778,
-          "citations": []
-        },
-        {
-          "path": "general-systems-theory/nested-systems/sections/systems.tex",
-          "content_length": 12267,
-          "citations": [
-            "Mesarovic1970",
-            "Poizat2000"
-          ]
-        },
-        {
-          "path": "general-systems-theory/nested-systems/sections/preliminaries.tex",
-          "content_length": 4642,
-          "citations": [
-            "Poizat2000"
-          ]
-        },
-        {
-          "path": "general-systems-theory/nested-systems/sections/hierarchies.tex",
-          "content_length": 22050,
-          "citations": [
-            "Simon2012",
-            "Mesarovic1970",
-            "Lin2002"
-          ]
-        }
-      ],
-      "citations": [
-        "Backlund2000",
-        "Mesarovic1976",
-        "Poizat2000",
-        "Walloth2016",
-        "Lin2002",
-        "Simon2012",
-        "Mesarovic1970"
+        "Schaffer2008"
       ]
     },
     {
       "name": "gst-overview",
       "tex_files": [
         {
-          "path": "general-systems-theory/gst-overview/main.tex",
+          "path": "general-systems-theory\\gst-overview\\main.tex",
           "content_length": 1350,
           "citations": []
         },
         {
-          "path": "general-systems-theory/gst-overview/sections/theoretical-insights.tex",
-          "content_length": 6470,
+          "path": "general-systems-theory\\gst-overview\\sections\\foundational-definitions.tex",
+          "content_length": 5067,
           "citations": [
             "Lin1999",
-            "Mesarovic1972",
-            "Takahashi1995",
-            "Mesarovic1975"
+            "Mesarovic1975",
+            "Mesarovic1972"
           ]
         },
         {
-          "path": "general-systems-theory/gst-overview/sections/foundational-definitions.tex",
-          "content_length": 5067,
+          "path": "general-systems-theory\\gst-overview\\sections\\theoretical-insights.tex",
+          "content_length": 6470,
           "citations": [
-            "Mesarovic1972",
+            "Takahashi1995",
             "Lin1999",
-            "Mesarovic1975"
+            "Mesarovic1975",
+            "Mesarovic1972"
           ]
         }
       ],
       "citations": [
-        "Mesarovic1972",
+        "Takahashi1995",
         "Lin1999",
         "Mesarovic1975",
-        "Takahashi1995"
+        "Mesarovic1972"
+      ]
+    },
+    {
+      "name": "nested-systems",
+      "tex_files": [
+        {
+          "path": "general-systems-theory\\nested-systems\\main.tex",
+          "content_length": 3501,
+          "citations": []
+        },
+        {
+          "path": "general-systems-theory\\nested-systems\\sections\\hierarchies.tex",
+          "content_length": 22050,
+          "citations": [
+            "Lin2002",
+            "Simon2012",
+            "Mesarovic1970"
+          ]
+        },
+        {
+          "path": "general-systems-theory\\nested-systems\\sections\\introduction.tex",
+          "content_length": 8778,
+          "citations": []
+        },
+        {
+          "path": "general-systems-theory\\nested-systems\\sections\\preliminaries.tex",
+          "content_length": 4642,
+          "citations": [
+            "Poizat2000"
+          ]
+        },
+        {
+          "path": "general-systems-theory\\nested-systems\\sections\\subsystems.tex",
+          "content_length": 17466,
+          "citations": [
+            "Mesarovic1976",
+            "Walloth2016",
+            "Backlund2000",
+            "Mesarovic1970"
+          ]
+        },
+        {
+          "path": "general-systems-theory\\nested-systems\\sections\\systems.tex",
+          "content_length": 12267,
+          "citations": [
+            "Poizat2000",
+            "Mesarovic1970"
+          ]
+        }
+      ],
+      "citations": [
+        "Walloth2016",
+        "Backlund2000",
+        "Poizat2000",
+        "Mesarovic1970",
+        "Lin2002",
+        "Simon2012",
+        "Mesarovic1976"
       ]
     }
   ],
   "all_citations": [
-    "Backlund2000",
-    "Bertalanffy1968",
-    "Schaffer2008",
+    "Lin1999",
     "Lin1987",
     "Walloth2016",
+    "Carnap1956",
+    "Backlund2000",
+    "Mesarovic1970",
+    "Poizat2000",
     "Lin2002",
     "Simon2012",
-    "Poizat2000",
-    "Takahashi1995",
-    "Carnap1956",
-    "Backlund2000a",
-    "Mesarovic1976",
-    "Mesarovic1972",
-    "Lin1999",
+    "Bertalanffy1968",
     "Mesarovic1975",
-    "Mesarovic1970"
+    "Schaffer2008",
+    "Mesarovic1972",
+    "Takahashi1995",
+    "Mesarovic1976",
+    "Backlund2000a"
   ],
   "zotero_items_summary": [],
   "bibliography_keys": [
-    "Bertalanffy1968",
-    "Carnap1956",
-    "Backlund2000a",
-    "Guarino2009",
-    "Lin1987",
-    "Mesarovic1975",
-    "Schaffer2008",
     "Poizat2000",
     "Lin2002",
     "Pichler2000",
@@ -290,11 +283,19 @@
     "DeHaro2019",
     "Gabbay2011",
     "Furusawa2000",
+    "Mesarovic1975",
     "Mesarovic1989",
     "Lin1999",
     "Takahashi1995",
     "Bunge1979",
     "Klir1985",
-    "Bertalanffy1972"
-  ]
+    "Bertalanffy1972",
+    "Bertalanffy1968",
+    "Carnap1956",
+    "Backlund2000a",
+    "Guarino2009",
+    "Lin1987",
+    "Schaffer2008"
+  ],
+  "cited_papers": {}
 }

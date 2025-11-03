@@ -25,6 +25,13 @@ from typing import Dict, List, Set, Optional, Tuple
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 
+# Import PaperFetcher for Γ⁺ expansion
+try:
+    from paper_fetcher import PaperFetcher, PaperContent
+except ImportError:
+    # Try relative import
+    from .paper_fetcher import PaperFetcher, PaperContent
+
 
 @dataclass
 class LatexSource:
@@ -113,20 +120,32 @@ class LatexAnalyzer:
 class KnowledgeBaseGenerator:
     """Orchestrates knowledge base generation from LaTeX and Zotero data."""
     
-    def __init__(self, repo_root: Path, manifest_path: Path, output_dir: Path):
+    def __init__(self, repo_root: Path, manifest_path: Path, output_dir: Path,
+                 zotero_api_key: Optional[str] = None,
+                 semantic_scholar_api_key: Optional[str] = None):
         self.repo_root = repo_root
         self.manifest_path = manifest_path
         self.output_dir = output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        
+
         # Load Zotero manifest
         self.manifest = self.load_manifest()
-        
+
         # Analyze LaTeX sources
         self.latex_sources = LatexAnalyzer.find_latex_files(repo_root)
-        
+
         # Load bibliography files
         self.bib_entries = self.load_all_bibtex()
+
+        # Initialize PaperFetcher for Γ⁺ expansion
+        self.paper_fetcher = PaperFetcher(
+            zotero_api_key=zotero_api_key,
+            semantic_scholar_api_key=semantic_scholar_api_key
+        )
+
+        # Load paper cache if it exists
+        cache_file = self.output_dir / "cited-papers-cache.json"
+        self.paper_fetcher.load_cache(cache_file)
     
     def load_manifest(self) -> Dict:
         """Load the Zotero manifest."""
@@ -163,13 +182,13 @@ class KnowledgeBaseGenerator:
         
         return bib_entries
     
-    def prepare_analysis_data(self) -> Dict:
+    def prepare_analysis_data(self, fetch_papers: bool = True) -> Dict:
         """Prepare structured data for semantic analysis."""
         # Collect all citations from LaTeX sources
         all_citations = set()
         for source in self.latex_sources:
             all_citations.update(source.citations)
-        
+
         # Organize data by project
         projects_data = {}
         for source in self.latex_sources:
@@ -179,18 +198,23 @@ class KnowledgeBaseGenerator:
                     'tex_files': [],
                     'citations': set()
                 }
-            
+
             projects_data[source.project]['tex_files'].append({
                 'path': str(source.path.relative_to(self.repo_root)),
                 'content_length': len(source.content),
                 'citations': list(source.citations)
             })
             projects_data[source.project]['citations'].update(source.citations)
-        
+
         # Convert sets to lists for JSON serialization
         for project_data in projects_data.values():
             project_data['citations'] = list(project_data['citations'])
-        
+
+        # Fetch cited papers for Γ⁺ expansion
+        cited_papers = {}
+        if fetch_papers and all_citations:
+            cited_papers = self.fetch_cited_papers(all_citations)
+
         analysis_data = {
             'timestamp': datetime.now(timezone.utc).isoformat(),
             'total_projects': len(projects_data),
@@ -201,15 +225,16 @@ class KnowledgeBaseGenerator:
             'projects': list(projects_data.values()),
             'all_citations': list(all_citations),
             'zotero_items_summary': self.summarize_zotero_items(),
-            'bibliography_keys': list(self.bib_entries.keys())
+            'bibliography_keys': list(self.bib_entries.keys()),
+            'cited_papers': cited_papers  # Add cited papers data for Γ⁺ expansion
         }
-        
+
         return analysis_data
     
     def summarize_zotero_items(self) -> List[Dict]:
         """Create a summary of Zotero items for analysis."""
         items_summary = []
-        
+
         for item in self.manifest.get('items', []):
             summary = {
                 'key': item['key'],
@@ -221,8 +246,59 @@ class KnowledgeBaseGenerator:
                 'num_attachments': len(item.get('attachments', []))
             }
             items_summary.append(summary)
-        
+
         return items_summary
+
+    def fetch_cited_papers(self, citations: Set[str]) -> Dict[str, Optional[Dict]]:
+        """
+        Fetch content for cited papers (Γ → Γ⁺ expansion).
+
+        Args:
+            citations: Set of citation keys from LaTeX sources
+
+        Returns:
+            Dictionary mapping bibkey to paper content
+        """
+        cited_papers = {}
+
+        print(f"\nFetching content for {len(citations)} cited papers...")
+
+        # Create mapping from bibkey to Zotero item
+        zotero_items_by_bibkey = {}
+        for item in self.manifest.get('items', []):
+            # Try to match Zotero item to bibkey
+            item_id = item.get('citation_key') or item.get('key')
+            if item_id:
+                zotero_items_by_bibkey[item_id] = item
+
+        for i, bibkey in enumerate(sorted(citations), 1):
+            print(f"  [{i}/{len(citations)}] Fetching {bibkey}...", end=' ')
+
+            # Get Zotero item if available
+            zotero_item = zotero_items_by_bibkey.get(bibkey)
+
+            # Get bib entry if available
+            bib_entry = self.bib_entries.get(bibkey)
+
+            # Fetch paper content
+            content = self.paper_fetcher.fetch_paper_content(
+                bibkey=bibkey,
+                zotero_item=zotero_item,
+                bib_entry=bib_entry
+            )
+
+            if content:
+                cited_papers[bibkey] = content.to_dict()
+                print(f"OK ({content.source})")
+            else:
+                cited_papers[bibkey] = None
+                print("NOT FOUND")
+
+        # Save cache
+        cache_file = self.output_dir / "cited-papers-cache.json"
+        self.paper_fetcher.save_cache(cache_file)
+
+        return cited_papers
     
     def generate_claude_prompt(self, analysis_data: Dict) -> str:
         """Generate a detailed prompt for Claude Code semantic analysis."""
@@ -259,23 +335,46 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
    - References/citations associated with the concept
    - Related concepts mentioned together
 
-### Phase 2: Expand to Zotero Concepts (Γ⁺)
-1. Review Zotero library items (titles, tags, abstracts)
-2. Identify concepts referenced/cited in LaTeX that appear in Zotero
-3. Expand Γ to Γ⁺ by including related concepts from Zotero that:
-   - Are cited in the LaTeX sources
-   - Share tags with concepts in Γ
-   - Are semantically related based on titles and abstracts
-   - Form logical connections in the knowledge graph
+### Phase 2: Expand to Γ⁺ via Cited Papers
+1. **Locate cited papers** in the `cited_papers` section of `analysis-data.json`
+2. **Analyze paper content** for each citation found in LaTeX sources:
+   - Read the title, abstract, and TLDR (if available)
+   - Identify core concepts that the paper introduces or defines
+   - Extract key technical terms and theoretical constructs
+   - Note concepts that appear repeatedly or are central to the paper's contribution
+3. **Extract concepts** from cited papers that should be added to Γ⁺:
+   - Concepts that are central to highly-cited or influential papers
+   - Concepts that appear in ≥2 different cited papers
+   - Concepts that are mentioned (even in passing) in the LaTeX sources
+   - Foundational concepts that establish theoretical frameworks
+4. **Expand Γ to Γ⁺** by including these paper-derived concepts
 
-### Phase 3: Hierarchical Classification
-1. Organize Γ⁺ into a hierarchical taxonomy
+**Example:**
+```
+LaTeX cites: Simon2012 ("The Architecture of Complexity")
+→ Read paper content from cited_papers['Simon2012']
+→ Extract concepts: {complexity, near-decomposability, hierarchy,
+                     stable-intermediate-forms, watchmaker-parable}
+→ Add to Γ⁺ (even though not explicitly defined in LaTeX sources)
+```
+
+### Phase 3: Cross-reference with Zotero Library (Γ⁺ → Γ⁺⁺)
+1. Review remaining Zotero library items (titles, tags, abstracts)
+2. For each concept in Γ⁺, search for additional papers in Zotero that:
+   - Have the concept in title or tags
+   - Are in the same collection as cited papers
+   - Provide alternative definitions or perspectives
+3. Extract additional definitions and treatments of concepts
+4. Build cross-references between different treatments
+
+### Phase 4: Hierarchical Classification
+1. Organize Γ⁺⁺ into a hierarchical taxonomy
 2. Identify top-level domains (e.g., "systems-theory", "formal-ontologies", "mathematics")
 3. Create 2-4 levels of hierarchy where appropriate
 4. Group related concepts together
 
-### Phase 4: Generate Atomic Markdown Files
-For each concept in Γ⁺, create a Markdown file with:
+### Phase 5: Generate Atomic Markdown Files
+For each concept in Γ⁺⁺, create a Markdown file with:
 
 **Filename:** `knowledge-database/concepts/{hierarchy-path}/{concept-name}.md`
 
@@ -323,7 +422,7 @@ zotero_keys: [KEY1, KEY2, ...]
 - bibkey2
 ```
 
-### Phase 5: Generate Summary Files
+### Phase 6: Generate Summary Files
 At each level of the hierarchy, create an `index.md` file that:
 - Lists all concepts at that level
 - Provides brief descriptions
@@ -388,7 +487,7 @@ Please proceed with the semantic analysis and knowledge base generation.
             f.write(prompt)
         return output_file
     
-    def generate(self, force: bool = False) -> None:
+    def generate(self, force: bool = False, fetch_papers: bool = True) -> None:
         """Main generation workflow."""
         print("=" * 70)
         print("Knowledge Base Generator - Semantic Analysis Orchestration")
@@ -396,26 +495,27 @@ Please proceed with the semantic analysis and knowledge base generation.
         print(f"Repository: {self.repo_root}")
         print(f"Manifest: {self.manifest_path}")
         print(f"Output: {self.output_dir}")
+        print(f"Cited Paper Expansion: {'enabled' if fetch_papers else 'disabled'}")
         print()
-        
+
         # Prepare analysis data
         print("Preparing analysis data...")
-        analysis_data = self.prepare_analysis_data()
-        print(f"  ✓ Projects: {analysis_data['total_projects']}")
-        print(f"  ✓ LaTeX files: {analysis_data['total_latex_files']}")
-        print(f"  ✓ Citations: {analysis_data['total_citations']}")
-        print(f"  ✓ Zotero items: {analysis_data['total_zotero_items']}")
+        analysis_data = self.prepare_analysis_data(fetch_papers=fetch_papers)
+        print(f"  * Projects: {analysis_data['total_projects']}")
+        print(f"  * LaTeX files: {analysis_data['total_latex_files']}")
+        print(f"  * Citations: {analysis_data['total_citations']}")
+        print(f"  * Zotero items: {analysis_data['total_zotero_items']}")
         print()
-        
+
         # Save analysis data
         analysis_file = self.save_analysis_data(analysis_data)
-        print(f"✓ Saved analysis data: {analysis_file}")
-        
+        print(f"* Saved analysis data: {analysis_file}")
+
         # Generate Claude prompt
         print("\nGenerating Claude Code prompt...")
         prompt = self.generate_claude_prompt(analysis_data)
         prompt_file = self.save_claude_prompt(prompt)
-        print(f"✓ Saved Claude prompt: {prompt_file}")
+        print(f"* Saved Claude prompt: {prompt_file}")
         print()
         
         # Generate instructions for handoff
@@ -567,8 +667,8 @@ DOI: [10.xxxx/yyyy](https://doi.org/10.xxxx/yyyy)
         instructions_file = self.output_dir / "CLAUDE_INTEGRATION.md"
         with open(instructions_file, 'w', encoding='utf-8') as f:
             f.write(instructions)
-        
-        print(f"✓ Saved integration instructions: {instructions_file}")
+
+        print(f"* Saved integration instructions: {instructions_file}")
 
 
 def main():
@@ -601,15 +701,32 @@ def main():
         help="Force regeneration of all files"
     )
     
+    parser.add_argument(
+        "--s2-api-key",
+        default=os.environ.get("SEMANTIC_SCHOLAR_API_KEY"),
+        help="Semantic Scholar API key (for Γ⁺ expansion)"
+    )
+    parser.add_argument(
+        "--skip-paper-fetch",
+        action="store_true",
+        help="Skip fetching cited papers (Γ⁺ expansion)"
+    )
+
     args = parser.parse_args()
-    
+
     repo_root = Path.cwd()
     manifest_path = Path(args.manifest)
     output_dir = Path(args.output_dir)
-    
-    generator = KnowledgeBaseGenerator(repo_root, manifest_path, output_dir)
-    generator.generate(force=args.force)
-    
+
+    generator = KnowledgeBaseGenerator(
+        repo_root,
+        manifest_path,
+        output_dir,
+        zotero_api_key=args.api_key,
+        semantic_scholar_api_key=args.s2_api_key
+    )
+    generator.generate(force=args.force, fetch_papers=not args.skip_paper_fetch)
+
     return 0
 
 

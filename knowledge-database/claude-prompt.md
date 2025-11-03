@@ -16,13 +16,13 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - LaTeX files: 8
 - Citations: 6
 
-### nested-systems
-- LaTeX files: 6
-- Citations: 7
-
 ### gst-overview
 - LaTeX files: 3
 - Citations: 4
+
+### nested-systems
+- LaTeX files: 6
+- Citations: 7
 
 
 ## Task Requirements
@@ -37,23 +37,46 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
    - References/citations associated with the concept
    - Related concepts mentioned together
 
-### Phase 2: Expand to Zotero Concepts (Γ⁺)
-1. Review Zotero library items (titles, tags, abstracts)
-2. Identify concepts referenced/cited in LaTeX that appear in Zotero
-3. Expand Γ to Γ⁺ by including related concepts from Zotero that:
-   - Are cited in the LaTeX sources
-   - Share tags with concepts in Γ
-   - Are semantically related based on titles and abstracts
-   - Form logical connections in the knowledge graph
+### Phase 2: Expand to Γ⁺ via Cited Papers
+1. **Locate cited papers** in the `cited_papers` section of `analysis-data.json`
+2. **Analyze paper content** for each citation found in LaTeX sources:
+   - Read the title, abstract, and TLDR (if available)
+   - Identify core concepts that the paper introduces or defines
+   - Extract key technical terms and theoretical constructs
+   - Note concepts that appear repeatedly or are central to the paper's contribution
+3. **Extract concepts** from cited papers that should be added to Γ⁺:
+   - Concepts that are central to highly-cited or influential papers
+   - Concepts that appear in ≥2 different cited papers
+   - Concepts that are mentioned (even in passing) in the LaTeX sources
+   - Foundational concepts that establish theoretical frameworks
+4. **Expand Γ to Γ⁺** by including these paper-derived concepts
 
-### Phase 3: Hierarchical Classification
-1. Organize Γ⁺ into a hierarchical taxonomy
+**Example:**
+```
+LaTeX cites: Simon2012 ("The Architecture of Complexity")
+→ Read paper content from cited_papers['Simon2012']
+→ Extract concepts: {complexity, near-decomposability, hierarchy,
+                     stable-intermediate-forms, watchmaker-parable}
+→ Add to Γ⁺ (even though not explicitly defined in LaTeX sources)
+```
+
+### Phase 3: Cross-reference with Zotero Library (Γ⁺ → Γ⁺⁺)
+1. Review remaining Zotero library items (titles, tags, abstracts)
+2. For each concept in Γ⁺, search for additional papers in Zotero that:
+   - Have the concept in title or tags
+   - Are in the same collection as cited papers
+   - Provide alternative definitions or perspectives
+3. Extract additional definitions and treatments of concepts
+4. Build cross-references between different treatments
+
+### Phase 4: Hierarchical Classification
+1. Organize Γ⁺⁺ into a hierarchical taxonomy
 2. Identify top-level domains (e.g., "systems-theory", "formal-ontologies", "mathematics")
 3. Create 2-4 levels of hierarchy where appropriate
 4. Group related concepts together
 
-### Phase 4: Generate Atomic Markdown Files
-For each concept in Γ⁺, create a Markdown file with:
+### Phase 5: Generate Atomic Markdown Files
+For each concept in Γ⁺⁺, create a Markdown file with:
 
 **Filename:** `knowledge-database/concepts/{hierarchy-path}/{concept-name}.md`
 
@@ -101,7 +124,7 @@ zotero_keys: [KEY1, KEY2, ...]
 - bibkey2
 ```
 
-### Phase 5: Generate Summary Files
+### Phase 6: Generate Summary Files
 At each level of the hierarchy, create an `index.md` file that:
 - Lists all concepts at that level
 - Provides brief descriptions
@@ -129,22 +152,22 @@ Provide the complete knowledge base structure as:
 The following data is available for your analysis:
 
 ### Sample Citations
-- Backlund2000
-- Bertalanffy1968
-- Schaffer2008
+- Lin1999
 - Lin1987
 - Walloth2016
+- Carnap1956
+- Backlund2000
+- Mesarovic1970
+- Poizat2000
 - Lin2002
 - Simon2012
-- Poizat2000
-- Takahashi1995
-- Carnap1956
-- Backlund2000a
-- Mesarovic1976
-- Mesarovic1972
-- Lin1999
+- Bertalanffy1968
 - Mesarovic1975
-- Mesarovic1970
+- Schaffer2008
+- Mesarovic1972
+- Takahashi1995
+- Mesarovic1976
+- Backlund2000a
 
 ### Sample Zotero Items
 
