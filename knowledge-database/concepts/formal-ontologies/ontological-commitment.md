@@ -51,7 +51,7 @@ Ideally: K(O) ⊆ I(C), where I(C) is the set of intended models of C.
 2. **Part-Whole Relations**:
    - Conceptualization: Physical parthood
    - Ontological Commitment: Models satisfying transitivity and anti-symmetry
-   - Different ontologies: mereology with different axioms for fusion/sum
+   - Different ontologies: theories with different axioms for composition
 
 3. **Classification Systems**:
    - Conceptualization: Hierarchical organization

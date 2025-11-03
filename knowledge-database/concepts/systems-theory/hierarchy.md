@@ -116,7 +116,6 @@ Provides comprehensive formal mathematical foundations for hierarchical systems 
 - [[subsystem]] - Components at different hierarchical levels
 - [[hierarchical-decomposition]] - Process of creating hierarchies
 - [[system]] - Entities organized hierarchically
-- [[emergence]] - Properties arising at hierarchical levels
 - [[relational-structure]] - Mathematical representation
 
 ## Bibliography Keys

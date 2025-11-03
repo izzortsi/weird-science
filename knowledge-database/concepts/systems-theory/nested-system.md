@@ -20,7 +20,7 @@ where $\sqsubset$ is the **enclose relation** (parthood).
 Let $\mathcal{S},\ \mathcal{S}'$ be systems such that $\mathcal{S}' \sqsubset \mathcal{S}$ (subsystem relation). We say that $\mathcal{S}$ **encloses** $\mathcal{S}'$, denoting by $\mathcal{S}' \encl \mathcal{S}$, if additionally $\mathfrak{u}(\mathcal{S}') \sqin \mathfrak{e}(\mathcal{S})$. If $\mathcal{S}$ encloses $\mathcal{S}'$ we say that the latter is a **part** of the former.
 
 The enclose relation thus combines three distinct aspects:
-- The mereological relation of part-to-whole
+- The part-to-whole relation
 - The functional dependencies $\mathcal{S}$ holds with respect to $\mathcal{S}'$ (captured by $\sqsubset$)
 - The set-theoretic relation of membership (captured by $\sqin$)
 
@@ -117,7 +117,6 @@ Provides formal mathematical foundations for hierarchical and multilevel systems
 - [[subsystem]] - Components within a level
 - [[hierarchy]] - Organizational structure
 - [[hierarchical-decomposition]] - Process of creating nested structure
-- [[emergence]] - Properties arising at higher levels
 - [[relational-structure]] - Mathematical representation
 
 ## Bibliography Keys

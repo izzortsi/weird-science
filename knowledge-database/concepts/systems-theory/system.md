@@ -121,7 +121,6 @@ Reappraises foundations of systems theory, sharpening basic systems concepts and
 - [[valued-relation]] - Formal representation of system relations
 - [[input-output-system]] - Systems viewed through I/O behavior
 - [[hierarchy]] - Organizational structure of systems
-- [[emergence]] - Properties arising from system interactions
 
 ## Bibliography Keys
 
