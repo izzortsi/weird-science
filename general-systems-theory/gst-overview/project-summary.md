@@ -1,21 +1,21 @@
 ---
 title: "Foundations of General Systems Theory: A Survey of Formal Definitions"
 project: gst-overview
-date: 2025-11-02
+date: 2025-11-03
 tags:
   - zotero
   - literature-review
   - gst-overview
 zotero_keys:
   - JVAUAL5Q
-  - TETVGKU7
   - E6TF8EDR
   - 4JSYDZNR
+  - TETVGKU7
 matched_bibkeys:
   - Lin1999
-  - Mesarovic1975
   - Takahashi1995
   - Mesarovic1972
+  - Mesarovic1975
 ---
 
 # Foundations of General Systems Theory: A Survey of Formal Definitions

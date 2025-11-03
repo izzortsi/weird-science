@@ -1,21 +1,21 @@
 ---
 title: Non-well-founded Hierarchies of Nested Systems
 project: nested-systems
-date: 2025-11-02
+date: 2025-11-03
 tags:
   - zotero
   - literature-review
   - nested-systems
 zotero_keys:
+  - 3I8HVQYH
+  - TETVGKU7
   - B7AE6ZQF
   - LQ8GFWEG
-  - TETVGKU7
-  - 3I8HVQYH
 matched_bibkeys:
+  - Mesarovic1970
+  - Mesarovic1976
   - Simon2012
   - Backlund2000
-  - Mesarovic1976
-  - Mesarovic1970
 ---
 
 # Non-well-founded Hierarchies of Nested Systems
