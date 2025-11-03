@@ -17,13 +17,25 @@ Systems theory provides a unified framework for understanding complex, organized
 
 - [[system]] - Set of interrelated elements forming a unified whole
 - [[subsystem]] - System that is part of a larger system
+- [[supersystem]] - System that encompasses other systems with functional dependencies
 - [[relational-structure]] - Mathematical foundation for system representation
 
-### Organizational Structure
+### Compositional Relationships
 
+- [[parthood]] - The enclose relation combining subsystem membership and mereology
 - [[nested-system]] - Hierarchical organization with systems containing subsystems
+
+### Hierarchical Organization
+
 - [[hierarchy]] - Multi-level organizational structure with ranked or graded elements
 - [[hierarchical-decomposition]] - Process of breaking systems into hierarchical subsystems
+- [[superlevel-system]] - System at a coarser organizational level
+- [[sublevel-system]] - System at a finer organizational level revealing microstructure
+
+### Emergent Phenomena
+
+- [[emergence]] - Novel properties arising at coarser scales from component interactions
+- [[near-decomposability]] - Weak coupling between subsystems enabling stable hierarchies
 
 ### Mathematical Foundations
 
@@ -150,6 +162,6 @@ For deeper understanding, explore:
 
 ---
 
-**Total Concepts in Domain**: 7
+**Total Concepts in Domain**: 13
 
-**Last Updated**: 2025-11-02
+**Last Updated**: 2025-11-03
