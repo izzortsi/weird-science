@@ -46,8 +46,11 @@ Foundational concepts for formal representation of systems and ontologies.
 - [[ontological-commitment]] - Philosophical commitments in formal representations
 - [[intended-models]] - Relationship between specifications and interpretations
 - [[ontology-specification]] - Practical ontology engineering
+- [[world-and-world-state]] - Maximal observable states and temporal evolution
+- [[intensional-relation]] - Functions mapping world states to extensions
+- [[extensional-first-order-structure]] - Model-theoretic semantics for first-order logic
 
-**6 concepts** | [View Index](concepts/formal-ontologies/index.md)
+**9 concepts** | [View Index](concepts/formal-ontologies/index.md)
 
 ---
 
@@ -57,13 +60,19 @@ Mathematical foundations and formal definitions of systems, subsystems, and hier
 
 - [[system]] - Core definition of systems as valued relations
 - [[subsystem]] - Formal characterization of part-whole relationships
+- [[supersystem]] - System encompassing others with functional dependencies
+- [[parthood]] - The enclose relation combining subsystem and membership
 - [[nested-system]] - Recursive nesting and hierarchical organization
 - [[hierarchy]] - Multi-level system architectures
 - [[hierarchical-decomposition]] - Breaking down complex systems
+- [[superlevel-system]] - Coarse-grained level transitions
+- [[sublevel-system]] - Fine-grained level transitions revealing microstructure
 - [[valued-relation]] - Mathematical framework for system descriptions
 - [[input-output-system]] - Systems characterized by input/output behavior
+- [[emergence]] - Novel properties arising at coarser organizational scales
+- [[near-decomposability]] - Weak coupling enabling stable hierarchical organization
 
-**7 concepts** | [View Index](concepts/systems-theory/index.md)
+**13 concepts** | [View Index](concepts/systems-theory/index.md)
 
 ---
 
@@ -80,7 +89,7 @@ Set-theoretic and logical foundations underlying systems theory.
 
 ## Knowledge Base Statistics
 
-- **Total Concepts**: 15 atomic concept articles
+- **Total Concepts**: 24 atomic concept articles
 - **Research Projects**: 3 active investigations
 - **Concept Domains**: 3 hierarchical categories
 - **LaTeX Sources**: 17 files analyzed
@@ -104,4 +113,4 @@ Atomic concept articles are generated through semantic analysis performed by Cla
 
 ---
 
-*Last updated: 2025-11-02*
+*Last updated: 2025-11-03*

@@ -20,11 +20,14 @@ These concepts form the core theoretical framework:
 - [[conceptualization]] - Abstract, simplified view of a domain that we wish to represent
 - [[intensional-relational-structure]] - The conceptual schema defining meaningful entities and relationships
 - [[intended-models]] - The set of possible states of affairs consistent with a conceptualization
+- [[world-and-world-state]] - Maximal observable states and their temporal evolution
+- [[intensional-relation]] - Functions mapping world states to extensional relations
 
 ### Formal Specification
 
 - [[ontological-commitment]] - Agreement to use shared vocabulary coherently with respect to a conceptualization
 - [[ontology-specification]] - Formal, explicit specification of a shared conceptualization
+- [[extensional-first-order-structure]] - Model-theoretic semantics for first-order logic
 
 ## Key Relationships
 
@@ -86,6 +89,6 @@ For deeper understanding, explore:
 
 ---
 
-**Total Concepts in Domain**: 5
+**Total Concepts in Domain**: 8
 
-**Last Updated**: 2025-11-02
+**Last Updated**: 2025-11-03
