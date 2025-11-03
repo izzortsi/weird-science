@@ -8,14 +8,14 @@ tags:
   - gst-overview
 zotero_keys:
   - 4JSYDZNR
-  - TETVGKU7
   - E6TF8EDR
   - JVAUAL5Q
+  - TETVGKU7
 matched_bibkeys:
   - Mesarovic1972
-  - Mesarovic1975
   - Takahashi1995
   - Lin1999
+  - Mesarovic1975
 ---
 
 # Foundations of General Systems Theory: A Survey of Formal Definitions
