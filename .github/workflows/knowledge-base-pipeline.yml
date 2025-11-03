@@ -119,7 +119,6 @@ jobs:
         env:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
           ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
-          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
         run: |
           set -euo pipefail
           if [ -x .github/scripts/generate_knowledge_db.sh ]; then

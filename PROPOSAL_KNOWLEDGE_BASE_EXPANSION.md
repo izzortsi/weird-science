@@ -25,11 +25,11 @@ Currently, the knowledge base generation only extracts concepts **explicitly def
 
 For each citation in Γ's source LaTeX:
 1. Look up paper in Zotero library
-2. **Fetch paper content** via:
-   - Zotero attachments (PDFs)
-   - Semantic Scholar API (abstracts, TLDRs, influential citations)
-   - arXiv API (for preprints)
-   - CrossRef API (metadata)
+2. **Fetch paper content** from Zotero library:
+   - Metadata (title, authors, year)
+   - Abstract
+   - Keywords/tags
+   - Attachments (PDFs)
 3. **Extract concepts** from paper using:
    - Title keywords
    - Abstract analysis
@@ -218,19 +218,13 @@ For each concept in Γ⁺:
 4. **Establish cross-references** between related concepts
 ```
 
-### Step 4: Add Semantic Scholar Integration
+### Step 4: Zotero Library Integration
 
-Add to `.github/workflows/knowledge-base-pipeline.yml`:
-
-```yaml
-- name: Fetch cited papers via APIs
-  env:
-    SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
-    ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
-  run: |
-    python scripts/zotero-integration/fetch_cited_papers.py \
-      --output knowledge-database/cited-papers-content.json
-```
+The system uses only the Zotero library for paper content. Ensure:
+1. Papers are synced to Zotero with metadata
+2. Abstracts are included in Zotero items
+3. Tags/keywords are properly set
+4. Citation keys match bibliography entries
 
 ## Benefits
 
@@ -296,5 +290,5 @@ From LaTeX files directly:
 3. **How deep to go?** (Should we also fetch papers cited BY cited papers?)
    - Proposal: Stop at 1 level deep (papers cited in LaTeX only)
 
-4. **API rate limits?** (Semantic Scholar, CrossRef have limits)
-   - Proposal: Cache fetched content, batch requests, use exponential backoff
+4. **Zotero library completeness?** (What if cited papers aren't in Zotero?)
+   - Proposal: Manual curation to ensure all cited papers are added to Zotero library

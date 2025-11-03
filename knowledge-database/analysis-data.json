@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-03T01:06:26.745354+00:00",
+  "timestamp": "2025-11-03T01:10:24.315593+00:00",
   "total_projects": 3,
   "total_latex_files": 17,
   "total_citations": 16,
@@ -23,9 +23,9 @@
           "path": "formal-ontologies\\sections\\extensional-foundations.tex",
           "content_length": 3528,
           "citations": [
+            "Bertalanffy1968",
             "Lin1987",
-            "Mesarovic1975",
-            "Bertalanffy1968"
+            "Mesarovic1975"
           ]
         },
         {
@@ -37,8 +37,8 @@
           "path": "formal-ontologies\\sections\\intensional-turn.tex",
           "content_length": 6296,
           "citations": [
-            "Backlund2000a",
-            "Carnap1956"
+            "Carnap1956",
+            "Backlund2000a"
           ]
         },
         {
@@ -64,12 +64,12 @@
         }
       ],
       "citations": [
-        "Lin1987",
         "Carnap1956",
-        "Backlund2000a",
         "Bertalanffy1968",
-        "Mesarovic1975",
-        "Schaffer2008"
+        "Lin1987",
+        "Backlund2000a",
+        "Schaffer2008",
+        "Mesarovic1975"
       ]
     },
     {
@@ -84,27 +84,27 @@
           "path": "general-systems-theory\\gst-overview\\sections\\foundational-definitions.tex",
           "content_length": 5067,
           "citations": [
+            "Mesarovic1972",
             "Lin1999",
-            "Mesarovic1975",
-            "Mesarovic1972"
+            "Mesarovic1975"
           ]
         },
         {
           "path": "general-systems-theory\\gst-overview\\sections\\theoretical-insights.tex",
           "content_length": 6470,
           "citations": [
-            "Takahashi1995",
+            "Mesarovic1972",
             "Lin1999",
-            "Mesarovic1975",
-            "Mesarovic1972"
+            "Takahashi1995",
+            "Mesarovic1975"
           ]
         }
       ],
       "citations": [
-        "Takahashi1995",
+        "Mesarovic1972",
         "Lin1999",
-        "Mesarovic1975",
-        "Mesarovic1972"
+        "Takahashi1995",
+        "Mesarovic1975"
       ]
     },
     {
@@ -119,9 +119,9 @@
           "path": "general-systems-theory\\nested-systems\\sections\\hierarchies.tex",
           "content_length": 22050,
           "citations": [
-            "Lin2002",
             "Simon2012",
-            "Mesarovic1970"
+            "Mesarovic1970",
+            "Lin2002"
           ]
         },
         {
@@ -140,49 +140,49 @@
           "path": "general-systems-theory\\nested-systems\\sections\\subsystems.tex",
           "content_length": 17466,
           "citations": [
-            "Mesarovic1976",
+            "Mesarovic1970",
             "Walloth2016",
             "Backlund2000",
-            "Mesarovic1970"
+            "Mesarovic1976"
           ]
         },
         {
           "path": "general-systems-theory\\nested-systems\\sections\\systems.tex",
           "content_length": 12267,
           "citations": [
-            "Poizat2000",
-            "Mesarovic1970"
+            "Mesarovic1970",
+            "Poizat2000"
           ]
         }
       ],
       "citations": [
+        "Lin2002",
         "Walloth2016",
         "Backlund2000",
         "Poizat2000",
+        "Mesarovic1976",
         "Mesarovic1970",
-        "Lin2002",
-        "Simon2012",
-        "Mesarovic1976"
+        "Simon2012"
       ]
     }
   ],
   "all_citations": [
-    "Lin1999",
-    "Lin1987",
-    "Walloth2016",
-    "Carnap1956",
-    "Backlund2000",
-    "Mesarovic1970",
-    "Poizat2000",
     "Lin2002",
-    "Simon2012",
-    "Bertalanffy1968",
-    "Mesarovic1975",
-    "Schaffer2008",
+    "Walloth2016",
     "Mesarovic1972",
-    "Takahashi1995",
+    "Lin1999",
+    "Backlund2000",
+    "Mesarovic1975",
+    "Poizat2000",
+    "Carnap1956",
     "Mesarovic1976",
-    "Backlund2000a"
+    "Bertalanffy1968",
+    "Mesarovic1970",
+    "Lin1987",
+    "Simon2012",
+    "Backlund2000a",
+    "Takahashi1995",
+    "Schaffer2008"
   ],
   "zotero_items_summary": [],
   "bibliography_keys": [
@@ -297,5 +297,103 @@
     "Lin1987",
     "Schaffer2008"
   ],
-  "cited_papers": {}
+  "cited_papers": {
+    "Backlund2000": {
+      "bibkey": "Backlund2000",
+      "title": "The definition of system",
+      "authors": [
+        "Alexander Backlund"
+      ],
+      "year": 2000,
+      "abstract": null,
+      "tldr": null,
+      "keywords": [],
+      "doi": "10.1108/03684920010322055",
+      "arxiv_id": null,
+      "url": "https://www.semanticscholar.org/paper/2da035f4c0c7d5da663b4438f8703dfdb1d90de4",
+      "citation_count": 354,
+      "influential_citation_count": 14,
+      "source": "semantic_scholar",
+      "full_text_available": false
+    },
+    "Backlund2000a": null,
+    "Bertalanffy1968": null,
+    "Carnap1956": null,
+    "Lin1987": null,
+    "Lin1999": null,
+    "Lin2002": {
+      "bibkey": "Lin2002",
+      "title": "General Systems Theory",
+      "authors": [],
+      "year": 2002,
+      "abstract": null,
+      "tldr": null,
+      "keywords": [],
+      "doi": "10.1007/b116863",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1007/b116863",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "source": "crossref",
+      "full_text_available": false
+    },
+    "Mesarovic1970": null,
+    "Mesarovic1972": null,
+    "Mesarovic1975": null,
+    "Mesarovic1976": {
+      "bibkey": "Mesarovic1976",
+      "title": "General systems theory: Mathematical foundations",
+      "authors": [],
+      "year": 1976,
+      "abstract": null,
+      "tldr": null,
+      "keywords": [],
+      "doi": "10.1016/0001-8708(76)90196-1",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1016/0001-8708(76)90196-1",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "source": "crossref",
+      "full_text_available": false
+    },
+    "Poizat2000": null,
+    "Schaffer2008": null,
+    "Simon2012": {
+      "bibkey": "Simon2012",
+      "title": "The Architecture of Complexity",
+      "authors": [
+        "Herbert A. Simon"
+      ],
+      "year": 2012,
+      "abstract": null,
+      "tldr": null,
+      "keywords": [],
+      "doi": "10.1007/978-3-642-27922-5_23",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1007/978-3-642-27922-5_23",
+      "citation_count": 48,
+      "influential_citation_count": 0,
+      "source": "crossref",
+      "full_text_available": false
+    },
+    "Takahashi1995": null,
+    "Walloth2016": {
+      "bibkey": "Walloth2016",
+      "title": "Emergent Nested Systems",
+      "authors": [
+        "C. Walloth"
+      ],
+      "year": 2016,
+      "abstract": null,
+      "tldr": null,
+      "keywords": [],
+      "doi": "10.1007/978-3-319-27550-5",
+      "arxiv_id": null,
+      "url": "https://www.semanticscholar.org/paper/d8815976588d5ccf34df1b7ceb73f2d5afbdd4c8",
+      "citation_count": 17,
+      "influential_citation_count": 2,
+      "source": "semantic_scholar",
+      "full_text_available": false
+    }
+  }
 }

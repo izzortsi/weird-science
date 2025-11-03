@@ -120,9 +120,7 @@ class LatexAnalyzer:
 class KnowledgeBaseGenerator:
     """Orchestrates knowledge base generation from LaTeX and Zotero data."""
     
-    def __init__(self, repo_root: Path, manifest_path: Path, output_dir: Path,
-                 zotero_api_key: Optional[str] = None,
-                 semantic_scholar_api_key: Optional[str] = None):
+    def __init__(self, repo_root: Path, manifest_path: Path, output_dir: Path):
         self.repo_root = repo_root
         self.manifest_path = manifest_path
         self.output_dir = output_dir
@@ -138,10 +136,7 @@ class KnowledgeBaseGenerator:
         self.bib_entries = self.load_all_bibtex()
 
         # Initialize PaperFetcher for Γ⁺ expansion
-        self.paper_fetcher = PaperFetcher(
-            zotero_api_key=zotero_api_key,
-            semantic_scholar_api_key=semantic_scholar_api_key
-        )
+        self.paper_fetcher = PaperFetcher()
 
         # Load paper cache if it exists
         cache_file = self.output_dir / "cited-papers-cache.json"
@@ -159,27 +154,56 @@ class KnowledgeBaseGenerator:
     def load_all_bibtex(self) -> Dict[str, Dict]:
         """Load all .bib files from the repository."""
         bib_entries = {}
-        
+
         for bib_file in self.repo_root.rglob("*.bib"):
             # Skip if in hidden or cache directories
             if any(part.startswith('.') for part in bib_file.parts):
                 continue
-            
+
             try:
                 content = bib_file.read_text(encoding='utf-8')
-                # Extract bibkeys - handles various formats
-                # Match @type{key, or @type{key}
-                pattern = r'@\w+\s*{\s*([^,}\s]+)'
-                for match in re.finditer(pattern, content):
-                    bibkey = match.group(1).strip()
-                    if bibkey:  # Only add non-empty keys
-                        bib_entries[bibkey] = {
-                            'key': bibkey,
-                            'file': str(bib_file.relative_to(self.repo_root))
-                        }
+
+                # Split into individual entries
+                # Match @type{key, ... }
+                entry_pattern = r'@(\w+)\s*{\s*([^,}\s]+)\s*,([^@]*?)(?=\n@|\n*$)'
+
+                for match in re.finditer(entry_pattern, content, re.DOTALL):
+                    entry_type = match.group(1)
+                    bibkey = match.group(2).strip()
+                    entry_content = match.group(3)
+
+                    if not bibkey:
+                        continue
+
+                    # Extract DOI if present
+                    doi = None
+                    doi_match = re.search(r'doi\s*=\s*[{"]?([^,}"]+)[}"]?', entry_content, re.IGNORECASE)
+                    if doi_match:
+                        doi = doi_match.group(1).strip()
+
+                    # Extract arXiv ID if present
+                    arxiv_id = None
+                    arxiv_patterns = [
+                        r'eprint\s*=\s*[{"]?(\d{4}\.\d{4,5})[}"]?',
+                        r'arxiv[:\s]+(\d{4}\.\d{4,5})',
+                    ]
+                    for pattern in arxiv_patterns:
+                        arxiv_match = re.search(pattern, entry_content, re.IGNORECASE)
+                        if arxiv_match:
+                            arxiv_id = arxiv_match.group(1).strip()
+                            break
+
+                    bib_entries[bibkey] = {
+                        'key': bibkey,
+                        'type': entry_type,
+                        'file': str(bib_file.relative_to(self.repo_root)),
+                        'doi': doi,
+                        'arxiv_id': arxiv_id
+                    }
+
             except Exception as e:
                 print(f"Warning: Could not read {bib_file}: {e}", file=sys.stderr)
-        
+
         return bib_entries
     
     def prepare_analysis_data(self, fetch_papers: bool = True) -> Dict:
@@ -702,11 +726,6 @@ def main():
     )
     
     parser.add_argument(
-        "--s2-api-key",
-        default=os.environ.get("SEMANTIC_SCHOLAR_API_KEY"),
-        help="Semantic Scholar API key (for Γ⁺ expansion)"
-    )
-    parser.add_argument(
         "--skip-paper-fetch",
         action="store_true",
         help="Skip fetching cited papers (Γ⁺ expansion)"
@@ -718,13 +737,7 @@ def main():
     manifest_path = Path(args.manifest)
     output_dir = Path(args.output_dir)
 
-    generator = KnowledgeBaseGenerator(
-        repo_root,
-        manifest_path,
-        output_dir,
-        zotero_api_key=args.api_key,
-        semantic_scholar_api_key=args.s2_api_key
-    )
+    generator = KnowledgeBaseGenerator(repo_root, manifest_path, output_dir)
     generator.generate(force=args.force, fetch_papers=not args.skip_paper_fetch)
 
     return 0

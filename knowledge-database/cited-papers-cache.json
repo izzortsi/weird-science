@@ -1,0 +1,88 @@
+{
+  "Backlund2000": {
+    "bibkey": "Backlund2000",
+    "title": "The definition of system",
+    "authors": [
+      "Alexander Backlund"
+    ],
+    "year": 2000,
+    "abstract": null,
+    "tldr": null,
+    "keywords": [],
+    "doi": "10.1108/03684920010322055",
+    "arxiv_id": null,
+    "url": "https://www.semanticscholar.org/paper/2da035f4c0c7d5da663b4438f8703dfdb1d90de4",
+    "citation_count": 354,
+    "influential_citation_count": 14,
+    "source": "semantic_scholar",
+    "full_text_available": false
+  },
+  "Lin2002": {
+    "bibkey": "Lin2002",
+    "title": "General Systems Theory",
+    "authors": [],
+    "year": 2002,
+    "abstract": null,
+    "tldr": null,
+    "keywords": [],
+    "doi": "10.1007/b116863",
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1007/b116863",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "source": "crossref",
+    "full_text_available": false
+  },
+  "Mesarovic1976": {
+    "bibkey": "Mesarovic1976",
+    "title": "General systems theory: Mathematical foundations",
+    "authors": [],
+    "year": 1976,
+    "abstract": null,
+    "tldr": null,
+    "keywords": [],
+    "doi": "10.1016/0001-8708(76)90196-1",
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1016/0001-8708(76)90196-1",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "source": "crossref",
+    "full_text_available": false
+  },
+  "Simon2012": {
+    "bibkey": "Simon2012",
+    "title": "The Architecture of Complexity",
+    "authors": [
+      "Herbert A. Simon"
+    ],
+    "year": 2012,
+    "abstract": null,
+    "tldr": null,
+    "keywords": [],
+    "doi": "10.1007/978-3-642-27922-5_23",
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1007/978-3-642-27922-5_23",
+    "citation_count": 48,
+    "influential_citation_count": 0,
+    "source": "crossref",
+    "full_text_available": false
+  },
+  "Walloth2016": {
+    "bibkey": "Walloth2016",
+    "title": "Emergent Nested Systems",
+    "authors": [
+      "C. Walloth"
+    ],
+    "year": 2016,
+    "abstract": null,
+    "tldr": null,
+    "keywords": [],
+    "doi": "10.1007/978-3-319-27550-5",
+    "arxiv_id": null,
+    "url": "https://www.semanticscholar.org/paper/d8815976588d5ccf34df1b7ceb73f2d5afbdd4c8",
+    "citation_count": 17,
+    "influential_citation_count": 2,
+    "source": "semantic_scholar",
+    "full_text_available": false
+  }
+}
