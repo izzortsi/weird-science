@@ -17,6 +17,13 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set
 from dataclasses import dataclass, asdict
 
+try:
+    import fitz  # PyMuPDF
+    PDF_SUPPORT = True
+except ImportError:
+    PDF_SUPPORT = False
+    print("Warning: PyMuPDF not installed. PDF reading disabled.", file=sys.stderr)
+
 
 @dataclass
 class PaperContent:
@@ -107,6 +114,17 @@ class PaperFetcher:
             # Extract keywords from tags
             keywords = [tag.strip() for tag in zotero_item.get('tags', [])]
 
+            # Try to extract abstract from PDF if not in metadata
+            attachments = zotero_item.get('attachments', [])
+            pdf_text = None
+            if PDF_SUPPORT and attachments and not abstract:
+                pdf_text = self._extract_pdf_text(attachments)
+                if pdf_text:
+                    # Try to extract abstract from PDF
+                    extracted_abstract = self._extract_abstract_from_text(pdf_text)
+                    if extracted_abstract:
+                        abstract = extracted_abstract
+
             return PaperContent(
                 bibkey=bibkey,
                 title=title,
@@ -117,11 +135,70 @@ class PaperFetcher:
                 doi=doi,
                 url=url,
                 source='zotero',
-                full_text_available=len(zotero_item.get('attachments', [])) > 0
+                full_text_available=len(attachments) > 0
             )
         except Exception as e:
             print(f"Warning: Error fetching from Zotero for {bibkey}: {e}", file=sys.stderr)
             return None
+
+    def _extract_pdf_text(self, attachments: List[Dict]) -> Optional[str]:
+        """Extract text from PDF attachments."""
+        if not PDF_SUPPORT:
+            return None
+
+        for attachment in attachments:
+            # Look for PDF attachments
+            if attachment.get('content_type') == 'application/pdf':
+                pdf_path = attachment.get('path')
+                if pdf_path and Path(pdf_path).exists():
+                    try:
+                        return self._read_pdf(Path(pdf_path))
+                    except Exception as e:
+                        print(f"Warning: Could not read PDF {pdf_path}: {e}", file=sys.stderr)
+                        continue
+
+        return None
+
+    def _read_pdf(self, pdf_path: Path, max_pages: int = 10) -> str:
+        """Read text from a PDF file (first few pages only for abstracts/intro)."""
+        if not PDF_SUPPORT:
+            return ""
+
+        try:
+            doc = fitz.open(pdf_path)
+            text = ""
+
+            # Only read first few pages (abstract + intro usually there)
+            for page_num in range(min(max_pages, len(doc))):
+                page = doc[page_num]
+                text += page.get_text()
+
+            doc.close()
+            return text
+
+        except Exception as e:
+            print(f"Warning: Error reading PDF {pdf_path}: {e}", file=sys.stderr)
+            return ""
+
+    def _extract_abstract_from_text(self, text: str) -> Optional[str]:
+        """Extract abstract section from PDF text."""
+        # Look for abstract section
+        abstract_patterns = [
+            r'(?:ABSTRACT|Abstract)\s*\n+(.*?)(?:\n\s*\n|\n(?:INTRODUCTION|Introduction|1\.|I\.))',
+            r'(?:ABSTRACT|Abstract)[:\s]+(.*?)(?:\n\s*\n|\n(?:INTRODUCTION|Introduction))',
+        ]
+
+        for pattern in abstract_patterns:
+            match = re.search(pattern, text, re.DOTALL | re.IGNORECASE)
+            if match:
+                abstract = match.group(1).strip()
+                # Clean up the abstract (remove excess whitespace, page numbers, etc.)
+                abstract = re.sub(r'\s+', ' ', abstract)
+                abstract = re.sub(r'\d+\s*$', '', abstract)  # Remove trailing page numbers
+                if len(abstract) > 100:  # Sanity check
+                    return abstract[:2000]  # Limit length
+
+        return None
 
     def extract_concepts_from_paper(self, content: PaperContent) -> List[str]:
         """
