@@ -65,12 +65,21 @@ jobs:
           ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
           ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
         run: |
-          if [ -f scripts/zotero-integration/zotero_exporter.py ]; then
+          if [ -f scripts/zotero-integration/zotero_sync.py ]; then
+            echo "Running new zotero_sync.py to generate manifest with PDF support..."
+            python scripts/zotero-integration/zotero_sync.py \
+              --group-id "$ZOTERO_GROUP_ID" \
+              ${ZOTERO_API_KEY:+--api-key "$ZOTERO_API_KEY"} \
+              --cache-dir zotero-cache \
+              --generate-manifest \
+              --download-pdfs || echo "⚠️ Zotero sync failed, continuing anyway"
+          elif [ -f scripts/zotero-integration/zotero_exporter.py ]; then
+            echo "⚠️ Using legacy zotero_exporter.py (PDF reading not supported)"
             python scripts/zotero-integration/zotero_exporter.py \
               --group-id "$ZOTERO_GROUP_ID" \
               ${ZOTERO_API_KEY:+--api-key "$ZOTERO_API_KEY"} || echo "⚠️ Zotero sync failed, continuing anyway"
           else
-            echo "⚠️ zotero_exporter.py not found, skipping Zotero sync"
+            echo "⚠️ No Zotero sync script found, skipping Zotero sync"
           fi
 
       - name: Check for changes and commit
