@@ -138,14 +138,20 @@ class ZoteroSync:
         
         # Skip if already cached
         if cached_file.exists():
-            print(f"  Already cached: {cached_file.name}")
+            try:
+                print(f"  Already cached: {cached_file.name}")
+            except UnicodeEncodeError:
+                print(f"  Already cached: {cached_file.name.encode('ascii', 'replace').decode('ascii')}")
             return cached_file
         
         # Download the file
         url = f"{self.base_url}/items/{attachment_key}/file"
-        
+
         try:
-            print(f"  Downloading: {filename}...")
+            try:
+                print(f"  Downloading: {filename}...")
+            except UnicodeEncodeError:
+                print(f"  Downloading: {filename.encode('ascii', 'replace').decode('ascii')}...")
             response = requests.get(url, headers=self.headers, timeout=60, stream=True)
             response.raise_for_status()
             
@@ -154,7 +160,10 @@ class ZoteroSync:
                 for chunk in response.iter_content(chunk_size=8192):
                     f.write(chunk)
             
-            print(f"  ✓ Cached: {cached_file.name} ({cached_file.stat().st_size} bytes)")
+            try:
+                print(f"  Cached: {cached_file.name} ({cached_file.stat().st_size} bytes)")
+            except UnicodeEncodeError:
+                print(f"  Cached: {cached_file.name.encode('ascii', 'replace').decode('ascii')} ({cached_file.stat().st_size} bytes)")
             return cached_file
             
         except requests.exceptions.RequestException as e:
@@ -248,11 +257,15 @@ class ZoteroSync:
         if not attachments:
             print("No PDF attachments to download.")
             return
-        
+
         print(f"\nDownloading {len(attachments)} PDF attachments...")
-        
+
         for i, attachment in enumerate(attachments, 1):
-            print(f"\n[{i}/{len(attachments)}] {attachment.filename}")
+            # Handle Unicode filenames safely for Windows console
+            try:
+                print(f"\n[{i}/{len(attachments)}] {attachment.filename}")
+            except UnicodeEncodeError:
+                print(f"\n[{i}/{len(attachments)}] {attachment.filename.encode('ascii', 'replace').decode('ascii')}")
             
             cached_path = self.download_attachment(
                 attachment.key,
@@ -290,7 +303,7 @@ class ZoteroSync:
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(manifest, f, indent=2, ensure_ascii=False)
         
-        print(f"\n✓ Manifest saved to: {filepath}")
+        print(f"\nManifest saved to: {filepath}")
         print(f"  Items: {manifest['total_items']}")
         print(f"  Attachments: {manifest['total_attachments']}")
 
