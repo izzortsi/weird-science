@@ -147,6 +147,10 @@ class PaperFetcher:
             return None
 
         for attachment in attachments:
+            # Skip if attachment is just a string (key) instead of dict
+            if not isinstance(attachment, dict):
+                continue
+
             # Look for PDF attachments
             if attachment.get('content_type') == 'application/pdf':
                 pdf_path = attachment.get('path')

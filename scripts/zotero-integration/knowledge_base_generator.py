@@ -193,12 +193,35 @@ class KnowledgeBaseGenerator:
                             arxiv_id = arxiv_match.group(1).strip()
                             break
 
+                    # Extract title if present
+                    title = None
+                    title_match = re.search(r'title\s*=\s*\{+([^}]+)\}+', entry_content, re.IGNORECASE)
+                    if title_match:
+                        title = title_match.group(1).strip()
+
+                    # Extract author if present
+                    authors = []
+                    author_match = re.search(r'author\s*=\s*[{"]([^}"]+)[}"]', entry_content, re.IGNORECASE)
+                    if author_match:
+                        author_str = author_match.group(1).strip()
+                        # Split by "and" for multiple authors
+                        authors = [a.strip() for a in author_str.split(' and ')]
+
+                    # Extract year if present
+                    year = None
+                    year_match = re.search(r'year\s*=\s*[{"]?(\d{4})[}"]?', entry_content, re.IGNORECASE)
+                    if year_match:
+                        year = int(year_match.group(1))
+
                     bib_entries[bibkey] = {
                         'key': bibkey,
                         'type': entry_type,
                         'file': str(bib_file.relative_to(self.repo_root)),
                         'doi': doi,
-                        'arxiv_id': arxiv_id
+                        'arxiv_id': arxiv_id,
+                        'title': title,
+                        'authors': authors,
+                        'year': year
                     }
 
             except Exception as e:
@@ -273,6 +296,64 @@ class KnowledgeBaseGenerator:
 
         return items_summary
 
+    def _match_zotero_item_by_metadata(self, bibkey: str) -> Optional[Dict]:
+        """
+        Match a Zotero item by metadata (title, author, year) when bibkey doesn't match directly.
+
+        Args:
+            bibkey: Bibliography key to match
+
+        Returns:
+            Matching Zotero item or None
+        """
+        bib_entry = self.bib_entries.get(bibkey)
+        if not bib_entry:
+            return None
+
+        # Extract metadata from bib entry
+        bib_title = (bib_entry.get('title') or '').lower().strip()
+        bib_doi = (bib_entry.get('doi') or '').strip()
+        bib_authors = bib_entry.get('authors', [])
+        bib_year = bib_entry.get('year')
+
+        # Try DOI match first (most reliable)
+        if bib_doi:
+            for item in self.manifest.get('items', []):
+                item_doi = item.get('doi') or ''
+                if item_doi.strip() == bib_doi:
+                    return item
+
+        # Try title + author match
+        if bib_title:
+            for item in self.manifest.get('items', []):
+                item_title = item.get('title', '').lower().strip()
+
+                # Check title similarity (simple contains check)
+                if bib_title in item_title or item_title in bib_title:
+                    # If we have author info, verify it matches
+                    if bib_authors:
+                        item_creators = item.get('creators', [])
+                        item_authors = [f"{c.get('firstName', '')} {c.get('lastName', '')}".strip()
+                                      for c in item_creators if c.get('creatorType') == 'author']
+
+                        # Check if any author matches
+                        for bib_author in bib_authors:
+                            # Extract last name from bib_author (handle "Last, First" or "First Last" format)
+                            bib_last_name = bib_author.split(',')[0].strip() if ',' in bib_author else bib_author.split()[-1]
+
+                            for item_author in item_authors:
+                                # Extract last name from item_author
+                                item_last_name = item_author.split()[-1] if item_author else ''
+
+                                # Match on last name
+                                if bib_last_name.lower() == item_last_name.lower():
+                                    return item
+                    else:
+                        # No author info, accept title match
+                        return item
+
+        return None
+
     def fetch_cited_papers(self, citations: Set[str]) -> Dict[str, Optional[Dict]]:
         """
         Fetch content for cited papers (Γ → Γ⁺ expansion).
@@ -298,8 +379,12 @@ class KnowledgeBaseGenerator:
         for i, bibkey in enumerate(sorted(citations), 1):
             print(f"  [{i}/{len(citations)}] Fetching {bibkey}...", end=' ')
 
-            # Get Zotero item if available
+            # Get Zotero item if available (direct match by key)
             zotero_item = zotero_items_by_bibkey.get(bibkey)
+
+            # If no direct match, try fuzzy matching by metadata
+            if not zotero_item:
+                zotero_item = self._match_zotero_item_by_metadata(bibkey)
 
             # Get bib entry if available
             bib_entry = self.bib_entries.get(bibkey)
@@ -728,7 +813,7 @@ def main():
     parser.add_argument(
         "--skip-paper-fetch",
         action="store_true",
-        help="Skip fetching cited papers (Γ⁺ expansion)"
+        help="Skip fetching cited papers (cited paper expansion)"
     )
 
     args = parser.parse_args()

@@ -7,7 +7,7 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - **Projects:** 3
 - **LaTeX Files:** 17
 - **Citations:** 16
-- **Zotero Items:** 0
+- **Zotero Items:** 93
 - **Bibliography Entries:** 110
 
 ## Projects in Repository
@@ -152,29 +152,39 @@ Provide the complete knowledge base structure as:
 The following data is available for your analysis:
 
 ### Sample Citations
-- Lin2002
-- Walloth2016
-- Mesarovic1972
-- Lin1999
-- Backlund2000
-- Mesarovic1975
-- Poizat2000
-- Carnap1956
-- Mesarovic1976
-- Bertalanffy1968
-- Mesarovic1970
-- Lin1987
 - Simon2012
+- Mesarovic1976
+- Poizat2000
 - Backlund2000a
-- Takahashi1995
 - Schaffer2008
+- Mesarovic1970
+- Mesarovic1975
+- Lin1987
+- Lin1999
+- Takahashi1995
+- Backlund2000
+- Walloth2016
+- Carnap1956
+- Mesarovic1972
+- Bertalanffy1968
+- Lin2002
 
 ### Sample Zotero Items
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
 
 
 ### Full Data Files Available
 - Complete LaTeX sources in: 17 files
-- Zotero manifest: 0 items
+- Zotero manifest: 93 items
 - Bibliography: 110 entries
 
 Please proceed with the semantic analysis and knowledge base generation.
