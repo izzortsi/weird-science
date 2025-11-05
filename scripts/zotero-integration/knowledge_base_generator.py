@@ -437,10 +437,15 @@ class KnowledgeBaseGenerator:
         print(f"\nExpanding {len(gamma_plus_concepts)} concepts via Zotero library...")
 
         # Set cited papers in cross-referencer to avoid duplicates
+        # Only include papers that were actually cited in the LaTeX sources
         cited_paper_keys = set()
+        cited_bibkeys = set(self.bib_entries.keys())
+
         for item in self.manifest.get('items', []):
-            if item.get('citation_key') or item.get('key'):
-                cited_paper_keys.add(item.get('citation_key') or item.get('key'))
+            item_key = item.get('key')
+            # Only mark as cited if it matches one of the actual bibliography keys
+            if item_key and item_key in cited_bibkeys:
+                cited_paper_keys.add(item_key)
 
         self.cross_referencer.set_cited_papers(cited_paper_keys)
 

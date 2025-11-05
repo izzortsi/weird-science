@@ -236,8 +236,8 @@ class ZoteroCrossReferencer:
         """Search a single Zotero item for mentions of the concept."""
         references = []
 
-        title = item.get('title', '').lower()
-        abstract = item.get('abstract', '').lower()
+        title = (item.get('title') or '').lower()
+        abstract = (item.get('abstract') or '').lower()
         tags = [tag.lower() for tag in item.get('tags', [])]
         authors_text = ' '.join([
             f"{c.get('first_name', '')} {c.get('last_name', '')}".lower()
@@ -349,8 +349,8 @@ class ZoteroCrossReferencer:
 
     def _get_searchable_text(self, item: Dict) -> str:
         """Get all searchable text from a Zotero item."""
-        title = item.get('title', '')
-        abstract = item.get('abstract', '')
+        title = item.get('title') or ''
+        abstract = item.get('abstract') or ''
         tags = ' '.join(item.get('tags', []))
 
         return f"{title} {abstract} {tags}".lower()

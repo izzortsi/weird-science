@@ -184,21 +184,21 @@ Provide the complete knowledge base structure as:
 The following data is available for your analysis:
 
 ### Sample Citations
-- Takahashi1995
-- Poizat2000
+- Mesarovic1975
 - Mesarovic1976
+- Mesarovic1970
+- Poizat2000
+- Carnap1956
+- Mesarovic1972
+- Lin2002
 - Schaffer2008
+- Walloth2016
+- Backlund2000
+- Takahashi1995
+- Simon2012
+- Lin1999
 - Backlund2000a
 - Lin1987
-- Mesarovic1975
-- Lin1999
-- Lin2002
-- Mesarovic1970
-- Walloth2016
-- Simon2012
-- Backlund2000
-- Mesarovic1972
-- Carnap1956
 - Bertalanffy1968
 
 ### Sample Zotero Items

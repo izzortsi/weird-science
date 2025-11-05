@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-05T00:18:25.980193+00:00",
+  "timestamp": "2025-11-05T00:22:30.927598+00:00",
   "total_projects": 3,
   "total_latex_files": 17,
   "total_citations": 16,
@@ -23,8 +23,8 @@
           "path": "formal-ontologies\\sections\\extensional-foundations.tex",
           "content_length": 3528,
           "citations": [
-            "Lin1987",
             "Mesarovic1975",
+            "Lin1987",
             "Bertalanffy1968"
           ]
         },
@@ -37,8 +37,8 @@
           "path": "formal-ontologies\\sections\\intensional-turn.tex",
           "content_length": 6296,
           "citations": [
-            "Backlund2000a",
-            "Carnap1956"
+            "Carnap1956",
+            "Backlund2000a"
           ]
         },
         {
@@ -64,11 +64,11 @@
         }
       ],
       "citations": [
-        "Carnap1956",
+        "Mesarovic1975",
         "Schaffer2008",
+        "Carnap1956",
         "Backlund2000a",
         "Lin1987",
-        "Mesarovic1975",
         "Bertalanffy1968"
       ]
     },
@@ -93,18 +93,18 @@
           "path": "general-systems-theory\\gst-overview\\sections\\theoretical-insights.tex",
           "content_length": 6470,
           "citations": [
-            "Lin1999",
             "Mesarovic1972",
             "Mesarovic1975",
-            "Takahashi1995"
+            "Takahashi1995",
+            "Lin1999"
           ]
         }
       ],
       "citations": [
         "Takahashi1995",
-        "Mesarovic1972",
         "Mesarovic1975",
-        "Lin1999"
+        "Lin1999",
+        "Mesarovic1972"
       ]
     },
     {
@@ -119,9 +119,9 @@
           "path": "general-systems-theory\\nested-systems\\sections\\hierarchies.tex",
           "content_length": 22050,
           "citations": [
+            "Simon2012",
             "Lin2002",
-            "Mesarovic1970",
-            "Simon2012"
+            "Mesarovic1970"
           ]
         },
         {
@@ -140,10 +140,10 @@
           "path": "general-systems-theory\\nested-systems\\sections\\subsystems.tex",
           "content_length": 17466,
           "citations": [
-            "Walloth2016",
-            "Mesarovic1970",
+            "Backlund2000",
             "Mesarovic1976",
-            "Backlund2000"
+            "Mesarovic1970",
+            "Walloth2016"
           ]
         },
         {
@@ -157,31 +157,31 @@
       ],
       "citations": [
         "Mesarovic1976",
-        "Lin2002",
+        "Poizat2000",
         "Mesarovic1970",
+        "Lin2002",
         "Walloth2016",
-        "Simon2012",
         "Backlund2000",
-        "Poizat2000"
+        "Simon2012"
       ]
     }
   ],
   "all_citations": [
-    "Takahashi1995",
-    "Poizat2000",
+    "Mesarovic1975",
     "Mesarovic1976",
+    "Mesarovic1970",
+    "Poizat2000",
+    "Carnap1956",
+    "Mesarovic1972",
+    "Lin2002",
     "Schaffer2008",
+    "Walloth2016",
+    "Backlund2000",
+    "Takahashi1995",
+    "Simon2012",
+    "Lin1999",
     "Backlund2000a",
     "Lin1987",
-    "Mesarovic1975",
-    "Lin1999",
-    "Lin2002",
-    "Mesarovic1970",
-    "Walloth2016",
-    "Simon2012",
-    "Backlund2000",
-    "Mesarovic1972",
-    "Carnap1956",
     "Bertalanffy1968"
   ],
   "zotero_items_summary": [
@@ -1261,5 +1261,5621 @@
       "full_text_available": true
     }
   },
-  "concept_expansions": {}
+  "concept_expansions": {
+    "among": {
+      "additional_papers": [
+        {
+          "zotero_key": "EX3U5QRS",
+          "title": "Region-Based Topology",
+          "authors": [
+            "Peter Roeper"
+          ],
+          "year": 1997,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "using",
+        "theory",
+        "central",
+        "systems theory",
+        "this",
+        "general"
+      ],
+      "cross_references": {
+        "using": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "central": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "case studies": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "urban systems",
+        "theory",
+        "complexity",
+        "emergent nested systems",
+        "influencing complex systems",
+        "understanding"
+      ],
+      "cross_references": {
+        "urban systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "emergent nested systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "influencing complex systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "central": {
+      "additional_papers": [
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "K3HV72CL",
+          "title": "Forms of emergent interaction in General Process Theory",
+          "authors": [
+            "Johanna Seibt"
+          ],
+          "year": 2009,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "among",
+        "using",
+        "theory",
+        "systems theory",
+        "this",
+        "general"
+      ],
+      "cross_references": {
+        "theory": [
+          {
+            "zotero_key": "K3HV72CL",
+            "title": "Forms of emergent interaction in General Process Theory",
+            "authors": [
+              "Johanna Seibt"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "K3HV72CL",
+            "title": "Forms of emergent interaction in General Process Theory",
+            "authors": [
+              "Johanna Seibt"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "among": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "using": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "complexity": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IY87BB9B",
+          "title": "On the mereological structure of complex states of affairs",
+          "authors": [
+            "Thomas Mormann"
+          ],
+          "year": 2012,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "M7DRWKSM",
+          "title": "What is a complex system?",
+          "authors": [
+            "James Ladyman",
+            "James Lambert",
+            "Karoline Wiesner"
+          ],
+          "year": 2013,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "6PSGHYK5",
+          "title": "Modeling Complex Systems by Multi-agent Holarchies",
+          "authors": [
+            "Peter Kopacek",
+            "Roberto Moreno-Díaz",
+            "Franz Pichler",
+            "Franz Pichler"
+          ],
+          "year": 2000,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "6PSGHYK5",
+          "title": "Modeling Complex Systems by Multi-agent Holarchies",
+          "authors": [
+            "Peter Kopacek",
+            "Roberto Moreno-Díaz",
+            "Franz Pichler",
+            "Franz Pichler"
+          ],
+          "year": 2000,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "B7AE6ZQF",
+          "title": "The Architecture of Complexity",
+          "authors": [
+            "Herbert A. Simon"
+          ],
+          "year": 1962,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "5IFTH3PW",
+          "title": "The Organization of Complex Systems",
+          "authors": [
+            "Herbert A. Simon"
+          ],
+          "year": 1977,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "5IFTH3PW",
+          "title": "The Organization of Complex Systems",
+          "authors": [
+            "Herbert A. Simon"
+          ],
+          "year": 1977,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TAXJ2RQE",
+          "title": "Complex Systems",
+          "authors": [
+            "Mikhail Prokopenko"
+          ],
+          "year": 2019,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TAXJ2RQE",
+          "title": "Complex Systems",
+          "authors": [
+            "Mikhail Prokopenko"
+          ],
+          "year": 2019,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "UFVLK353",
+          "title": "Hierarchy theory ; the challenge of complex systems",
+          "authors": [],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "UFVLK353",
+          "title": "Hierarchy theory ; the challenge of complex systems",
+          "authors": [],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E9E4FHM6",
+          "title": "Information and Self-Organization: A Macroscopic Approach to Complex Systems",
+          "authors": [
+            "Hermann Haken"
+          ],
+          "year": 2006,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E9E4FHM6",
+          "title": "Information and Self-Organization: A Macroscopic Approach to Complex Systems",
+          "authors": [
+            "Hermann Haken"
+          ],
+          "year": 2006,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "QKY7CH45",
+          "title": "Complexity and Information Theory",
+          "authors": [
+            "Claudius Gros"
+          ],
+          "year": 2013,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "9NV6TQ7X",
+          "title": "Complex Adaptive Systems",
+          "authors": [
+            "Rob Dekkers"
+          ],
+          "year": 2017,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "MNNN2K8M",
+          "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+          "authors": [
+            "Juergen Schmidhuber"
+          ],
+          "year": 2006,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IY87BB9B",
+          "title": "On the mereological structure of complex states of affairs",
+          "authors": [
+            "Thomas Mormann"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "M7DRWKSM",
+          "title": "What is a complex system?",
+          "authors": [
+            "James Ladyman",
+            "James Lambert",
+            "Karoline Wiesner"
+          ],
+          "year": 2013,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "M7DRWKSM",
+          "title": "What is a complex system?",
+          "authors": [
+            "James Ladyman",
+            "James Lambert",
+            "Karoline Wiesner"
+          ],
+          "year": 2013,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "M7DRWKSM",
+          "title": "What is a complex system?",
+          "authors": [
+            "James Ladyman",
+            "James Lambert",
+            "Karoline Wiesner"
+          ],
+          "year": 2013,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3C84JKPA",
+          "title": "A hierarchical framework for the analysis of scale",
+          "authors": [
+            "R. V. O'Neill",
+            "A. R. Johnson",
+            "A. W. King"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Q2P4SB57",
+          "title": "Complexity, contingency, and criticality.",
+          "authors": [
+            "P Bak",
+            "M Paczuski"
+          ],
+          "year": 1995,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JWHDV62A",
+          "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+          "authors": [
+            "Michael John Healy",
+            "Thomas Preston Caudell"
+          ],
+          "year": 2006,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "B7AE6ZQF",
+          "title": "The Architecture of Complexity",
+          "authors": [
+            "Herbert A. Simon"
+          ],
+          "year": 1962,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Q2P4SB57",
+          "title": "Complexity, contingency, and criticality.",
+          "authors": [
+            "P Bak",
+            "M Paczuski"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Q2P4SB57",
+          "title": "Complexity, contingency, and criticality.",
+          "authors": [
+            "P Bak",
+            "M Paczuski"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "QKY7CH45",
+          "title": "Complexity and Information Theory",
+          "authors": [
+            "Claudius Gros"
+          ],
+          "year": 2013,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "MNNN2K8M",
+          "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+          "authors": [
+            "Juergen Schmidhuber"
+          ],
+          "year": 2006,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IEDT26PR",
+          "title": "Hierarchical Structures",
+          "authors": [
+            "Stanley N. Salthe"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Q2P4SB57",
+          "title": "Complexity, contingency, and criticality.",
+          "authors": [
+            "P Bak",
+            "M Paczuski"
+          ],
+          "year": 1995,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [
+        "Presenting the Formal Theory of Hierarchical Complexity: Complexity theories generally exclude the concept of hierarchical complexity; Developmental Psychology has included it for over 20 years",
+        "Presenting the Formal Theory of Hierarchical Complexity: Complexity theories generally exclude the concept of hierarchical complexity; Developmental Psychology has included it for over 20 years",
+        "Presenting the Formal Theory of Hierarchical Complexity: Complexity theories generally exclude the concept of hierarchical complexity; Developmental Psychology has included it for over 20 years",
+        "Presenting the Formal Theory of Hierarchical Complexity: Complexity theories generally exclude the concept of hierarchical complexity; Developmental Psychology has included it for over 20 years"
+      ],
+      "related_concepts": [
+        "urban systems",
+        "the architecture",
+        "theory",
+        "case studies",
+        "using",
+        "emergent nested systems",
+        "general systems theory",
+        "systems theory",
+        "influencing complex systems",
+        "this",
+        "understanding",
+        "general"
+      ],
+      "cross_references": {
+        "general": [
+          {
+            "zotero_key": "MNNN2K8M",
+            "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+            "authors": [
+              "Juergen Schmidhuber"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IEDT26PR",
+            "title": "Hierarchical Structures",
+            "authors": [
+              "Stanley N. Salthe"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          }
+        ],
+        "urban systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "case studies": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "3C84JKPA",
+            "title": "A hierarchical framework for the analysis of scale",
+            "authors": [
+              "R. V. O'Neill",
+              "A. R. Johnson",
+              "A. W. King"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "UFVLK353",
+            "title": "Hierarchy theory ; the challenge of complex systems",
+            "authors": [],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "QKY7CH45",
+            "title": "Complexity and Information Theory",
+            "authors": [
+              "Claudius Gros"
+            ],
+            "year": 2013,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JWHDV62A",
+            "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+            "authors": [
+              "Michael John Healy",
+              "Thomas Preston Caudell"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          }
+        ],
+        "emergent nested systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "influencing complex systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IEDT26PR",
+            "title": "Hierarchical Structures",
+            "authors": [
+              "Stanley N. Salthe"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "3C84JKPA",
+            "title": "A hierarchical framework for the analysis of scale",
+            "authors": [
+              "R. V. O'Neill",
+              "A. R. Johnson",
+              "A. W. King"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JWHDV62A",
+            "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+            "authors": [
+              "Michael John Healy",
+              "Thomas Preston Caudell"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          }
+        ],
+        "the architecture": [
+          {
+            "zotero_key": "B7AE6ZQF",
+            "title": "The Architecture of Complexity",
+            "authors": [
+              "Herbert A. Simon"
+            ],
+            "year": 1962,
+            "relevance_score": 0.5
+          }
+        ],
+        "general systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "using": [
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "emergent nested systems": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "urban systems",
+        "theory",
+        "case studies",
+        "complexity",
+        "influencing complex systems",
+        "understanding"
+      ],
+      "cross_references": {
+        "urban systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "case studies": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "influencing complex systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "general": {
+      "additional_papers": [
+        {
+          "zotero_key": "K3HV72CL",
+          "title": "Forms of emergent interaction in General Process Theory",
+          "authors": [
+            "Johanna Seibt"
+          ],
+          "year": 2009,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4254DRYW",
+          "title": "General system theory: foundations, development, applications",
+          "authors": [
+            "Ludwig von Bertalanffy"
+          ],
+          "year": 2009,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TETVGKU7",
+          "title": "General systems theory: mathematical foundations",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1975,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JVAUAL5Q",
+          "title": "General Systems Theory: A Mathematical Approach",
+          "authors": [
+            "Yi Lin"
+          ],
+          "year": 2002,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IEDT26PR",
+          "title": "Hierarchical Structures",
+          "authors": [
+            "Stanley N. Salthe"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "K3HV72CL",
+          "title": "Forms of emergent interaction in General Process Theory",
+          "authors": [
+            "Johanna Seibt"
+          ],
+          "year": 2009,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "MNNN2K8M",
+          "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+          "authors": [
+            "Juergen Schmidhuber"
+          ],
+          "year": 2006,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "R6VLI2I8",
+          "title": "Mereotopology without Mereology",
+          "authors": [
+            "Peter Forrest"
+          ],
+          "year": 2010,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IY87BB9B",
+          "title": "On the mereological structure of complex states of affairs",
+          "authors": [
+            "Thomas Mormann"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [
+        "Forms of emergent interaction in General Process Theory: ’ I begin with an analysis of our common sense concept of activities, which plays a crucial heuristic role in the development of the notion of a general process",
+        "General system theory: foundations, development, applications: General system theory: foundations, development, applications",
+        "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS: This is done in the article on the basis of a general theory of systems developed within the set‐theory and related branches of abstract mathematics",
+        "Hierarchical Structures: I contrast their general properties, internal formal relations, modes of growth (emergence) in applications to the natural world, criteria for applying them, the complexities that they embody, their dynamical relations in applied models, and their informational relations and semiotic aspects",
+        "Forms of emergent interaction in General Process Theory: ’ I begin with an analysis of our common sense concept of activities, which plays a crucial heuristic role in the development of the notion of a general process",
+        "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS: This is done in the article on the basis of a general theory of systems developed within the set‐theory and related branches of abstract mathematics",
+        "Presenting the Formal Theory of Hierarchical Complexity: Complexity theories generally exclude the concept of hierarchical complexity; Developmental Psychology has included it for over 20 years",
+        "The definition of system: Using the underlying assumptions of many authors, a general, more exact definition of system is proposed"
+      ],
+      "related_concepts": [
+        "among",
+        "using",
+        "theory",
+        "central",
+        "complexity",
+        "importance",
+        "mathematical approach",
+        "general systems theory",
+        "systems theory",
+        "this",
+        "understanding"
+      ],
+      "cross_references": {
+        "complexity": [
+          {
+            "zotero_key": "MNNN2K8M",
+            "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+            "authors": [
+              "Juergen Schmidhuber"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IEDT26PR",
+            "title": "Hierarchical Structures",
+            "authors": [
+              "Stanley N. Salthe"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "R6VLI2I8",
+            "title": "Mereotopology without Mereology",
+            "authors": [
+              "Peter Forrest"
+            ],
+            "year": 2010,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IEDT26PR",
+            "title": "Hierarchical Structures",
+            "authors": [
+              "Stanley N. Salthe"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "R6VLI2I8",
+            "title": "Mereotopology without Mereology",
+            "authors": [
+              "Peter Forrest"
+            ],
+            "year": 2010,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "K3HV72CL",
+            "title": "Forms of emergent interaction in General Process Theory",
+            "authors": [
+              "Johanna Seibt"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DGYK3I6Q",
+            "title": "Systems Theory and the Metaphysics of Composition",
+            "authors": [
+              "Martin Zwick"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4254DRYW",
+            "title": "General system theory: foundations, development, applications",
+            "authors": [
+              "Ludwig von Bertalanffy"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "general systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DGYK3I6Q",
+            "title": "Systems Theory and the Metaphysics of Composition",
+            "authors": [
+              "Martin Zwick"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "using": [
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "central": [
+          {
+            "zotero_key": "K3HV72CL",
+            "title": "Forms of emergent interaction in General Process Theory",
+            "authors": [
+              "Johanna Seibt"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "importance": [
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          }
+        ],
+        "among": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "mathematical approach": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "general systems theory": {
+      "additional_papers": [
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TETVGKU7",
+          "title": "General systems theory: mathematical foundations",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1975,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JVAUAL5Q",
+          "title": "General Systems Theory: A Mathematical Approach",
+          "authors": [
+            "Yi Lin"
+          ],
+          "year": 2002,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "theory",
+        "complexity",
+        "mathematical approach",
+        "systems theory",
+        "this",
+        "understanding",
+        "general"
+      ],
+      "cross_references": {
+        "theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "mathematical approach": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "importance": {
+      "additional_papers": [
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IJB29JJT",
+          "title": "Handbook on Ontologies",
+          "authors": [
+            "Steffen Staab",
+            "Rudi Studer"
+          ],
+          "year": 2009,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [
+        "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS: Importance of the goal‐seeking representation of the systems behavior and the basic classification of large‐scale systems are briefly discussed",
+        "Handbook on Ontologies: In this paper we shall revisit the previous attempts to clarify and formalize such original deﬁnition, providing a detailed account of the notions of conceptualization and explicit speciﬁcation, while discussing at the same time the importance of shared explicit speciﬁcations"
+      ],
+      "related_concepts": [
+        "this",
+        "theory",
+        "general"
+      ],
+      "cross_references": {
+        "this": [
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IJB29JJT",
+            "title": "Handbook on Ontologies",
+            "authors": [
+              "Steffen Staab",
+              "Rudi Studer"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "influencing complex systems": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "urban systems",
+        "theory",
+        "case studies",
+        "complexity",
+        "emergent nested systems",
+        "understanding"
+      ],
+      "cross_references": {
+        "urban systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "case studies": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "emergent nested systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "logical approach": {
+      "additional_papers": [
+        {
+          "zotero_key": "E6TF8EDR",
+          "title": "Logical Approach to Systems Theory",
+          "authors": [
+            "Shingo Takahashi",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "systems theory",
+        "theory"
+      ],
+      "cross_references": {
+        "systems theory": [
+          {
+            "zotero_key": "E6TF8EDR",
+            "title": "Logical Approach to Systems Theory",
+            "authors": [
+              "Shingo Takahashi",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1995,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "E6TF8EDR",
+            "title": "Logical Approach to Systems Theory",
+            "authors": [
+              "Shingo Takahashi",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1995,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "mathematical approach": {
+      "additional_papers": [
+        {
+          "zotero_key": "JVAUAL5Q",
+          "title": "General Systems Theory: A Mathematical Approach",
+          "authors": [
+            "Yi Lin"
+          ],
+          "year": 2002,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "systems theory",
+        "theory",
+        "general",
+        "general systems theory"
+      ],
+      "cross_references": {
+        "theory": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "general systems theory": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "systems theory": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "QWY7RGVT",
+          "title": "Holonic Multiagent Systems: A Foundation for the Organisation of Multiagent Systems",
+          "authors": [
+            "Vladimír Mařík",
+            "Duncan McFarlane",
+            "Paul Valckenaers",
+            "Klaus Fischer",
+            "Michael Schillo",
+            "Jörg Siekmann"
+          ],
+          "year": 2003,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "HLR5XWWD",
+          "title": "Holonic Multi-Agent Systems",
+          "authors": [
+            "Giovanna Di Marzo Serugendo",
+            "Marie-Pierre Gleizes",
+            "Anthony Karageorgos",
+            "Sebastian Rodriguez",
+            "Vincent Hilaire",
+            "Nicolas Gaud",
+            "Stephane Galland",
+            "Abderrafiâa Koukam"
+          ],
+          "year": 2011,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "35S62LNY",
+          "title": "Holonic Multi-Agent Systems",
+          "authors": [
+            "Christian Gerber"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "6PSGHYK5",
+          "title": "Modeling Complex Systems by Multi-agent Holarchies",
+          "authors": [
+            "Peter Kopacek",
+            "Roberto Moreno-Díaz",
+            "Franz Pichler",
+            "Franz Pichler"
+          ],
+          "year": 2000,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "5IFTH3PW",
+          "title": "The Organization of Complex Systems",
+          "authors": [
+            "Herbert A. Simon"
+          ],
+          "year": 1977,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "VKTQFBU2",
+          "title": "Self-organization in hierarchical systems",
+          "authors": [
+            "Stanley N. Salthe",
+            "Koichiro Matsuno"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TAXJ2RQE",
+          "title": "Complex Systems",
+          "authors": [
+            "Mikhail Prokopenko"
+          ],
+          "year": 2019,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "UFVLK353",
+          "title": "Hierarchy theory ; the challenge of complex systems",
+          "authors": [],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3I8HVQYH",
+          "title": "Theory of hierarchical, multilevel, systems",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "D. Macko",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1970,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E9E4FHM6",
+          "title": "Information and Self-Organization: A Macroscopic Approach to Complex Systems",
+          "authors": [
+            "Hermann Haken"
+          ],
+          "year": 2006,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "9NV6TQ7X",
+          "title": "Complex Adaptive Systems",
+          "authors": [
+            "Rob Dekkers"
+          ],
+          "year": 2017,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "C42IZKTZ",
+          "title": "Autopoietic Systems",
+          "authors": [
+            "Rob Dekkers"
+          ],
+          "year": 2017,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "L72QNR7U",
+          "title": "Basic Concepts of Systems Theories",
+          "authors": [
+            "Rob Dekkers"
+          ],
+          "year": 2017,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4254DRYW",
+          "title": "General system theory: foundations, development, applications",
+          "authors": [
+            "Ludwig von Bertalanffy"
+          ],
+          "year": 2009,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E6TF8EDR",
+          "title": "Logical Approach to Systems Theory",
+          "authors": [
+            "Shingo Takahashi",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E6TF8EDR",
+          "title": "Logical Approach to Systems Theory",
+          "authors": [
+            "Shingo Takahashi",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TETVGKU7",
+          "title": "General systems theory: mathematical foundations",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1975,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "definition"
+        },
+        {
+          "zotero_key": "JVAUAL5Q",
+          "title": "General Systems Theory: A Mathematical Approach",
+          "authors": [
+            "Yi Lin"
+          ],
+          "year": 2002,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JWHDV62A",
+          "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+          "authors": [
+            "Michael John Healy",
+            "Thomas Preston Caudell"
+          ],
+          "year": 2006,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "78HTLZ5S",
+          "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+          "authors": [
+            "Jenny Zhang",
+            "Shengran Hu",
+            "Cong Lu",
+            "Robert Lange",
+            "Jeff Clune"
+          ],
+          "year": 2025,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "78HTLZ5S",
+          "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+          "authors": [
+            "Jenny Zhang",
+            "Shengran Hu",
+            "Cong Lu",
+            "Robert Lange",
+            "Jeff Clune"
+          ],
+          "year": 2025,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "R6VLI2I8",
+          "title": "Mereotopology without Mereology",
+          "authors": [
+            "Peter Forrest"
+          ],
+          "year": 2010,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IY87BB9B",
+          "title": "On the mereological structure of complex states of affairs",
+          "authors": [
+            "Thomas Mormann"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "QWY7RGVT",
+          "title": "Holonic Multiagent Systems: A Foundation for the Organisation of Multiagent Systems",
+          "authors": [
+            "Vladimír Mařík",
+            "Duncan McFarlane",
+            "Paul Valckenaers",
+            "Klaus Fischer",
+            "Michael Schillo",
+            "Jörg Siekmann"
+          ],
+          "year": 2003,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "QWY7RGVT",
+          "title": "Holonic Multiagent Systems: A Foundation for the Organisation of Multiagent Systems",
+          "authors": [
+            "Vladimír Mařík",
+            "Duncan McFarlane",
+            "Paul Valckenaers",
+            "Klaus Fischer",
+            "Michael Schillo",
+            "Jörg Siekmann"
+          ],
+          "year": 2003,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "M7DRWKSM",
+          "title": "What is a complex system?",
+          "authors": [
+            "James Ladyman",
+            "James Lambert",
+            "Karoline Wiesner"
+          ],
+          "year": 2013,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3C84JKPA",
+          "title": "A hierarchical framework for the analysis of scale",
+          "authors": [
+            "R. V. O'Neill",
+            "A. R. Johnson",
+            "A. W. King"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3C84JKPA",
+          "title": "A hierarchical framework for the analysis of scale",
+          "authors": [
+            "R. V. O'Neill",
+            "A. R. Johnson",
+            "A. W. King"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Q2P4SB57",
+          "title": "Complexity, contingency, and criticality.",
+          "authors": [
+            "P Bak",
+            "M Paczuski"
+          ],
+          "year": 1995,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "definition"
+        },
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "QWY7RGVT",
+          "title": "Holonic Multiagent Systems: A Foundation for the Organisation of Multiagent Systems",
+          "authors": [
+            "Vladimír Mařík",
+            "Duncan McFarlane",
+            "Paul Valckenaers",
+            "Klaus Fischer",
+            "Michael Schillo",
+            "Jörg Siekmann"
+          ],
+          "year": 2003,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "HLR5XWWD",
+          "title": "Holonic Multi-Agent Systems",
+          "authors": [
+            "Giovanna Di Marzo Serugendo",
+            "Marie-Pierre Gleizes",
+            "Anthony Karageorgos",
+            "Sebastian Rodriguez",
+            "Vincent Hilaire",
+            "Nicolas Gaud",
+            "Stephane Galland",
+            "Abderrafiâa Koukam"
+          ],
+          "year": 2011,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "M7DRWKSM",
+          "title": "What is a complex system?",
+          "authors": [
+            "James Ladyman",
+            "James Lambert",
+            "Karoline Wiesner"
+          ],
+          "year": 2013,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "35S62LNY",
+          "title": "Holonic Multi-Agent Systems",
+          "authors": [
+            "Christian Gerber"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "6PSGHYK5",
+          "title": "Modeling Complex Systems by Multi-agent Holarchies",
+          "authors": [
+            "Peter Kopacek",
+            "Roberto Moreno-Díaz",
+            "Franz Pichler",
+            "Franz Pichler"
+          ],
+          "year": 2000,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "5IFTH3PW",
+          "title": "The Organization of Complex Systems",
+          "authors": [
+            "Herbert A. Simon"
+          ],
+          "year": 1977,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "VKTQFBU2",
+          "title": "Self-organization in hierarchical systems",
+          "authors": [
+            "Stanley N. Salthe",
+            "Koichiro Matsuno"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TAXJ2RQE",
+          "title": "Complex Systems",
+          "authors": [
+            "Mikhail Prokopenko"
+          ],
+          "year": 2019,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "UFVLK353",
+          "title": "Hierarchy theory ; the challenge of complex systems",
+          "authors": [],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3I8HVQYH",
+          "title": "Theory of hierarchical, multilevel, systems",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "D. Macko",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1970,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E9E4FHM6",
+          "title": "Information and Self-Organization: A Macroscopic Approach to Complex Systems",
+          "authors": [
+            "Hermann Haken"
+          ],
+          "year": 2006,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "9NV6TQ7X",
+          "title": "Complex Adaptive Systems",
+          "authors": [
+            "Rob Dekkers"
+          ],
+          "year": 2017,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "C42IZKTZ",
+          "title": "Autopoietic Systems",
+          "authors": [
+            "Rob Dekkers"
+          ],
+          "year": 2017,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "L72QNR7U",
+          "title": "Basic Concepts of Systems Theories",
+          "authors": [
+            "Rob Dekkers"
+          ],
+          "year": 2017,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "6J3RQ8Q7",
+          "title": "Handbook of ecosystem theories and management",
+          "authors": [
+            "Sven Erik Jørgensen",
+            "Felix Müller"
+          ],
+          "year": 2000,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E6TF8EDR",
+          "title": "Logical Approach to Systems Theory",
+          "authors": [
+            "Shingo Takahashi",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TETVGKU7",
+          "title": "General systems theory: mathematical foundations",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1975,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TETVGKU7",
+          "title": "General systems theory: mathematical foundations",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1975,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JVAUAL5Q",
+          "title": "General Systems Theory: A Mathematical Approach",
+          "authors": [
+            "Yi Lin"
+          ],
+          "year": 2002,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JVAUAL5Q",
+          "title": "General Systems Theory: A Mathematical Approach",
+          "authors": [
+            "Yi Lin"
+          ],
+          "year": 2002,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JWHDV62A",
+          "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+          "authors": [
+            "Michael John Healy",
+            "Thomas Preston Caudell"
+          ],
+          "year": 2006,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "MNNN2K8M",
+          "title": "Goedel Machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements",
+          "authors": [
+            "Juergen Schmidhuber"
+          ],
+          "year": 2006,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IY87BB9B",
+          "title": "On the mereological structure of complex states of affairs",
+          "authors": [
+            "Thomas Mormann"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "M7DRWKSM",
+          "title": "What is a complex system?",
+          "authors": [
+            "James Ladyman",
+            "James Lambert",
+            "Karoline Wiesner"
+          ],
+          "year": 2013,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "J9ZJ489C",
+          "title": "NON-WELLFOUNDED MEREOLOGY",
+          "authors": [
+            "Aaron J. Cotnoir",
+            "Andrew Bacon"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "GEN58ZP8",
+          "title": "Levels of Description: A Novel Approach to Dynamical Hierarchies",
+          "authors": [
+            "Simon McGregor",
+            "Chrisantha Fernando"
+          ],
+          "year": 2005,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "GEN58ZP8",
+          "title": "Levels of Description: A Novel Approach to Dynamical Hierarchies",
+          "authors": [
+            "Simon McGregor",
+            "Chrisantha Fernando"
+          ],
+          "year": 2005,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Q2P4SB57",
+          "title": "Complexity, contingency, and criticality.",
+          "authors": [
+            "P Bak",
+            "M Paczuski"
+          ],
+          "year": 1995,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "among",
+        "using",
+        "theory",
+        "central",
+        "complexity",
+        "mathematical approach",
+        "general systems theory",
+        "logical approach",
+        "this",
+        "understanding",
+        "general"
+      ],
+      "cross_references": {
+        "theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DGYK3I6Q",
+            "title": "Systems Theory and the Metaphysics of Composition",
+            "authors": [
+              "Martin Zwick"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "E6TF8EDR",
+            "title": "Logical Approach to Systems Theory",
+            "authors": [
+              "Shingo Takahashi",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1995,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TU9JLH4M",
+            "title": "Abstract Systems Theory",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "general systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TU9JLH4M",
+            "title": "Abstract Systems Theory",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DGYK3I6Q",
+            "title": "Systems Theory and the Metaphysics of Composition",
+            "authors": [
+              "Martin Zwick"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "logical approach": [
+          {
+            "zotero_key": "E6TF8EDR",
+            "title": "Logical Approach to Systems Theory",
+            "authors": [
+              "Shingo Takahashi",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1995,
+            "relevance_score": 0.5
+          }
+        ],
+        "among": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "using": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "central": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "mathematical approach": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "the architecture": {
+      "additional_papers": [
+        {
+          "zotero_key": "B7AE6ZQF",
+          "title": "The Architecture of Complexity",
+          "authors": [
+            "Herbert A. Simon"
+          ],
+          "year": 1962,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "complexity"
+      ],
+      "cross_references": {
+        "complexity": [
+          {
+            "zotero_key": "B7AE6ZQF",
+            "title": "The Architecture of Complexity",
+            "authors": [
+              "Herbert A. Simon"
+            ],
+            "year": 1962,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "theory": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "UFVLK353",
+          "title": "Hierarchy theory ; the challenge of complex systems",
+          "authors": [],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3I8HVQYH",
+          "title": "Theory of hierarchical, multilevel, systems",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "D. Macko",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1970,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "QKY7CH45",
+          "title": "Complexity and Information Theory",
+          "authors": [
+            "Claudius Gros"
+          ],
+          "year": 2013,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "K3HV72CL",
+          "title": "Forms of emergent interaction in General Process Theory",
+          "authors": [
+            "Johanna Seibt"
+          ],
+          "year": 2009,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "E6TF8EDR",
+          "title": "Logical Approach to Systems Theory",
+          "authors": [
+            "Shingo Takahashi",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1995,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "MICIWVNH",
+          "title": "Algebraic Theory of Automata and Languages",
+          "authors": [
+            "Masami Itō"
+          ],
+          "year": 2004,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "YB9RLWZJ",
+          "title": "Parts, wholes, and part-whole relations: The prospects of mereotopology",
+          "authors": [
+            "Achille C. Varzi"
+          ],
+          "year": 1996,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "R6VLI2I8",
+          "title": "Mereotopology without Mereology",
+          "authors": [
+            "Peter Forrest"
+          ],
+          "year": 2010,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IY87BB9B",
+          "title": "On the mereological structure of complex states of affairs",
+          "authors": [
+            "Thomas Mormann"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3C84JKPA",
+          "title": "A hierarchical framework for the analysis of scale",
+          "authors": [
+            "R. V. O'Neill",
+            "A. R. Johnson",
+            "A. W. King"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "K3HV72CL",
+          "title": "Forms of emergent interaction in General Process Theory",
+          "authors": [
+            "Johanna Seibt"
+          ],
+          "year": 2009,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DGYK3I6Q",
+          "title": "Systems Theory and the Metaphysics of Composition",
+          "authors": [
+            "Martin Zwick"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JWHDV62A",
+          "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+          "authors": [
+            "Michael John Healy",
+            "Thomas Preston Caudell"
+          ],
+          "year": 2006,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DQMR4KHS",
+          "title": "A categorical manifesto",
+          "authors": [
+            "Joseph A. Goguen"
+          ],
+          "year": 1991,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "7QPBYEZY",
+          "title": "The handbook of multilevel theory, measurement, and analysis.",
+          "authors": [
+            "Stephen E. Humphrey",
+            "James M. LeBreton"
+          ],
+          "year": 2019,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4254DRYW",
+          "title": "General system theory: foundations, development, applications",
+          "authors": [
+            "Ludwig von Bertalanffy"
+          ],
+          "year": 2009,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TETVGKU7",
+          "title": "General systems theory: mathematical foundations",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1975,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JVAUAL5Q",
+          "title": "General Systems Theory: A Mathematical Approach",
+          "authors": [
+            "Yi Lin"
+          ],
+          "year": 2002,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JWHDV62A",
+          "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+          "authors": [
+            "Michael John Healy",
+            "Thomas Preston Caudell"
+          ],
+          "year": 2006,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "7XFM4QVD",
+          "title": "THE INFORMATION FLOW FRAMEWORK: A DESCRIPTIVE CATEGORY METATHEORY",
+          "authors": [
+            "Robert E Kent"
+          ],
+          "year": null,
+          "context": "title",
+          "relevance_score": 0.63,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "GEN58ZP8",
+          "title": "Levels of Description: A Novel Approach to Dynamical Hierarchies",
+          "authors": [
+            "Simon McGregor",
+            "Chrisantha Fernando"
+          ],
+          "year": 2005,
+          "context": "abstract",
+          "relevance_score": 0.48999999999999994,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [
+        "Abstract Systems Theory: It shows the progress made so far in the effort launched in 1960 to develop a mathematical theory of systems based on the \"top-down\"-formalization-approach",
+        "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS: This is done in the article on the basis of a general theory of systems developed within the set‐theory and related branches of abstract mathematics",
+        "Abstract Systems Theory: It shows the progress made so far in the effort launched in 1960 to develop a mathematical theory of systems based on the \"top-down\"-formalization-approach",
+        "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS: This is done in the article on the basis of a general theory of systems developed within the set‐theory and related branches of abstract mathematics",
+        "Ontologies and Worlds in Category Theory: Implications for Neural Systems: We propose category theory, the mathematical theory of structure, as a vehicle for deﬁning ontologies in an unambiguous language with analytical and constructive features",
+        "A categorical manifesto: This paper tries to explain why and how category theory is useful in computing science, by giving guidelines for applying seven basic categorical concepts: category, functor, natural transformation, limit, adjoint, colimit and comma category",
+        "General system theory: foundations, development, applications: General system theory: foundations, development, applications",
+        "Ontologies and Worlds in Category Theory: Implications for Neural Systems: We propose category theory, the mathematical theory of structure, as a vehicle for deﬁning ontologies in an unambiguous language with analytical and constructive features"
+      ],
+      "related_concepts": [
+        "urban systems",
+        "among",
+        "using",
+        "case studies",
+        "central",
+        "complexity",
+        "emergent nested systems",
+        "importance",
+        "mathematical approach",
+        "general systems theory",
+        "systems theory",
+        "logical approach",
+        "influencing complex systems",
+        "this",
+        "understanding",
+        "general"
+      ],
+      "cross_references": {
+        "urban systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "case studies": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "3C84JKPA",
+            "title": "A hierarchical framework for the analysis of scale",
+            "authors": [
+              "R. V. O'Neill",
+              "A. R. Johnson",
+              "A. W. King"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "UFVLK353",
+            "title": "Hierarchy theory ; the challenge of complex systems",
+            "authors": [],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "QKY7CH45",
+            "title": "Complexity and Information Theory",
+            "authors": [
+              "Claudius Gros"
+            ],
+            "year": 2013,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JWHDV62A",
+            "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+            "authors": [
+              "Michael John Healy",
+              "Thomas Preston Caudell"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          }
+        ],
+        "emergent nested systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "influencing complex systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "YB9RLWZJ",
+            "title": "Parts, wholes, and part-whole relations: The prospects of mereotopology",
+            "authors": [
+              "Achille C. Varzi"
+            ],
+            "year": 1996,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "R6VLI2I8",
+            "title": "Mereotopology without Mereology",
+            "authors": [
+              "Peter Forrest"
+            ],
+            "year": 2010,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "GEN58ZP8",
+            "title": "Levels of Description: A Novel Approach to Dynamical Hierarchies",
+            "authors": [
+              "Simon McGregor",
+              "Chrisantha Fernando"
+            ],
+            "year": 2005,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "3C84JKPA",
+            "title": "A hierarchical framework for the analysis of scale",
+            "authors": [
+              "R. V. O'Neill",
+              "A. R. Johnson",
+              "A. W. King"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TU9JLH4M",
+            "title": "Abstract Systems Theory",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JWHDV62A",
+            "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+            "authors": [
+              "Michael John Healy",
+              "Thomas Preston Caudell"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DQMR4KHS",
+            "title": "A categorical manifesto",
+            "authors": [
+              "Joseph A. Goguen"
+            ],
+            "year": 1991,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "R6VLI2I8",
+            "title": "Mereotopology without Mereology",
+            "authors": [
+              "Peter Forrest"
+            ],
+            "year": 2010,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "K3HV72CL",
+            "title": "Forms of emergent interaction in General Process Theory",
+            "authors": [
+              "Johanna Seibt"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DGYK3I6Q",
+            "title": "Systems Theory and the Metaphysics of Composition",
+            "authors": [
+              "Martin Zwick"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4254DRYW",
+            "title": "General system theory: foundations, development, applications",
+            "authors": [
+              "Ludwig von Bertalanffy"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "general systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DGYK3I6Q",
+            "title": "Systems Theory and the Metaphysics of Composition",
+            "authors": [
+              "Martin Zwick"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "E6TF8EDR",
+            "title": "Logical Approach to Systems Theory",
+            "authors": [
+              "Shingo Takahashi",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1995,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TU9JLH4M",
+            "title": "Abstract Systems Theory",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TETVGKU7",
+            "title": "General systems theory: mathematical foundations",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1975,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ],
+        "using": [
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "central": [
+          {
+            "zotero_key": "K3HV72CL",
+            "title": "Forms of emergent interaction in General Process Theory",
+            "authors": [
+              "Johanna Seibt"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "logical approach": [
+          {
+            "zotero_key": "E6TF8EDR",
+            "title": "Logical Approach to Systems Theory",
+            "authors": [
+              "Shingo Takahashi",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1995,
+            "relevance_score": 0.5
+          }
+        ],
+        "importance": [
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          }
+        ],
+        "among": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "mathematical approach": [
+          {
+            "zotero_key": "JVAUAL5Q",
+            "title": "General Systems Theory: A Mathematical Approach",
+            "authors": [
+              "Yi Lin"
+            ],
+            "year": 2002,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "this": {
+      "additional_papers": [
+        {
+          "zotero_key": "78HTLZ5S",
+          "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+          "authors": [
+            "Jenny Zhang",
+            "Shengran Hu",
+            "Cong Lu",
+            "Robert Lange",
+            "Jeff Clune"
+          ],
+          "year": 2025,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "WFB8I6Z3",
+          "title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+          "authors": [
+            "Wenyi Wang",
+            "Piotr Piękos",
+            "Li Nanbo",
+            "Firas Laakom",
+            "Yimeng Chen",
+            "Mateusz Ostaszewski",
+            "Mingchen Zhuge",
+            "Jürgen Schmidhuber"
+          ],
+          "year": 2025,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "YB9RLWZJ",
+          "title": "Parts, wholes, and part-whole relations: The prospects of mereotopology",
+          "authors": [
+            "Achille C. Varzi"
+          ],
+          "year": 1996,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "R6VLI2I8",
+          "title": "Mereotopology without Mereology",
+          "authors": [
+            "Peter Forrest"
+          ],
+          "year": 2010,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IY87BB9B",
+          "title": "On the mereological structure of complex states of affairs",
+          "authors": [
+            "Thomas Mormann"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "J9ZJ489C",
+          "title": "NON-WELLFOUNDED MEREOLOGY",
+          "authors": [
+            "Aaron J. Cotnoir",
+            "Andrew Bacon"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JSJGGFP5",
+          "title": "Structure, scale and emergence",
+          "authors": [
+            "Robin Findlay Hendry"
+          ],
+          "year": 2021,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IEDT26PR",
+          "title": "Hierarchical Structures",
+          "authors": [
+            "Stanley N. Salthe"
+          ],
+          "year": 2012,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "GEN58ZP8",
+          "title": "Levels of Description: A Novel Approach to Dynamical Hierarchies",
+          "authors": [
+            "Simon McGregor",
+            "Chrisantha Fernando"
+          ],
+          "year": 2005,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "3C84JKPA",
+          "title": "A hierarchical framework for the analysis of scale",
+          "authors": [
+            "R. V. O'Neill",
+            "A. R. Johnson",
+            "A. W. King"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "TU9JLH4M",
+          "title": "Abstract Systems Theory",
+          "authors": [
+            "Mihajlo D. Mesarović",
+            "Yasuhiko Takahara"
+          ],
+          "year": 1989,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "4JSYDZNR",
+          "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+          "authors": [
+            "Mihajlo D. Mesarovic"
+          ],
+          "year": 1972,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JWHDV62A",
+          "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+          "authors": [
+            "Michael John Healy",
+            "Thomas Preston Caudell"
+          ],
+          "year": 2006,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "DQMR4KHS",
+          "title": "A categorical manifesto",
+          "authors": [
+            "Joseph A. Goguen"
+          ],
+          "year": 1991,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "IJB29JJT",
+          "title": "Handbook on Ontologies",
+          "authors": [
+            "Steffen Staab",
+            "Rudi Studer"
+          ],
+          "year": 2009,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [
+        "Parts, wholes, and part-whole relations: The prospects of mereotopology: This paper examines three main ways of answering this question",
+        "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS: This is done in the article on the basis of a general theory of systems developed within the set‐theory and related branches of abstract mathematics",
+        "A categorical manifesto: This paper tries to explain why and how category theory is useful in computing science, by giving guidelines for applying seven basic categorical concepts: category, functor, natural transformation, limit, adjoint, colimit and comma category",
+        "Handbook on Ontologies: In this paper we shall revisit the previous attempts to clarify and formalize such original deﬁnition, providing a detailed account of the notions of conceptualization and explicit speciﬁcation, while discussing at the same time the importance of shared explicit speciﬁcations"
+      ],
+      "related_concepts": [
+        "among",
+        "using",
+        "theory",
+        "central",
+        "complexity",
+        "importance",
+        "general systems theory",
+        "systems theory",
+        "understanding",
+        "general"
+      ],
+      "cross_references": {
+        "using": [
+          {
+            "zotero_key": "78HTLZ5S",
+            "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+            "authors": [
+              "Jenny Zhang",
+              "Shengran Hu",
+              "Cong Lu",
+              "Robert Lange",
+              "Jeff Clune"
+            ],
+            "year": 2025,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "WFB8I6Z3",
+            "title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+            "authors": [
+              "Wenyi Wang",
+              "Piotr Piękos",
+              "Li Nanbo",
+              "Firas Laakom",
+              "Yimeng Chen",
+              "Mateusz Ostaszewski",
+              "Mingchen Zhuge",
+              "Jürgen Schmidhuber"
+            ],
+            "year": 2025,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JSJGGFP5",
+            "title": "Structure, scale and emergence",
+            "authors": [
+              "Robin Findlay Hendry"
+            ],
+            "year": 2021,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "YB9RLWZJ",
+            "title": "Parts, wholes, and part-whole relations: The prospects of mereotopology",
+            "authors": [
+              "Achille C. Varzi"
+            ],
+            "year": 1996,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "R6VLI2I8",
+            "title": "Mereotopology without Mereology",
+            "authors": [
+              "Peter Forrest"
+            ],
+            "year": 2010,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "GEN58ZP8",
+            "title": "Levels of Description: A Novel Approach to Dynamical Hierarchies",
+            "authors": [
+              "Simon McGregor",
+              "Chrisantha Fernando"
+            ],
+            "year": 2005,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "3C84JKPA",
+            "title": "A hierarchical framework for the analysis of scale",
+            "authors": [
+              "R. V. O'Neill",
+              "A. R. Johnson",
+              "A. W. King"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TU9JLH4M",
+            "title": "Abstract Systems Theory",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JWHDV62A",
+            "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+            "authors": [
+              "Michael John Healy",
+              "Thomas Preston Caudell"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "DQMR4KHS",
+            "title": "A categorical manifesto",
+            "authors": [
+              "Joseph A. Goguen"
+            ],
+            "year": 1991,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "R6VLI2I8",
+            "title": "Mereotopology without Mereology",
+            "authors": [
+              "Peter Forrest"
+            ],
+            "year": 2010,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IEDT26PR",
+            "title": "Hierarchical Structures",
+            "authors": [
+              "Stanley N. Salthe"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "IY87BB9B",
+            "title": "On the mereological structure of complex states of affairs",
+            "authors": [
+              "Thomas Mormann"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IEDT26PR",
+            "title": "Hierarchical Structures",
+            "authors": [
+              "Stanley N. Salthe"
+            ],
+            "year": 2012,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "3C84JKPA",
+            "title": "A hierarchical framework for the analysis of scale",
+            "authors": [
+              "R. V. O'Neill",
+              "A. R. Johnson",
+              "A. W. King"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JWHDV62A",
+            "title": "Ontologies and Worlds in Category Theory: Implications for Neural Systems",
+            "authors": [
+              "Michael John Healy",
+              "Thomas Preston Caudell"
+            ],
+            "year": 2006,
+            "relevance_score": 0.5
+          }
+        ],
+        "general systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "TU9JLH4M",
+            "title": "Abstract Systems Theory",
+            "authors": [
+              "Mihajlo D. Mesarović",
+              "Yasuhiko Takahara"
+            ],
+            "year": 1989,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "importance": [
+          {
+            "zotero_key": "4JSYDZNR",
+            "title": "CONCEPTUAL BASIS FOR A MATHEMATICAL THEORY OF GENERAL SYSTEMS",
+            "authors": [
+              "Mihajlo D. Mesarovic"
+            ],
+            "year": 1972,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "IJB29JJT",
+            "title": "Handbook on Ontologies",
+            "authors": [
+              "Steffen Staab",
+              "Rudi Studer"
+            ],
+            "year": 2009,
+            "relevance_score": 0.5
+          }
+        ],
+        "among": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "central": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "understanding": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "AYFWBF93",
+          "title": "A Summary of the Principles of Hierarchy Theory",
+          "authors": [
+            "Timothy F Allen"
+          ],
+          "year": null,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "urban systems",
+        "theory",
+        "case studies",
+        "complexity",
+        "emergent nested systems",
+        "general systems theory",
+        "systems theory",
+        "influencing complex systems",
+        "this",
+        "general"
+      ],
+      "cross_references": {
+        "urban systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "case studies": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "emergent nested systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "influencing complex systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "general systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "this": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "AYFWBF93",
+            "title": "A Summary of the Principles of Hierarchy Theory",
+            "authors": [
+              "Timothy F Allen"
+            ],
+            "year": null,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "urban systems": {
+      "additional_papers": [
+        {
+          "zotero_key": "RPX43WBZ",
+          "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+          "authors": [
+            "Christian Walloth"
+          ],
+          "year": 2016,
+          "context": "title",
+          "relevance_score": 0.9,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [],
+      "related_concepts": [
+        "theory",
+        "case studies",
+        "complexity",
+        "emergent nested systems",
+        "influencing complex systems",
+        "understanding"
+      ],
+      "cross_references": {
+        "case studies": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "emergent nested systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "influencing complex systems": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ],
+        "understanding": [
+          {
+            "zotero_key": "RPX43WBZ",
+            "title": "Emergent Nested Systems: A Theory of Understanding and Influencing Complex Systems as well as Case Studies in Urban Systems",
+            "authors": [
+              "Christian Walloth"
+            ],
+            "year": 2016,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    },
+    "using": {
+      "additional_papers": [
+        {
+          "zotero_key": "78HTLZ5S",
+          "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+          "authors": [
+            "Jenny Zhang",
+            "Shengran Hu",
+            "Cong Lu",
+            "Robert Lange",
+            "Jeff Clune"
+          ],
+          "year": 2025,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "WFB8I6Z3",
+          "title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+          "authors": [
+            "Wenyi Wang",
+            "Piotr Piękos",
+            "Li Nanbo",
+            "Firas Laakom",
+            "Yimeng Chen",
+            "Mateusz Ostaszewski",
+            "Mingchen Zhuge",
+            "Jürgen Schmidhuber"
+          ],
+          "year": 2025,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "JSJGGFP5",
+          "title": "Structure, scale and emergence",
+          "authors": [
+            "Robin Findlay Hendry"
+          ],
+          "year": 2021,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "Y38FTH58",
+          "title": "Presenting the Formal Theory of Hierarchical Complexity",
+          "authors": [
+            "Michael Lamport Commons",
+            "Alexander Pekker"
+          ],
+          "year": 2008,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        },
+        {
+          "zotero_key": "LQ8GFWEG",
+          "title": "The definition of system",
+          "authors": [
+            "Alexander Backlund"
+          ],
+          "year": 2000,
+          "context": "abstract",
+          "relevance_score": 0.7,
+          "mention_type": "discussion"
+        }
+      ],
+      "alternative_definitions": [],
+      "extended_treatments": [
+        "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine: On SWEbench Verified and Polyglot, HGM outperforms prior self-improving coding agent development methods while using fewer allocated CPU hours",
+        "The definition of system: Using the underlying assumptions of many authors, a general, more exact definition of system is proposed"
+      ],
+      "related_concepts": [
+        "among",
+        "central",
+        "theory",
+        "complexity",
+        "systems theory",
+        "this",
+        "general"
+      ],
+      "cross_references": {
+        "this": [
+          {
+            "zotero_key": "78HTLZ5S",
+            "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+            "authors": [
+              "Jenny Zhang",
+              "Shengran Hu",
+              "Cong Lu",
+              "Robert Lange",
+              "Jeff Clune"
+            ],
+            "year": 2025,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "WFB8I6Z3",
+            "title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+            "authors": [
+              "Wenyi Wang",
+              "Piotr Piękos",
+              "Li Nanbo",
+              "Firas Laakom",
+              "Yimeng Chen",
+              "Mateusz Ostaszewski",
+              "Mingchen Zhuge",
+              "Jürgen Schmidhuber"
+            ],
+            "year": 2025,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "JSJGGFP5",
+            "title": "Structure, scale and emergence",
+            "authors": [
+              "Robin Findlay Hendry"
+            ],
+            "year": 2021,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "theory": [
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "complexity": [
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          }
+        ],
+        "general": [
+          {
+            "zotero_key": "Y38FTH58",
+            "title": "Presenting the Formal Theory of Hierarchical Complexity",
+            "authors": [
+              "Michael Lamport Commons",
+              "Alexander Pekker"
+            ],
+            "year": 2008,
+            "relevance_score": 0.5
+          },
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "among": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "central": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ],
+        "systems theory": [
+          {
+            "zotero_key": "LQ8GFWEG",
+            "title": "The definition of system",
+            "authors": [
+              "Alexander Backlund"
+            ],
+            "year": 2000,
+            "relevance_score": 0.5
+          }
+        ]
+      }
+    }
+  }
 }
