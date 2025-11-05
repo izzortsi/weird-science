@@ -98,29 +98,17 @@ jobs:
             fi
 
             # Create a redirect page for the original repository README
-            cat > quartz-site/content/README.md << 'EOF'
----
-title: "weird-science Knowledge Base"
----
-
-# weird-science Knowledge Base
-
-**This page has moved!**
-
-**Visit the complete Knowledge Base**: [[Home]]
-
-**Direct link**: https://izzortsi.github.io/weird-science/
-
----
-
-## Quick Navigation
-
-- **Knowledge Base**: [[Home]]
-- **Projects**: [[projects]]
-- **Concepts**: [[concepts]]
-- **About**: [[about]]
-
-EOF
+            echo '---' > quartz-site/content/README.md
+            echo 'title: "weird-science Knowledge Base"' >> quartz-site/content/README.md
+            echo '---' >> quartz-site/content/README.md
+            echo '' >> quartz-site/content/README.md
+            echo '# weird-science Knowledge Base' >> quartz-site/content/README.md
+            echo '' >> quartz-site/content/README.md
+            echo '**This page has moved!**' >> quartz-site/content/README.md
+            echo '' >> quartz-site/content/README.md
+            echo '**Visit the complete Knowledge Base**: [[Home]]' >> quartz-site/content/README.md
+            echo '' >> quartz-site/content/README.md
+            echo '**Direct link**: https://izzortsi.github.io/weird-science/' >> quartz-site/content/README.md
           fi
 
           # Copy project summaries
