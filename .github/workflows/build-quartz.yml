@@ -96,6 +96,31 @@ jobs:
             if [ -f "knowledge-database/README.md" ]; then
               cp knowledge-database/README.md quartz-site/content/index.md
             fi
+
+            # Create a redirect page for the original repository README
+            cat > quartz-site/content/README.md << 'EOF'
+---
+title: "weird-science Knowledge Base"
+---
+
+# weird-science Knowledge Base
+
+⚠️ **This page has moved!**
+
+📚 **Visit the complete Knowledge Base**: [[Home]]
+
+🔗 **Direct link**: https://izzortsi.github.io/weird-science/
+
+---
+
+## Quick Navigation
+
+- **Knowledge Base**: [[Home]]
+- **Projects**: [[projects]]
+- **Concepts**: [[concepts]]
+- **About**: [[about]]
+
+EOF
           fi
 
           # Copy project summaries
