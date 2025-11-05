@@ -19,7 +19,7 @@ Currently, the knowledge base generation only extracts concepts **explicitly def
 - Result: **Γ** = {concept₁, concept₂, ...}
 
 ### Phase 2: Expand via Cited Papers (Γ → Γ⁺)
-**Status:** 🟡 Partially implemented (only uses Zotero metadata)
+**Status:** 🟡 Partially implemented (basic Zotero integration exists)
 
 **Proposed enhancement:**
 
@@ -27,18 +27,17 @@ For each citation in Γ's source LaTeX:
 1. Look up paper in Zotero library
 2. **Fetch paper content** from Zotero library:
    - Metadata (title, authors, year)
-   - Abstract
-   - Keywords/tags
-   - Attachments (PDFs)
+   - Abstract (from metadata or PDF extraction)
+   - Keywords/tags from Zotero
+   - PDF attachments for text extraction
 3. **Extract concepts** from paper using:
-   - Title keywords
-   - Abstract analysis
-   - Section headings
-   - Index terms / keywords
-   - Frequently mentioned technical terms
+   - Title keywords and technical terms
+   - Abstract analysis for key concepts
+   - Zotero tags/keywords
+   - Frequently mentioned technical terms in abstract
 4. **Add to Γ⁺** if concept:
    - Appears in ≥2 cited papers, OR
-   - Is central to a highly-cited paper, OR
+   - Is central to a highly-cited paper (based on Zotero metadata), OR
    - Is explicitly referenced in LaTeX (even if not defined)
 
 **Example:**
@@ -74,57 +73,51 @@ For each concept in Γ⁺:
 
 ## Implementation Plan
 
-### Step 1: Enhance Paper Fetching
+### Step 1: Enhance Paper Fetching (Zotero-Only)
 
-Create `scripts/zotero-integration/paper_fetcher.py`:
+Enhance `scripts/zotero-integration/paper_fetcher.py`:
 
 ```python
 class PaperFetcher:
-    def __init__(self, zotero_api_key, semantic_scholar_api_key=None):
-        self.zotero = pyzotero.zotero.Zotero(...)
-        self.s2_api_key = semantic_scholar_api_key
+    def __init__(self, group_id: str = "6182921"):
+        """
+        Initialize the paper fetcher for Zotero library access.
 
-    def fetch_paper_content(self, bibkey: str) -> PaperContent:
-        """Fetch full content of a paper from multiple sources"""
-        # 1. Try Zotero PDF attachment
-        pdf_content = self._fetch_from_zotero_pdf(bibkey)
-        if pdf_content:
-            return pdf_content
+        Args:
+            group_id: Zotero group ID
+        """
+        self.group_id = group_id
 
-        # 2. Try Semantic Scholar
-        s2_content = self._fetch_from_semantic_scholar(bibkey)
-        if s2_content:
-            return s2_content
+    def fetch_paper_content(self, bibkey: str, zotero_item: Dict) -> PaperContent:
+        """Fetch paper content from Zotero library"""
+        # Extract content from Zotero item metadata
+        content = self._fetch_from_zotero(bibkey, zotero_item)
 
-        # 3. Try arXiv
-        arxiv_content = self._fetch_from_arxiv(bibkey)
-        if arxiv_content:
-            return arxiv_content
+        # Try to extract abstract from PDF attachment if not in metadata
+        if not content.abstract and content.full_text_available:
+            pdf_abstract = self._extract_abstract_from_attachment(zotero_item)
+            if pdf_abstract:
+                content.abstract = pdf_abstract
 
-        # 4. Fallback to CrossRef metadata
-        return self._fetch_from_crossref(bibkey)
+        return content
 
-    def extract_concepts_from_paper(self, content: PaperContent) -> List[Concept]:
+    def extract_concepts_from_paper(self, content: PaperContent) -> List[str]:
         """Extract key concepts from paper content"""
-        concepts = []
+        concepts = set()
 
         # Extract from title keywords
         title_concepts = self._extract_title_concepts(content.title)
-        concepts.extend(title_concepts)
+        concepts.update(title_concepts)
 
         # Extract from abstract
-        abstract_concepts = self._extract_abstract_concepts(content.abstract)
-        concepts.extend(abstract_concepts)
+        if content.abstract:
+            abstract_concepts = self._extract_abstract_concepts(content.abstract)
+            concepts.update(abstract_concepts)
 
-        # Extract from section headings
-        section_concepts = self._extract_section_concepts(content.sections)
-        concepts.extend(section_concepts)
+        # Use keywords from Zotero tags directly
+        concepts.update(content.keywords)
 
-        # Extract from index terms / keywords
-        if content.keywords:
-            concepts.extend(content.keywords)
-
-        return self._deduplicate_and_rank(concepts)
+        return list(concepts)
 ```
 
 ### Step 2: Modify Knowledge Base Generator
@@ -221,10 +214,11 @@ For each concept in Γ⁺:
 ### Step 4: Zotero Library Integration
 
 The system uses only the Zotero library for paper content. Ensure:
-1. Papers are synced to Zotero with metadata
-2. Abstracts are included in Zotero items
-3. Tags/keywords are properly set
+1. Papers are synced to Zotero with complete metadata
+2. Abstracts are included in Zotero items or available in PDF attachments
+3. Tags/keywords are properly set in Zotero
 4. Citation keys match bibliography entries
+5. PDF attachments are available for abstract extraction when needed
 
 ## Benefits
 
@@ -273,10 +267,10 @@ From LaTeX files directly:
 
 ## Implementation Timeline
 
-1. **Week 1:** Implement PaperFetcher with Semantic Scholar API
+1. **Week 1:** Enhance PaperFetcher with PDF abstract extraction
 2. **Week 2:** Update knowledge_base_generator.py with expansion logic
 3. **Week 3:** Integrate into CI/CD pipeline
-4. **Week 4:** Test and refine concept extraction
+4. **Week 4:** Test and refine concept extraction from Zotero content
 5. **Week 5:** Document and deploy
 
 ## Open Questions
@@ -285,10 +279,13 @@ From LaTeX files directly:
    - Proposal: Create separate articles for different interpretations
 
 2. **Citation threshold for inclusion?** (How many papers must mention a concept?)
-   - Proposal: ≥2 cited papers OR ≥1 if mentioned in LaTeX
+   - Proposal: ≥1 cited papers OR ≥1 if mentioned in LaTeX
 
 3. **How deep to go?** (Should we also fetch papers cited BY cited papers?)
    - Proposal: Stop at 1 level deep (papers cited in LaTeX only)
 
 4. **Zotero library completeness?** (What if cited papers aren't in Zotero?)
-   - Proposal: Manual curation to ensure all cited papers are added to Zotero library
+   - Proposal: Manual curation to ensure all cited papers are added to Zotero library with proper metadata and attachments
+
+5. **PDF extraction quality?** (How reliable is abstract extraction from PDFs?)
+   - Proposal: Use metadata abstracts when available, fall back to PDF extraction only when necessary
