@@ -7,7 +7,7 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - **Projects:** 3
 - **LaTeX Files:** 17
 - **Citations:** 16
-- **Zotero Items:** 0
+- **Zotero Items:** 93
 - **Bibliography Entries:** 110
 
 ## Projects in Repository
@@ -16,13 +16,13 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - LaTeX files: 8
 - Citations: 6
 
-### nested-systems
-- LaTeX files: 6
-- Citations: 7
-
 ### gst-overview
 - LaTeX files: 3
 - Citations: 4
+
+### nested-systems
+- LaTeX files: 6
+- Citations: 7
 
 
 ## Task Requirements
@@ -61,13 +61,28 @@ LaTeX cites: Simon2012 ("The Architecture of Complexity")
 ```
 
 ### Phase 3: Cross-reference with Zotero Library (Γ⁺ → Γ⁺⁺)
-1. Review remaining Zotero library items (titles, tags, abstracts)
-2. For each concept in Γ⁺, search for additional papers in Zotero that:
-   - Have the concept in title or tags
-   - Are in the same collection as cited papers
-   - Provide alternative definitions or perspectives
-3. Extract additional definitions and treatments of concepts
-4. Build cross-references between different treatments
+**ALREADY COMPLETED:** The system has already performed Γ⁺ → Γ⁺⁺ expansion and provided results in `concept_expansions`.
+
+**Available Data:**
+- `concept_expansions` contains pre-processed expansions for each concept
+- For each concept, includes:
+  - `additional_papers`: Papers found in Zotero that discuss the concept but weren't cited
+  - `alternative_definitions`: Different definitions/perspectives from uncited papers
+  - `extended_treatments`: Extended discussions, applications, or critiques
+  - `related_concepts`: Other concepts found in the same papers
+  - `cross_references`: Papers that discuss multiple concepts together
+
+**Your Task:**
+1. **Review the provided `concept_expansions` data** for each concept
+2. **Integrate additional papers** into the concept articles:
+   - Add "Additional References" sections with the newly discovered papers
+   - Include alternative definitions alongside primary definitions
+   - Add extended treatments as separate subsections
+3. **Build comprehensive cross-references**:
+   - Use the `cross_references` data to link concepts that appear together in papers
+   - Add "See Also" sections with related concepts
+   - Create bidirectional wikilinks between related concepts
+4. **Create richer concept articles** that show multiple perspectives and treatments
 
 ### Phase 4: Hierarchical Classification
 1. Organize Γ⁺⁺ into a hierarchical taxonomy
@@ -98,7 +113,11 @@ zotero_keys: [KEY1, KEY2, ...]
 
 ### Alternative Definitions
 
-[Additional definitions if found in multiple sources]
+[Additional definitions from concept_expansions data]
+
+## Extended Treatments
+
+[Extended discussions, applications, or critiques from Γ⁺⁺ expansion]
 
 ## Examples
 
@@ -106,15 +125,28 @@ zotero_keys: [KEY1, KEY2, ...]
 
 ## Key References
 
-### [Reference 1 Title]
+### Primary References
+[Cited papers that introduced the concept]
+
+### Additional References (Γ⁺⁺ Expansion)
+[Uncited papers found through Zotero cross-referencing]
+
+#### [Additional Paper Title]
 *Authors (Year)*
 [Zotero Link](https://www.zotero.org/groups/6182921/items/KEY)
-[DOI Link if available]
+[Relevance: X.X] [Context: title/abstract/tags]
 
-[Abstract or key points]
+[Key points or alternative perspective]
+
+## See Also
+
+[Related concepts found through cross-referencing]
+- [[related-concept-1]] (appears together in: Paper1, Paper2)
+- [[related-concept-2]] (appears together in: Paper3)
 
 ## Related Concepts
 
+[Original related concepts from LaTeX analysis]
 - [[related-concept-1]]
 - [[related-concept-2]]
 
@@ -153,28 +185,48 @@ The following data is available for your analysis:
 
 ### Sample Citations
 - Mesarovic1975
-- Carnap1956
-- Lin1987
-- Bertalanffy1968
-- Backlund2000
 - Mesarovic1976
-- Takahashi1995
-- Schaffer2008
-- Mesarovic1972
-- Poizat2000
 - Mesarovic1970
+- Poizat2000
+- Carnap1956
+- Mesarovic1972
 - Lin2002
-- Backlund2000a
+- Schaffer2008
+- Walloth2016
+- Backlund2000
+- Takahashi1995
 - Simon2012
 - Lin1999
-- Walloth2016
+- Backlund2000a
+- Lin1987
+- Bertalanffy1968
 
 ### Sample Zotero Items
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
+- Untitled (annotation) - Tags: 
 
 
 ### Full Data Files Available
 - Complete LaTeX sources in: 17 files
-- Zotero manifest: 0 items
+- Zotero manifest: 93 items
 - Bibliography: 110 entries
+- Cited papers: 16 papers fetched and processed
+- Concept expansions: Γ⁺ → Γ⁺⁺ cross-referencing results (if available)
+
+**Γ⁺⁺ Expansion Data (concept_expansions):**
+For each concept that was expanded, you'll find:
+- Additional papers from the 93-item Zotero library
+- Alternative definitions and perspectives
+- Extended treatments and applications
+- Cross-references to related concepts
 
 Please proceed with the semantic analysis and knowledge base generation.
+```

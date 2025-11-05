@@ -25,12 +25,14 @@ from typing import Dict, List, Set, Optional, Tuple
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 
-# Import PaperFetcher for Γ⁺ expansion
+# Import PaperFetcher for Γ⁺ expansion and CrossReferencer for Γ⁺⁺ expansion
 try:
     from paper_fetcher import PaperFetcher, PaperContent
+    from zotero_cross_referencer import ZoteroCrossReferencer, ConceptExpansion
 except ImportError:
     # Try relative import
     from .paper_fetcher import PaperFetcher, PaperContent
+    from .zotero_cross_referencer import ZoteroCrossReferencer, ConceptExpansion
 
 
 @dataclass
@@ -138,6 +140,9 @@ class KnowledgeBaseGenerator:
         # Initialize PaperFetcher for Γ⁺ expansion
         self.paper_fetcher = PaperFetcher()
 
+        # Initialize CrossReferencer for Γ⁺⁺ expansion
+        self.cross_referencer = ZoteroCrossReferencer(self.manifest)
+
         # Load paper cache if it exists
         cache_file = self.output_dir / "cited-papers-cache.json"
         self.paper_fetcher.load_cache(cache_file)
@@ -229,7 +234,7 @@ class KnowledgeBaseGenerator:
 
         return bib_entries
     
-    def prepare_analysis_data(self, fetch_papers: bool = True) -> Dict:
+    def prepare_analysis_data(self, fetch_papers: bool = True, expand_concepts: bool = True) -> Dict:
         """Prepare structured data for semantic analysis."""
         # Collect all citations from LaTeX sources
         all_citations = set()
@@ -262,6 +267,15 @@ class KnowledgeBaseGenerator:
         if fetch_papers and all_citations:
             cited_papers = self.fetch_cited_papers(all_citations)
 
+        # Phase 3: Γ⁺ → Γ⁺⁺ expansion via Zotero library cross-referencing
+        concept_expansions = {}
+        if expand_concepts and fetch_papers and cited_papers:
+            # Extract concepts from cited papers (Γ⁺)
+            gamma_plus_concepts = self._extract_gamma_plus_concepts(cited_papers)
+
+            # Expand via Zotero library (Γ⁺ → Γ⁺⁺)
+            concept_expansions = self.expand_via_zotero_library(gamma_plus_concepts)
+
         analysis_data = {
             'timestamp': datetime.now(timezone.utc).isoformat(),
             'total_projects': len(projects_data),
@@ -273,7 +287,8 @@ class KnowledgeBaseGenerator:
             'all_citations': list(all_citations),
             'zotero_items_summary': self.summarize_zotero_items(),
             'bibliography_keys': list(self.bib_entries.keys()),
-            'cited_papers': cited_papers  # Add cited papers data for Γ⁺ expansion
+            'cited_papers': cited_papers,  # Add cited papers data for Γ⁺ expansion
+            'concept_expansions': self._serialize_concept_expansions(concept_expansions)  # Add Γ⁺⁺ expansion data
         }
 
         return analysis_data
@@ -408,7 +423,140 @@ class KnowledgeBaseGenerator:
         self.paper_fetcher.save_cache(cache_file)
 
         return cited_papers
-    
+
+    def expand_via_zotero_library(self, gamma_plus_concepts: Set[str]) -> Dict[str, ConceptExpansion]:
+        """
+        Expand Γ⁺ concepts via full Zotero library cross-referencing (Γ⁺ → Γ⁺⁺).
+
+        Args:
+            gamma_plus_concepts: Set of concepts from Γ⁺ expansion
+
+        Returns:
+            Dictionary mapping concept names to their expansions
+        """
+        print(f"\nExpanding {len(gamma_plus_concepts)} concepts via Zotero library...")
+
+        # Set cited papers in cross-referencer to avoid duplicates
+        # Only include papers that were actually cited in the LaTeX sources
+        cited_paper_keys = set()
+        cited_bibkeys = set(self.bib_entries.keys())
+
+        for item in self.manifest.get('items', []):
+            item_key = item.get('key')
+            # Only mark as cited if it matches one of the actual bibliography keys
+            if item_key and item_key in cited_bibkeys:
+                cited_paper_keys.add(item_key)
+
+        self.cross_referencer.set_cited_papers(cited_paper_keys)
+
+        # Expand each concept
+        expansions = {}
+        for i, concept in enumerate(sorted(gamma_plus_concepts), 1):
+            print(f"  [{i}/{len(gamma_plus_concepts)}] Expanding '{concept}'...")
+
+            try:
+                expansion = self.cross_referencer.expand_concept(concept, gamma_plus_concepts)
+
+                # Only include if we found additional content
+                if (expansion.additional_papers or
+                    expansion.alternative_definitions or
+                    expansion.extended_treatments):
+                    expansions[concept] = expansion
+                    print(f"    -> Found {len(expansion.additional_papers)} additional papers, "
+                          f"{len(expansion.alternative_definitions)} alt definitions, "
+                          f"{len(expansion.extended_treatments)} extended treatments")
+                else:
+                    print("    -> No additional content found")
+
+            except Exception as e:
+                print(f"    -> Error expanding '{concept}': {e}")
+                continue
+
+        print(f"\nGamma+ -> Gamma++ expansion complete: {len(expansions)} concepts expanded")
+        return expansions
+
+    def _extract_gamma_plus_concepts(self, cited_papers: Dict) -> Set[str]:
+        """
+        Extract concepts from cited papers to form Γ⁺.
+
+        Args:
+            cited_papers: Dictionary of fetched cited papers
+
+        Returns:
+            Set of concept names
+        """
+        concepts = set()
+
+        for bibkey, paper_data in cited_papers.items():
+            if not paper_data:
+                continue
+
+            # Extract concepts using paper_fetcher's method
+            if 'title' in paper_data:
+                content = PaperContent(
+                    bibkey=bibkey,
+                    title=paper_data.get('title', ''),
+                    authors=paper_data.get('authors', []),
+                    year=paper_data.get('year'),
+                    abstract=paper_data.get('abstract'),
+                    keywords=paper_data.get('keywords', []),
+                    doi=paper_data.get('doi'),
+                    url=paper_data.get('url'),
+                    source=paper_data.get('source', ''),
+                    full_text_available=paper_data.get('full_text_available', False)
+                )
+
+                paper_concepts = self.paper_fetcher.extract_concepts_from_paper(content)
+                concepts.update(paper_concepts)
+
+        return concepts
+
+    def _serialize_concept_expansions(self, expansions: Dict[str, ConceptExpansion]) -> Dict:
+        """
+        Serialize ConceptExpansion objects for JSON output.
+
+        Args:
+            expansions: Dictionary of concept expansions
+
+        Returns:
+            Serializable dictionary
+        """
+        serialized = {}
+
+        for concept_name, expansion in expansions.items():
+            serialized[concept_name] = {
+                'additional_papers': [
+                    {
+                        'zotero_key': ref.zotero_key,
+                        'title': ref.title,
+                        'authors': ref.authors,
+                        'year': ref.year,
+                        'context': ref.context,
+                        'relevance_score': ref.relevance_score,
+                        'mention_type': ref.mention_type
+                    }
+                    for ref in expansion.additional_papers
+                ],
+                'alternative_definitions': expansion.alternative_definitions,
+                'extended_treatments': expansion.extended_treatments,
+                'related_concepts': list(expansion.related_concepts),
+                'cross_references': {
+                    concept: [
+                        {
+                            'zotero_key': ref.zotero_key,
+                            'title': ref.title,
+                            'authors': ref.authors,
+                            'year': ref.year,
+                            'relevance_score': ref.relevance_score
+                        }
+                        for ref in refs
+                    ]
+                    for concept, refs in expansion.cross_references.items()
+                }
+            }
+
+        return serialized
+
     def generate_claude_prompt(self, analysis_data: Dict) -> str:
         """Generate a detailed prompt for Claude Code semantic analysis."""
         prompt = f"""# Semantic Analysis Task: Knowledge Base Generation from LaTeX and Zotero
@@ -468,13 +616,28 @@ LaTeX cites: Simon2012 ("The Architecture of Complexity")
 ```
 
 ### Phase 3: Cross-reference with Zotero Library (Γ⁺ → Γ⁺⁺)
-1. Review remaining Zotero library items (titles, tags, abstracts)
-2. For each concept in Γ⁺, search for additional papers in Zotero that:
-   - Have the concept in title or tags
-   - Are in the same collection as cited papers
-   - Provide alternative definitions or perspectives
-3. Extract additional definitions and treatments of concepts
-4. Build cross-references between different treatments
+**ALREADY COMPLETED:** The system has already performed Γ⁺ → Γ⁺⁺ expansion and provided results in `concept_expansions`.
+
+**Available Data:**
+- `concept_expansions` contains pre-processed expansions for each concept
+- For each concept, includes:
+  - `additional_papers`: Papers found in Zotero that discuss the concept but weren't cited
+  - `alternative_definitions`: Different definitions/perspectives from uncited papers
+  - `extended_treatments`: Extended discussions, applications, or critiques
+  - `related_concepts`: Other concepts found in the same papers
+  - `cross_references`: Papers that discuss multiple concepts together
+
+**Your Task:**
+1. **Review the provided `concept_expansions` data** for each concept
+2. **Integrate additional papers** into the concept articles:
+   - Add "Additional References" sections with the newly discovered papers
+   - Include alternative definitions alongside primary definitions
+   - Add extended treatments as separate subsections
+3. **Build comprehensive cross-references**:
+   - Use the `cross_references` data to link concepts that appear together in papers
+   - Add "See Also" sections with related concepts
+   - Create bidirectional wikilinks between related concepts
+4. **Create richer concept articles** that show multiple perspectives and treatments
 
 ### Phase 4: Hierarchical Classification
 1. Organize Γ⁺⁺ into a hierarchical taxonomy
@@ -505,7 +668,11 @@ zotero_keys: [KEY1, KEY2, ...]
 
 ### Alternative Definitions
 
-[Additional definitions if found in multiple sources]
+[Additional definitions from concept_expansions data]
+
+## Extended Treatments
+
+[Extended discussions, applications, or critiques from Γ⁺⁺ expansion]
 
 ## Examples
 
@@ -513,15 +680,28 @@ zotero_keys: [KEY1, KEY2, ...]
 
 ## Key References
 
-### [Reference 1 Title]
+### Primary References
+[Cited papers that introduced the concept]
+
+### Additional References (Γ⁺⁺ Expansion)
+[Uncited papers found through Zotero cross-referencing]
+
+#### [Additional Paper Title]
 *Authors (Year)*
 [Zotero Link](https://www.zotero.org/groups/6182921/items/KEY)
-[DOI Link if available]
+[Relevance: X.X] [Context: title/abstract/tags]
 
-[Abstract or key points]
+[Key points or alternative perspective]
+
+## See Also
+
+[Related concepts found through cross-referencing]
+- [[related-concept-1]] (appears together in: Paper1, Paper2)
+- [[related-concept-2]] (appears together in: Paper3)
 
 ## Related Concepts
 
+[Original related concepts from LaTeX analysis]
 - [[related-concept-1]]
 - [[related-concept-2]]
 
@@ -576,8 +756,18 @@ The following data is available for your analysis:
 - Complete LaTeX sources in: {analysis_data['total_latex_files']} files
 - Zotero manifest: {analysis_data['total_zotero_items']} items
 - Bibliography: {analysis_data['total_bib_entries']} entries
+- Cited papers: {len(analysis_data.get('cited_papers', {}))} papers fetched and processed
+- Concept expansions: Γ⁺ → Γ⁺⁺ cross-referencing results (if available)
+
+**Γ⁺⁺ Expansion Data (concept_expansions):**
+For each concept that was expanded, you'll find:
+- Additional papers from the 93-item Zotero library
+- Alternative definitions and perspectives
+- Extended treatments and applications
+- Cross-references to related concepts
 
 Please proceed with the semantic analysis and knowledge base generation.
+```
 """
         
         return prompt
