@@ -3,7 +3,6 @@
 Repository dedicated to organizing and versioning study topics in systems theory, formal ontologies, and related areas. These materials serve as stepping-stones for future paper development.
 
 [![Knowledge Base](https://img.shields.io/badge/Knowledge_Base-Live-green?style=for-the-badge&logo=github)](https://izzortsi.github.io/weird-science/)
-[![Deploy to GitHub Pages](https://github.com/actions/workflows/build-quartz.yml/badge.svg)](https://github.com/izzortsi/weird-science/actions/workflows/build-quartz.yml)
 
 ## 📚 Study Topics
 
