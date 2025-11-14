@@ -78,6 +78,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Record start time
+        run: echo "START_TIME=$(date +%s)" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: |
           pip install -r scripts/zotero-integration/requirements.txt
@@ -212,6 +215,10 @@ jobs:
           # Get some stats about the generated knowledge base
           CATEGORIES=$(find knowledge-database/concepts -mindepth 1 -maxdepth 1 -type d | wc -l)
           TOTAL_FILES=$(find knowledge-database/concepts -name "*.md" | wc -l)
+          
+          # Calculate processing time
+          END_TIME=$(date +%s)
+          ELAPSED_TIME=$((END_TIME - START_TIME))
 
           gh pr comment ${{ steps.create_pr.outputs.pr_number }} --body "## 📊 Detailed Analysis Report
 
@@ -220,7 +227,7 @@ jobs:
           - **Total Concept Files**: $TOTAL_FILES
           - **Categories**: $CATEGORIES
           - **Source**: Automated heuristic analysis
-          - **Processing Time**: ~${{ github.run_duration }} seconds
+          - **Processing Time**: ~${ELAPSED_TIME} seconds
 
           ### Files Generated
 
