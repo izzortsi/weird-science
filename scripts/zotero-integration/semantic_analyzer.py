@@ -311,29 +311,44 @@ class SemanticAnalyzer:
 
     def _organize_hierarchy(self):
         """Organize concepts into hierarchical structure."""
-        # Simple heuristic: group by category and find related concepts
-
+        # Build indices for sources and citations
+        source_to_concepts = defaultdict(set)
+        citation_to_concepts = defaultdict(set)
         for name, concept in self.concepts.items():
-            # Find related concepts (appear in same sources or citations)
-            for other_name, other_concept in self.concepts.items():
-                if name == other_name:
+            for source in concept.sources:
+                source_to_concepts[source].add(name)
+            for citation in concept.citations:
+                citation_to_concepts[citation].add(name)
+
+        # For each concept, find related concepts efficiently
+        for name, concept in self.concepts.items():
+            related = set()
+            # Related by shared sources
+            for source in concept.sources:
+                related.update(source_to_concepts[source])
+            # Related by shared citations (at least 2)
+            citation_counts = Counter()
+            for citation in concept.citations:
+                for other_name in citation_to_concepts[citation]:
+                    if other_name != name:
+                        citation_counts[other_name] += 1
+            for other_name, count in citation_counts.items():
+                if count >= 2:
+                    related.add(other_name)
+            # Remove self
+            related.discard(name)
+            concept.related_concepts.update(related)
+
+        # Name containment check (hierarchy hint) - keep O(n²)
+        concept_names = list(self.concepts.keys())
+        for i, name in enumerate(concept_names):
+            concept = self.concepts[name]
+            for j, other_name in enumerate(concept_names):
+                if i == j:
                     continue
-
-                # Check for shared sources
-                shared_sources = concept.sources & other_concept.sources
-                if shared_sources:
-                    concept.related_concepts.add(other_name)
-
-                # Check for shared citations
-                shared_citations = concept.citations & other_concept.citations
-                if len(shared_citations) >= 2:
-                    concept.related_concepts.add(other_name)
-
-                # Check if one name contains the other (hierarchy hint)
                 if name.lower() in other_name.lower() or other_name.lower() in name.lower():
                     if len(name) < len(other_name):
                         concept.related_concepts.add(other_name)
-
     def _generate_markdown_files(self):
         """Generate markdown files for all concepts."""
         concepts_dir = self.output_dir / "concepts"
