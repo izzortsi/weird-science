@@ -105,14 +105,17 @@ The theory and practice of creating computational systems that can perform tasks
 - [[self-rewriting-program]] - Programs that can modify their own source code
 - [[recursive-self-improvement]] - Iterative enhancement of improvement capabilities
 - [[homoiconicity]] - Code-as-data property enabling natural metaprogramming
+- [[metaprogramming]] - Programs that manipulate other programs as data
+- [[proof-search-based-modification]] - Formal verification of self-modifications
+- [[utility-function-optimization]] - Mathematical framework for evaluating improvements
 
-**4 concepts** | [View Index](concepts/artificial-intelligence/index.md)
+**7 concepts** | [View Index](concepts/artificial-intelligence/index.md)
 
 ---
 
 ## Knowledge Base Statistics
 
-- **Total Concepts**: 28 atomic concept articles
+- **Total Concepts**: 31 atomic concept articles
 - **Research Projects**: 4 active investigations
 - **Concept Domains**: 4 hierarchical categories
 - **LaTeX Sources**: 17 files analyzed

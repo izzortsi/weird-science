@@ -3,7 +3,7 @@ title: Self-Rewriting Program
 tags: [artificial-intelligence, self-modifying-systems, metaprogramming, homoiconicity, code-as-data]
 hierarchy: [artificial-intelligence, self-improving-systems, implementation-techniques]
 related: [godel-machine, homoiconicity, metaprogramming, s-expression-parsing, code-manipulation]
-zotero_keys: []
+zotero_keys: [78HTLZ5S, WFB8I6Z3]
 ---
 
 # Self-Rewriting Program
@@ -159,20 +159,29 @@ Languages that facilitate self-rewriting typically exhibit:
 
 ## Key References
 
-### The Structure of Intelligence and the Design of Working Minds
-*Ben Goertzel (2007)*
+### Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
+*Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune (2025)*
 
-Discusses self-modifying AI systems and the theoretical foundations for recursively self-improving intelligence.
+Demonstrates practical self-rewriting capabilities through open-ended evolution, showing how coding agents can automatically modify their own code to improve performance on software engineering benchmarks.
 
-### Gödel Machines: Fully Self-Referential Optimal Universal Self-Improvers
-*Jürgen Schmidhuber (2006)*
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/78HTLZ5S)
 
-Provides formal framework for self-modifying systems with provable optimality guarantees.
+### Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine
+*Wenyi Wang, Piotr Piękos, Li Nanbo, Firas Laakom, Yimeng Chen, Mateusz Ostaszewski, Mingchen Zhuge, Jürgen Schmidhuber (2025)*
 
-### Lisp: A Language for Stratified Design
-*Harold Abelson and Gerald Sussman (1985)*
+Shows how self-rewriting coding agents can achieve human-level performance through empirical validation of self-modifications rather than formal proof search.
 
-Demonstrates homoiconicity and metaprogramming capabilities that enable self-modification.
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/WFB8I6Z3)
+
+### Structure and Interpretation of Computer Programs
+*Harold Abelson and Gerald Sussman (1996)*
+
+Classic computer science text demonstrating metaprogramming, homoiconicity, and self-modifying program concepts using Scheme (Lisp dialect).
+
+### On Lisp: Advanced Techniques for Common Lisp
+*Paul Graham (1993)*
+
+Comprehensive treatment of Lisp metaprogramming techniques, including macros and code generation that enable self-modifying programs.
 
 ## Practical Implementation Tips
 
@@ -192,6 +201,7 @@ Demonstrates homoiconicity and metaprogramming capabilities that enable self-mod
 
 ## Bibliography Keys
 
-- Goertzel2007
-- Schmidhuber2006
-- Abelson1985
+- Zhang2025
+- Wang2025
+- Abelson1996
+- Graham1993

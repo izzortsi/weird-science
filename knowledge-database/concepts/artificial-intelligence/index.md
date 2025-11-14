@@ -19,8 +19,11 @@ Systems that can modify their own behavior, algorithms, or architecture to enhan
 - [[self-rewriting-program]] - Programs that can modify their own source code
 - [[recursive-self-improvement]] - Iterative enhancement of improvement capabilities
 - [[homoiconicity]] - Code-as-data property enabling natural metaprogramming
+- [[metaprogramming]] - Programs that manipulate other programs as data
+- [[proof-search-based-modification]] - Formal verification of self-modifications
+- [[utility-function-optimization]] - Mathematical framework for evaluating improvements
 
-**4 concepts** | [View Details](self-improving-systems/index.md)
+**7 concepts** | [View Details](self-improving-systems/index.md)
 
 ---
 
