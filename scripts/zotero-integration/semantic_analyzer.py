@@ -26,7 +26,7 @@ class Concept:
     citations: Set[str] = field(default_factory=set)
     keywords: Set[str] = field(default_factory=set)
 
-    def to_markdown(self, output_path: Path, hierarchy: List[str]) -> str:
+    def to_markdown(self, hierarchy: List[str]) -> str:
         """Generate markdown content for this concept."""
         related_links = '\n'.join([f"- [[{c}]]" for c in sorted(self.related_concepts)])
         citations_list = '\n'.join([f"- {c}" for c in sorted(self.citations)])
@@ -168,7 +168,7 @@ class SemanticAnalyzer:
     def _add_citation_context(self, citation: str, content: str, source: str):
         """Find context around citations to understand related concepts."""
         # Find sentences containing the citation
-        cite_pattern = rf'\\cite\{{{citation}\}}'
+        cite_pattern = rf'\\cite\{{{re.escape(citation)}\}}'
         for match in re.finditer(cite_pattern, content):
             start = max(0, match.start() - 200)
             end = min(len(content), match.end() + 200)
@@ -202,12 +202,8 @@ class SemanticAnalyzer:
                     "cited-papers",
                     is_weak=True
                 )
-                if bibkey in self.concepts.get(concept, Concept("")).citations:
-                    pass  # Already linked
-                else:
-                    if concept in self.concepts:
-                        self.concepts[concept].citations.add(bibkey)
-
+                if concept in self.concepts:
+                    self.concepts[concept].citations.add(bibkey)
             # Extract from abstract
             if abstract:
                 abstract_concepts = self._extract_abstract_concepts(abstract)
@@ -307,7 +303,14 @@ class SemanticAnalyzer:
                 concept.definitions.append(definition)
             # Merge categories (prefer non-cited-papers)
             if category != "cited-papers" and concept.category == "cited-papers":
+                # Remove from old category
+                if name in self.categories[concept.category]:
+                    self.categories[concept.category].remove(name)
+                # Update concept category
                 concept.category = category
+                # Add to new category if not already there
+                if name not in self.categories[category]:
+                    self.categories[category].append(name)
 
     def _organize_hierarchy(self):
         """Organize concepts into hierarchical structure."""
@@ -375,7 +378,12 @@ class SemanticAnalyzer:
                 if not filename:
                     continue
 
+                # Avoid filename collisions by appending a numeric suffix if needed
                 filepath = category_dir / f"{filename}.md"
+                counter = 1
+                while filepath.exists():
+                    filepath = category_dir / f"{filename}-{counter}.md"
+                    counter += 1
 
                 # Generate markdown
                 hierarchy = [category_slug]
