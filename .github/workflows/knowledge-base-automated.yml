@@ -184,18 +184,22 @@ jobs:
           🤖 *Generated automatically by the Knowledge Base Automated Analysis workflow*
           "
 
-          gh pr create \
-            --title "$PR_TITLE" \
-            --body "$PR_BODY" \
-            --base dev \
-            --head "${{ github.event.inputs.branch }}" \
-            --label "automated,knowledge-base,experimental"
+          # Check if PR already exists for the branch
+          if gh pr view "${{ github.event.inputs.branch }}" >/dev/null 2>&1; then
+            echo "PR already exists for branch '${{ github.event.inputs.branch }}'."
+          else
+            gh pr create \
+              --title "$PR_TITLE" \
+              --body "$PR_BODY" \
+              --base dev \
+              --head "${{ github.event.inputs.branch }}" \
+              --label "automated,knowledge-base,experimental"
+          fi
 
           # Get PR number
           PR_NUMBER=$(gh pr view "${{ github.event.inputs.branch }}" --json number -q .number)
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
           echo "✅ Created PR #$PR_NUMBER"
-
       - name: Add PR comment with details
         if: steps.create_pr.outputs.pr_number
         env:
