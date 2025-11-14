@@ -153,8 +153,8 @@ class SemanticAnalyzer:
 
     def _extract_section_concepts(self, content: str, source: str, category: str):
         """Extract concepts from section and subsection titles."""
-        # Match \section{Title} and \subsection{Title}
-        section_pattern = r'\\(?:sub)*section\{([^}]+)\}'
+        # Match \section{Title}, \subsection{Title}, and \subsubsection{Title}
+        section_pattern = r'\\(?:sub){0,2}section\{([^}]+)\}'
         for match in re.finditer(section_pattern, content):
             title = match.group(1).strip()
             # Remove LaTeX commands
