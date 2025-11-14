@@ -29,35 +29,47 @@
            sexprs))
 
 (defun increment-generation-in-sexprs (sexprs)
-  "Increment the *generation* value in a list of S-expressions"
-  (let ((gen-form (find-defparameter-form '*generation* sexprs)))
-    (if gen-form
-        (progn
-          (setf (third gen-form) (1+ (third gen-form)))
-          sexprs)
-        (error "Could not find *generation* defparameter"))))
+  "Increment the *generation* value in a list of S-expressions, returning a modified copy"
+  (let ((found nil))
+    (let ((new-sexprs
+           (mapcar (lambda (form)
+                     (if (and (listp form)
+                              (eq (car form) 'defparameter)
+                              (eq (cadr form) '*generation*))
+                         (progn
+                           (setf found t)
+                           `(defparameter *generation* ,(1+ (third form))))
+                         form))
+                   sexprs)))
+      (if found
+          new-sexprs
+          (error "Could not find *generation* defparameter")))))
 
 (defun verify-self-modification ()
   "Verify that the program successfully modified itself"
   (let ((original-gen *generation*))
     (format t "Current generation: ~a~%" original-gen)
     (let* ((sexprs (read-self-as-sexprs))
-           (new-generation (third (find-defparameter-form '*generation* sexprs))))
-      (if (= new-generation (1+ original-gen))
-          (format t "✓ Self-modification successful!~%")
-          (format t "✗ Self-modification failed! Expected ~a, found ~a~%"
-                  (1+ original-gen) new-generation)))))
+           (gen-form (find-defparameter-form '*generation* sexprs)))
+      (if gen-form
+          (let ((new-generation (third gen-form)))
+            (if (= new-generation (1+ original-gen))
+                (format t "✓ Self-modification successful!~%")
+                (format t "✗ Self-modification failed! Expected ~a, found ~a~%"
+                        (1+ original-gen) new-generation)))
+          (format t "✗ Self-modification failed! Could not find *generation* defparameter in source.~%")))))
 
 (defun transform-code-additions (sexprs)
   "Demonstrate more complex self-modification by adding new features"
-  (let ((gen-form (find-defparameter-form '*generation* sexprs))
-        (current-gen (third (find-defparameter-form '*generation* sexprs))))
+  (let* ((gen-form (find-defparameter-form '*generation* sexprs))
+         (current-gen (third gen-form)))
     (cond
       ;; Add execution history tracking at generation 3
       ((and (= current-gen 3)
             (not (find-defparameter-form '*execution-history* sexprs)))
-       (push '(defparameter *execution-history* '()) sexprs)
-       (push ';;; Added execution history tracking at generation 3 sexprs)
+       (setf sexprs (append sexprs
+                            (list ';;; Added execution history tracking at generation 3
+                                  '(defparameter *execution-history* '()))))
        (format t "→ Adding execution history tracking...~%"))
       ;; Add evolution function at generation 5
       ((and (= current-gen 5)
@@ -66,11 +78,11 @@
                                 (eq (car form) 'defun)
                                 (eq (cadr form) 'evolve-further)))
                          sexprs)))
-       (push '(defun evolve-further ()
-                "Function added at generation 5 - demonstrates evolution"
-                (format t "I can evolve myself in complex ways!~%"))
-             sexprs)
-       (push ';;; Added evolution capability at generation 5 sexprs)
+       (setf sexprs (append sexprs
+                            (list ';;; Added evolution capability at generation 5
+                                  '(defun evolve-further ()
+                                     "Function added at generation 5 - demonstrates evolution"
+                                     (format t "I can evolve myself in complex ways!~%")))))
        (format t "→ Adding evolution capability...~%"))
       ;; Modify behavior at generation 7
       ((= current-gen 7)
