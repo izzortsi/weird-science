@@ -9,10 +9,11 @@ and heuristic methods.
 
 import re
 import json
+import yaml
 from pathlib import Path
 from typing import Dict, List, Set
 from dataclasses import dataclass, field
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 
 @dataclass
@@ -31,12 +32,17 @@ class Concept:
         related_links = '\n'.join([f"- [[{c}]]" for c in sorted(self.related_concepts)])
         citations_list = '\n'.join([f"- {c}" for c in sorted(self.citations)])
 
+        # Generate YAML front matter using yaml library for proper escaping
+        frontmatter = {
+            'title': self.name,
+            'tags': sorted(self.keywords),
+            'hierarchy': hierarchy,
+            'related': sorted(self.related_concepts)
+        }
+        yaml_str = yaml.safe_dump(frontmatter, default_flow_style=False, allow_unicode=True, sort_keys=False)
+        
         content = f"""---
-title: {self.name}
-tags: [{', '.join(sorted(self.keywords))}]
-hierarchy: [{', '.join(hierarchy)}]
-related: [{', '.join(sorted(self.related_concepts))}]
----
+{yaml_str}---
 
 # {self.name}
 
