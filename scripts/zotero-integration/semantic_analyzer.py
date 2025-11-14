@@ -134,14 +134,76 @@ class SemanticAnalyzer:
                 for citation in tex_file.get('citations', []):
                     self._add_citation_context(citation, content, tex_file['path'])
 
+    def _extract_latex_arg(self, text: str, start_pos: int) -> tuple:
+        """
+        Extract a LaTeX argument with proper brace matching.
+        
+        Handles nested braces correctly by counting brace depth.
+        Returns (argument_text, end_position) or (None, start_pos) if no valid argument.
+        
+        Args:
+            text: The full text to parse
+            start_pos: Position where the opening brace should be
+            
+        Returns:
+            Tuple of (extracted argument text, position after closing brace)
+        """
+        if start_pos >= len(text) or text[start_pos] != '{':
+            return None, start_pos
+        
+        depth = 1
+        pos = start_pos + 1
+        arg_start = pos
+        
+        while pos < len(text) and depth > 0:
+            if text[pos] == '\\':
+                # Skip escaped characters
+                pos += 2
+                continue
+            elif text[pos] == '{':
+                depth += 1
+            elif text[pos] == '}':
+                depth -= 1
+            pos += 1
+        
+        if depth == 0:
+            return text[arg_start:pos-1], pos
+        else:
+            # Unmatched braces
+            return None, start_pos
+
     def _extract_definitions(self, content: str, source: str, category: str):
-        """Extract explicit definitions from LaTeX content."""
-        # Pattern: \definition{term}{definition text}
-        def_pattern = r'\\definition\{([^}]+)\}\{([^}]+)\}'
-        for match in re.finditer(def_pattern, content, re.DOTALL):
-            term = match.group(1).strip()
-            definition = match.group(2).strip()
-            self._add_concept(term, definition, source, category)
+        """
+        Extract explicit definitions from LaTeX content.
+        
+        This method uses proper brace matching to handle nested braces in
+        LaTeX definitions like: \\definition{term}{text with \\emph{nested} braces}
+        """
+        # Find all occurrences of \definition command
+        pattern = r'\\definition'
+        for match in re.finditer(pattern, content):
+            pos = match.end()
+            
+            # Skip whitespace
+            while pos < len(content) and content[pos].isspace():
+                pos += 1
+            
+            # Extract first argument (term)
+            term, pos = self._extract_latex_arg(content, pos)
+            if term is None:
+                continue
+            
+            # Skip whitespace
+            while pos < len(content) and content[pos].isspace():
+                pos += 1
+            
+            # Extract second argument (definition)
+            definition, _ = self._extract_latex_arg(content, pos)
+            if definition is None:
+                continue
+            
+            # Add the concept
+            self._add_concept(term.strip(), definition.strip(), source, category)
 
         # Pattern: "X is defined as Y" or "X is a Y that"
         text_def_patterns = [
