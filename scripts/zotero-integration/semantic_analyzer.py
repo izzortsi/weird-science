@@ -10,9 +10,9 @@ and heuristic methods.
 import re
 import json
 from pathlib import Path
-from typing import Dict, List, Set, Tuple, Optional
+from typing import Dict, List, Set
 from dataclasses import dataclass, field
-from collections import defaultdict, Counter
+from collections import defaultdict
 
 
 @dataclass
