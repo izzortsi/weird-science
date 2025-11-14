@@ -48,7 +48,7 @@ related: [{', '.join(sorted(self.related_concepts))}]
 
         if len(self.definitions) > 1:
             content += "### Alternative Definitions\n\n"
-            for i, defn in enumerate(self.definitions[1:], 2):
+            for i, defn in enumerate(self.definitions[1:], 1):
                 content += f"{i}. {defn}\n\n"
 
         if self.related_concepts:
