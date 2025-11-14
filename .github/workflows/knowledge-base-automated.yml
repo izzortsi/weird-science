@@ -116,6 +116,10 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add knowledge-database/concepts
+          if git diff --cached --quiet; then
+            echo "⚠️ No concept files generated"
+            exit 1
+          fi
           git commit -m "feat(kb): automated semantic analysis generated ${{ env.concept_count }} concepts
 
           This knowledge base was automatically generated using local NLP and
