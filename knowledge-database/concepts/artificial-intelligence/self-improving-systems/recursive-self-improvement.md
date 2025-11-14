@@ -3,7 +3,7 @@ title: Recursive Self-Improvement
 tags: [artificial-intelligence, self-improvement, artificial-general-intelligence, recursive-algorithms, exponential-growth]
 hierarchy: [artificial-intelligence, self-improving-systems, theoretical-foundations]
 related: [godel-machine, self-rewriting-program, intelligence-explosion, superintelligence, ai-safety]
-zotero_keys: [G4JWXW5Y]
+zotero_keys: [78HTLZ5S, WFB8I6Z3]
 ---
 
 # Recursive Self-Improvement
@@ -173,12 +173,19 @@ $$\text{Growth Rate} \propto \text{Intelligence} \times \text{Self-Improvement C
 
 ## Key References
 
-### Machine Super Intelligence
-*Shane Legg (2007)*
+### Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
+*Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune (2025)*
 
-Formalizes universal intelligence and discusses implications for recursive self-improvement in artificial general intelligence systems.
+Demonstrates practical recursive self-improvement through open-ended evolution, showing how systems can automatically enhance their coding capabilities from 20.0% to 50.0% on SWE-bench.
 
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/G4JWXW5Y)
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/78HTLZ5S)
+
+### Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine
+*Wenyi Wang, Piotr Piękos, Li Nanbo, Firas Laakom, Yimeng Chen, Mateusz Ostaszewski, Mingchen Zhuge, Jürgen Schmidhuber (2025)*
+
+Addresses fundamental challenges in recursive self-improvement by introducing metrics for evaluating modification potential and demonstrates human-level performance through recursive enhancement.
+
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/WFB8I6Z3)
 
 ### The Singularity Is Near
 *Ray Kurzweil (2005)*

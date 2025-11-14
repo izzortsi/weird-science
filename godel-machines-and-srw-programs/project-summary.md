@@ -12,66 +12,47 @@ tags:
 zotero_keys:
   - 78HTLZ5S
   - WFB8I6Z3
-  - U6K9X8N7
-  - G4JWXW5Y
 matched_bibkeys:
-  - Schmidhuber2006
-  - Schmidhuber2007
-  - Goertzel2007
-  - Legg2007
+  - Zhang2025
+  - Wang2025
 ---
 
 # Gödel Machines and Self-Rewriting Programs
 
 ## Project Summary
 
-This project investigates the theoretical foundations and practical implementations of self-rewriting systems that can modify their own code and behavior, culminating in Gödel machines - universal problem solvers capable of recursive self-improvement. The investigation begins with the fundamental theoretical insight that a formally defined problem solver can, in principle, construct provably optimal self-modifications [[#Schmidhuber2006|(Schmidhuber, 2006)]].
+This project investigates the theoretical foundations and practical implementations of self-rewriting systems that can modify their own code and behavior, culminating in Gödel machines - universal problem solvers capable of recursive self-improvement. The investigation builds upon recent advances in practical implementations of Gödel machine concepts through evolutionary approaches and open-ended self-improvement [[#Zhang2025|(Zhang et al., 2025)]].
 
-Gödel machines represent a specific class of universal AI systems that can rewrite arbitrary parts of their own code in response to environmental feedback, guided by a formal proof search that guarantees the usefulness of proposed modifications [[#Schmidhuber2007|(Schmidhuber, 2007)]]. Unlike traditional learning systems that only adjust parameters within fixed architectures, Gödel machines can fundamentally alter their own structure, algorithms, and even their learning mechanisms.
+Contemporary implementations of Gödel machines represent a practical realization of Schmidhuber's theoretical framework, using empirical validation through coding benchmarks rather than formal proof search. These systems iteratively modify their own code while improving their ability to perform future modifications, creating a feedback loop of recursive self-improvement [[#Wang2025|(Wang et al., 2025)]]. Unlike traditional AI systems constrained by fixed architectures, these modern Gödel machines can fundamentally alter their own structure, algorithms, and learning mechanisms.
 
-The research examines the fundamental tension between computational universality and self-reference paradoxes. By leveraging Gödel's incompleteness theorems in a constructive way, Gödel machines avoid the classic limitations of self-referential systems while maintaining the ability to improve themselves without bound [[#Schmidhuber2006|(Schmidhuber, 2006)]]. This contrasts sharply with fixed-architecture learning systems that remain computationally bounded by their initial design [[#Goertzel2007|(Goertzel, 2007)]].
+The research examines the critical challenge of evaluating self-modification potential, addressing the "MetaproductivityPerformance Mismatch" between an agent's self-improvement capabilities and its current benchmark performance. By developing metrics like the Clade Metaproductivity (CMP) that aggregate the potential of an agent's descendants, modern implementations can approximate the behavior of theoretically optimal self-improving machines under practical constraints [[#Wang2025|(Wang et al., 2025)]].
 
-A central focus is the formalization of utility functions and proof mechanisms that enable a system to evaluate its own potential modifications. The investigation explores how machine learning and search techniques can be integrated with formal verification methods to create systems that not only improve but can provably demonstrate that proposed modifications will increase expected performance [[#Legg2007|(Legg, 2007)]].
+The project explores how evolutionary principles, inspired by Darwinian natural selection and open-endedness research, can create systems that continuously generate novel self-modifications while maintaining safety through empirical validation and sandboxed execution environments [[#Zhang2025|(Zhang et al., 2025)]].
 
 ## References
 
-### Schmidhuber2006
+### Zhang2025
 
-**Gödel machines: Fully self-referential optimal universal self-improvers**
+**Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents**
 
-*Jürgen Schmidhuber (2006)*
+*Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune (2025)*
 
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/JURGVK7P)
- | DOI: [10.1007/11839132_29](https://doi.org/10.1007/11839132_29)
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/78HTLZ5S)
+ | DOI: [10.48550/arXiv.2505.22954](https://doi.org/10.48550/arXiv.2505.22954)
 
----
-
-### Schmidhuber2007
-
-**Goedel machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements**
-
-*Jürgen Schmidhuber (2007)*
-
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/F3VXRJ5H)
+A practical implementation of Gödel machine concepts using evolutionary approaches and open-ended exploration. The system automatically improves its coding capabilities from 20.0% to 50.0% on SWE-bench through self-modification and empirical validation.
 
 ---
 
-### Goertzel2007
+### Wang2025
 
-**The structure of intelligence and the design of working minds**
+**Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine**
 
-*Ben Goertzel (2007)*
+*Wenyi Wang, Piotr Piękos, Li Nanbo, Firas Laakom, Yimeng Chen, Mateusz Ostaszewski, Mingchen Zhuge, Jürgen Schmidhuber (2025)*
 
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/H79AZM9V)
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/WFB8I6Z3)
+ | DOI: [10.48550/arXiv.2510.21614](https://doi.org/10.48550/arXiv.2510.21614)
 
----
-
-### Legg2007
-
-**Machine super intelligence**
-
-*Shane Legg (2007)*
-
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/S8NP5R2K)
+Addresses the MetaproductivityPerformance Mismatch in self-improving systems by introducing Clade Metaproductivity (CMP) metrics. Demonstrates human-level performance on coding benchmarks through approximations of optimal self-improving machines.
 
 ---

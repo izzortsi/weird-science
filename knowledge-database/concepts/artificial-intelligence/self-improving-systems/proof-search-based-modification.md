@@ -3,7 +3,7 @@ title: Proof-Search-Based Modification
 tags: [formal-verification, self-improvement, godel-machine, formal-methods, theorem-proving]
 hierarchy: [artificial-intelligence, self-improving-systems, theoretical-foundations]
 related: [godel-machine, utility-function-optimization, formal-verification, theorem-proving, self-rewriting-program]
-zotero_keys: [WFB8I6Z3]
+zotero_keys: [78HTLZ5S, WFB8I6Z3]
 ---
 
 # Proof-Search-Based Modification
@@ -192,10 +192,17 @@ QED
 
 ## Key References
 
-### Goedel machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements
-*Jürgen Schmidhuber (2007)*
+### Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
+*Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune (2025)*
 
-Extended treatment of Gödel machines with detailed formal frameworks for proof-search-based modification and practical implementation considerations.
+Demonstrates practical approaches to proof-search-based modification through empirical validation, using coding benchmarks to verify self-modification benefits rather than formal proof search.
+
+[View in Zotero Library](https://www.zotero.org/groups/6182921/items/78HTLZ5S)
+
+### Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine
+*Wenyi Wang, Piotr Piękos, Li Nanbo, Firas Laakom, Yimeng Chen, Mateusz Ostaszewski, Mingchen Zhuge, Jürgen Schmidhuber (2025)*
+
+Addresses fundamental challenges in evaluating modification potential, introducing Clade Metaproductivity (CMP) metrics as an alternative to formal proof search for assessing recursive self-improvement benefits.
 
 [View in Zotero Library](https://www.zotero.org/groups/6182921/items/WFB8I6Z3)
 
@@ -246,6 +253,7 @@ Comprehensive reference on automated theorem proving techniques and their applic
 
 ## Bibliography Keys
 
-- Schmidhuber2007
+- Zhang2025
+- Wang2025
 - Schmidhuber2006
 - Robinson2001

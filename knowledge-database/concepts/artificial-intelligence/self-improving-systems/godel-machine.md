@@ -3,7 +3,7 @@ title: Gödel Machine
 tags: [artificial-intelligence, self-improving-systems, recursive-self-improvement, formal-verification, universal-problem-solver]
 hierarchy: [artificial-intelligence, self-improving-systems, theoretical-foundations]
 related: [self-rewriting-program, recursive-self-improvement, proof-search-based-modification, utility-function-optimization]
-zotero_keys: [78HTLZ5S, WFB8I6Z3, U6K9X8N7, G4JWXW5Y]
+zotero_keys: [78HTLZ5S, WFB8I6Z3]
 ---
 
 # Gödel Machine
@@ -48,39 +48,30 @@ This approach contrasts with traditional machine learning systems that:
    - Strategy: Search for provably beneficial self-modifications
 
 2. **Darwin Gödel Machine**:
-   - Combines evolutionary algorithms with formal proof search
+   - Combines evolutionary algorithms with empirical validation through benchmarks
    - Demonstrates open-ended evolution of self-improving agents
-   - Shows practical application of Gödel machine principles
+   - Shows practical application of Gödel machine concepts with 20.0% to 50.0% improvement on SWE-bench
+
+3. **Huxley-Gödel Machine**:
+   - Addresses MetaproductivityPerformance Mismatch in self-improving systems
+   - Introduces Clade Metaproductivity (CMP) metrics for evaluating modification potential
+   - Achieves human-level performance on coding benchmarks through optimal self-improvement approximation
 
 ## Key References
 
-### Gödel machines: Fully self-referential optimal universal self-improvers
-*Jürgen Schmidhuber (2006)*
+### Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
+*Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune (2025)*
 
-The seminal paper introducing Gödel machines, demonstrating how formally defined problem solvers can construct provably optimal self-modifications while avoiding classical self-reference paradoxes.
+A practical implementation of Gödel machine concepts using evolutionary approaches. The system automatically improves its coding capabilities from 20.0% to 50.0% on SWE-bench through open-ended self-modification and empirical validation.
 
 [View in Zotero Library](https://www.zotero.org/groups/6182921/items/78HTLZ5S)
 
-### Goedel machines: Self-Referential Universal Problem Solvers Making Provably Optimal Self-Improvements
-*Jürgen Schmidhuber (2007)*
+### Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine
+*Wenyi Wang, Piotr Piękos, Li Nanbo, Firas Laakom, Yimeng Chen, Mateusz Ostaszewski, Mingchen Zhuge, Jürgen Schmidhuber (2025)*
 
-Extended treatment of Gödel machine principles with detailed formal frameworks and practical considerations for implementation.
+Addresses the MetaproductivityPerformance Mismatch by introducing Clade Metaproductivity (CMP) metrics that aggregate the potential of an agent's descendants. Demonstrates human-level performance on coding benchmarks through approximations of optimal self-improving machines.
 
 [View in Zotero Library](https://www.zotero.org/groups/6182921/items/WFB8I6Z3)
-
-### Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents
-*Zhang et al. (2025)*
-
-Recent work demonstrating practical application of Gödel machine concepts in evolutionary systems, showing how the theoretical framework can be implemented for open-ended self-improvement.
-
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/U6K9X8N7)
-
-### Machine super intelligence
-*Shane Legg (2007)*
-
-Provides broader context for Gödel machines within the framework of artificial general intelligence and universal intelligence measures.
-
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/G4JWXW5Y)
 
 ## Related Concepts
 
@@ -116,7 +107,5 @@ Provides broader context for Gödel machines within the framework of artificial 
 
 ## Bibliography Keys
 
-- Schmidhuber2006
-- Schmidhuber2007
 - Zhang2025
-- Legg2007
+- Wang2025
