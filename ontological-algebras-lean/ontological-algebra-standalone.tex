@@ -6,11 +6,12 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathtools}
 \usepackage{geometry}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, linkcolor=leanblue, citecolor=leanblue, urlcolor=leanblue]{hyperref}
 \usepackage{xcolor}
 \usepackage{fancyhdr}
 \usepackage{listings}
 \usepackage{stmaryrd}
+\usepackage{tikz}
 
 \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
 
@@ -43,16 +44,36 @@
 }
 
 \lstnewenvironment{leancode}{%
-  \lstset{
-    language=Lean,
-    basicstyle=\ttfamily\small,
-    keywordstyle=\color{leanblue}\bfseries,
-    commentstyle=\color{leangreen}\itshape,
-    breaklines=true,
-    frame=single,
-    xleftmargin=1em,
-    xrightmargin=1em,
-  }%
+	\lstset{
+		language=Lean,
+		basicstyle=\ttfamily\small,
+		keywordstyle=\color{leanblue}\bfseries,
+		commentstyle=\color{leangreen}\itshape,
+		breaklines=true,
+		frame=single,
+		xleftmargin=1em,
+		xrightmargin=1em,
+		literate=
+		{α}{{$\alpha$}}1
+		{β}{{$\beta$}}1
+		{→}{{$\to$}}1
+		{←}{{$\leftarrow$}}1
+		{↔}{{$\leftrightarrow$}}1
+		{≤}{{$\leq$}}1
+		{≥}{{$\geq$}}1
+		{≠}{{$\neq$}}1
+		{∀}{{$\forall$}}1
+		{∃}{{$\exists$}}1
+		{¬}{{$\neg$}}1
+		{∧}{{$\land$}}1
+		{∨}{{$\lor$}}1
+		{⦃}{{$\lbrace\mkern-4mu|$}}1
+		{⦄}{{$|\mkern-4mu\rbrace$}}1
+		{⊗}{{$\otimes$}}1
+		{₁}{{$_1$}}1
+		{₂}{{$_2$}}1
+		{·}{{$\cdot$}}1,
+	}%
 }{}
 
 % Header
