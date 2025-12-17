@@ -5,9 +5,11 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
 \usepackage{geometry}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue]{hyperref}
 \usepackage{enumitem}
 \usepackage{tikz-cd}
+\usepackage{stmaryrd}
+\usepackage{natbib}
 
 \geometry{margin=1in}
 
@@ -45,7 +47,7 @@ Federal University of Rio de Janeiro}
 \maketitle
 
 \begin{abstract}
-We develop the mathematical foundations of formal ontologies within a purely set-theoretical framework, progressing from extensional relational structures through conceptualizations to ontology specifications. The central contribution lies in the articulation of \emph{ontological algebras}---algebraic structures acting upon ordered ontologies that enable systematic expansion while preserving structural coherence. By grounding our framework in the minimal apparatus of partial orders and Heyting algebras, we reveal the essential algebraic substrate underlying ontological reasoning, stripped of extraneous topological machinery. The resulting framework illuminates the dialectical relationship between static ontological representation and dynamic conceptual evolution.
+We explore the development of a mathematical foundation for formal ontologies within a purely set-theoretical framework, progressing from extensional relational structures through conceptualizations to ontology specifications. The central contribution lies in the articulation of \emph{ontological algebras} -- \textit{algebraic structures acting upon ordered ontologies that enable systematic ontological expansions while preserving structural coherence}. By grounding our framework in the minimal apparatus of partial orders and Heyting algebras, we intend to reveal the essential algebraic substrate underlying ontological reasoning. The resulting framework proposes to illuminate the dialectical relationship between static ontological representation and dynamic conceptual evolution.
 \end{abstract}
 
 \tableofcontents
@@ -55,19 +57,21 @@ We develop the mathematical foundations of formal ontologies within a purely set
 \section{Prolegomena: The Architecture of Formal Representation}
 %=============================================================================
 
-In the liminal space between abstract conceptualization and formal representation lies a profound epistemological challenge: how might we capture the invariant structures of a domain while acknowledging the irreducible gap between symbolic articulation and conceptual content? The edifice of formal ontology emerges from this tension, offering systematic approaches to the formalization of domain knowledge while maintaining critical awareness of representation's inherent limitations.
+In the liminal space between abstract conceptualization and formal representation lies a profound epistemological challenge: how might one capture the invariant structures of a ``domain" while acknowledging the irreducible gap between symbolic articulation and conceptual content? The edifice of formal ontology emerges from this tension, offering systematic approaches to the formalization of domain knowledge while maintaining critical awareness of representation's inherent limitations.
 
-The trajectory we trace here---from extensional structures through conceptualizations to ontological algebras---mirrors a fundamental dialectic in the theory of systems itself. We begin with the mathematical bedrock of sets and relations, enrich this substrate with conceptual structure, and ultimately arrive at algebraic mechanisms that enable ontologies to evolve while preserving their essential organization.
+The trajectory we trace here -- from extensional structures through conceptualizations to ontological algebras -- mirrors a fundamental dialectic in the theory of systems itself. Following \citet{gruber1993, guarino2009}, who characterized an ontology as ``an explicit specification of a conceptualization,'' we begin with the mathematical bedrock of sets and relations, enrich this substrate with conceptual structure, and ultimately arrive at algebraic mechanisms that enable ontologies to evolve while preserving their essential organization.
 
-Our approach is distinguished by a commitment to minimalism: we work with the simplest ordered structures sufficient for our purposes, avoiding the imposition of topological or mereological apparatus except where genuinely required. This economy of means reveals more clearly the essential algebraic character of ontological expansion.
+Our approach is distinguished by a commitment to minimalism: we work with the simplest ordered structures sufficient for our purposes (avoiding, for instance, any kind of explicit mereological or topological apparatus). This economy of means targets to reveal more clearly the essential algebraic character of ontological expansion.
 
 The progression unfolds through four levels of increasing abstraction:
 \begin{enumerate}[label=(\roman*)]
     \item \textbf{Extensional relational structures}: The mathematical substrate of sets and relations, providing the phenomenal cross-section of a domain
-    \item \textbf{Conceptualizations}: Abstract, language-independent representations that transcend particular extensional instantiations
-    \item \textbf{Ontological commitments}: The semantic anchoring whereby vocabularies latch onto conceptual structures
-    \item \textbf{Ontological algebras}: The algebraic apparatus enabling compositional reasoning and systematic expansion
+    \item \textbf{Intensional relational structures (Conceptualizations)}: Abstract, language-independent representations that transcend particular extensional instantiations by enriching them through an ``intensional turn"
+    \item \textbf{Ontological commitments}: The semantic anchoring whereby formal languages latch onto conceptual structures
+    \item \textbf{Ontological algebras}: The algebraic apparatus enabling compositional reasoning and systematic ontological expansion
 \end{enumerate}
+
+addressing related, relevant concepts as it feels needed.
 
 %=============================================================================
 \section{Extensional Foundations}
@@ -76,7 +80,7 @@ The progression unfolds through four levels of increasing abstraction:
 We commence with the mathematical substrate upon which all subsequent constructions rest---the extensional relational structure, which provides what we might term the \emph{phenomenal cross-section} of a domain.
 
 \begin{definition}[Extensional Relational Structure]
-An \emph{extensional relational structure} is a tuple $S = (\domain, \mathbf{R})$ where:
+An \emph{extensional relational structure} \citep[cf.][]{genesereth1987} is a tuple $S = (\domain, \mathbf{R})$ where:
 \begin{itemize}
     \item $\domain$ is a non-empty set called the \emph{universe of discourse}
     \item $\mathbf{R} = \{R_i\}_{i \in I}$ is a family of relations on $\domain$, where each $R_i \subseteq \domain^{n_i}$ for some arity $n_i \in \mathbb{N}$
@@ -86,7 +90,7 @@ An \emph{extensional relational structure} is a tuple $S = (\domain, \mathbf{R})
 This deceptively simple mathematical structure conceals profound ontological choices. The extensional relational structure captures entities and their actual interrelations at a particular state---a snapshot devoid of modal or intensional content. Yet this very extensionality creates a constitutive tension: the structure cannot inherently distinguish between relations that are intrinsic to the system's organization and relations that merely happen to obtain.
 
 \begin{remark}[The Constitutive-Summative Distinction]
-Following von Bertalanffy's foundational insight, we recognize that an extensional structure $(\domain, \mathbf{R})$ captures relations as sets of tuples but cannot discriminate between:
+Following \citeauthor{bertalanffy1968}'s foundational insight \citep{bertalanffy1968}, we recognize that an extensional structure $(\domain, \mathbf{R})$ captures relations as sets of tuples but cannot discriminate between:
 \begin{enumerate}
     \item Relations that are \emph{constitutive}---intrinsic to the system's identity and organization
     \item Relations that are \emph{summative}---contingent aggregations without organizational significance
@@ -108,7 +112,7 @@ The emergent chemical properties---divergent reactivities, distinct spectroscopi
 \section{Conceptualization}
 %=============================================================================
 
-The conceptualization represents our ascent from the extensional plane to the intensional---an abstract, language-independent representation of a domain that serves as the semantic foundation for ontological specification.
+The conceptualization represents our ascent from the extensional plane to the intensional---an abstract, language-independent representation of a domain that serves as the semantic foundation for ontological specification \citep{gruber1995, guarino1998}.
 
 \begin{definition}[Conceptualization]
 A \emph{conceptualization} is a triple $\concept = (\domain, \Sigma, \intrel)$ where:
@@ -122,7 +126,7 @@ A \emph{conceptualization} is a triple $\concept = (\domain, \Sigma, \intrel)$ w
 The conceptualization transcends mere extensional enumeration by incorporating \emph{intensional} content through its signature structure. The set $\Sigma$ specifies not merely what relations exist, but what \emph{kinds} of relations are meaningful within the domain---a crucial distinction that separates ontological engineering from mere database design.
 
 \begin{definition}[Intended Models]
-Given a conceptualization $\concept = (\domain, \Sigma, \intrel)$, the set of \emph{intended models} $I(\concept)$ consists of all extensional relational structures $S = (\domain, \mathbf{R})$ satisfying:
+Given a conceptualization $\concept = (\domain, \Sigma, \intrel)$, the set of \emph{intended models} $I(\concept)$ consists of all extensional relational structures $S = (\domain, \mathbf{R})$ satisfying \citep[following][]{guarino2009}:
 \begin{enumerate}
     \item The domain of $S$ coincides with that of $\concept$
     \item For each $\sigma \in \Sigma$, there exists $R \in \mathbf{R}$ with $R = \rho_\sigma$
@@ -137,7 +141,7 @@ The intended models constitute the extensional ``shadow'' cast by a conceptualiz
 
 \subsection{The Nature of Commitment}
 
-Ontological commitment performs the crucial mediating work of anchoring vocabulary to conceptualization, specifying how linguistic terms latch onto conceptual structure.
+Ontological commitment performs the crucial mediating work of anchoring vocabulary to conceptualization, specifying how linguistic terms latch onto conceptual structure. The notion traces to \citeauthor{quine1948}'s dictum that ``to be is to be the value of a bound variable'' \citep{quine1948}, though here we extend it to intensional contexts following \citet{guarino1998}.
 
 \begin{definition}[Ontological Commitment]
 Let $\lang$ be a first-order logical language with vocabulary $\vocab$ and let $\concept = (\domain, \Sigma, \intrel)$ be a conceptualization. An \emph{ontological commitment} for $\lang$ is a tuple $K = (\concept, \interp)$ where the \emph{interpretation function} $\interp : \vocab \to \domain \cup \intrel$ is a total function mapping:
@@ -147,7 +151,7 @@ Let $\lang$ be a first-order logical language with vocabulary $\vocab$ and let $
 \end{itemize}
 \end{definition}
 
-The term ``commitment'' carries profound philosophical weight. To commit to a conceptualization $\concept$ is to specify how one's vocabulary latches onto the conceptual structure of $\concept$---not merely onto some particular extensional snapshot, but onto the relations that constitute the domain's organization. This addresses a deep problem in ontological engineering: without such anchoring, the same linguistic theory could be satisfied by radically different conceptualizations.
+The term ``commitment'' carries profound philosophical weight. To commit to a conceptualization $\concept$ is to specify how one's vocabulary latches onto the conceptual structure of $\concept$---not merely onto some particular extensional snapshot, but onto the relations that constitute the domain's organization. This addresses a deep problem in ontological engineering: without such anchoring, the same linguistic theory could be satisfied by radically different conceptualizations \citep{guarino2009}.
 
 \begin{definition}[Compatibility and Intended Models]
 An extensional first-order structure $M = (S, I)$ for $\lang$ is \emph{compatible with} ontological commitment $K = (\concept, \interp)$ if:
@@ -161,7 +165,7 @@ The set $I_K(\lang)$ of all compatible models constitutes the \emph{intended mod
 \subsection{Ontology as Approximation}
 
 \begin{definition}[Ontology]
-An \emph{ontology} for a conceptualization $\concept$ with vocabulary $\vocab$ and ontological commitment $K$ is a logical theory $\onto$ consisting of a set of formulas of $\lang$, designed so that the set of its models approximates the set of intended models $I_K(\lang)$.
+An \emph{ontology} for a conceptualization $\concept$ with vocabulary $\vocab$ and ontological commitment $K$ is a logical theory $\onto$ consisting of a set of formulas of $\lang$, designed so that the set of its models approximates the set of intended models $I_K(\lang)$ \citep{gruber1993, guarino1998}.
 \end{definition}
 
 The language of ``approximation'' here is not accidental but rather constitutive. An ontology does not \emph{fully capture} a conceptualization but rather constrains the space of models to approach the intended models. The gap between $\text{Mod}(\onto)$ and $I_K(\lang)$ measures our axiomatic incompleteness---a gap that is not mere deficiency but rather an inevitable feature of formal representation before the richness of conceptual content.
@@ -170,7 +174,7 @@ The language of ``approximation'' here is not accidental but rather constitutive
 \section{Ordered Ontologies}
 %=============================================================================
 
-We now introduce the minimal ordered structure sufficient for algebraic action. In the interstices between arbitrary set-theoretic structure and rich topological apparatus, we discover that a simple partial order provides the essential substrate for ontological algebra.
+We now introduce the minimal ordered structure sufficient for algebraic action. In the interstices between arbitrary set-theoretic structure and rich topological apparatus, we discover that a simple partial order provides the essential substrate for ontological algebra \citep[for foundational material on order theory, see][]{davey2002}.
 
 \begin{definition}[Ordered Ontology]
 An \emph{ordered ontology} is a pair $\onto = (O, \leq)$ where:
@@ -197,19 +201,19 @@ From the primitive order, we define:
 \end{definition}
 
 \begin{remark}[The Lattice Completion]
-Given an ordered ontology $(O, \leq)$, one may always consider its Dedekind-MacNeille completion---the smallest complete lattice containing $(O, \leq)$ as a sub-poset. This completion provides meets and joins for arbitrary subsets, though we shall not require this full apparatus for our development.
+Given an ordered ontology $(O, \leq)$, one may always consider its Dedekind-MacNeille completion---the smallest complete lattice containing $(O, \leq)$ as a sub-poset \citep{davey2002}. This completion provides meets and joins for arbitrary subsets, though we shall not require this full apparatus for our development.
 \end{remark}
 
 %=============================================================================
 \section{Compositional Algebras}
 %=============================================================================
 
-The Heyting algebra emerges as the natural algebraic structure for compositional ontological reasoning. Its operations encode the fundamental modes of conceptual combination, while its intrinsic constructive character reflects the epistemological constraints inherent in ontological work.
+The Heyting algebra emerges as the natural algebraic structure for compositional ontological reasoning. Its operations encode the fundamental modes of conceptual combination, while its intrinsic constructive character reflects the epistemological constraints inherent in ontological work \citep{heyting1956}.
 
 \subsection{The Heyting Structure}
 
 \begin{definition}[Heyting Algebra]
-A \emph{Heyting algebra} is a bounded distributive lattice $H = (H, \sqcup, \sqcap, \Rightarrow, 0, 1)$ such that for all $a, b \in H$, the \emph{relative pseudo-complement} $a \Rightarrow b$ exists, characterized by the adjunction:
+A \emph{Heyting algebra} \citep{heyting1956, johnstone1982} is a bounded distributive lattice $H = (H, \sqcup, \sqcap, \Rightarrow, 0, 1)$ such that for all $a, b \in H$, the \emph{relative pseudo-complement} $a \Rightarrow b$ exists, characterized by the adjunction:
 $$
 c \sqcap a \leq b \iff c \leq a \Rightarrow b
 $$
@@ -219,7 +223,7 @@ This adjunction property---the defining characteristic of Heyting algebras---enc
 
 \begin{proposition}[Fundamental Properties]
 In any Heyting algebra:
-\begin{enumerate}[label=(\roman*)}
+\begin{enumerate}[label=(\roman*)]
     \item The negation $\sim a := a \Rightarrow 0$ satisfies $a \sqcap \sim a = 0$
     \item Contraposition holds: $a \leq b \implies \sim b \leq \sim a$
     \item $a \leq \sim\sim a$ but generally $\sim\sim a \not\leq a$
@@ -227,7 +231,7 @@ In any Heyting algebra:
 \end{enumerate}
 \end{proposition}
 
-The failure of double negation elimination---property (iii)---reflects the constructive character of Heyting algebras. One cannot, in general, recover $a$ from the mere absence of its negation; positive construction is required. This constructive orientation aligns naturally with the epistemological situation in ontological engineering, where one cannot assert the existence of concepts without constructive justification.
+The failure of double negation elimination---property (iii)---reflects the constructive character of Heyting algebras. One cannot, in general, recover $a$ from the mere absence of its negation; positive construction is required. This constructive orientation aligns naturally with the epistemological situation in ontological engineering, where one cannot assert the existence of concepts without constructive justification \citep[cf.][]{sorensen2006}.
 
 \subsection{Compositional Interpretation}
 
@@ -445,28 +449,15 @@ The essential contributions:
     \item The Heyting algebra structure ensures constructive, coherent reasoning throughout
 \end{enumerate}
 
-In the interstices between formal precision and conceptual adequacy, between what can be axiomatized and what transcends axiomatization, we discover the living practice of ontological engineering---an ongoing negotiation between the extensional clarity of logic and the intensional depth of understanding.
+Within the meanders between formal precision and conceptual adequacy, between what can be axiomatized and what transcends axiomatization, we discover the living practice of ontological engineering -- an ongoing negotiation between the extensional clarity of logic and the intensional depth of understanding. 
+
+And, even more importantly, through the acknowledgment of a richer structure such as the one above proposed, there emerges a door to an even richer ontological system, one that allows ontologies be raise above being merely a convenient way to rigorously describe how existent entities stand in relation to each other, but one that also \textit{permits} said ontologies to \textit{evolve}, through the rigorous inclusion of ever-new-formed entities, or concepts, by means of a well-defined, precised notion of ``concept/entity derivability".
 
 %=============================================================================
 % References
 %=============================================================================
 
-\begin{thebibliography}{99}
-
-\bibitem{gruber1993} Gruber, T. R. (1993). A Translation Approach to Portable Ontology Specifications. \textit{Knowledge Acquisition}, 5(2), 199--220.
-
-\bibitem{guarino1998} Guarino, N. (1998). Formal Ontology and Information Systems. In \textit{Proceedings of FOIS'98}, 3--15.
-
-\bibitem{guarino2009} Guarino, N., Oberle, D., \& Staab, S. (2009). What Is an Ontology? In S. Staab \& R. Studer (Eds.), \textit{Handbook on Ontologies} (pp. 1--17). Springer.
-
-\bibitem{heyting1956} Heyting, A. (1956). \textit{Intuitionism: An Introduction}. North-Holland.
-
-\bibitem{johnstone1982} Johnstone, P. T. (1982). \textit{Stone Spaces}. Cambridge University Press.
-
-\bibitem{bertalanffy1968} von Bertalanffy, L. (1968). \textit{General System Theory}. George Braziller.
-
-\bibitem{davey2002} Davey, B. A., \& Priestley, H. A. (2002). \textit{Introduction to Lattices and Order} (2nd ed.). Cambridge University Press.
-
-\end{thebibliography}
+\bibliographystyle{plainnat}
+\bibliography{formal_ontologies}
 
 \end{document}
