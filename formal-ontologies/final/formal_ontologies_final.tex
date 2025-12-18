@@ -97,7 +97,25 @@ What is of most relevance to us here, in the discussions above, will be addresse
 
 Although we, in general, accept the definitions found in \citet{guarino2009} we adopt a slightly different order of exposition, by choosing to discuss and present (even though informally, on occasions) notions such as that of a \textit{system} and of a \textit{domain} in advance. Hopefully, the motivations for the following definitions will be clear in due time.
 
-Let us first discuss the concept of a system, presented as in \citet{bertalanffy1968}.
+Let us first discuss the concept of a system, similarly as presented in \citet{bertalanffy1968}.
+
+A system can be defined as a ``complex of interacting elements", where by interactions we can understand that for some relation $R$ (of arity $n$), defined over the ``set of elements" $P$, for some $(p_i)_{i \in n} \in P^n$, $(p_i)_{i \in n} \in R$ is relevant for the system's \textit{global} behavior: that is what captures ``complex" in the ``interacting of things". With that considered, a familiar-to-be mathematical object is suggested: that of an extensional relational structure.
+
+See, if a single relation with a single element suffices, as long as it impacts the system behavior as a whole, to be considered in the definition of a system (as a complex of interacting elements), it is only natural to consider that a system would require in its definition possibly many relations, with, why not, many different arities. It would appeal to reason, then, to consider:
+
+\begin{definition}[System (I)]
+	Let $X$ be a set. Let $R^{<i>}_j$ be an $i-$ary relation over $X$. A \textit{system} is a tuple $\mathcal{S} = (X, R)$, where $R = (\{R^{<i>}_j\}_{j\in \mathbb{N}})_{i\in \mathbb{N}}$
+	 
+	...is a tuple $S = (\domain, \mathbf{R})$ where:
+	\begin{itemize}
+		\item $\domain$ is a non-empty set called the \emph{universe of discourse}
+		\item $\mathbf{R} = \{R_i\}_{i \in I}$ is a family of relations on $\domain$, where each $R_i \subseteq \domain^{n_i}$ for some arity $n_i \in \mathbb{N}$
+	\end{itemize}
+\end{definition}
+
+
+
+
 
 
 
