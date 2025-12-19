@@ -1,19 +1,19 @@
 ---
 title: From Conceptualization to Ontology
 project: formal-ontologies
-date: 2025-12-18
+date: 2025-12-19
 tags:
   - zotero
   - literature-review
   - formal-ontologies
 zotero_keys:
-  - LQ8GFWEG
-  - TETVGKU7
   - 4254DRYW
+  - TETVGKU7
+  - LQ8GFWEG
 matched_bibkeys:
-  - Backlund2000a
-  - Mesarovic1975
   - Bertalanffy1968
+  - Mesarovic1975
+  - Backlund2000a
 ---
 
 # From Conceptualization to Ontology
