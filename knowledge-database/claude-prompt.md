@@ -7,7 +7,7 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - **Projects:** 3
 - **LaTeX Files:** 17
 - **Citations:** 16
-- **Zotero Items:** 93
+- **Zotero Items:** 0
 - **Bibliography Entries:** 110
 
 ## Projects in Repository
@@ -16,13 +16,13 @@ Analyze the provided LaTeX sources and Zotero library to generate a hierarchical
 - LaTeX files: 8
 - Citations: 6
 
-### gst-overview
-- LaTeX files: 3
-- Citations: 4
-
 ### nested-systems
 - LaTeX files: 6
 - Citations: 7
+
+### gst-overview
+- LaTeX files: 3
+- Citations: 4
 
 
 ## Task Requirements
@@ -184,39 +184,29 @@ Provide the complete knowledge base structure as:
 The following data is available for your analysis:
 
 ### Sample Citations
+- Carnap1956
+- Poizat2000
+- Bertalanffy1968
+- Schaffer2008
+- Mesarovic1972
+- Mesarovic1970
+- Lin1987
 - Mesarovic1975
 - Mesarovic1976
-- Mesarovic1970
-- Poizat2000
-- Carnap1956
-- Mesarovic1972
-- Lin2002
-- Schaffer2008
-- Walloth2016
-- Backlund2000
 - Takahashi1995
-- Simon2012
 - Lin1999
+- Backlund2000
 - Backlund2000a
-- Lin1987
-- Bertalanffy1968
+- Simon2012
+- Lin2002
+- Walloth2016
 
 ### Sample Zotero Items
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
-- Untitled (annotation) - Tags: 
 
 
 ### Full Data Files Available
 - Complete LaTeX sources in: 17 files
-- Zotero manifest: 93 items
+- Zotero manifest: 0 items
 - Bibliography: 110 entries
 - Cited papers: 16 papers fetched and processed
 - Concept expansions: Γ⁺ → Γ⁺⁺ cross-referencing results (if available)
