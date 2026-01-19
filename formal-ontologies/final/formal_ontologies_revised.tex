@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 % Packages
 \usepackage[utf8]{inputenc}
@@ -10,6 +10,9 @@
 \usepackage{tikz-cd}
 \usepackage{stmaryrd}
 \usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
 
 \geometry{margin=1in}
 
@@ -35,27 +38,83 @@
 \newcommand{\sem}[1]{\llbracket #1 \rrbracket}
 \newcommand{\Phen}{\mathrm{Phen}}
 \newcommand{\supp}{\mathrm{supp}}
+% ===========================
+% INFORMAÇÕES DO DOCUMENTO
+% ===========================
+\newcommand{\nomealuno}{Igor Strozzi}
+\newcommand{\matricula}{2025123456}
+% Full title for title page
+\newcommand{\ctitle}{Expanding Formal Ontologies \vspace{0.5cm}
+	\\\Large{An Algebraic Framework}}
+% Short title for header
+\newcommand{\ctitleshort}{Expanding Formal Ontologies}
+\newcommand{\disciplina}[1]{#1}	
+\newcommand{\professor}{Francesco Noseda}
+\newcommand{\universidade}{UFRJ}
+\newcommand{\instituto}{Instituto de Matemática}
+\newcommand{\departamento}{Departamento de Matemática Aplicada}
 
-\title{Mathematical Foundations of Formal Ontologies\\
-\Large{Algebraic Structures for Ontological Expansion}}
+% ===========================
+% CABEÇALHO E RODAPÉ
+% ===========================
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\nomealuno}
+\chead{\ctitleshort}  % <-- Use short title here
+%\rhead{Lista \lista}
+\lfoot{\universidade}
+\cfoot{}
+\rfoot{Page \thepage\ of \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
-\author{Igor Strozzi\\
-Applied Mathematics Department\\
-Federal University of Rio de Janeiro}
+% ===========================
+% PÁGINA DE TÍTULO
+% ===========================
+\newcommand{\maketitlecustom}{
+	\thispagestyle{empty}
+	\begin{center}
+		{\Large \textbf{\universidade}} \\[0.3cm]
+		{\Large \instituto} \\ [0.15cm]
+		{\large \textit{\departamento}} \\[0.5cm]
+		\hrule height 2pt width \textwidth
+		\vspace{0.4cm}
+		{\LARGE \textbf{\ctitle}} \\[0.4cm]
+		\hrule height 2pt width \textwidth
+		\vspace{0.8cm}
+		{\Large \nomealuno} \\
+		\vspace{0.8cm}
+%		\begin{tabular}{ll}
+		{\large \textit{Work developed for the course:} \disciplina{Projeto I (MAEX11)}} \\ [0.25cm]
+		{\large \textit{Supervisor:} \professor} \\
+%		\end{tabular}
+	\end{center}
+	\vspace{0.5cm}
+	\hrule height 1pt
+	\vspace{0.5cm}
+}
+
+%\title{Mathematical Foundations of Formal Ontologies\\
+%\Large{Algebraic Structures for Ontological Expansion}}
+%
+%\author{Igor Strozzi\\
+%Applied Mathematics Department\\
+%Federal University of Rio de Janeiro}
 
 \date{\today}
 
 \begin{document}
 
-\maketitle
+\maketitlecustom
+
 
 \begin{abstract}
 We explore the development of a mathematical foundation for formal ontologies within a purely set-theoretical framework, progressing from extensional relational structures through conceptualizations to ontology specifications. The central contribution lies in the articulation of \emph{ontological algebras} -- \textit{algebraic structures acting upon ordered ontologies that enable systematic ontological expansions while preserving structural coherence}. By grounding our framework in the minimal apparatus of partial orders and Heyting algebras, we intend to reveal the essential algebraic substrate underlying ontological reasoning. The resulting framework proposes to illuminate the dialectical relationship between static ontological representation and dynamic conceptual evolution.
 \end{abstract}
 
+\newpage
 \tableofcontents
 \newpage
-
 %=============================================================================
 \section{Prolegomena: The Architecture of Formal Representation}
 %=============================================================================
