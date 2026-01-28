@@ -31,7 +31,6 @@
 \newcommand{\interp}{\mathcal{I}}
 \newcommand{\concept}{\mathcal{C}}
 \newcommand{\onto}{\mathcal{O}}
-\newcommand{\theory}{\mathcal{T}}
 \newcommand{\intrel}{\mathfrak{R}}
 \newcommand{\powerset}{\mathcal{P}}
 \newcommand{\pfin}{\mathcal{P}_{\mathrm{fin}}}
@@ -118,7 +117,7 @@
 \section{Introduction}
 %=============================================================================
 
-Ontology, in the philosophical sense, concerns the most general questions about what there is and how entities are to be counted as such \citep{quine1948, vaninwagen1993, lowe2002survey, lewis1986, chalmers2009metametaphysics, sider2011}. In practice, however, one typically works with \emph{domain} ontologies: structured representations of a circumscribed portion of reality, tailored to a modeling goal.
+Ontology, in the philosophical sense, concerns the most general questions about what there is and how entities are to be counted as such \citep{quine1948, vaninwagen1993, lowe2002survey}. In practice, however, one typically works with \emph{domain} ontologies: structured representations of a circumscribed portion of reality, tailored to a modeling goal.
 
 In the setting of knowledge representation, a formal ontology is commonly understood as an explicit specification of a conceptualization, separating (i) an intensional account of meaning (conceptual relations varying over possible states) from (ii) a formal theory constraining extensional models \citep{gruber1993, gruber1995, uschold1996, studer1998, guarino1995clarification, guarino1998, guarino2009}. This perspective highlights the methodological gap between intended meaning and its logical capture: a theory constrains models, but it does not exhaust the conceptual structure it aims to represent.
 
@@ -357,6 +356,7 @@ The conceptualization represents our ascent from the extensional plane to the in
 
 The key insight bridging our framework to the intensional account is this: a \emph{conceptual relation} is not a single extensional relation but a \emph{function} assigning an extensional relation to each world. This is the ``intensional turn" that distinguishes ontological engineering from mere database design.
 
+Recall that a domain space $\langle \domain, W \rangle$ fixes the domain and the set of admissible worlds. Given such a domain space, we can define:
 
 \begin{definition}[Conceptual Relation]
 \label{def:conceptual-relation}
@@ -377,17 +377,16 @@ The extensional content at a particular world $w$ is recovered as $\mathrm{ext}(
 
 \begin{definition}[Conceptualization]
 \label{def:conceptualization}
-A \emph{conceptualization} is a tuple $\concept = (\domain, W, \Sigma, \intrel)$ where:
+A \emph{conceptualization} is a triple $\concept = (\domain, \Sigma, \intrel)$ where:
 \begin{itemize}
     \item $\domain$ is the universe of discourse
-    \item $W$ is a set of worlds over $\domain$ (so that $\langle \domain, W\rangle$ is a domain space)
     \item $\Sigma$ is a set of \emph{conceptual signatures} specifying the types and arities of meaningful relations
-    \item $\intrel = \{\rho_\sigma\}_{\sigma \in \Sigma}$ is a family of \emph{conceptual relations}, where each $\rho_\sigma$ is a conceptual relation of arity $\text{arity}(\sigma)$ on the domain space $\langle \domain, W \rangle$
+    \item $\intrel = \{\rho_\sigma\}_{\sigma \in \Sigma}$ is a family of \emph{conceptual relations}, where each $\rho_\sigma$ is a conceptual relation of arity $\text{arity}(\sigma)$ on some domain space $\langle \domain, W \rangle$
 \end{itemize}
 \end{definition}
 
-\begin{remark}[Relation to Guarino's Formulation]
-Up to the signature layer $\Sigma$, this matches the standard presentation of a conceptualization as $(\domain, W, \intrel)$, with $\intrel$ a family of intensional relations over the domain space $\langle \domain, W\rangle$.
+\begin{remark}[Implicit Domain Space]
+The definition of conceptualization presupposes a domain space $\langle \domain, W \rangle$ over which the conceptual relations are defined. This domain space is often left implicit, with $W$ understood as ``all possible worlds consistent with our conceptual understanding." We make it explicit here to clarify the connection with our framework of systems and worlds.
 \end{remark}
 
 The conceptualization transcends mere extensional enumeration by incorporating \emph{intensional} content through its signature structure. The set $\Sigma$ specifies not merely what relations exist, but what \emph{kinds} of relations are meaningful within the domain---a crucial distinction that separates ontological engineering from mere database design.
@@ -397,7 +396,7 @@ The conceptualization transcends mere extensional enumeration by incorporating \
 %-----------------------------------------------------------------------------
 
 \begin{definition}[Intended Models]
-Given a conceptualization $\concept = (\domain, W, \Sigma, \intrel)$, the set of \emph{intended models} $I(\concept)$ consists of all extensional relational structures $\mathcal{S} = (\domain, (R_i)_{i\in I})$ satisfying \citep[following][]{guarino2009}:
+Given a conceptualization $\concept = (\domain, \Sigma, \intrel)$ over a domain space $\langle \domain, W \rangle$, the set of \emph{intended models} $I(\concept)$ consists of all extensional relational structures $\mathcal{S} = (\domain, (R_i)_{i\in I})$ satisfying \citep[following][]{guarino2009}:
 \begin{enumerate}
     \item The domain of $\mathcal{S}$ coincides with that of $\concept$
     \item There exists a world $w \in W$ such that for each $\sigma \in \Sigma$, there exists $i\in I$ with $R_i = \mathrm{ext}(\rho_\sigma(w))$
@@ -419,7 +418,7 @@ In our framework, an intended model corresponds to a phenomenal cross-section of
 Ontological commitment performs the crucial mediating work of anchoring vocabulary to conceptualization, specifying how linguistic terms latch onto conceptual structure. The notion traces to \citeauthor{quine1948}'s dictum that ``to be is to be the value of a bound variable'' \citep{quine1948}, though here we extend it to intensional contexts following \citet{guarino1998}.
 
 \begin{definition}[Ontological Commitment]
-Let $\lang$ be a first-order logical language with vocabulary $\vocab$ and let $\concept = (\domain, W, \Sigma, \intrel)$ be a conceptualization. An \emph{ontological commitment} for $\lang$ is a tuple $K = (\concept, \interp)$ where the \emph{interpretation function} $\interp : \vocab \to \domain \cup \intrel$ is a total function mapping:
+Let $\lang$ be a first-order logical language with vocabulary $\vocab$ and let $\concept = (\domain, \Sigma, \intrel)$ be a conceptualization. An \emph{ontological commitment} for $\lang$ is a tuple $K = (\concept, \interp)$ where the \emph{interpretation function} $\interp : \vocab \to \domain \cup \intrel$ is a total function mapping:
 \begin{itemize}
     \item Each constant symbol in $\vocab$ to an element of $\domain$
     \item Each predicate symbol in $\vocab$ to a conceptual relation in $\intrel$
@@ -444,10 +443,10 @@ The set $I_K(\lang)$ of all compatible models constitutes the \emph{intended mod
 \subsection{Ontology as Approximation}
 
 \begin{definition}[Ontology]
-An \emph{ontology} for a conceptualization $\concept$ with vocabulary $\vocab$ and ontological commitment $K$ is a logical theory $\theory$ consisting of a set of formulas of $\lang$, designed so that the set of its models approximates the set of intended models $I_K(\lang)$ \citep{gruber1993, guarino1998}.
+An \emph{ontology} for a conceptualization $\concept$ with vocabulary $\vocab$ and ontological commitment $K$ is a logical theory $\onto$ consisting of a set of formulas of $\lang$, designed so that the set of its models approximates the set of intended models $I_K(\lang)$ \citep{gruber1993, guarino1998}.
 \end{definition}
 
-The language of ``approximation'' here is not accidental but rather constitutive. An ontology does not \emph{fully capture} a conceptualization but rather constrains the space of models to approach the intended models. The gap between $\text{Mod}(\theory)$ and $I_K(\lang)$ measures our axiomatic incompleteness---a gap that is not mere deficiency but rather an inevitable feature of formal representation before the richness of conceptual content.
+The language of ``approximation'' here is not accidental but rather constitutive. An ontology does not \emph{fully capture} a conceptualization but rather constrains the space of models to approach the intended models. The gap between $\text{Mod}(\onto)$ and $I_K(\lang)$ measures our axiomatic incompleteness---a gap that is not mere deficiency but rather an inevitable feature of formal representation before the richness of conceptual content.
 
 %=============================================================================
 \section{Ordered Ontologies}
@@ -652,40 +651,37 @@ The generated concept $c \otimes a$ yields a valid expansion: the extended struc
 We must verify that $x \leq' y$ implies $\sem{x}' \leq \sem{y}'$. For $x, y \in O$, this follows from the original monotonicity. For $x = c \otimes a$ and $y \in O$, we have $c \otimes a \leq' y$ iff $a \leq \sem{y}$, and $\sem{c \otimes a}' = a$, so $\sem{c \otimes a}' \leq \sem{y}' = \sem{y}$ as required.
 \end{proof}
 
-\subsection{Refinements and Meet-Composition}
+\subsection{The Expansion Monoid}
 
-The previous construction $c\otimes a$ can be read as introducing a \emph{refinement} of a concept $c$ whose semantic content is constrained to be $a\le \sem{c}$. To make the compositionality of successive refinements precise without committing to a particular global expanded carrier $O'$, we consider the family of all formal refinements of a fixed concept.
-
-\begin{definition}[Refinement Family]
-Fix $c\in O$. The \emph{refinement family} of $c$ is
-$$
-O_c := \{\,c\otimes a \mid a\in A,\ a\le \sem{c}\,\}.
-$$
-We extend the interpretation by stipulating $\sem{c\otimes a}:=a$, and we adopt the convention that $c=c\otimes \sem{c}\in O_c$.
+\begin{definition}[Expansion Operator]
+An \emph{expansion operator} is a function $\mathcal{E} : O \times A \to O'$ satisfying:
+\begin{enumerate}
+    \item $\mathcal{E}(c, \sem{c}) = c$ (identity at interpretation)
+    \item $\mathcal{E}(c, a)$ is defined only when $a \leq \sem{c}$ (subordination constraint)
+    \item The result extends the ontological algebra structure
+\end{enumerate}
 \end{definition}
 
-\begin{proposition}[Meet-Composition of Refinements]
-Fix $c\in O$. The binary operation
-$$
-(c\otimes a)\star(c\otimes b) := c\otimes (a\sqcap b)
-$$
-is well-defined on $O_c$, and $(O_c,\star,c)$ is a commutative idempotent monoid. Moreover,
-$$
-\sem{(c\otimes a)\star(c\otimes b)}=\sem{c\otimes a}\sqcap \sem{c\otimes b}.
-$$
+\begin{proposition}[Monoid Structure]
+The set of expansion operators forms a monoid under composition:
+\begin{itemize}
+    \item \textbf{Composition}: $(\mathcal{E}_1 \circ \mathcal{E}_2)(c, a) := \mathcal{E}_1(\mathcal{E}_2(c, a'), a'')$ where $a = a' \sqcap a''$
+    \item \textbf{Identity}: $\text{id}(c, a) := c$ when $a = \sem{c}$
+\end{itemize}
 \end{proposition}
 
-\begin{proof}
-If $a\le \sem{c}$ and $b\le \sem{c}$ then $a\sqcap b\le \sem{c}$, so $c\otimes(a\sqcap b)\in O_c$. Commutativity and associativity follow from those of $\sqcap$ in $A$, idempotence from $a\sqcap a=a$, and the unit law from $a\sqcap \sem{c}=a$ (since $a\le \sem{c}$). The semantic identity is immediate from $\sem{c\otimes a}=a$.
-\end{proof}
+This monoid structure captures the compositionality of ontological expansion: sequential refinements can be combined, and ``doing nothing'' (expanding by the interpretation itself) serves as identity.
 
-\begin{remark}[Filtering as an Order-Theoretic Constraint]
-Let $(O',\le',\sem{\cdot}')$ be an expansion generated by $c\otimes a$ as in Definition (Concept Generation). The generation rule can be read as a filtering principle: the refined concept $c\otimes a$ is obtained by constraining $c$ by $a$. In particular, for any $d\in O$, the defining order clause
+\subsection{Semantic Characterization}
+
+\begin{theorem}[Expansion as Filtering]
+Let $(\onto, A, \sem{\cdot})$ be an ontological algebra and $(O', \leq', \sem{\cdot}')$ an expansion generated by $c \otimes a$. Then for any formula $\phi$ in the language of $\onto$:
 $$
-c\otimes a \le' d \quad\Longleftrightarrow\quad a\le \sem{d}
+\onto' \models \phi[c \otimes a / x] \iff \onto \models \phi[c/x] \text{ and } a \text{ satisfies the constraints encoded by } \phi
 $$
-states that $c\otimes a$ entails precisely those base concepts whose interpretations lie above the constraint $a$.
-\end{remark}
+\end{theorem}
+
+This theorem reveals expansion as a \emph{filtering} operation: the generated concept $c \otimes a$ inherits properties from $c$ but only those compatible with the algebraic constraint $a$. Expansion thus provides controlled specialization within the algebraic framework.
 
 %=============================================================================
 \section{The Dialectics of Formalization}
@@ -719,7 +715,7 @@ The framework developed here comprises the following hierarchy:
 \text{System } (\domain, S) \arrow[r, leftrightarrow, "\text{vary over } W"] & \text{World } (\domain, w) \\
 \text{Phenomenal Cross-Section } \sigma \sqsubseteq S \arrow[d, "\text{flatten}"] \\
 \text{Extensional Structure } (\domain, |\sigma|) \arrow[d] \\
-\text{Conceptualization } (\domain, W, \Sigma, \intrel) \arrow[d] \arrow[r] & I(\concept) \\
+\text{Conceptualization } (\domain, \Sigma, \intrel) \arrow[d] \arrow[r] & I(\concept) \\
 \text{Ontological Commitment } (\concept, \interp) \arrow[d] \\
 \text{Ordered Ontology } (O, \leq) \arrow[d] \\
 \text{Ontological Algebra } (\onto, A, \sem{\cdot}) \arrow[d] \\
