@@ -34,6 +34,16 @@ A comprehensive survey of mathematical formalizations of systems theory, tracing
 
 ---
 
+### [Gödel Machines and Self-Rewriting Programs](projects/godel-machines-and-srw-programs-summary)
+
+A theoretical investigation of universal problem solvers capable of recursive self-improvement through formal code modification and provably optimal self-enhancements.
+
+**Core Investigation**: How can computational systems be designed to make provably optimal modifications to their own code, and what are the theoretical limits and practical implications of such recursive self-improvement?
+
+**Key Concepts**: [[godel-machine]], [[self-rewriting-program]], [[recursive-self-improvement]], [[homoiconicity]]
+
+---
+
 ## Concept Domains
 
 ### [Formal Ontologies](concepts/formal-ontologies/)
@@ -87,11 +97,27 @@ Set-theoretic and logical foundations underlying systems theory.
 
 ---
 
+### [Artificial Intelligence](concepts/artificial-intelligence/)
+
+The theory and practice of creating computational systems that can perform tasks requiring intelligence, including learning, reasoning, and self-improvement.
+
+- [[godel-machine]] - Universal problem solvers with provably optimal self-modification
+- [[self-rewriting-program]] - Programs that can modify their own source code
+- [[recursive-self-improvement]] - Iterative enhancement of improvement capabilities
+- [[homoiconicity]] - Code-as-data property enabling natural metaprogramming
+- [[metaprogramming]] - Programs that manipulate other programs as data
+- [[proof-search-based-modification]] - Formal verification of self-modifications
+- [[utility-function-optimization]] - Mathematical framework for evaluating improvements
+
+**7 concepts** | [View Index](concepts/artificial-intelligence/index.md)
+
+---
+
 ## Knowledge Base Statistics
 
-- **Total Concepts**: 24 atomic concept articles
-- **Research Projects**: 3 active investigations
-- **Concept Domains**: 3 hierarchical categories
+- **Total Concepts**: 31 atomic concept articles
+- **Research Projects**: 4 active investigations
+- **Concept Domains**: 4 hierarchical categories
 - **LaTeX Sources**: 17 files analyzed
 - **Bibliography**: 110+ references
 

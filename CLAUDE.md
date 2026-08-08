@@ -1,0 +1,2 @@
+- Always use descriptive variable names.
+- Your goal is to help into the construction of a fully self-refreshing Knowledge Database, with atomic .md entries, and wikilink hyperlinked cross-references, over a Zotero's group library on github, which gets quartz-deployed to github-pages.
