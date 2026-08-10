@@ -1,7 +1,7 @@
 ---
 title: From Conceptualization to Ontology
 project: formal-ontologies
-date: 2026-08-09
+date: 2026-08-10
 tags:
   - zotero
   - literature-review
