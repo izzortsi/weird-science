@@ -1,0 +1,286 @@
+name: Knowledge Base — Automated Analysis (Experimental)
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Generated branch to analyze (e.g., knowledge-database/generated-XXXXX)'
+        required: true
+        type: string
+      sync_zotero_first:
+        description: 'Sync Zotero library before analysis'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # Optional: Sync Zotero first
+  sync-zotero:
+    name: "Sync Zotero (Optional)"
+    if: github.event.inputs.sync_zotero_first == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/zotero-integration/requirements.txt
+
+      - name: Run Zotero sync
+        env:
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          ZOTERO_GROUP_ID: ${{ vars.ZOTERO_GROUP_ID || '6182921' }}
+        run: |
+          python scripts/zotero-integration/zotero_sync.py \
+            --group-id "$ZOTERO_GROUP_ID" \
+            ${ZOTERO_API_KEY:+--api-key "$ZOTERO_API_KEY"} \
+            --cache-dir zotero-cache \
+            --generate-manifest \
+            --download-pdfs
+
+      - name: Commit Zotero updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add zotero-cache
+          git commit -m "chore: update Zotero cache for automated analysis" || echo "No changes"
+          git push
+
+  # Main automated analysis job
+  automated-analysis:
+    name: "Run Automated Semantic Analysis"
+    needs: [sync-zotero]
+    if: always() && (needs.sync-zotero.result == 'success' || needs.sync-zotero.result == 'skipped')
+    runs-on: ubuntu-latest
+    outputs:
+      pr_number: ${{ steps.create_pr.outputs.pr_number }}
+    steps:
+      - name: Checkout generated branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Record start time
+        run: echo "START_TIME=$(date +%s)" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: |
+          pip install -r scripts/zotero-integration/requirements.txt
+
+      - name: Verify analysis data exists
+        run: |
+          if [ ! -f knowledge-database/analysis-data.json ]; then
+            echo "❌ Error: analysis-data.json not found!"
+            echo "Make sure you're running this on a generated branch from the main pipeline."
+            exit 1
+          fi
+          echo "✅ Found analysis-data.json"
+
+      - name: Run automated semantic analysis
+        run: |
+          echo "🤖 Running automated semantic analysis..."
+          python scripts/zotero-integration/semantic_analyzer.py \
+            --repo-root . \
+            --analysis-data knowledge-database/analysis-data.json \
+            --output-dir knowledge-database
+
+      - name: Verify generated files
+        run: |
+          if [ -d knowledge-database/concepts ]; then
+            CONCEPT_COUNT=$(find knowledge-database/concepts -name "*.md" | wc -l)
+            echo "✅ Generated $CONCEPT_COUNT concept files"
+            echo "concept_count=$CONCEPT_COUNT" >> $GITHUB_ENV
+          else
+            echo "❌ No concepts directory found!"
+            exit 1
+          fi
+
+      - name: Commit generated knowledge base
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add knowledge-database/concepts
+          if git diff --cached --quiet; then
+            echo "⚠️ No concept files generated"
+            exit 1
+          fi
+          git commit -m "feat(kb): automated semantic analysis generated ${{ env.concept_count }} concepts
+
+          This knowledge base was automatically generated using local NLP and
+          heuristic analysis (no API calls).
+
+          Source branch: ${{ github.event.inputs.branch }}
+
+          🤖 Generated with automated semantic analyzer
+
+          Co-Authored-By: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+
+          git push
+
+      - name: Create Pull Request
+        id: create_pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create PR from generated branch to dev
+          PR_TITLE="🤖 Automated Knowledge Base Analysis (${{ env.concept_count }} concepts)"
+
+          PR_BODY="## 🤖 Automated Semantic Analysis Complete
+
+          This PR contains automatically generated knowledge base concepts using local NLP analysis (no API calls).
+
+          ### 📊 Analysis Summary
+
+          - **Branch**: \`${{ github.event.inputs.branch }}\`
+          - **Concepts Generated**: ${{ env.concept_count }}
+          - **Method**: Automated heuristic + NLP extraction
+          - **API Calls**: None (fully local processing)
+
+          ### 🔍 What was analyzed
+
+          1. **LaTeX Sources**: Extracted definitions, section titles, and concept relationships
+          2. **Cited Papers**: Analyzed titles, abstracts, and keywords from matched papers
+          3. **Hierarchy**: Organized concepts by project/category
+          4. **Cross-references**: Linked related concepts based on co-occurrence
+
+          ### 📁 Generated Structure
+
+          \`\`\`
+          knowledge-database/concepts/
+          ├── formal-ontologies/
+          ├── nested-systems/
+          ├── gst-overview/
+          ├── cited-papers/
+          └── index.md
+          \`\`\`
+
+          ### ⚠️ Note: This is Experimental
+
+          This automated analysis uses heuristics and may require manual review and refinement.
+          Consider this a first draft that captures the main concepts automatically.
+
+          ### ✅ Review Checklist
+
+          - [ ] Review generated concept definitions
+          - [ ] Check cross-references and links
+          - [ ] Verify hierarchy organization
+          - [ ] Add missing concepts manually if needed
+          - [ ] Update definitions for clarity
+
+          ---
+
+          🤖 *Generated automatically by the Knowledge Base Automated Analysis workflow*
+          "
+
+          # Check if PR already exists for the branch
+          if gh pr view "${{ github.event.inputs.branch }}" >/dev/null 2>&1; then
+            echo "PR already exists for branch '${{ github.event.inputs.branch }}'."
+          else
+            gh pr create \
+              --title "$PR_TITLE" \
+              --body "$PR_BODY" \
+              --base dev \
+              --head "${{ github.event.inputs.branch }}" \
+              --label "automated,knowledge-base,experimental"
+          fi
+
+          # Get PR number
+          PR_NUMBER=$(gh pr view "${{ github.event.inputs.branch }}" --json number -q .number)
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+          echo "✅ Created PR #$PR_NUMBER"
+      - name: Add PR comment with details
+        if: steps.create_pr.outputs.pr_number
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get some stats about the generated knowledge base
+          CATEGORIES=$(find knowledge-database/concepts -mindepth 1 -maxdepth 1 -type d | wc -l)
+          TOTAL_FILES=$(find knowledge-database/concepts -name "*.md" | wc -l)
+          
+          # Calculate processing time
+          END_TIME=$(date +%s)
+          ELAPSED_TIME=$((END_TIME - START_TIME))
+
+          gh pr comment ${{ steps.create_pr.outputs.pr_number }} --body "## 📊 Detailed Analysis Report
+
+          ### Generated Knowledge Base Statistics
+
+          - **Total Concept Files**: $TOTAL_FILES
+          - **Categories**: $CATEGORIES
+          - **Source**: Automated heuristic analysis
+          - **Processing Time**: ~${ELAPSED_TIME} seconds
+
+          ### Files Generated
+
+          \`\`\`
+          $(find knowledge-database/concepts -name "*.md" | head -20)
+          $([ $(find knowledge-database/concepts -name "*.md" | wc -l) -gt 20 ] && echo "... and $(($(find knowledge-database/concepts -name "*.md" | wc -l) - 20)) more")
+          \`\`\`
+
+          ### Next Steps
+
+          1. Review the generated concepts
+          2. Refine definitions as needed
+          3. Add missing cross-references
+          4. Merge when ready!
+
+          ---
+
+          💡 **Tip**: Compare this with manual Claude Code analysis to see differences in quality/coverage."
+
+  # Summary
+  summary:
+    name: "📊 Workflow Summary"
+    needs: [automated-analysis]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create summary
+        run: |
+          echo "# 🤖 Automated Knowledge Base Analysis Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ needs.automated-analysis.result }}" == "success" ]; then
+            echo "## ✅ Analysis Complete!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The automated semantic analysis has completed successfully." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Pull Request**: #${{ needs.automated-analysis.outputs.pr_number }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### What Happened" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "1. ✅ Analyzed LaTeX sources for concepts" >> $GITHUB_STEP_SUMMARY
+            echo "2. ✅ Extracted concepts from cited papers" >> $GITHUB_STEP_SUMMARY
+            echo "3. ✅ Generated markdown files with Quartz compatibility" >> $GITHUB_STEP_SUMMARY
+            echo "4. ✅ Created hierarchical structure" >> $GITHUB_STEP_SUMMARY
+            echo "5. ✅ Opened pull request for review" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Analysis Failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "The automated analysis encountered an error." >> $GITHUB_STEP_SUMMARY
+            echo "Check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 [View Workflow Run](../actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
