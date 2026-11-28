@@ -1,19 +1,13 @@
 ---
 title: From Conceptualization to Ontology
 project: formal-ontologies
-date: 2026-11-27
+date: 2026-11-28
 tags:
   - zotero
   - literature-review
   - formal-ontologies
 zotero_keys:
-  - 4254DRYW
-  - TETVGKU7
-  - LQ8GFWEG
 matched_bibkeys:
-  - Bertalanffy1968
-  - Mesarovic1975
-  - Backlund2000a
 ---
 
 # From Conceptualization to Ontology
@@ -26,35 +20,4 @@ Following Backlund's critique of existing system definitions [[#Backlund2000a|(B
 
 The central philosophical question emerges: How do we formalize the transition from mathematical descriptions of specific system states to general [[conceptualization|conceptualizations]] that encompass all possible states, and finally to [[ontological-commitment|ontological commitments]] suitable for computational reasoning? This investigation synthesizes insights from formal ontology and systems theory to address the relationship between [[extensional-relational-structure|extensional relational structures]], [[intensional-relational-structure|intensional conceptualizations]], [[ontological-commitment|ontological commitments]], and [[intended-models]].
 
-## References
-
-### Backlund2000a
-
-**The definition of system**
-
-*Alexander Backlund (2000)*
-
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/LQ8GFWEG)
- | DOI: [10.1108/03684920010322055](https://doi.org/10.1108/03684920010322055)
-
----
-
-### Bertalanffy1968
-
-**General system theory: foundations, development, applications**
-
-*Ludwig von Bertalanffy (2009)*
-
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/4254DRYW)
-
----
-
-### Mesarovic1975
-
-**General systems theory: mathematical foundations**
-
-*Mihajlo D. Mesarović, Yasuhiko Takahara (1975)*
-
-[View in Zotero Library](https://www.zotero.org/groups/6182921/items/TETVGKU7)
-
----
+*No matched references found.*
